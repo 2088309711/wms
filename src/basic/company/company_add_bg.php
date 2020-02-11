@@ -22,7 +22,7 @@ $zipcode = $_POST["zipcode"];
 if($id==''||$name=='')//||$contact==''||$phone==''||$fax==''||...
 	$error='提交的表单有误！';
 else{
-//	$con = mysql_connect("localhost","root","1234") or die("不能连接到Mysql Server");
+//	$con = mysql_pconnect("localhost","root","1234") or die("不能连接到Mysql Server");
 //	mysql_select_db("db_wms", $con) or die("数据库选择失败");
 //	mysql_query("set names utf-8");
 	

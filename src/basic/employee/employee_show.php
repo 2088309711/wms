@@ -1,18 +1,19 @@
 <?php
 //权限验证――
 include("../../const.php");
-if ($authority[2]==0){  
+include("../../inc/func.php");
+if ($authority[2]==0){
 	echo "<script language='javascript'>alert('对不起，你没有此操作权限！');history.back();</script>";
 	exit;
 }
 //权限验证――
 
 	include "../include.php";
-	include "../database.php";
+
 	
 	$pagesize = 10;//单页显示的项目数
-	$page = $_GET['page'];//URL中没有定义page时，$page=0；当前页码=$page+1；
-	$orderby = $_GET['orderby'];//URL中没有定义orderby时，$orderby=0，使用默认排序方式
+	$page = var_get('page');//URL中没有定义page时，$page=0；当前页码=$page+1；
+	$orderby = var_get('orderby');//URL中没有定义orderby时，$orderby=0，使用默认排序方式
 	
 	$query="select count(*) as num from table_employee";//echo $query."<br>";
 	$result = mysql_query($query) or die("Invalid query: " . mysql_error());

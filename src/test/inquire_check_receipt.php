@@ -1,5 +1,5 @@
 <?php
-	$con = mysql_connect("localhost","root","1234");
+	$con = mysql_pconnect("localhost","root","1234");
 	mysql_select_db("db_wms", $con);
 	mysql_query("set names utf-8 ");
 

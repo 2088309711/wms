@@ -8,7 +8,7 @@ if ($authority[10] == 0) {
 //权限验证――
 
 include "../basic/include.php";
-include "../basic/database.php";
+
 
 $warehouse = isset($_GET['warehouse']) ? $_GET['warehouse'] : '';
 

@@ -1,16 +1,17 @@
 <?php
 //权限验证――
 include("../const.php");
-if ($authority[17]==0){  
+include("../inc/func.php");
+if ($authority[17]==0){
 	echo "<script language='javascript'>alert('对不起，你没有此操作权限！');history.back();</script>";
 	exit;
 }
 //权限验证――
 	include "../basic/include.php";
-	include "../basic/database.php";
+
 
 	$limit_string = '';
-	$option = $_GET[option];//echo $option;
+	$option = var_get('option');//echo $option;
 	if($option == 'date'){ //按日期范围查询
 		$date1 = $_GET[date1];
 		$date2 = $_GET[date2];
@@ -30,7 +31,7 @@ if ($authority[17]==0){
 	$query = "select count(*) as num from test_check where 1".$limit_string;//echo $query."<br>";
 	$result = mysql_query($query) or die("Invalid query: " . mysql_error());
 	$RS = mysql_fetch_array($result);
-	$num = $RS[num];
+	$num = $RS['num'];
 	
 	$query = "select * from test_check where 1".$limit_string;//echo $query."<br>";
 	$result_receipt = mysql_query($query);

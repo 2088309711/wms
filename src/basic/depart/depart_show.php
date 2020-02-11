@@ -1,17 +1,18 @@
 <?php
 //权限验证――
 include("../../const.php");
-if ($authority[1]==0){  
+include("../../inc/func.php");
+if ($authority[1]==0){
 	echo "<script language='javascript'>alert('对不起，你没有此操作权限！');history.back();</script>";
 	exit;
 }
 //权限验证――
 
 	include "../include.php";
-	include "../database.php";
+
 
 	$pagesize = 10;//单页显示的项目数
-	$page = $_GET['page'];//URL中没有定义page时，$page=0；当前页码=$page+1；
+	$page = var_get('page');//URL中没有定义page时，$page=0；当前页码=$page+1；
 
 	$query="select count(*) as num from table_depart order by id";//echo $query."<br>";
 	$result = mysql_query($query);

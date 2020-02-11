@@ -12,7 +12,7 @@ class Db
 
     {   
 
-      if(!$this->conn=mysql_connect($host,$user,$pass))   
+      if(!$this->conn=mysql_pconnect($host,$user,$pass))
 
       die("can't connect to mysql sever");   
 
@@ -736,7 +736,7 @@ $db=new db();
 $flag=$_POST[flag];
 $filename =$_POST[filename];
 //echo $flag;
-$link =mysql_connect("localhost","root","hust");
+$link =mysql_pconnect("localhost","root","hust");
 
 $tables = mysql_list_tables(db_wms);
 $cachetables = array(); $tableselected = array();

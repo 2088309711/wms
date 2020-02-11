@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(session_id()==''){
+    session_start();
+}
+
 include("conn/conn.php");
 $sql = mysql_query("select * from tb_admin where name='" . $_SESSION['username'] . "'", $conn);
 //$sql=mysql_query("select * from tb_admin where name='".tsoft."'",$conn);

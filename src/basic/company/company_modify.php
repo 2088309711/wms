@@ -19,7 +19,7 @@ function checkForm(){
 	$id=$_GET["id"];
 	if($id=="")die("参数传递错误");
 	
-//	$con = mysql_connect("localhost","root","1234") or die("不能连接到Mysql Server");
+//	$con = mysql_pconnect("localhost","root","1234") or die("不能连接到Mysql Server");
 //	mysql_select_db("db_wms", $con) or die("数据库选择失败");
 //	mysql_query("set names utf-8 ");
 	$query="select * from table_company where id=$id";//echo $query."<br>";

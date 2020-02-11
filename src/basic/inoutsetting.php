@@ -1,6 +1,6 @@
 <?php
   include("../const.php");
-  include("../conn/conn.php");
+
 
 ?>
 <html>
@@ -28,7 +28,7 @@
 <?php
 	   $sql=mysql_query("select count(*) as total from tb_inout ",$conn);
 	   $info=mysql_fetch_array($sql);
-	   $total=$info[total];
+	   $total=$info['total'];
 	   if($total==0){
 	     echo "暂无分类!";
 	   }
@@ -57,22 +57,22 @@
       </tr>
 	  <?php
 	  
-		  $sql1=mysql_query("select * from tb_inout where type='".出库."' order by id asc",$conn);
+		  $sql1=mysql_query("select * from tb_inout order by id asc",$conn);
 		  $cnt=1;
 		   while($info1=mysql_fetch_array($sql1))
 		    {
 	  ?>
       <tr>
         <td height="25" bgcolor="#FFFFFF"><div align="center">
-          <input type="checkbox" name="<?php echo $info1[id];?>" value=<?php echo $info1[id];?>>
+          <input type="checkbox" name="<?php echo $info1['id'];?>" value=<?php echo $info1['id'];?>>
         </div></td>
         <td height="25" bgcolor="#FFFFFF">
           
           <div align="center" class="STYLE3"><?php echo $cnt++;?></div></td>
-        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php echo $info1[type];?></div></td>
-        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php echo $info1[name];?></div></td>
-        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php if($info1[cost]==0) {echo "否";}else {echo "是";}?></div>          <div align="center" class="STYLE3"></div>          </td>
-        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE2"><a href="editinout.php?id=<?php echo $info1[id];?>">修改</a></div></td>
+        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php echo $info1['type'];?></div></td>
+        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php echo $info1['name'];?></div></td>
+        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php if($info1['cost']==0) {echo "否";}else {echo "是";}?></div>          <div align="center" class="STYLE3"></div>          </td>
+        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE2"><a href="editinout.php?id=<?php echo $info1['id'];?>">修改</a></div></td>
       </tr>
 	 <?php
 	    }
@@ -80,22 +80,22 @@
 	  
 	  <?php
 
-		  $sql2=mysql_query("select * from tb_inout where type='".入库."' order by id asc",$conn);
+		  $sql2=mysql_query("select * from tb_inout order by id asc",$conn);
 		   while($info2=mysql_fetch_array($sql2))
 		    {
 	  ?>
 	  
 	  <tr>
         <td height="25" bgcolor="#FFFFFF"><div align="center">
-          <input type="checkbox" name="<?php echo $info2[id];?>" value=<?php echo $info2[id];?>>
+          <input type="checkbox" name="<?php echo $info2['id'];?>" value=<?php echo $info2['id'];?>>
         </div></td>
         <td height="25" bgcolor="#FFFFFF">
           
           <div align="center" class="STYLE3"><?php echo $cnt++;?></div></td>
-        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php echo $info2[type];?></div></td>
-        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php echo $info2[name];?></div></td>
-        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php if($info2[cost]==0) {echo "否";}else {echo "是";}?></div>          <div align="center" class="STYLE3"></div>          </td>
-        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE2"><a href="editinout.php?id=<?php echo $info2[id];?>">修改</a></div></td>
+        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php echo $info2['type'];?></div></td>
+        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php echo $info2['name'];?></div></td>
+        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php if($info2['cost']==0) {echo "否";}else {echo "是";}?></div>          <div align="center" class="STYLE3"></div>          </td>
+        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE2"><a href="editinout.php?id=<?php echo $info2['id'];?>">修改</a></div></td>
       </tr>
  <?php
 	    }

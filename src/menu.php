@@ -143,7 +143,7 @@ img{border:none;}
       </tr></table></td>
     </tr>
     <tr>
-      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='product/showproduct?mtype=1&stype=1';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td>
+      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='product/showproduct.php?mtype=1&stype=1';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td>
       <td>货品信息管理</td>
       </tr></table></td>
     </tr>
@@ -239,7 +239,7 @@ img{border:none;}
   <tbody>
     
 	<tr>
-      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='system/adminsetting.php?name=<?php echo $_SESSION[username];?>';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>操作用户管理</td></tr></table></td>
+      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='system/adminsetting.php?name=<?php echo $_SESSION['username'];?>';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>操作用户管理</td></tr></table></td>
     </tr>
 	<tr>
       <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='system/databackup.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>数据备份</td></tr></table></td>
