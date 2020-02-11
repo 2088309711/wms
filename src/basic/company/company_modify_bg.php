@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <?php
 //include "../include.php";
@@ -20,19 +20,19 @@ $address = $_POST["adress"];
 $zipcode = $_POST["zipcode"];
 
 if($id==''||$name=='')//||$gender==''||$job==''||$phone==''||$address==''||$depart==''
-	$error='Ìá½»µÄ±íµ¥ÓĞÎó£¡';
+	$error='æäº¤çš„è¡¨å•æœ‰è¯¯ï¼';
 else
 {
-//	$con = mysql_connect("localhost","root","1234") or die("²»ÄÜÁ¬½Óµ½Mysql Server");
-//	mysql_select_db("db_wms", $con) or die("Êı¾İ¿âÑ¡ÔñÊ§°Ü");
-//	mysql_query("set names gb2312");
+//	$con = mysql_connect("localhost","root","1234") or die("ä¸èƒ½è¿æ¥åˆ°Mysql Server");
+//	mysql_select_db("db_wms", $con) or die("æ•°æ®åº“é€‰æ‹©å¤±è´¥");
+//	mysql_query("set names utf-8");
 	
 	$query = "select * from table_company where id = '$id'";//echo $query."<br>";
 	$result = mysql_query($query);
 	$RS = mysql_fetch_array($result);
 	
 	if(empty($RS))
-		$error = "ID´íÎó£¬ĞèĞŞ¸ÄµÄÄ¿±ê²»´æÔÚ£¡";	
+		$error = "IDé”™è¯¯ï¼Œéœ€ä¿®æ”¹çš„ç›®æ ‡ä¸å­˜åœ¨ï¼";	
 	else{
 		$query = "update table_company set name='$name',type='$type',contact='$contact',phone='$phone',fax='$fax',email='$email',bank='$bank',bankaccount='$bankaccount',tariff='$tariff',area='$area',province='$province',address='$address',zipcode='$zipcode' where id = '$id'";
 		//echo $query;die();
@@ -48,16 +48,16 @@ var url;
 <?php
 if($error==''){
 	if($result == FALSE){
-		echo "alert('¸üĞÂĞÅÏ¢Ê§°Ü!£¡·µ»ØĞÅÏ¢ĞŞ¸ÄÒ³Ãæ£¡');";
+		echo "alert('æ›´æ–°ä¿¡æ¯å¤±è´¥!ï¼è¿”å›ä¿¡æ¯ä¿®æ”¹é¡µé¢ï¼');";
 		echo "var url = 'company_modify.php?id=".$id."';";
 	}
 	else{
-		echo "alert('¸üĞÂĞÅÏ¢³É¹¦£¡·µ»Ø¹ÜÀí½çÃæ£¡\\n±àºÅ£º $id\\nÃû³Æ£º $name');\n";
+		echo "alert('æ›´æ–°ä¿¡æ¯æˆåŠŸï¼è¿”å›ç®¡ç†ç•Œé¢ï¼\\nç¼–å·ï¼š $id\\nåç§°ï¼š $name');\n";
 		echo "var url = 'company_show.php';";
 	}
 }
 else{
-	echo "alert('$error ·µ»ØÔ±¹¤ĞÅÏ¢ĞŞ¸ÄÒ³Ãæ£¡');";
+	echo "alert('$error è¿”å›å‘˜å·¥ä¿¡æ¯ä¿®æ”¹é¡µé¢ï¼');";
 	echo "var url = 'company_modify.php?id=".$id."';";
 }
 ?>

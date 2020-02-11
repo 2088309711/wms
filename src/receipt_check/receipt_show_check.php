@@ -4,13 +4,13 @@
 
 	$id = $_GET[id];
 	if($id == '')
-		die('IDÎ´Ö¸¶¨£¡');
+		die('IDæœªæŒ‡å®šï¼');
 	
 	$query = "select * from test_check where id = '$id'";//echo $query."<br>";
 	$result = mysql_query($query);
 	$RS = mysql_fetch_array($result);
 	if(empty($RS))
-		die('Î´ÕÒµ½Ö¸¶¨ÏîÄ¿£¡');
+		die('æœªæ‰¾åˆ°æŒ‡å®šé¡¹ç›®ï¼');
 	$date = $RS[date];
 	$yewuyuan = $RS[yewuyuan];
 	$itemstr = $RS[itemstring];
@@ -26,8 +26,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>ÅÌµãµ¥ÏêÏ¸ĞÅÏ¢</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ç›˜ç‚¹å•è¯¦ç»†ä¿¡æ¯</title>
 </head>
 <style>
 </style>
@@ -39,36 +39,36 @@
 </script>
 <body style="width:800px">
 <form id="item_in" name="item_in" method="post" action="../receipt_inout/receipt_in_bg.php" onsubmit=" return checkForm()">
-  <h3>µ¥¾İÏêÇé-ÅÌµãµ¥</h3>
+  <h3>å•æ®è¯¦æƒ…-ç›˜ç‚¹å•</h3>
   <fieldset>
-  <legend>²Ö¿âĞÅÏ¢</legend>
-  <label>ÅÌµã²Ö¿â</label>
+  <legend>ä»“åº“ä¿¡æ¯</legend>
+  <label>ç›˜ç‚¹ä»“åº“</label>
   <select name="company" id="company" disabled>
     <?php echo "<option value='$RS[warehouse]'>$warehouse</option>";?>
   </select>
   </fieldset>
   <fieldset>
-  <legend>µ¥¾İĞÅÏ¢</legend>
-  <label>µ¥¾İ±àºÅ</label>
+  <legend>å•æ®ä¿¡æ¯</legend>
+  <label>å•æ®ç¼–å·</label>
   <input id="id" name="id" type="text" value="<?php echo $id;?>" style="background-color:#CCCCCC" readonly/>
-  <label>Â¼µ¥ÈÕÆÚ</label>
+  <label>å½•å•æ—¥æœŸ</label>
   <input name="date" id="date" type="text" value="<?php echo $date;?>" style="background-color:#CCCCCC" readonly/>
   <p>&nbsp;</p>
-  <label>ÒµÎñÔ±</label>
+  <label>ä¸šåŠ¡å‘˜</label>
   <input id="yewuyuan" name="yewuyuan" type="text" value="<?php echo $yewuyuan;?>" style="background-color:#CCCCCC" readonly/>
   </fieldset>
   <textarea name="item_str" id="item_str" style="display:none" hidden><?php echo $itemstr;?></textarea>
-  <!--Éè¶¨ÎªÒş²ØÓò-->
+  <!--è®¾å®šä¸ºéšè—åŸŸ-->
   <fieldset>
-  <legend>µ÷²¦ÁĞ±í</legend>
+  <legend>è°ƒæ‹¨åˆ—è¡¨</legend>
   <table id="item_list" border="1" width="100%" cellspacing="0" cellpadding="5" style="font-size:12px; border:thin; border-color:#9999FF ">
     <tr align="center">
-      <td>»õÆ·±àºÅ</td>
-      <td>Ãû³Æ</td>
-      <td>¹æ¸ñĞÍºÅ</td>
-      <td>µ¥Î»</td>
-      <td>¼ÇÂ¼ÊıÁ¿</td>
-	  <td>Êµ¼ÊÊıÁ¿</td>
+      <td>è´§å“ç¼–å·</td>
+      <td>åç§°</td>
+      <td>è§„æ ¼å‹å·</td>
+      <td>å•ä½</td>
+      <td>è®°å½•æ•°é‡</td>
+	  <td>å®é™…æ•°é‡</td>
     </tr>
     <?php
 		$item_list = explode('|',$itemstr);//print_r($list);
@@ -101,8 +101,8 @@
   <p>&nbsp;</p>
   </fieldset>
   <fieldset>
-  <legend>ÆäËü</legend>
-  <label>±¸×¢</label>
+  <legend>å…¶å®ƒ</legend>
+  <label>å¤‡æ³¨</label>
   <textarea name="remark" cols="15" rows="3" disabled><?php echo $remark;?></textarea>
   </fieldset>
 </form>

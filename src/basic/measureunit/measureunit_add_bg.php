@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <?php
 	include "../include.php";
@@ -8,14 +8,14 @@ $id = "0000";
 $name = $_POST["name"];
 
 if($id==''||$name=='')//||$major==''||$phone==''
-	$error='Ìá½»µÄ±íµ¥ÓÐÎó£¡';
+	$error='æäº¤çš„è¡¨å•æœ‰è¯¯ï¼';
 else{	
 	$query = "select * from table_measureunit where name = '$name'";
 	$result = mysql_query($query);
 	$RS = mysql_fetch_array($result);
 	
 	if(!empty($RS))
-		$error="¸Ã²¿ÃÅÒÑ´æÔÚ£¡";
+		$error="è¯¥éƒ¨é—¨å·²å­˜åœ¨ï¼";
 	
 	$query = "select * from table_measureunit where id = '$id'";
 	$result = mysql_query($query);
@@ -30,7 +30,7 @@ else{
 		}
 		else
 		{
-			$error='±àºÅÒç³ö£¡';
+			$error='ç¼–å·æº¢å‡ºï¼';
 			break;
 		}
 	}	
@@ -49,11 +49,11 @@ var url;
 if($error=='')
 {
 	if($result == FALSE){
-		echo "alert('Ìí¼ÓÊ§°Ü£¡');";
+		echo "alert('æ·»åŠ å¤±è´¥ï¼');";
 		echo "var url = 'measureunit_add.php';";
 	}
 	else{
-		echo "alert('Ìí¼Ó³É¹¦£¡\\n±àºÅ£º $id\\nµ¥Î»Ãû³Æ£º $name');\n";
+		echo "alert('æ·»åŠ æˆåŠŸï¼\\nç¼–å·ï¼š $id\\nå•ä½åç§°ï¼š $name');\n";
 		echo "var url = 'measureunit_show.php';";
 	}
 }

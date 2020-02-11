@@ -1,50 +1,99 @@
 <?php
-session_start();
-
-function w_log($act){
-	$filename = "log.txt";
-	if(file_exists($filename)){
-		$f_open = fopen($filename,"a+");
-	}
-	else
-	{
-		$f_open = fopen($filename,"w+");
-	}
-		$str = $_SESSION['username'].",".date("Y-m-d H:i:s").",".$_SERVER['REMOTE_ADDR'].",".$act."\n";
-		fwrite($f_open,$str);
-		fclose($f_open);
+if (session_id() == '') {
+    session_start();
 }
-//É¾³ıÏµÍ³ÈÕÖ¾
-function c_log(){
-	$filename="../log.txt";
-	if(file_exists($filename))
-		unlink($filename);
-	else
-		echo "<script>alert('ÔİÎŞÏµÍ³ÈÕÖ¾£¡');history.go(-1);</script>";
+
+function var_get($str)
+{
+    return isset($_GET[$str]) ? $_GET[$str] : '';
 }
 
 
-//·µ»ØÎÄ¼ş¼ĞÏÂµÄÎÄ¼şÁĞ±í
-function show_file(){
-	$folder_name = "sql";
-	$d_open = opendir($folder_name);
-	$num = 0;
-	while($file = readdir($d_open)){
-		$filename[$num] = $file;
-		$num++; 
-	}
-	closedir($d_open);
-	return $filename;
+function var_post($str)
+{
+    return isset($_POST[$str]) ? $_POST[$str] : '';
 }
-//¶ÁÈ¡×Ö¶Î
-//$conn,Êı¾İ¿âÁ´½Ó
-//$dataname£ºÊı¾İ±íÃû³Æ
-//$fieldname£ºÒª²éÕÒ×Ö¶Î
-//$n_id£ºÊı¾İidºÅ
-function read_field($conn,$tablename,$fieldname,$n_id){
-	$sqlstr = "select ".$fieldname." from ".$tablename." where id = ".$n_id;
-	$result = mysql_query($sqlstr,$conn);
-	$rows = mysql_fetch_row($result);
-	return $rows[0];
+
+
+/**
+ * æ˜¾ç¤ºæ¶ˆæ¯
+ * @param $msg
+ * @param string $href
+ */
+function show_msg($msg, $href = 'back')
+{
+
+    $str = '<!DOCTYPE html><html lang="zh-cn"><head><title>ç³»ç»Ÿæ¶ˆæ¯</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head><body><script>alert("';
+
+    $str .= $msg . '");';
+
+    switch ($href) {
+        case 'back':
+            $str .= 'history.back();';
+            break;
+        case 'close':
+            $str .= 'window.close();';
+            break;
+        default:
+            $str .= 'location.href="' . $href . '";';
+            break;
+    }
+
+    $str .= '</script></body></html>';
+
+    echo $str;
 }
+
+
+function w_log($act)
+{
+    $filename = "log.txt";
+    if (file_exists($filename)) {
+        $f_open = fopen($filename, "a+");
+    } else {
+        $f_open = fopen($filename, "w+");
+    }
+    $str = $_SESSION['username'] . "," . date("Y-m-d H:i:s") . "," . $_SERVER['REMOTE_ADDR'] . "," . $act . "\n";
+    fwrite($f_open, $str);
+    fclose($f_open);
+}
+
+//åˆ é™¤ç³»ç»Ÿæ—¥å¿—
+function c_log()
+{
+    $filename = "../log.txt";
+    if (file_exists($filename))
+        unlink($filename);
+    else
+        echo "<script>alert('æš‚æ— ç³»ç»Ÿæ—¥å¿—ï¼');history.go(-1);</script>";
+}
+
+
+//è¿”å›æ–‡ä»¶å¤¹ä¸‹çš„æ–‡ä»¶åˆ—è¡¨
+function show_file()
+{
+    $folder_name = "sql";
+    $d_open = opendir($folder_name);
+    $num = 0;
+    while ($file = readdir($d_open)) {
+        $filename[$num] = $file;
+        $num++;
+    }
+    closedir($d_open);
+    return $filename;
+}
+
+//è¯»å–å­—æ®µ
+//$conn,æ•°æ®åº“é“¾æ¥
+//$datanameï¼šæ•°æ®è¡¨åç§°
+//$fieldnameï¼šè¦æŸ¥æ‰¾å­—æ®µ
+//$n_idï¼šæ•°æ®idå·
+function read_field($conn, $tablename, $fieldname, $n_id)
+{
+    $sqlstr = "select " . $fieldname . " from " . $tablename . " where id = " . $n_id;
+    $result = mysql_query($sqlstr, $conn);
+    $rows = mysql_fetch_row($result);
+    return $rows[0];
+}
+
 ?>

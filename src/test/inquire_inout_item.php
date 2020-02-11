@@ -1,210 +1,213 @@
 <?php
-	$con = mysql_connect("localhost","root","1234");
-	mysql_select_db("db_wms", $con);
-	mysql_query("set names gb2312 ");
-	
-	$limit_string = '';
-	$option = $_GET[option];//echo $option;
-	if($option == 'type'){
-		$id = $_GET[id];
-		$limit_string = " and type = '$id'";
-	}
-	else if($option == 'receipt'){
-		$id = $_GET[id];
-		$limit_string = " and receipt = '$id'";
-	}
-	else if($option == 'item'){
-		$id = $_GET[id];
-		$limit_string = " and item = '$id'";
-	}
-	
-	$query = "select count(*) as num from test_inout where 1".$limit_string;//echo $query."<br>";
-	$result = mysql_query($query) or die("Invalid query: " . mysql_error());
-	$RS = mysql_fetch_array($result);
-	$num = $RS[num];
-	
-	$query = "select * from test_inout where 1".$limit_string;//echo $query."<br>";
-	$result_receipt = mysql_query($query);
-	
-	$query = "select * from tb_inout order by id";//echo $query."<br>";
-	$result_type = mysql_query($query);//ªÒ»°≥ˆ»Îø‚¿‡–Õ¡–±Ì
-	
+$con = mysql_connect("localhost", "root", "1234");
+mysql_select_db("db_wms", $con);
+mysql_query("set names utf-8 ");
+
+$limit_string = '';
+$option = $_GET[option];//echo $option;
+if ($option == 'type') {
+    $id = $_GET[id];
+    $limit_string = " and type = '$id'";
+} else if ($option == 'receipt') {
+    $id = $_GET[id];
+    $limit_string = " and receipt = '$id'";
+} else if ($option == 'item') {
+    $id = $_GET[id];
+    $limit_string = " and item = '$id'";
+}
+
+$query = "select count(*) as num from test_inout where 1" . $limit_string;//echo $query."<br>";
+$result = mysql_query($query) or die("Invalid query: " . mysql_error());
+$RS = mysql_fetch_array($result);
+$num = $RS[num];
+
+$query = "select * from test_inout where 1" . $limit_string;//echo $query."<br>";
+$result_receipt = mysql_query($query);
+
+$query = "select * from tb_inout order by id";//echo $query."<br>";
+$result_type = mysql_query($query);//Ëé∑ÂèñÂá∫ÂÖ•Â∫ìÁ±ªÂûãÂàóË°®
+
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>≥ˆ»Îø‚≤È—Ø-ªı∆∑</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Âá∫ÂÖ•Â∫ìÊü•ËØ¢-Ë¥ßÂìÅ</title>
 </head>
 <script language="javascript">
-function gotoURL(target){
-	var id = target.innerHTML;
-	var url = "receipt_show_inout.php?id="+id;
-	//location.href = url;
-	window.open(url,'_blank','directorys=no,toolbar=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=640,height=480,top=176,left=161');
-}
-function gotoURL2(target){
-	var id = target.innerHTML;
-	var url = "receipt_show_exchange.php?id="+id;
-	//location.href = url;
-	window.open(url,'_blank','directorys=no,toolbar=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=640,height=480,top=176,left=161');
-}
-function optionChange(object){
-	hideAll();
-	switch(object.value){
-		case 'inquiry_type':
-			document.getElementById('inquiry_type').hidden = false;
-			break;
-		case 'inquiry_item':
-			document.getElementById('inquiry_item').hidden = false;
-			break;
-		case 'inquiry_receipt':
-			document.getElementById('inquiry_receipt').hidden = false;
-			break;
-		default:break;
-	}
-}
-function hideAll(){
-	
-	document.getElementById('inquiry_type').hidden = true;	
-	document.getElementById('inquiry_item').hidden = true;	
-	document.getElementById('inquiry_receipt').hidden = true;
-}
+    function gotoURL(target) {
+        var id = target.innerHTML;
+        var url = "receipt_show_inout.php?id=" + id;
+        //location.href = url;
+        window.open(url, '_blank', 'directorys=no,toolbar=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=640,height=480,top=176,left=161');
+    }
+
+    function gotoURL2(target) {
+        var id = target.innerHTML;
+        var url = "receipt_show_exchange.php?id=" + id;
+        //location.href = url;
+        window.open(url, '_blank', 'directorys=no,toolbar=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=640,height=480,top=176,left=161');
+    }
+
+    function optionChange(object) {
+        hideAll();
+        switch (object.value) {
+            case 'inquiry_type':
+                document.getElementById('inquiry_type').hidden = false;
+                break;
+            case 'inquiry_item':
+                document.getElementById('inquiry_item').hidden = false;
+                break;
+            case 'inquiry_receipt':
+                document.getElementById('inquiry_receipt').hidden = false;
+                break;
+            default:
+                break;
+        }
+    }
+
+    function hideAll() {
+
+        document.getElementById('inquiry_type').hidden = true;
+        document.getElementById('inquiry_item').hidden = true;
+        document.getElementById('inquiry_receipt').hidden = true;
+    }
 </script>
 <script type="text/javascript" src="../js/TableSort_mains.js"></script>
 <body>
-<h3>≥ˆ»Îø‚≤È—Ø-ªı∆∑</h3>
+<h3>Âá∫ÂÖ•Â∫ìÊü•ËØ¢-Ë¥ßÂìÅ</h3>
 <?php
-echo "<p>π≤”– $num Ãıº«¬º</p>";
+echo "<p>ÂÖ±Êúâ $num Êù°ËÆ∞ÂΩï</p>";
 ?>
-<!--æ´»∑≤È—ØøÚº‹-->
-<!--<div style="margin-bottom:8px; height:20px"> æ´»∑≤È—Ø£∫
-  <input id="receipt_id" name="receipt_id" type="text" value="«Î ‰»Îµ•æ›ID" onclick="this.value=''" onblur="if(this.value=='') this.value='«Î ‰»Îµ•æ›ID'"/>
-  <input name="search" type="button" value="≤È’“" onclick="location.href='receipt_show_inout.php?id=' + document.getElementById('receipt_id').value"/>
+<!--Á≤æÁ°ÆÊü•ËØ¢Ê°ÜÊû∂-->
+<!--<div style="margin-bottom:8px; height:20px"> Á≤æÁ°ÆÊü•ËØ¢Ôºö
+  <input id="receipt_id" name="receipt_id" type="text" value="ËØ∑ËæìÂÖ•ÂçïÊçÆID" onclick="this.value=''" onblur="if(this.value=='') this.value='ËØ∑ËæìÂÖ•ÂçïÊçÆID'"/>
+  <input name="search" type="button" value="Êü•Êâæ" onclick="location.href='receipt_show_inout.php?id=' + document.getElementById('receipt_id').value"/>
 </div>-->
-<!--æ´»∑≤È—ØøÚº‹-->
-<!--≤È—ØøÚº‹-->
+<!--Á≤æÁ°ÆÊü•ËØ¢Ê°ÜÊû∂-->
+<!--Êü•ËØ¢Ê°ÜÊû∂-->
 <div style="margin-bottom:8px; height:20px">
-  <!--≤È—Ø∑Ω Ω—°‘Ò-->
-  <div style="float:left">≤È—Ø∑Ω Ω£∫
-    <select id="inquiry" name="inquiry" onchange="optionChange(this)">
-      <option value="none" selected="selected">Œﬁ</option>
-      <option value="inquiry_item">ªı∆∑ID</option>
-      <option value="inquiry_receipt">≥ˆ»Îø‚µ•</option>
-      <option value="inquiry_type">≥ˆ»Îø‚¿‡–Õ</option>
-    </select>
-  </div>
-  <!--≤È—Ø∑Ω Ω—°‘Ò-->
-  <!--≥ˆ»Îø‚¿‡–Õ-->
-  <div id="inquiry_type">
-    <select name="menu1" onchange="location.href='inquire_inout_item.php?option=type&id='+this.value">
-      <option value="none">«Î—°‘Ò</option>
-      <?php 
-	  	while($RS = mysql_fetch_array($result_type))
-			echo "<option value='$RS[id]'>$RS[name]</option>";
-	  ?>
-      <option value="none">≤÷ø‚µ˜≤¶</option>
-    </select>
-  </div>
-  <!--≥ˆ»Îø‚¿‡–Õ-->
-  <!--ªı∆∑ID-->
-  <div id="inquiry_item">
-    <input id="item_id" name="item_id" value="«Î ‰»Îªı∆∑ID" type="text" onclick="this.value=''" onblur="if(this.value=='') this.value='«Î ‰»Îªı∆∑ID'"/>
-    <input name="button" type="button" value="≤È—Ø" onclick="location.href='inquire_inout_item.php?option=item&id=' + document.getElementById('item_id').value"/>
-  </div>
-  <!--ªı∆∑ID-->
-  <!--≥ˆ»Îø‚µ•æ›ID-->
-  <div id="inquiry_receipt">
-    <input id="receipt_id" name="item_id" value="«Î ‰»Îµ•æ›ID" type="text" onclick="this.value=''" onblur="if(this.value=='') this.value='«Î ‰»Îµ•æ›ID'"/>
-    <input name="button" type="button" value="≤È—Ø" onclick="location.href='inquire_inout_item.php?option=receipt&id=' + document.getElementById('receipt_id').value"/>
-  </div>
-  <!--≥ˆ»Îø‚µ•æ›ID--->
+    <!--Êü•ËØ¢ÊñπÂºèÈÄâÊã©-->
+    <div style="float:left">Êü•ËØ¢ÊñπÂºèÔºö
+        <select id="inquiry" name="inquiry" onchange="optionChange(this)">
+            <option value="none" selected="selected">Êó†</option>
+            <option value="inquiry_item">Ë¥ßÂìÅID</option>
+            <option value="inquiry_receipt">Âá∫ÂÖ•Â∫ìÂçï</option>
+            <option value="inquiry_type">Âá∫ÂÖ•Â∫ìÁ±ªÂûã</option>
+        </select>
+    </div>
+    <!--Êü•ËØ¢ÊñπÂºèÈÄâÊã©-->
+    <!--Âá∫ÂÖ•Â∫ìÁ±ªÂûã-->
+    <div id="inquiry_type">
+        <select name="menu1" onchange="location.href='inquire_inout_item.php?option=type&id='+this.value">
+            <option value="none">ËØ∑ÈÄâÊã©</option>
+            <?php
+            while ($RS = mysql_fetch_array($result_type))
+                echo "<option value='$RS[id]'>$RS[name]</option>";
+            ?>
+            <option value="none">‰ªìÂ∫ìË∞ÉÊã®</option>
+        </select>
+    </div>
+    <!--Âá∫ÂÖ•Â∫ìÁ±ªÂûã-->
+    <!--Ë¥ßÂìÅID-->
+    <div id="inquiry_item">
+        <input id="item_id" name="item_id" value="ËØ∑ËæìÂÖ•Ë¥ßÂìÅID" type="text" onclick="this.value=''"
+               onblur="if(this.value=='') this.value='ËØ∑ËæìÂÖ•Ë¥ßÂìÅID'"/>
+        <input name="button" type="button" value="Êü•ËØ¢"
+               onclick="location.href='inquire_inout_item.php?option=item&id=' + document.getElementById('item_id').value"/>
+    </div>
+    <!--Ë¥ßÂìÅID-->
+    <!--Âá∫ÂÖ•Â∫ìÂçïÊçÆID-->
+    <div id="inquiry_receipt">
+        <input id="receipt_id" name="item_id" value="ËØ∑ËæìÂÖ•ÂçïÊçÆID" type="text" onclick="this.value=''"
+               onblur="if(this.value=='') this.value='ËØ∑ËæìÂÖ•ÂçïÊçÆID'"/>
+        <input name="button" type="button" value="Êü•ËØ¢"
+               onclick="location.href='inquire_inout_item.php?option=receipt&id=' + document.getElementById('receipt_id').value"/>
+    </div>
+    <!--Âá∫ÂÖ•Â∫ìÂçïÊçÆID--->
 </div>
 <script language="javascript">
-hideAll();
+    hideAll();
 </script>
 <div>
-  <input name="" type="button" value="œ‘ æ»´≤ø" onclick="location.href='inquire_inout_item.php'"/>
+    <input name="" type="button" value="ÊòæÁ§∫ÂÖ®ÈÉ®" onclick="location.href='inquire_inout_item.php'"/>
 </div>
 <table id="MyTable" width="100%" border="1" cellspacing="0" cellpadding="5" bordercolor="#9999FF">
-  <thead>
-  <tr align="center">
-    <td rowspan="2" onclick="SortTable('MyTable',0,'string')" style="cursor:pointer">º«¬º±‡∫≈</td>
-    <td colspan="4">ªı∆∑–≈œ¢</td>
-    <td colspan="3">≥ˆ»Îø‚–≈œ¢</td>
-    <td colspan="2">À˘ Ùµ•æ›–≈œ¢</td>
-  </tr>
-  <tr align="center">
-    <td onclick="SortTable('MyTable',1,'string')" style="cursor:pointer">ªı∆∑ID</td>
-    <td onclick="SortTable('MyTable',2,'string')" style="cursor:pointer">√˚≥∆</td>
-    <td onclick="SortTable('MyTable',3,'string')" style="cursor:pointer">–Õ∫≈</td>
-    <td onclick="SortTable('MyTable',4,'string')" style="cursor:pointer">µ•Œª</td>
-    <td onclick="SortTable('MyTable',5,'int')" style="cursor:pointer"> ˝¡ø</td>
-    <td onclick="SortTable('MyTable',6,'float')" style="cursor:pointer">º€∏Ò</td>
-    <td onclick="SortTable('MyTable',7,'string')" style="cursor:pointer">¿‡–Õ</td>
-    <td onclick="SortTable('MyTable',8,'string')" style="cursor:pointer">µ•æ›ID</td>
-    <td onclick="SortTable('MyTable',9,'string')" style="cursor:pointer">≤÷ø‚</td>
-  </tr>
-  </thead>
-  <tbody>
-  <?php
-	while($RS = mysql_fetch_array($result_receipt))
-	{
-		echo "<tr align='center'>";
-		echo "<td>$RS[id]</td>";
-		
-		echo "<td  style='background-color:#CCCCCC'>$RS[item]</td>";
-		
-		if(1){
-			$query = "select * from tb_product where encode = '$RS[item]'";
-			$result_iteminfo = mysql_query($query);
-			$RS2 = mysql_fetch_array($result_iteminfo);
-			echo "<td>$RS2[name]</td>";
-			echo "<td>$RS2[size]</td>";
-			echo "<td>$RS2[unit]</td>";
-		}
-		else{
-			echo "<td></td>";
-			echo "<td></td>";
-			echo "<td></td>";
-		}
+    <thead>
+    <tr align="center">
+        <td rowspan="2" onclick="SortTable('MyTable',0,'string')" style="cursor:pointer">ËÆ∞ÂΩïÁºñÂè∑</td>
+        <td colspan="4">Ë¥ßÂìÅ‰ø°ÊÅØ</td>
+        <td colspan="3">Âá∫ÂÖ•Â∫ì‰ø°ÊÅØ</td>
+        <td colspan="2">ÊâÄÂ±ûÂçïÊçÆ‰ø°ÊÅØ</td>
+    </tr>
+    <tr align="center">
+        <td onclick="SortTable('MyTable',1,'string')" style="cursor:pointer">Ë¥ßÂìÅID</td>
+        <td onclick="SortTable('MyTable',2,'string')" style="cursor:pointer">ÂêçÁß∞</td>
+        <td onclick="SortTable('MyTable',3,'string')" style="cursor:pointer">ÂûãÂè∑</td>
+        <td onclick="SortTable('MyTable',4,'string')" style="cursor:pointer">Âçï‰Ωç</td>
+        <td onclick="SortTable('MyTable',5,'int')" style="cursor:pointer">Êï∞Èáè</td>
+        <td onclick="SortTable('MyTable',6,'float')" style="cursor:pointer">‰ª∑Ê†º</td>
+        <td onclick="SortTable('MyTable',7,'string')" style="cursor:pointer">Á±ªÂûã</td>
+        <td onclick="SortTable('MyTable',8,'string')" style="cursor:pointer">ÂçïÊçÆID</td>
+        <td onclick="SortTable('MyTable',9,'string')" style="cursor:pointer">‰ªìÂ∫ì</td>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    while ($RS = mysql_fetch_array($result_receipt)) {
+        echo "<tr align='center'>";
+        echo "<td>$RS[id]</td>";
 
-		echo "<td>$RS[num]</td>";
-		echo "<td>$RS[price]</td>";
-		
-		if($RS[type]!='none'){
-			$query = "select name from tb_inout where id = '$RS[type]'";//echo $query."<br>";
-			$result = mysql_query($query);
-			$RS2 = mysql_fetch_array($result);
-			echo "<td>$RS2[name]</td>\n";//≥ˆ»Îø‚¿‡–Õ
-		}
-		else
-			echo "<td>≤÷ø‚µ˜≤¶</td>\n";
-		
-		if($RS[type]!='none'){
-			echo "<td onclick='gotoURL(this)' style='background-color:#CCCCCC'>$RS[receipt]</td>\n";			
-			$query = "select warehouse from test_receipt where id = '$RS[receipt]'";//echo $query."<br>";
-			$result = mysql_query($query);
-			$RS2 = mysql_fetch_array($result);
-			$query = "select name from table_warehouse where id = '$RS2[warehouse]'";//echo $query."<br>";
-			$result = mysql_query($query);
-			$RS3 = mysql_fetch_array($result);
-			echo "<td>$RS3[name]</td>\n";
-		}
-		else{
-			echo "<td onclick='gotoURL2(this)' style='background-color:#CCCCCC'>$RS[receipt]</td>\n";	
-			$query = "select warehouse from test_exchange where id = '$RS[receipt]'";//echo $query."<br>";
-			$result = mysql_query($query);
-			$RS2 = mysql_fetch_array($result);
-			$query = "select name from table_warehouse where id = '$RS2[warehouse]'";//echo $query."<br>";
-			$result = mysql_query($query);
-			$RS3 = mysql_fetch_array($result);
-			echo "<td>$RS3[name]</td>\n";
-		}
-		echo "</tr>";
-	}
-?></tbody>
+        echo "<td  style='background-color:#CCCCCC'>$RS[item]</td>";
+
+        if (1) {
+            $query = "select * from tb_product where encode = '$RS[item]'";
+            $result_iteminfo = mysql_query($query);
+            $RS2 = mysql_fetch_array($result_iteminfo);
+            echo "<td>$RS2[name]</td>";
+            echo "<td>$RS2[size]</td>";
+            echo "<td>$RS2[unit]</td>";
+        } else {
+            echo "<td></td>";
+            echo "<td></td>";
+            echo "<td></td>";
+        }
+
+        echo "<td>$RS[num]</td>";
+        echo "<td>$RS[price]</td>";
+
+        if ($RS[type] != 'none') {
+            $query = "select name from tb_inout where id = '$RS[type]'";//echo $query."<br>";
+            $result = mysql_query($query);
+            $RS2 = mysql_fetch_array($result);
+            echo "<td>$RS2[name]</td>\n";//Âá∫ÂÖ•Â∫ìÁ±ªÂûã
+        } else
+            echo "<td>‰ªìÂ∫ìË∞ÉÊã®</td>\n";
+
+        if ($RS[type] != 'none') {
+            echo "<td onclick='gotoURL(this)' style='background-color:#CCCCCC'>$RS[receipt]</td>\n";
+            $query = "select warehouse from test_receipt where id = '$RS[receipt]'";//echo $query."<br>";
+            $result = mysql_query($query);
+            $RS2 = mysql_fetch_array($result);
+            $query = "select name from table_warehouse where id = '$RS2[warehouse]'";//echo $query."<br>";
+            $result = mysql_query($query);
+            $RS3 = mysql_fetch_array($result);
+            echo "<td>$RS3[name]</td>\n";
+        } else {
+            echo "<td onclick='gotoURL2(this)' style='background-color:#CCCCCC'>$RS[receipt]</td>\n";
+            $query = "select warehouse from test_exchange where id = '$RS[receipt]'";//echo $query."<br>";
+            $result = mysql_query($query);
+            $RS2 = mysql_fetch_array($result);
+            $query = "select name from table_warehouse where id = '$RS2[warehouse]'";//echo $query."<br>";
+            $result = mysql_query($query);
+            $RS3 = mysql_fetch_array($result);
+            echo "<td>$RS3[name]</td>\n";
+        }
+        echo "</tr>";
+    }
+    ?></tbody>
 </table>
 </body>
 </html>

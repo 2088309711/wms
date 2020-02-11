@@ -5,5 +5,5 @@
 	for($num = 2;$num < count($filename);$num++){
 		unlink("sql/".$filename[$num]);
 	}
-	echo "<script>alert('É¾³ı³É¹¦£¡');location='databackup.php'</script>";
+	echo "<script>alert('åˆ é™¤æˆåŠŸï¼');location='databackup.php'</script>";
 ?>

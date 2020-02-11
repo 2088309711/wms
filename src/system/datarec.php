@@ -6,5 +6,5 @@
 	$mysqlstr = "mysql -uroot -phust db_wms<sql/".$_POST[r_name];
 	//echo $mysqlstr;
 	exec($mysqlstr);
-	echo "<script>alert('»Ö¸´³É¹¦');location='../desk.php'</script>";
+	echo "<script>alert('æ¢å¤æˆåŠŸ');location='../desk.php'</script>";
 ?>

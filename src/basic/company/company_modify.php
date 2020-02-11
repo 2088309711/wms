@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>µ¥Î»ĞÅÏ¢ĞŞ¸Ä</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>å•ä½ä¿¡æ¯ä¿®æ”¹</title>
 </head>
 <script language="javascript">
 function checkForm(){
 	//if(company_add.name.value==''){
-		//alert("Check Form£¡");
+		//alert("Check Formï¼");
 		return true;
 	//}
 }
@@ -17,16 +17,16 @@ function checkForm(){
 	include "../database.php";
 
 	$id=$_GET["id"];
-	if($id=="")die("²ÎÊı´«µİ´íÎó");
+	if($id=="")die("å‚æ•°ä¼ é€’é”™è¯¯");
 	
-//	$con = mysql_connect("localhost","root","1234") or die("²»ÄÜÁ¬½Óµ½Mysql Server");
-//	mysql_select_db("db_wms", $con) or die("Êı¾İ¿âÑ¡ÔñÊ§°Ü");
-//	mysql_query("set names gb2312 ");
+//	$con = mysql_connect("localhost","root","1234") or die("ä¸èƒ½è¿æ¥åˆ°Mysql Server");
+//	mysql_select_db("db_wms", $con) or die("æ•°æ®åº“é€‰æ‹©å¤±è´¥");
+//	mysql_query("set names utf-8 ");
 	$query="select * from table_company where id=$id";//echo $query."<br>";
 	$result=mysql_query($query);
 	$RS=mysql_fetch_array($result);
 	if(empty($RS))
-		$error="Ö¸¶¨µÄÓÃ»§²»´æÔÚ!";
+		$error="æŒ‡å®šçš„ç”¨æˆ·ä¸å­˜åœ¨!";
 	/*else{
 		$query = "select name from table_depart";
 		$result = mysql_query($query);
@@ -55,26 +55,26 @@ thead {
 }
 </style>
 <body>
-<h3>ĞŞ¸ÄĞÅÏ¢</h3>
-<p>×¢ÓĞ*µÄÏîÄ¿²»ÄÜÎª¿Õ£¡ </p>
+<h3>ä¿®æ”¹ä¿¡æ¯</h3>
+<p>æ³¨æœ‰*çš„é¡¹ç›®ä¸èƒ½ä¸ºç©ºï¼ </p>
 <form id="company_modify" name="company_modify" method="post" action="company_modify_bg.php" onsubmit="return checkForm();">
   <!--onsubmit=" return checkform()"-->
   <table border="1" cellpadding="5" cellspacing="0" bordercolor="#9999FF">
     <tr>
       <td bordercolor="#990099"><table width="100%">
           <tr>
-            <td width="100" align="center">*±àºÅ£º</td>
+            <td width="100" align="center">*ç¼–å·ï¼š</td>
             <td><input name="id" type="text" size="10" maxlength="10" style=" background-color:#CCCCCC" value="<?php echo $RS['id']; ?>" readonly/></td>
           </tr>
           <tr>
-            <td width="100" align="center">*µ¥Î»Ãû³Æ£º</td>
+            <td width="100" align="center">*å•ä½åç§°ï¼š</td>
             <td><input name="name" type="text" value="<?php echo $RS['name']; ?>" size="10" maxlength="10" /></td>
           </tr>
           <tr>
-            <td width="100" align="center">*ÀàĞÍ£º</td>
+            <td width="100" align="center">*ç±»å‹ï¼š</td>
             <td><select name="type">
-                <option value="¾­ÏúÉÌ">¾­ÏúÉÌ</option>
-                <option value="¹©Ó¦ÉÌ">¹©Ó¦ÉÌ</option>
+                <option value="ç»é”€å•†">ç»é”€å•†</option>
+                <option value="ä¾›åº”å•†">ä¾›åº”å•†</option>
               </select></td>
           </tr>
         </table></td>
@@ -82,33 +82,33 @@ thead {
     <tr>
       <td><table width="100%">
           <tr>
-            <td width="100" align="center">*ÁªÏµÈË£º</td>
+            <td width="100" align="center">*è”ç³»äººï¼š</td>
             <td><input name="contact" type="text" value="<?php echo $RS['contact']; ?>" size="10" maxlength="10"/></td>
           </tr>
           <tr>
-            <td width="100" align="center">*ÁªÏµµç»°£º</td>
+            <td width="100" align="center">*è”ç³»ç”µè¯ï¼š</td>
             <td><input name="phone" type="text" value="<?php echo $RS['phone']; ?>" size="10" maxlength="10"/></td>
           </tr>
           <tr>
-            <td width="100" align="center">*´«Õæ£º</td>
+            <td width="100" align="center">*ä¼ çœŸï¼š</td>
             <td><input name="fax" type="text" value="<?php echo $RS['fax']; ?>" size="10" maxlength="10"/></td>
           </tr>
           <tr>
-            <td width="100" align="center">*Email£º</td>
+            <td width="100" align="center">*Emailï¼š</td>
             <td><input name="email" type="text" value="<?php echo $RS['email']; ?>" size="10" maxlength="10"/></td>
           </tr>
         </table></td>
       <td><table width="100%">
           <tr>
-            <td width="100" align="center">*¿ª»§ÒøĞĞ£º</td>
+            <td width="100" align="center">*å¼€æˆ·é“¶è¡Œï¼š</td>
             <td><input name="bank" type="text" value="<?php echo $RS['bank']; ?>" size="10" maxlength="10" /></td>
           </tr>
           <tr>
-            <td width="100" align="center">*ÒøĞĞÕË»§£º</td>
+            <td width="100" align="center">*é“¶è¡Œè´¦æˆ·ï¼š</td>
             <td><input name="bankaccount" type="text" value="<?php echo $RS['bankaccount']; ?>" size="10" maxlength="10" />
           </tr>
           <tr>
-            <td width="100" align="center">*Ë°ºÅ£º</td>
+            <td width="100" align="center">*ç¨å·ï¼š</td>
             <td><input name="tariff" type="text" onkeyup="value=value.replace(/[\W]/g,'')" value="<?php echo $RS['tariff']; ?>" size="10" maxlength="10"/></td>
           </tr>
         </table></td>
@@ -116,38 +116,38 @@ thead {
     <tr>
       <td><table width="100%">
           <tr>
-            <td width="100" align="center">*ÇøÓò:</td>
+            <td width="100" align="center">*åŒºåŸŸ:</td>
             <td><select name="area">
-                <option value="Î÷±±" <?php if($RS['area']=="Î÷±±") echo 'selected'; ?>>Î÷±±</option>
-                <option value="»ª±±" <?php if($RS['area']=="»ª±±") echo 'selected'; ?>>¶«±±</option>
-                <option value="¶«±±" <?php if($RS['area']=="¶«±±") echo 'selected'; ?>>»ª±±</option>
-                <option value="»ªÖĞ" <?php if($RS['area']=="»ªÖĞ") echo 'selected'; ?>>»ªÖĞ</option>
-                <option value="»ªÄÏ" <?php if($RS['area']=="»ªÄÏ") echo 'selected'; ?>>»ªÄÏ</option>
-                <option value="Î÷ÄÏ" <?php if($RS['area']=="Î÷ÄÏ") echo 'selected'; ?>>Î÷ÄÏ</option>
-                <option value="¶«ÄÏ" <?php if($RS['area']=="¶«ÄÏ") echo 'selected'; ?>>¶«ÄÏ</option>
+                <option value="è¥¿åŒ—" <?php if($RS['area']=="è¥¿åŒ—") echo 'selected'; ?>>è¥¿åŒ—</option>
+                <option value="ååŒ—" <?php if($RS['area']=="ååŒ—") echo 'selected'; ?>>ä¸œåŒ—</option>
+                <option value="ä¸œåŒ—" <?php if($RS['area']=="ä¸œåŒ—") echo 'selected'; ?>>ååŒ—</option>
+                <option value="åä¸­" <?php if($RS['area']=="åä¸­") echo 'selected'; ?>>åä¸­</option>
+                <option value="åå—" <?php if($RS['area']=="åå—") echo 'selected'; ?>>åå—</option>
+                <option value="è¥¿å—" <?php if($RS['area']=="è¥¿å—") echo 'selected'; ?>>è¥¿å—</option>
+                <option value="ä¸œå—" <?php if($RS['area']=="ä¸œå—") echo 'selected'; ?>>ä¸œå—</option>
               </select></td>
           </tr>
           <tr>
-            <td width="100" align="center">*Ê¡·İ£º</td>
+            <td width="100" align="center">*çœä»½ï¼š</td>
             <td><input name="province" type="text" value="<?php echo $RS['province']; ?>" size="10" maxlength="10" /></td>
           </tr>
           <tr>
-            <td width="100" align="center">*µØÖ·£º</td>
+            <td width="100" align="center">*åœ°å€ï¼š</td>
             <td><input name="address" type="text" value="<?php echo $RS['address']; ?>" size="10" maxlength="10" /></td>
           </tr>
           <tr>
-            <td width="100" align="center">*ÓÊ±à£º</td>
+            <td width="100" align="center">*é‚®ç¼–ï¼š</td>
             <td><input name="zipcode" type="text" value="<?php echo $RS['zipcode']; ?>" size="10" maxlength="10" /></td>
           </tr>
         </table></td>
     </tr>
     <tr>
-      <td align="center"><input name="submit" type="submit" value="Ìá½»" /></td>
-      <td><input name="submit" type="reset" value="ÖØÖÃ" />
+      <td align="center"><input name="submit" type="submit" value="æäº¤" /></td>
+      <td><input name="submit" type="reset" value="é‡ç½®" />
       </td>
     </tr>
   </table>
 </form>
-<p><a href="company_show.php">·µ»ØÉÏÒ»Ò³</a></p>
+<p><a href="company_show.php">è¿”å›ä¸Šä¸€é¡µ</a></p>
 </body>
 </html>

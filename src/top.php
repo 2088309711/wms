@@ -58,7 +58,7 @@ A.blue:hover {
     <td width="326">&nbsp;</td>
     <td width="21">&nbsp;</td>
     <td width="*" align="right" nowrap="nowrap">
-	  [<A class=blue href="#" onClick="showModalDialog('about.htm',window,'dialogHeight:360px;dialogWidth:360px;dialogleft:400px;help:no;status:no;scroll:no');">¹ØÓÚÏµÍ³</A>]	  [<A class=blue href="javascript:parent.location.href='logout.php'" onClick="return confirm('È·¶¨ÒªÍË³öÂð£¿');">°²È«ÍË³ö</A>]
+	  [<A class=blue href="#" onClick="showModalDialog('about.htm',window,'dialogHeight:360px;dialogWidth:360px;dialogleft:400px;help:no;status:no;scroll:no');">å…³äºŽç³»ç»Ÿ</A>]	  [<A class=blue href="javascript:parent.location.href='logout.php'" onClick="return confirm('ç¡®å®šè¦é€€å‡ºå—ï¼Ÿ');">å®‰å…¨é€€å‡º</A>]
 &nbsp;&nbsp;	</td>
   </tr>
 </table>

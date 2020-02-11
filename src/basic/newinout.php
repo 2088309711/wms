@@ -1,4 +1,4 @@
-<title>Ìí¼Ó³ö/Èë¿âÀà±ð</title>
+<title>æ·»åŠ å‡º/å…¥åº“ç±»åˆ«</title>
 <link rel="stylesheet" type="text/css" href="css/font.css">
 <style type="text/css">
 <!--
@@ -16,47 +16,47 @@
 <script language="javascript">
 function showhide(value){
  var flag=value;;
- if (flag=="Èë¿â"){
+ if (flag=="å…¥åº“"){
   content.style.display="";
  }else{
   content.style.display="none";
  }
-}//»¶Ó­À´µ½Õ¾³¤ÌØÐ§Íø£¬ÎÒÃÇµÄÍøÖ·ÊÇwww.zzjs.net£¬ºÜºÃ¼Ç£¬zzÕ¾³¤£¬js¾ÍÊÇjsÌØÐ§£¬±¾Õ¾ÊÕ¼¯´ó Á¿¸ßÖÊÁ¿js´úÂë£¬»¹ÓÐÐí¶à¹ã¸æ´úÂëÏÂÔØ¡£
+}//æ¬¢è¿Žæ¥åˆ°ç«™é•¿ç‰¹æ•ˆç½‘ï¼Œæˆ‘ä»¬çš„ç½‘å€æ˜¯www.zzjs.netï¼Œå¾ˆå¥½è®°ï¼Œzzç«™é•¿ï¼Œjså°±æ˜¯jsç‰¹æ•ˆï¼Œæœ¬ç«™æ”¶é›†å¤§ é‡é«˜è´¨é‡jsä»£ç ï¼Œè¿˜æœ‰è®¸å¤šå¹¿å‘Šä»£ç ä¸‹è½½ã€‚
 </script> 
 <body topmargin="0" leftmargin="0" bottommargin="0" class="scrollbar">
   
 <table width="600" border="1" align="center" cellpadding="0" cellspacing="30" bordercolor="#33FFCC">
   <tr>
-    <td height="20" align="center" bgcolor="#3399FF"><span class="STYLE9">»õÆ·³ö¿â/Èë¿âÀà±ðÉèÖÃ</span>     -<span class="STYLE10">ÐÂÔöÀà±ð</span></td>
+    <td height="20" align="center" bgcolor="#3399FF"><span class="STYLE9">è´§å“å‡ºåº“/å…¥åº“ç±»åˆ«è®¾ç½®</span>     -<span class="STYLE10">æ–°å¢žç±»åˆ«</span></td>
   </tr>
   <tr>
     <td align="center"><form name="form1" method="post" action="savenewinout.php">
-      <label>Àà±ð
+      <label>ç±»åˆ«
       <select name="type" onChange="showhide(this.value);">
-        <option value="Èë¿â" selected>Èë¿â</option>
-        <option value="³ö¿â">³ö¿â</option>
+        <option value="å…¥åº“" selected>å…¥åº“</option>
+        <option value="å‡ºåº“">å‡ºåº“</option>
       </select>
       </label>
-        <label>Ãû³Æ
+        <label>åç§°
         <input type="text" name="name">
         </label>
         <p>
 		<div id="content">
-          <label>ÊÇ·ñ²ÎÓë³É±¾ºËËã
+          <label>æ˜¯å¦å‚ä¸Žæˆæœ¬æ ¸ç®—
           <select name="cost">
-            <option value="1">ÊÇ</option>
-            <option value="0" selected>·ñ</option>
+            <option value="1">æ˜¯</option>
+            <option value="0" selected>å¦</option>
           </select>
           </label>
 		 </div>
         </p>
         <p>
           <label>
-          <input type="submit" name="Submit" value="±£´æ"> 
+          <input type="submit" name="Submit" value="ä¿å­˜"> 
           </label>
 		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <label>
-          <input type="button" name="button"onClick="javascript:window.open('inoutsetting.php','_self')" value="ÍË³ö">
+          <input type="button" name="button"onClick="javascript:window.open('inoutsetting.php','_self')" value="é€€å‡º">
           </label>
         </p>
     </form>

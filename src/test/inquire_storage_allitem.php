@@ -1,7 +1,7 @@
 <?php
 	$con = mysql_connect("localhost","root","1234");
 	mysql_select_db("db_wms", $con);
-	mysql_query("set names gb2312 ");
+	mysql_query("set names utf-8 ");
 	
 	$query = "select count(*) as num from tb_product where 1";//echo $query."<br>";die();
 	$result = mysql_query($query) or die("Invalid query: " . mysql_error());
@@ -15,8 +15,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>©Б╢Ф╡Ия╞-кЫсп╩Уф╥</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Е╨⌠Е╜≤Ф÷╔Х╞╒-Ф┴─Ф°┴Х╢╖Е⌠│</title>
 </head>
 <script type="text/javascript" src="../js/Calendar3.js"></script>
 <script type="text/javascript" src="../js/TableSort_mains.js"></script>
@@ -42,27 +42,27 @@ function gotoURL2(target){
 </script>
 <body>
 <div style="width:1000px;">
-<h3>©Б╢Ф╡Ия╞-кЫсп╩Уф╥</h3>
-<p>╧╡сп <?php echo $num; ?> лУ╩Уф╥╪гб╪║ё</p>
-<div style="float:left">╣╔╩В╩Уф╥╠Ю╨е©ирт╡И©╢©Б╢ФоЙгИ║ё</div>
-<div style="float:right">и╦я║ё╨
+<h3>Е╨⌠Е╜≤Ф÷╔Х╞╒-Ф┴─Ф°┴Х╢╖Е⌠│</h3>
+<p>Е┘╠Ф°┴ <?php echo $num; ?> Ф²║Х╢╖Е⌠│Х╝╟Е╫∙Ц─┌</p>
+<div style="float:left">Е█∙Е┤╩Х╢╖Е⌠│Г╪√Е▐╥Е▐╞Д╩╔Ф÷╔Г°▀Е╨⌠Е╜≤Х╞╕Ф┐┘Ц─┌</div>
+<div style="float:right">Г╜⌡И─┴О╪ 
 <select name="filter" onchange="gotoURL2(this)">
-<option value="0" <?php if($_GET[option]==0) echo 'selected';?>>х╚╡©</option>
-<option value="1" <?php if($_GET[option]==1) echo 'selected';?>>уЩЁё</option>
-<option value="2" <?php if($_GET[option]==2) echo 'selected';?>>Ё╛ЁЖиооч</option>
-<option value="3" <?php if($_GET[option]==3) echo 'selected';?>>╣мсзобоч</option>
+<option value="0" <?php if($_GET[option]==0) echo 'selected';?>>Е┘╗И┐╗</option>
+<option value="1" <?php if($_GET[option]==1) echo 'selected';?>>Ф╜ёЕ╦╦</option>
+<option value="2" <?php if($_GET[option]==2) echo 'selected';?>>Х╤┘Е┤╨Д╦┼И≥░</option>
+<option value="3" <?php if($_GET[option]==3) echo 'selected';?>>Д╫▌Д╨▌Д╦▀И≥░</option>
 </select>
 </div>
 <table id="table_storage" width="100%" border="1" cellspacing="0" cellpadding="5" bordercolor="#9999FF">
   <thead><tr align="center" bordercolor="#9999FF">
-    <td onclick="SortTable('table_storage',0,'string')" style="cursor:pointer">╩Уф╥╠Ю╨е</td>
-    <td onclick="SortTable('table_storage',1,'string')" style="cursor:pointer">╩Уф╥цШЁф</td>
-    <td onclick="SortTable('table_storage',2,'string')" style="cursor:pointer">пм╨е</td>
-    <td onclick="SortTable('table_storage',3,'string')" style="cursor:pointer">╣╔н╩</td>
-    <td onclick="SortTable('table_storage',4,'int')" style="cursor:pointer">©Б╢Фиооч</td>
-    <td onclick="SortTable('table_storage',5,'int')" style="cursor:pointer">©Б╢Фобоч</td>
-    <td onclick="SortTable('table_storage',6,'int')" style="cursor:pointer">©Б╢Фа©</td>
-	<td onclick="SortTable('table_storage',7,'string')" style="cursor:pointer">т╓╬╞пео╒</td>
+    <td onclick="SortTable('table_storage',0,'string')" style="cursor:pointer">Х╢╖Е⌠│Г╪√Е▐╥</td>
+    <td onclick="SortTable('table_storage',1,'string')" style="cursor:pointer">Х╢╖Е⌠│Е░█Г╖╟</td>
+    <td onclick="SortTable('table_storage',2,'string')" style="cursor:pointer">Е·▀Е▐╥</td>
+    <td onclick="SortTable('table_storage',3,'string')" style="cursor:pointer">Е█∙Д╫█</td>
+    <td onclick="SortTable('table_storage',4,'int')" style="cursor:pointer">Е╨⌠Е╜≤Д╦┼И≥░</td>
+    <td onclick="SortTable('table_storage',5,'int')" style="cursor:pointer">Е╨⌠Е╜≤Д╦▀И≥░</td>
+    <td onclick="SortTable('table_storage',6,'int')" style="cursor:pointer">Е╨⌠Е╜≤И┤▐</td>
+	<td onclick="SortTable('table_storage',7,'string')" style="cursor:pointer">И╒└Х╜╕Д©║Ф│╞</td>
   </tr></thead>
   <tbody>
   <?php
@@ -70,7 +70,7 @@ function gotoURL2(target){
 	{
 		$sum = 0;
 		$query = "select id from table_warehouse order by id";//echo $query."<br>";
-		$result_warehouse = mysql_query($query);//╩Ях║╡ж©Бап╠М
+		$result_warehouse = mysql_query($query);//Х▌╥Е▐√Д╩⌠Е╨⌠Е┬≈Х║╗
 		while($RS2 = mysql_fetch_array($result_warehouse)){
 			$query = "select num from table_warehouse_$RS2[id] where id = '$RS[encode]'";//echo $query."<br>";
 			$result_num = mysql_query($query);
@@ -78,14 +78,14 @@ function gotoURL2(target){
 			$sum += $RS3[num];
 		}
 		if($sum > $RS[upperlimit])
-			$string = "Ё╛ЁЖиооч";
+			$string = "Х╤┘Е┤╨Д╦┼И≥░";
 		else if($sum < $RS[lowerlimit])
-			$string = "╣мсзобоч";
+			$string = "Д╫▌Д╨▌Д╦▀И≥░";
 		else
-			$string = "уЩЁё";
+			$string = "Ф╜ёЕ╦╦";
 			
 		$option = $_GET[option];
-		if($option==0 || ($option==1&&$string=="уЩЁё") || ($option==2&&$string=="Ё╛ЁЖиооч") || ($option==3&&$string=="╣мсзобоч")){		
+		if($option==0 || ($option==1&&$string=="Ф╜ёЕ╦╦") || ($option==2&&$string=="Х╤┘Е┤╨Д╦┼И≥░") || ($option==3&&$string=="Д╫▌Д╨▌Д╦▀И≥░")){		
 			echo "<tr align='center' bordercolor='#9999FF'>";
 			echo "<td onclick='gotoURL(this)' style='background-color:#CCCCCC'>$RS[encode]</td>\n";
 			echo "<td>$RS[name]</td>\n";

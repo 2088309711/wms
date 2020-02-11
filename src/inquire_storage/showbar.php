@@ -7,18 +7,18 @@ $flag = '';
 if($itemid=='')
 	$flag = 'none';
 
-if($flag == ''){//»ñÈ¡²Ö¿âĞÅÏ¢
+if($flag == ''){//è·å–ä»“åº“ä¿¡æ¯
 	$query = "select * from table_warehouse order by id";//echo $query."<br>";
 	$result_warehouse = mysql_query($query);
 	$x_length = mysql_num_rows($result_warehouse);
 }
 
-if($flag == ''){//»ñÈ¡»õÆ·ĞÅÏ¢
+if($flag == ''){//è·å–è´§å“ä¿¡æ¯
 	$query = "select * from tb_product where encode = '$itemid'";//echo $query."<br>";
 	$result_iteminfo = mysql_query($query);	
 }
 $RS = mysql_fetch_array($result_iteminfo);
-$title = "$RS[encode]-$RS[name]-¿â´æÍ³¼Æ";
+$title = "$RS[encode]-$RS[name]-åº“å­˜ç»Ÿè®¡";
 
 include ("jpgraph/jpgraph.php");
 include ("jpgraph/jpgraph_bar.php");
@@ -45,44 +45,44 @@ while($RS = mysql_fetch_array($result_warehouse)){
 //print_r($aix_y);
 //die('\n end \n');
 
-//´´½¨»­²¼
+//åˆ›å»ºç”»å¸ƒ
 $graph = new Graph(600,300,"auto");	
 $graph->SetScale("textlin");
 $graph->yaxis->scale->SetGrace(20);
 
-//´´½¨»­²¼ÒõÓ°
+//åˆ›å»ºç”»å¸ƒé˜´å½±
 $graph->SetShadow();
 
-//ÉèÖÃÏÔÊ¾Çø×ó¡¢ÓÒ¡¢ÉÏ¡¢ÏÂ¾à±ßÏßµÄ¾àÀë£¬µ¥Î»ÎªÏñËØ
+//è®¾ç½®æ˜¾ç¤ºåŒºå·¦ã€å³ã€ä¸Šã€ä¸‹è·è¾¹çº¿çš„è·ç¦»ï¼Œå•ä½ä¸ºåƒç´ 
 $graph->img->SetMargin(40,30,30,40);
 
-//´´½¨Ò»¸ö¾ØĞÎµÄ¶ÔÏó
+//åˆ›å»ºä¸€ä¸ªçŸ©å½¢çš„å¯¹è±¡
 $bplot = new BarPlot($aix_y);
 
-//ÉèÖÃÖùĞÎÍ¼µÄÑÕÉ«
+//è®¾ç½®æŸ±å½¢å›¾çš„é¢œè‰²
 $bplot->SetFillColor('orange');	
-//ÉèÖÃÏÔÊ¾Êı×Ö	
+//è®¾ç½®æ˜¾ç¤ºæ•°å­—	
 $bplot->value->Show();
-//ÔÚÖùĞÎÍ¼ÖĞÏÔÊ¾¸ñÊ½»¯µÄÍ¼ÊéÏúÁ¿
+//åœ¨æŸ±å½¢å›¾ä¸­æ˜¾ç¤ºæ ¼å¼åŒ–çš„å›¾ä¹¦é”€é‡
 $bplot->value->SetFormat('%d');
-//½«ÖùĞÎÍ¼Ìí¼Óµ½Í¼ÏñÖĞ
+//å°†æŸ±å½¢å›¾æ·»åŠ åˆ°å›¾åƒä¸­
 $graph->Add($bplot);
 
-//ÉèÖÃ»­²¼±³¾°É«Îªµ­À¶É«
+//è®¾ç½®ç”»å¸ƒèƒŒæ™¯è‰²ä¸ºæ·¡è“è‰²
 $graph->SetMarginColor("lightblue");
 
-//´´½¨±êÌâ
+//åˆ›å»ºæ ‡é¢˜
 $graph->title->Set($title);
 
-//ÉèÖÃX×ø±êÖáÎÄ×Ö
-//$a=array("1ÔÂ","2ÔÂ","3ÔÂ","4ÔÂ","5ÔÂ","6ÔÂ","7ÔÂ","8ÔÂ","9ÔÂ","10ÔÂ","11ÔÂ","12ÔÂ");
+//è®¾ç½®Xåæ ‡è½´æ–‡å­—
+//$a=array("1æœˆ","2æœˆ","3æœˆ","4æœˆ","5æœˆ","6æœˆ","7æœˆ","8æœˆ","9æœˆ","10æœˆ","11æœˆ","12æœˆ");
 $graph->xaxis->SetTickLabels($aix_x); 
 
-//ÉèÖÃ×ÖÌå
+//è®¾ç½®å­—ä½“
 $graph->title->SetFont(FF_SIMSUN);
 $graph->xaxis->SetFont(FF_SIMSUN); 
 
-//Êä³ö¾ØĞÎÍ¼±í
+//è¾“å‡ºçŸ©å½¢å›¾è¡¨
 $graph->Stroke();
 ?>
 

@@ -5,7 +5,7 @@
    $info=mysql_fetch_array($sql);
 		  
 ?>
-<title>Ìí¼Ó³ö/Èë¿âÀà±ğ</title>
+<title>æ·»åŠ å‡º/å…¥åº“ç±»åˆ«</title>
 <link rel="stylesheet" type="text/css" href="css/font.css">
 <style type="text/css">
 <!--
@@ -23,47 +23,47 @@
 <script language="javascript">
 function showhide(value){
  var flag=value;;
- if (flag=="Èë¿â"){
+ if (flag=="å…¥åº“"){
   content.style.display="";
  }else{
   content.style.display="none";
  }
-}//»¶Ó­À´µ½Õ¾³¤ÌØĞ§Íø£¬ÎÒÃÇµÄÍøÖ·ÊÇwww.zzjs.net£¬ºÜºÃ¼Ç£¬zzÕ¾³¤£¬js¾ÍÊÇjsÌØĞ§£¬±¾Õ¾ÊÕ¼¯´ó Á¿¸ßÖÊÁ¿js´úÂë£¬»¹ÓĞĞí¶à¹ã¸æ´úÂëÏÂÔØ¡£
+}//æ¬¢è¿æ¥åˆ°ç«™é•¿ç‰¹æ•ˆç½‘ï¼Œæˆ‘ä»¬çš„ç½‘å€æ˜¯www.zzjs.netï¼Œå¾ˆå¥½è®°ï¼Œzzç«™é•¿ï¼Œjså°±æ˜¯jsç‰¹æ•ˆï¼Œæœ¬ç«™æ”¶é›†å¤§ é‡é«˜è´¨é‡jsä»£ç ï¼Œè¿˜æœ‰è®¸å¤šå¹¿å‘Šä»£ç ä¸‹è½½ã€‚
 </script> 
 <body topmargin="0" leftmargin="0" bottommargin="0" class="scrollbar">
   
 <table width="600" border="1" align="center" cellpadding="0" cellspacing="30" bordercolor="#33FFCC">
   <tr>
-    <td height="20" align="center" bgcolor="#3399FF"><span class="STYLE9">»õÆ·³ö¿â/Èë¿âÀà±ğÉèÖÃ</span>     -±à¼­Àà±ğ</td>
+    <td height="20" align="center" bgcolor="#3399FF"><span class="STYLE9">è´§å“å‡ºåº“/å…¥åº“ç±»åˆ«è®¾ç½®</span>     -ç¼–è¾‘ç±»åˆ«</td>
   </tr>
   <tr>
     <td align="center"><form name="form1" method="post" action="savenewinout.php?id=<?php echo $info[id];?>">
-      <label>Àà±ğ
+      <label>ç±»åˆ«
       <select name="type" onChange="showhide(this.value);">
-        <option value="Èë¿â" <?php if($info[type]==Èë¿â){ ?>selected="selected"<?php } ?>>Èë¿â</option>
-        <option value="³ö¿â"<?php if($info[type]==³ö¿â){ ?>selected="selected"<?php } ?>>³ö¿â</option>
+        <option value="å…¥åº“" <?php if($info[type]==å…¥åº“){ ?>selected="selected"<?php } ?>>å…¥åº“</option>
+        <option value="å‡ºåº“"<?php if($info[type]==å‡ºåº“){ ?>selected="selected"<?php } ?>>å‡ºåº“</option>
       </select>
       </label>
-        <label>Ãû³Æ
+        <label>åç§°
         <input type="text" name="name"value="<?php echo $info[name];?>" readOnly="true"/>
         </label>
         <p>
 		<div id="content">
-          <label>ÊÇ·ñ²ÎÓë³É±¾ºËËã
+          <label>æ˜¯å¦å‚ä¸æˆæœ¬æ ¸ç®—
           <select name="cost">
-            <option value="1"<?php if($info[cost]==1){ ?>selected="selected"<?php } ?>>ÊÇ</option>
-            <option value="0" <?php if($info[cost]==0){ ?>selected="selected"<?php } ?>>·ñ</option>
+            <option value="1"<?php if($info[cost]==1){ ?>selected="selected"<?php } ?>>æ˜¯</option>
+            <option value="0" <?php if($info[cost]==0){ ?>selected="selected"<?php } ?>>å¦</option>
           </select>
           </label>
 		 </div>
         </p>
         <p>
           <label>
-          <input type="submit" name="Submit" value="±£´æ"> 
+          <input type="submit" name="Submit" value="ä¿å­˜"> 
           </label>
 		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <label>
-          <input type="button" name="button"onClick="javascript:window.open('inoutsetting.php','_self')" value="ÍË³ö">
+          <input type="button" name="button"onClick="javascript:window.open('inoutsetting.php','_self')" value="é€€å‡º">
           </label>
         </p>
     </form>

@@ -5,8 +5,8 @@
 ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>³öÈë¿âÀà±ðÉèÖÃ</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>å‡ºå…¥åº“ç±»åˆ«è®¾ç½®</title>
 <link rel="stylesheet" type="text/css" href="css/font.css">
 <style type="text/css">
 <!--
@@ -20,7 +20,7 @@
 
   if ($authority[4]==0)
  {  
-      echo "<script language='javascript'>alert('¶Ô²»Æð£¬ÄãÃ»ÓÐ´Ë²Ù×÷È¨ÏÞ£¡');history.back();</script>";
+      echo "<script language='javascript'>alert('å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰æ­¤æ“ä½œæƒé™ï¼');history.back();</script>";
       exit;
   }
 ?>
@@ -30,7 +30,7 @@
 	   $info=mysql_fetch_array($sql);
 	   $total=$info[total];
 	   if($total==0){
-	     echo "ÔÝÎÞ·ÖÀà!";
+	     echo "æš‚æ— åˆ†ç±»!";
 	   }
 	   else
 	    {
@@ -43,21 +43,21 @@
       
 	  <tr bgcolor="#FFCF60">
         <td height="20" colspan="6" bgcolor="#0066FF"><div align="center" class="style1">
-          <h1>»õÆ·³ö¿â/Èë¿âÀà±ðÉèÖÃ</h1>
+          <h1>è´§å“å‡ºåº“/å…¥åº“ç±»åˆ«è®¾ç½®</h1>
         </div></td>
       </tr>
       <tr>
-        <td width="59" height="28" bgcolor="#FFFFFF"><div align="center" class="STYLE2">¸´Ñ¡</div></td>
-        <td width="102" bgcolor="#FFFFFF"><div align="center" class="STYLE2">ÐòºÅ</div></td>
-        <td width="86" bgcolor="#FFFFFF"><div align="center" class="STYLE2">·ÖÀà</div></td>
-        <td width="128" bgcolor="#FFFFFF"><div align="center" class="STYLE2">Ãû³Æ</div></td>
-        <td width="235" bgcolor="#FFFFFF"><div align="center" class="STYLE2">ÊÇ·ñ²ÎÓë¿â´æ³É±¾ºËËã</div>          <div align="center" class="STYLE2"></div>          
+        <td width="59" height="28" bgcolor="#FFFFFF"><div align="center" class="STYLE2">å¤é€‰</div></td>
+        <td width="102" bgcolor="#FFFFFF"><div align="center" class="STYLE2">åºå·</div></td>
+        <td width="86" bgcolor="#FFFFFF"><div align="center" class="STYLE2">åˆ†ç±»</div></td>
+        <td width="128" bgcolor="#FFFFFF"><div align="center" class="STYLE2">åç§°</div></td>
+        <td width="235" bgcolor="#FFFFFF"><div align="center" class="STYLE2">æ˜¯å¦å‚ä¸Žåº“å­˜æˆæœ¬æ ¸ç®—</div>          <div align="center" class="STYLE2"></div>          
           <div align="center" class="STYLE2"></div></td>
-        <td width="98" bgcolor="#FFFFFF"><div align="center" class="STYLE2">²Ù×÷</div></td>
+        <td width="98" bgcolor="#FFFFFF"><div align="center" class="STYLE2">æ“ä½œ</div></td>
       </tr>
 	  <?php
 	  
-		  $sql1=mysql_query("select * from tb_inout where type='".³ö¿â."' order by id asc",$conn);
+		  $sql1=mysql_query("select * from tb_inout where type='".å‡ºåº“."' order by id asc",$conn);
 		  $cnt=1;
 		   while($info1=mysql_fetch_array($sql1))
 		    {
@@ -71,8 +71,8 @@
           <div align="center" class="STYLE3"><?php echo $cnt++;?></div></td>
         <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php echo $info1[type];?></div></td>
         <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php echo $info1[name];?></div></td>
-        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php if($info1[cost]==0) {echo "·ñ";}else {echo "ÊÇ";}?></div>          <div align="center" class="STYLE3"></div>          </td>
-        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE2"><a href="editinout.php?id=<?php echo $info1[id];?>">ÐÞ¸Ä</a></div></td>
+        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php if($info1[cost]==0) {echo "å¦";}else {echo "æ˜¯";}?></div>          <div align="center" class="STYLE3"></div>          </td>
+        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE2"><a href="editinout.php?id=<?php echo $info1[id];?>">ä¿®æ”¹</a></div></td>
       </tr>
 	 <?php
 	    }
@@ -80,7 +80,7 @@
 	  
 	  <?php
 
-		  $sql2=mysql_query("select * from tb_inout where type='".Èë¿â."' order by id asc",$conn);
+		  $sql2=mysql_query("select * from tb_inout where type='".å…¥åº“."' order by id asc",$conn);
 		   while($info2=mysql_fetch_array($sql2))
 		    {
 	  ?>
@@ -94,8 +94,8 @@
           <div align="center" class="STYLE3"><?php echo $cnt++;?></div></td>
         <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php echo $info2[type];?></div></td>
         <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php echo $info2[name];?></div></td>
-        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php if($info2[cost]==0) {echo "·ñ";}else {echo "ÊÇ";}?></div>          <div align="center" class="STYLE3"></div>          </td>
-        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE2"><a href="editinout.php?id=<?php echo $info2[id];?>">ÐÞ¸Ä</a></div></td>
+        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE3"><?php if($info2[cost]==0) {echo "å¦";}else {echo "æ˜¯";}?></div>          <div align="center" class="STYLE3"></div>          </td>
+        <td height="25" bgcolor="#FFFFFF"><div align="center" class="STYLE2"><a href="editinout.php?id=<?php echo $info2[id];?>">ä¿®æ”¹</a></div></td>
       </tr>
  <?php
 	    }
@@ -107,12 +107,12 @@
 <table width="710" height="78" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="355">
-	  <div align="left"><input name="submit" type="submit" class="btn_2k3" id="submit" value="É¾³ý"/>
-	  &nbsp;<input type="reset" value="ÖØÑ¡" class="btn_2k3"/>
+	  <div align="left"><input name="submit" type="submit" class="btn_2k3" id="submit" value="åˆ é™¤"/>
+	  &nbsp;<input type="reset" value="é‡é€‰" class="btn_2k3"/>
 	  <label></label>
 	  </div>	  
 	  <div align="right"></div></td>
-    <td width="355" align="center"><input name="addnew" type="button" value="ÐÂÔö"onClick="javascript:window.open('newinout.php','_self')" /></td>
+    <td width="355" align="center"><input name="addnew" type="button" value="æ–°å¢ž"onClick="javascript:window.open('newinout.php','_self')" /></td>
   </tr>
 </table>
 </form>

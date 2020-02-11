@@ -4,7 +4,7 @@
    
  /* if ($authority[0]==0)
  {  
-      echo "<script language='javascript'>alert('�Բ�����û�д˲���Ȩ�ޣ�');history.back();</script>";
+      echo "<script language='javascript'>alert('对不起，你没有此操作权限！');history.back();</script>";
       exit;
   }*/
 ?>
@@ -15,9 +15,9 @@
 ?>
 
 <?php   
-//   $con = mysql_connect("localhost","root","hust"); //or die("�������ӵ�Mysql Server");
-//	mysql_select_db("db_wms", $con); //or die("���ݿ�ѡ��ʧ��");
-//	mysql_query("set names gb2312 ");
+//   $con = mysql_connect("localhost","root","hust"); //or die("不能连接到Mysql Server");
+//	mysql_select_db("db_wms", $con); //or die("数据库选择失败");
+//	mysql_query("set names utf-8 ");
 	
 	$query = "select * from table_itemclassify order by name";//echo $query."<br>";
 	$result = mysql_query($query);
@@ -26,8 +26,8 @@
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>�ޱ����ĵ�</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
 <style type="text/css">
 <!--
 .STYLE1 {font-size: 18px}
@@ -68,7 +68,7 @@ div#PreviewBox div.Picture div a img{
 <script src="../js/jquery-1.7.2.min.js" type="text/javascript"></script>
 <script language="javascript">
 
-$("input[type=text][imemode=disabled]").live("click", this, function () {/*���ƹ�������*/
+$("input[type=text][imemode=disabled]").live("click", this, function () {/*控制光标在最后*/
 
 var curVal = $(this).val();
 
@@ -80,7 +80,7 @@ ran.collapse(true);
 
 ran.select();
 
-}).live("keydown", this, function (event) {/*���÷���� Home End PgUp PgDn*/
+}).live("keydown", this, function (event) {/*禁用方向键 Home End PgUp PgDn*/
 
 if (event.keyCode >= 33 && event.keyCode <= 40) {
 
@@ -96,21 +96,21 @@ var curVal = $(this).val();
 
 if (event.keyCode >= 48 && event.keyCode <= 57 || event.keyCode == 46) {
 
-if (curVal.indexOf(".") != -1 && event.keyCode == 46) return false; /*����ֻ������һ��С����*/
+if (curVal.indexOf(".") != -1 && event.keyCode == 46) return false; /*控制只能输入一个小数点*/
 
-if (curVal == "0" && event.keyCode != 46) { $(this).val(""); return true; } /*���Ƶ�һλ��0ʱ �������ֺ�0ɾ��*/
+if (curVal == "0" && event.keyCode != 46) { $(this).val(""); return true; } /*控制第一位是0时 输入数字后将0删掉*/
 
-if (curVal == "0" && event.keyCode != 46) return false; /*���Ƶ�һλ����0��������С����*/
+if (curVal == "0" && event.keyCode != 46) return false; /*控制第一位输入0其后必须是小数点*/
 
-if (curVal == "" && event.keyCode == 46) $(this).val("0"); /*��һλ����С���� ��ǰһλ��0*/
+if (curVal == "" && event.keyCode == 46) $(this).val("0"); /*第一位输入小数点 将前一位补0*/
 
 } else return false;
 
-}).live("paste", function () {/*��ֹճ������ֵ*/
+}).live("paste", function () {/*禁止粘贴非数值*/
 
 return !clipboardData.getData('text').match(/^\D+(\.\D+)?$/)
 
-}).live("dragenter", function () {/*��ֹ����*/
+}).live("dragenter", function () {/*禁止拖入*/
 
 return false;
 
@@ -127,14 +127,14 @@ function chkinput(form1)
 	var lowerlimit;
 	  if(form1.name.value=="")
 	   {
-	     alert("�������Ʒ����!");
+	     alert("请输入货品名称!");
 		 form1.name.select();
 		 return(false);
 	   }
 	  
 	  if(form1.encode.value=="")
 	   {
-	     alert("�������Ʒ����!");
+	     alert("请输入货品编码!");
 		 form1.encode.select();
 		 return(false);
 	   }
@@ -143,7 +143,7 @@ function chkinput(form1)
 	
 	  if(form1.barcode.value=="")
 	   {
-	     alert("�������Ʒ����!");
+	     alert("请输入货品条码!");
 		 form1.barcode.select();
 		 return(false);
 	   }
@@ -152,7 +152,7 @@ function chkinput(form1)
 	   lowerlimit=Number(form1.lowerlimit.value);
 	  if(upperlimit<lowerlimi)
 	  {
-	      alert("������޲��ܵ��ڿ������!");
+	      alert("库存上限不能低于库存下限!");
 		  form1.upperlimit.select();
 		  return(false);
 	  }
@@ -160,13 +160,13 @@ function chkinput(form1)
 	   return(true);
 	}
 
-//�Ƴ��ұ����е�ѡ��
+//移除右边所有的选项
 function removeAllOption(){
 	var right = document.getElementById("right");
 	for(;right.length!=0;)
 		right.remove(right.options[0]);
 }
-//����ѡ�е�ѡ����ʾ�ұߵ�ѡ��
+//根据选中的选项显示右边的选项
 function showOption(){
 	removeAllOption();
 	var left = document.getElementById("left");
@@ -186,7 +186,7 @@ function showOption(){
 		right.add(y);//right.appendChild(y,null);
 	}
 }
-//�����ѡ��ı�������ı仯
+//由左边选项改变所引起的变化
 function changeLeft(){
 	//var rename = document.getElementById("rename");
 	//var left = document.getElementById("left");
@@ -301,17 +301,17 @@ var loadingImg = 'images/login1.jpg';
 <form id="form1" name="form1"enctype="multipart/form-data" method="post" action="savenewproduct.php?flag=0&&id=<?php echo $_GET[id];?>" onSubmit="return chkinput(this)">
   <table width="800" border="0" align="center" cellpadding="5" cellspacing="0" bordercolor="#FFFFFF">
     <tr>
-      <td colspan="4" align="center" bgcolor="#0000CC"><span class="STYLE1">��Ʒ�༭</span></td>
+      <td colspan="4" align="center" bgcolor="#0000CC"><span class="STYLE1">货品编辑</span></td>
     </tr>
     <tr>
-      <td width="85" align="right">��Ʒ�����:</td>
+      <td width="85" align="right">货品主类别:</td>
       <td width="296"><label>
         <select id="left" name="typeid" onChange="changeLeft()">
-		<OPTION value="">--��ѡ��--</OPTION> 
+		<OPTION value="">--请选择--</OPTION> 
 		<?php while($RS=mysql_fetch_array($result)){ echo "<option value='$RS[id]|$RS[name]$RS[lowerclass]'";if($info1[maintype]==$RS[name]){echo "selected";}echo">$RS[name]</option>";}?>
         </select>
         </label></td>
-      <td width="99" align="center">��Ʒ�����</td>
+      <td width="99" align="center">货品子类别：</td>
       <td width="280"><label>
         <select id="right" name="stype" >
 		<script language="javascript">showOption();</script>
@@ -320,7 +320,7 @@ var loadingImg = 'images/login1.jpg';
         </label></td>
     </tr>
     <tr>
-      <td align="right">��Ʒ����:</td>
+      <td align="right">货品名称:</td>
       <td><label>
         <input type="text" name="name" value="<?php echo $info1[name];?>" />
         </label></td>
@@ -328,28 +328,28 @@ var loadingImg = 'images/login1.jpg';
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td align="right">��Ʒ����:</td>
+      <td align="right">货品编码:</td>
       <td><input type="text" name="encode" value="<?php echo $info1[encode];?>"/></td>
-      <td align="center"><label>��Ʒ����:</label></td>
+      <td align="center"><label>货品条码:</label></td>
       <td><input type="text" name="barcode" value="<?php echo $info1[barcode];?>" /></td>
     </tr>
     <tr>
-      <td align="right">����ͺ�:</td>
+      <td align="right">规格型号:</td>
       <td><input type="text" name="size" value="<?php echo $info1[size];?>"/></td>
-      <td align="center">������λ:</td>
+      <td align="center">计量单位:</td>
       <td><label>
         <?php
 			$sql=mysql_query("select * from table_measureunit order by id desc",$conn);
 			$info=mysql_fetch_array($sql);
 			if($info==false)
 			{
-			  echo "�������Ӽ�����λ!";
+			  echo "请先添加计量单位!";
 			}
 			else
 			{
 			?>
             <select name="unit" class="inputcss">
-			  <OPTION>--��ѡ��--</OPTION> 
+			  <OPTION>--请选择--</OPTION> 
 			<?php
 			do
 			{
@@ -366,32 +366,32 @@ var loadingImg = 'images/login1.jpg';
       </label></td>
     </tr>
     <tr>
-      <td align="right">�������:</td>
+      <td align="right">库存上限:</td>
       <td><input type="text" name="upperlimit"  value="<?php echo $info1[upperlimit];?>"onKeyUp="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/></td>
-      <td align="center">�������:</td>
+      <td align="center">库存下限:</td>
       <td><input type="text" name="lowerlimit"  value="<?php echo $info1[lowerlimit];?>"onKeyUp="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/></td>
     </tr>
     <tr>
-      <td align="right">���ο���:</td>
+      <td align="right">入库参考价:</td>
       <td><input type="text" name="inprice"  value="<?php echo $info1[inprice];?>" style="ime-mode: disabled" imemode="disabled" /></td>
-      <td align="center">����ο���:</td>
+      <td align="center">出库参考价:</td>
       <td><input type="text" name="outprice"  value="<?php echo $info1[outprice];?>"style="ime-mode: disabled" imemode="disabled" /></td>
     </tr>
     <tr>
-      <td align="right">��ƷͼƬ:</td>
+      <td align="right">商品图片:</td>
       <td><input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
         <input type="file" name="upfile" class="inputcss" size="16" /></td>
-      <td align="center">�鿴ԭͼ��</td>
+      <td align="center">查看原图：</td>
       <td>&nbsp;<a href="####" onmouseover='showPreview(event);' onmouseout='hidePreview(event);'><img src="../<?php echo $info1[tupian];?>"" alt="" width="30" height="30"  border="0" large-src="../<?php echo $info1[tupian];?>" pic-link="/"/></a></td>
     </tr>
     <tr>
-      <td align="right">��Ʒ��飺</td>
+      <td align="right">货品简介：</td>
       <td colspan="3"><textarea name="jianjie" cols="80" rows="8" class="inputcss"><?php echo $info1[jianjie];?></textarea></td>
     </tr>
     <tr>
-      <td colspan="4" align="center"><input name="submit" type="submit" class="btn2" id="submit" value="����" />
+      <td colspan="4" align="center"><input name="submit" type="submit" class="btn2" id="submit" value="保存" />
         &nbsp;&nbsp;
-        <input name="reset" type="reset" class="btn_2k3" value="ȡ��" /></td>
+        <input name="reset" type="reset" class="btn_2k3" value="取消" /></td>
     </tr>
   </table>
 </form>

@@ -6,7 +6,7 @@ include "../inc/func.php";
    
   if ($authority[20]==0)
  {  
-      echo "<script language='javascript'>alert('�Բ�����û�д˲���Ȩ�ޣ�');history.back();</script>";
+      echo "<script language='javascript'>alert('对不起，你没有此操作权限！');history.back();</script>";
       exit;
   }
 ?>
@@ -22,7 +22,7 @@ include "../inc/func.php";
 <table width="853" border="1" align="center" cellpadding="0" cellspacing="0" class="big_td">
 	<tr>
 		<td width="46" height="33" background="../iages/list.jpg" id="list">&nbsp;</td>
-	    <td width="841" background="../images/list.jpg" id="list">���ݻָ�</td>
+	    <td width="841" background="../images/list.jpg" id="list">数据恢复</td>
 	</tr>
 </table>
 
@@ -32,12 +32,12 @@ include "../inc/func.php";
   </tr>
   <tr>
     <td bgcolor="#669933">&nbsp;</td>
-    <td align="center" bgcolor="#669966"><h2>���ݻָ��������������ݣ����������</h2></td>
+    <td align="center" bgcolor="#669966"><h2>数据恢复将覆盖现有数据，请谨慎操作</h2></td>
     <td bordercolor="#F0F0F0" bgcolor="#FFFFFF">&nbsp;</td>
   </tr>
   <tr>
     <td colspan="3"><form name="rebak" id="rebak" method="post" action="datarec.php">
-<input id="butt" type="submit" value="�ָ�����" onclick="return re_bak();"/>&nbsp;
+<input id="butt" type="submit" value="恢复备份" onclick="return re_bak();"/>&nbsp;
 <select name="r_name" style="width:190;">
 		<?php
 			$filename = show_file();
@@ -51,10 +51,10 @@ include "../inc/func.php";
 </form>   </td>
   </tr>
   <tr>
-    <td colspan="3" align="left" valign="bottom"><form action="datarec1.php" method="post" enctype="multipart/form-data" name="form">�ӱ��ػָ�
+    <td colspan="3" align="left" valign="bottom"><form action="datarec1.php" method="post" enctype="multipart/form-data" name="form">从本地恢复
 	<input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
         <input type="file" name="upfile" class="inputcss" size="30" />
-	<input type="submit" name="submit" value="�ϴ�" />
+	<input type="submit" name="submit" value="上传" />
 </form>
 </td>
   </tr>

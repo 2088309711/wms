@@ -1,21 +1,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>Ô±¹¤ĞÅÏ¢ĞŞ¸Ä</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>å‘˜å·¥ä¿¡æ¯ä¿®æ”¹</title>
 </head>
 <?php
 	include "../include.php";
 	include "../database.php";
 
 	$id=$_GET["id"];
-	if($id=="")die("²ÎÊı´«µİ´íÎó");
+	if($id=="")die("å‚æ•°ä¼ é€’é”™è¯¯");
 	
 	$query="select * from table_employee where id=$id";//echo $query."<br>";
 	$result=mysql_query($query);
 	$RS=mysql_fetch_array($result);
 	if(empty($RS))
-		$error="Ö¸¶¨µÄÓÃ»§²»´æÔÚ!";
+		$error="æŒ‡å®šçš„ç”¨æˆ·ä¸å­˜åœ¨!";
 	else{
 		$query = "select name from table_depart";
 		$result = mysql_query($query);
@@ -44,28 +44,28 @@ thead {
 }
 </style>
 <body>
-<h3>Ô±¹¤ÏêÏ¸ĞÅÏ¢</h3>
+<h3>å‘˜å·¥è¯¦ç»†ä¿¡æ¯</h3>
 <form id="employee_modify" name="employee_modify" method="post" action="employee_modify_bg.php">
   <table border="1" cellpadding="5" cellspacing="0" bordercolor="#9999FF">
     <tr>
-      <td align="center">Ô±¹¤±àºÅ£º</td>
+      <td align="center">å‘˜å·¥ç¼–å·ï¼š</td>
       <td><input name="id" type="text" value="<?php echo $RS['id']; ?>" size="6" readonly /></td>
       <td align="center">&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td align="center">Ô±¹¤ĞÕÃû£º</td>
+      <td align="center">å‘˜å·¥å§“åï¼š</td>
       <td><input name="name" type="text" value="<?php echo $RS['name']; ?>" size="10" maxlength="10" /></td>
-      <td align="center">ĞÔ±ğ£º</td>
-      <td><input name="gender" type="radio" value="ÄĞ" <?php if($RS['gender']=='ÄĞ') echo "checked='checked'"; ?> />
-        ÄĞ
-        <input name="gender" type="radio" value="Å®" <?php if($RS['gender']=='Å®') echo "checked='checked'"; ?>/>
-        Å®</td>
+      <td align="center">æ€§åˆ«ï¼š</td>
+      <td><input name="gender" type="radio" value="ç”·" <?php if($RS['gender']=='ç”·') echo "checked='checked'"; ?> />
+        ç”·
+        <input name="gender" type="radio" value="å¥³" <?php if($RS['gender']=='å¥³') echo "checked='checked'"; ?>/>
+        å¥³</td>
     </tr>
     <tr>
-      <td align="center">Ö°Î»£º</td>
+      <td align="center">èŒä½ï¼š</td>
       <td><input name="job" type="text" value="<?php echo $RS['job']; ?>" size="10" maxlength="10" /></td>
-      <td align="center">²¿ÃÅ£º</td>
+      <td align="center">éƒ¨é—¨ï¼š</td>
       <td><select name="depart">
           <?php
 if($error==''){
@@ -79,32 +79,32 @@ if($error==''){
 		$i++;	
 	}
 	if($i == 0)
-		$error="Ã»ÓĞ²¿ÃÅĞÅÏ¢£¬ÇëÌí¼Ó²¿ÃÅºóÔÙÌí¼ÓÔ±¹¤";
+		$error="æ²¡æœ‰éƒ¨é—¨ä¿¡æ¯ï¼Œè¯·æ·»åŠ éƒ¨é—¨åå†æ·»åŠ å‘˜å·¥";
 }
 ?>
         </select>
       </td>
     </tr>
     <tr>
-      <td align="center">ÊÖ»ú£º</td>
+      <td align="center">æ‰‹æœºï¼š</td>
       <td><input name="phone" type="text" value="<?php echo $RS['phone']; ?>" size="12" maxlength="11" onkeyup="value=value.replace(/[^\d]/g,'')"/></td>
-      <td align="center">×¡Ö·£º</td>
+      <td align="center">ä½å€ï¼š</td>
       <td><input name="address" type="text" value="<?php echo $RS['address']; ?>" size="30" maxlength="50" /></td>
     </tr>
     <tr>
       <td align="center">&nbsp;</td>
-      <td><input type="submit" name="Submit" value="Ìá½»" /></td>
-      <td align="center"><input name="reset" type="reset" id="reset" value="»Ö¸´" /></td>
+      <td><input type="submit" name="Submit" value="æäº¤" /></td>
+      <td align="center"><input name="reset" type="reset" id="reset" value="æ¢å¤" /></td>
       <td>&nbsp;</td>
     </tr>
   </table>
-  <p>&nbsp;<a href="employee_show.php">·µ»ØÉÏÒ»Ò³</a></p>
+  <p>&nbsp;<a href="employee_show.php">è¿”å›ä¸Šä¸€é¡µ</a></p>
 </form>
 <script language="javascript">
 var url;
 <?php
 if($error!=''){
-	echo "alert('$error Çë·µ»ØÔ±¹¤ĞÅÏ¢¸ÅÀÀÒ³Ãæ£¡');";
+	echo "alert('$error è¯·è¿”å›å‘˜å·¥ä¿¡æ¯æ¦‚è§ˆé¡µé¢ï¼');";
 	echo "var url = 'employee_show.php';";
 	echo "location.href=url;";
 }

@@ -15,7 +15,7 @@ CREATE TABLE `table_company` (
   `address` varchar(50) default NULL,
   `zipcode` varchar(10) default NULL,
   PRIMARY KEY  (`id`,`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 INSERT INTO table_company VALUES('0001', '??B', 'type A', '??', '123456', '123456', '123456@123', '', '', '', '', '', '', '');
 INSERT INTO table_company VALUES('0002', '??C', '', '??', '123456', '123456', '', '', '', '', '', '', '', '');
 INSERT INTO table_company VALUES('0003', '??D', '', '??', '123456', '123456', '', '', '', '', '', '', '', '');
@@ -29,7 +29,7 @@ CREATE TABLE `table_depart` (
   `major` varchar(20) default NULL,
   `phone` varchar(8) default NULL,
   PRIMARY KEY  (`id`,`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 INSERT INTO table_depart VALUES('0001', '???', '', NULL);
 INSERT INTO table_depart VALUES('0002', '???', '', NULL);
 INSERT INTO table_depart VALUES('1003', '?????', 'zang', '132xxxxx');
@@ -47,7 +47,7 @@ CREATE TABLE `table_employee` (
   `address` varchar(50) default NULL,
   `depart` varchar(10) default NULL,
   PRIMARY KEY  (`id`,`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 INSERT INTO table_employee VALUES('13112700', '??', '?', 'job1', '2147483647', 'wuhan', '???');
 INSERT INTO table_employee VALUES('13112900', '??', '?', 'job2', '131', 'wuhan', '???');
 INSERT INTO table_employee VALUES('13112902', '??', '?', 'job2', '131', 'wuhan', '???');
@@ -69,7 +69,7 @@ CREATE TABLE `table_itemclassify` (
   `name` varchar(10) default NULL,
   `lowerclass` varchar(50) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 INSERT INTO table_itemclassify VALUES('0000', '??A', '??1,??2,??3,??4');
 INSERT INTO table_itemclassify VALUES('0001', '??B', '??1,??,??3,??4');
 INSERT INTO table_itemclassify VALUES('0002', '??C', '1,2,3,4,5');
@@ -83,7 +83,7 @@ CREATE TABLE `table_measureunit` (
   `id` varchar(4) NOT NULL,
   `name` varchar(5) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 INSERT INTO table_measureunit VALUES('0000', 'None');
 INSERT INTO table_measureunit VALUES('0003', '?');
 INSERT INTO table_measureunit VALUES('0004', '?');
@@ -103,7 +103,7 @@ CREATE TABLE `table_warehouse` (
   `address` varchar(50) default NULL,
   `remark` varchar(50) default NULL,
   PRIMARY KEY  (`id`,`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 INSERT INTO table_warehouse VALUES('0000', '??1', '??', '12345678', '??', '?');
 INSERT INTO table_warehouse VALUES('0003', '??4', '?X', '123456', '??', '????1234567890');
 
@@ -117,7 +117,7 @@ CREATE TABLE `tb_admin` (
   `authority` varchar(100) default NULL,
   `state` int(4) unsigned zerofill default NULL,
   PRIMARY KEY  (`id`,`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf-8;
 INSERT INTO tb_admin VALUES('1', 'tsoft', '698d51a19d8a121ce581499d7b701668', '1,1,1,1,1,0,0,0,0,0', '0001');
 INSERT INTO tb_admin VALUES('2', 'hust', 'd923c56282507665deec912b66556af4', '1,1,1,1,1,0,0,0,0,0', '0001');
 
@@ -130,7 +130,7 @@ CREATE TABLE `tb_inout` (
   `name` varchar(20) NOT NULL,
   `cost` int(4) NOT NULL,
   PRIMARY KEY  (`id`,`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf-8;
 INSERT INTO tb_inout VALUES('1', '??', '????', '0');
 INSERT INTO tb_inout VALUES('2', '??', '????', '0');
 INSERT INTO tb_inout VALUES('3', '??', '????', '0');

@@ -3,5 +3,5 @@
 	//include "../inc/chec.php";
 	include "../inc/func.php";
 	c_log();
-	echo "<script>alert('É¾³ı³É¹¦£¡');lcation='slog.php';</script>";
+	echo "<script>alert('åˆ é™¤æˆåŠŸï¼');lcation='slog.php';</script>";
 ?>

@@ -1,18 +1,18 @@
 // JavaScript Document
-//¼ì²âµÇÂ¼½çÃæ
+//æ£€æµ‹ç™»å½•ç•Œé¢
 function chk_lg(){
 	if(document.login.username.value == ""){
-		alert("ÕËºÅ²»ÄÜÎª¿Õ");
+		alert("è´¦å·ä¸èƒ½ä¸ºç©º");
 		document.login.username.focus();
 		return false;
 	}
 	if(document.login.pwd.value == ""){
-		alert("ÃÜÂë²»ÄÜÎª¿Õ");
+		alert("å¯†ç ä¸èƒ½ä¸ºç©º");
 		document.login.pwd.focus();
 		return false;
 	}
 }
-//¶¯Ì¬²Ëµ¥
+//åŠ¨æ€èœå•
 function clickHandler() {
   var targetId, srcElement, targetElement;
   srcElement = window.event.srcElement;
@@ -29,23 +29,23 @@ function clickHandler() {
      }
   }
 }
-//Ìí¼ÓÖÆ¶È
+//æ·»åŠ åˆ¶åº¦
 function add_rule(){
 	if(document.r_add.u_title.value == ""){
-		alert("±êÌâ²»ÄÜÎª¿Õ");
+		alert("æ ‡é¢˜ä¸èƒ½ä¸ºç©º");
 		return false;
 	}
 	if(document.r_add.u_content.value == ""){
-		alert("ÄÚÈİ²»ÄÜÎª¿Õ");
+		alert("å†…å®¹ä¸èƒ½ä¸ºç©º");
 		return false;
 	}
 }
-//ÓÅĞãÔ±¹¤
+//ä¼˜ç§€å‘˜å·¥
 function glist(){
 	var len = document.form1.right.length;
 	var list = "";
 	if((form1.s_fdate.value == "") && (form1.s_ldate.value == "")){
-		alert("ÈÕÆÚ²»ÄÜÎª¿Õ");
+		alert("æ—¥æœŸä¸èƒ½ä¸ºç©º");
 		return false;
 	}
 	for(var i = 0; i < len; i++){
@@ -78,38 +78,38 @@ function glist(){
          oSourceSel.removeChild(arrValueTextRelation[arrSelValue[i]]);
      }
  }
- //Ìí¼Ó¹«¸æ
+ //æ·»åŠ å…¬å‘Š
  function add_mess(){
 	if(document.addmess.p_title.value == ""){
-		alert("±êÌâ²»ÄÜÎª¿Õ");
+		alert("æ ‡é¢˜ä¸èƒ½ä¸ºç©º");
 		return false;
 	}
 	if(document.addmess.p_content.value == ""){
-		alert("ÄÚÈİ²»ÄÜÎª¿Õ");
+		alert("å†…å®¹ä¸èƒ½ä¸ºç©º");
 		return false;
 	}
 }
 function del_mess(){
-	if(confirm('È·ÈÏÒªÉ¾³ıÂğ£¿'))
+	if(confirm('ç¡®è®¤è¦åˆ é™¤å—ï¼Ÿ'))
 		return true;
 	else
 		return false;
 }
-//Ìí¼ÓÒâ¼û
+//æ·»åŠ æ„è§
 function add_lyb(){
 	if(document.lyb.l_title.value==""){
-		alert("Ö÷Ìâ²»ÄÜÎª¿Õ");
+		alert("ä¸»é¢˜ä¸èƒ½ä¸ºç©º");
 		return false;
 	}
 	if(document.lyb.l_content.value==""){
-		alert("ÄÚÈİ²»ÄÜÎª¿Õ");
+		alert("å†…å®¹ä¸èƒ½ä¸ºç©º");
 		return false;
 	}
 }
-//»Ø¸´Òâ¼û
+//å›å¤æ„è§
 function re_back(){
 	if(document.tback.r_back.value==""){
-		alert("ÄÚÈİ²»ÄÜÎª¿Õ");
+		alert("å†…å®¹ä¸èƒ½ä¸ºç©º");
 		return false;
 	}
 }

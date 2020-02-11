@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>╡©цепео╒пч╦д</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>И┐╗И≈╗Д©║Ф│╞Д©╝Ф■╧</title>
 </head>
 <?php
 	include "../include.php";
@@ -10,13 +10,13 @@
 
 	$id=$_GET["id"];
 	if($id=="")
-		$error="╡нйЩID╢╚╣щ╢МнС!";
+		$error="Е▐┌Ф∙╟IDД╪═И─▓И■≥Х╞╞!";
 	else{
 		$query="select * from table_depart where id=$id";//echo $query."<br>";
 		$result=mysql_query($query);
 		$RS=mysql_fetch_array($result);
 		if(empty($RS))
-			$error="ж╦╤╗╣д╡©це╡╩╢Фтз!";
+			$error="Ф▄┤Е╝ Г └И┐╗И≈╗Д╦█Е╜≤Е°╗!";
 		mysql_close();
 	}
 ?>
@@ -42,38 +42,38 @@ thead {
 }
 </style>
 <body>
-<h3>╡©цеоЙо╦пео╒</h3>
+<h3>И┐╗И≈╗Х╞╕Г╩├Д©║Ф│╞</h3>
 <form id="depart_modify" name="depart_modify" method="post" action="depart_modify_bg.php">
   <table border="1" cellpadding="5" cellspacing="0" bordercolor="#9999FF">
     <tr>
-      <td align="center">╡©це╠Ю╨её╨</td>
+      <td align="center">И┐╗И≈╗Г╪√Е▐╥О╪ </td>
       <td><input name="id" type="text" value="<?php echo $RS['id']; ?>" size="4" maxlength="4" readonly/></td>
     </tr>
     <tr>
-      <td align="center">╡©цецШЁфё╨</td>
+      <td align="center">И┐╗И≈╗Е░█Г╖╟О╪ </td>
       <td><input name="name" type="text" value="<?php echo $RS['name']; ?>" size="10" maxlength="10" /></td>
     </tr>
     <tr>
-      <td align="center">╡©цежВ╧эё╨</td>
+      <td align="center">И┐╗И≈╗Д╦╩Г╝║О╪ </td>
       <td><input name="major" type="text" value="<?php echo $RS['major']; ?>" size="10" maxlength="10" /></td>
     </tr>
     <tr>
-      <td align="center">╡©це╣Г╩╟ё╨</td>
+      <td align="center">И┐╗И≈╗Г■╣Х╞²О╪ </td>
       <td><input name="phone" type="text" value="<?php echo $RS['phone']; ?>" size="12" maxlength="11" /></td>
     </tr>
     <tr>
-      <td align="right"><input type="submit" name="Submit" value="лА╫╩" /></td>
-      <td><input name="reset" type="reset" id="reset" value="╩ж╦╢" /></td>
+      <td align="right"><input type="submit" name="Submit" value="Ф▐░Д╨╓" /></td>
+      <td><input name="reset" type="reset" id="reset" value="Ф│╒Е╓█" /></td>
     </tr>
   </table>
-  <p>&nbsp;<a href="depart_show.php">╥╣╩ьиор╩рЁ</a></p>
+  <p>&nbsp;<a href="depart_show.php">Х©■Е⌡·Д╦┼Д╦─И║╣</a></p>
 </form>
 <script language="javascript">
 var url;
 
 <?php
 if($error!=''){
-	echo "alert('$error гК╥╣╩ьт╠╧╓пео╒╦еююрЁцФё║');";
+	echo "alert('$error Х╞╥Х©■Е⌡·Е▒≤Е╥╔Д©║Ф│╞Ф╕┌Х╖┬И║╣И²╒О╪│');";
 	echo "var url = 'depart_show.php';";
 	echo "location.href=url;";
 }

@@ -38,7 +38,7 @@ CREATE TABLE `table_company` (
   `address` varchar(50) default NULL,
   `zipcode` varchar(10) default NULL,
   PRIMARY KEY  (`id`,`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -64,7 +64,7 @@ CREATE TABLE `table_depart` (
   `major` varchar(20) default NULL,
   `phone` varchar(8) default NULL,
   PRIMARY KEY  (`id`,`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -93,7 +93,7 @@ CREATE TABLE `table_employee` (
   `address` varchar(50) default NULL,
   `depart` varchar(10) default NULL,
   PRIMARY KEY  (`id`,`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -118,7 +118,7 @@ CREATE TABLE `table_itemclassify` (
   `name` varchar(10) default NULL,
   `lowerclass` varchar(50) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -142,7 +142,7 @@ CREATE TABLE `table_measureunit` (
   `id` varchar(4) NOT NULL,
   `name` varchar(5) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -170,7 +170,7 @@ CREATE TABLE `table_warehouse` (
   `address` varchar(50) default NULL,
   `remark` varchar(50) default NULL,
   PRIMARY KEY  (`id`,`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -194,7 +194,7 @@ CREATE TABLE `table_warehouse_0000` (
   `id` varchar(8) NOT NULL,
   `num` int(4) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -218,7 +218,7 @@ CREATE TABLE `table_warehouse_0001` (
   `id` varchar(8) NOT NULL,
   `num` int(4) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -242,7 +242,7 @@ CREATE TABLE `table_warehouse_0002` (
   `id` varchar(8) NOT NULL,
   `num` int(4) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -266,7 +266,7 @@ CREATE TABLE `table_warehouse_0003` (
   `id` varchar(8) NOT NULL,
   `num` int(4) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -293,7 +293,7 @@ CREATE TABLE `tb_admin` (
   `authority` varchar(100) default NULL,
   `state` int(4) unsigned zerofill default NULL,
   PRIMARY KEY  (`id`,`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf-8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -319,7 +319,7 @@ CREATE TABLE `tb_inout` (
   `name` varchar(20) NOT NULL,
   `cost` int(4) NOT NULL,
   PRIMARY KEY  (`id`,`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf-8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -352,11 +352,11 @@ CREATE TABLE `tb_product` (
   `lowerlimit` int(4) NOT NULL,
   `inprice` int(4) NOT NULL,
   `outprice` int(4) NOT NULL,
-  `tupian` varchar(100) character set gb2312 collate gb2312_bin NOT NULL,
+  `tupian` varchar(100) character set utf-8 collate gb2312_bin NOT NULL,
   `jianjie` mediumtext NOT NULL,
   `addtime` varchar(20) NOT NULL,
   PRIMARY KEY  (`id`,`encode`,`barcode`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf-8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -384,7 +384,7 @@ CREATE TABLE `test_check` (
   `remark` varchar(100) default NULL,
   `itemstring` varchar(200) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -414,7 +414,7 @@ CREATE TABLE `test_exchange` (
   `remark` varchar(100) default NULL,
   `itemstring` varchar(200) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -442,7 +442,7 @@ CREATE TABLE `test_inout` (
   `receipt` varchar(8) default NULL,
   `type` varchar(4) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -472,7 +472,7 @@ CREATE TABLE `test_receipt` (
   `remark` varchar(100) default NULL,
   `itemstring` varchar(200) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=gb2312;
+) ENGINE=MyISAM DEFAULT CHARSET=utf-8;
 SET character_set_client = @saved_cs_client;
 
 --

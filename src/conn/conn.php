@@ -1,6 +1,6 @@
 <?php
-     $conn=mysql_connect("localhost","root","hust") or die("Êý¾Ý¿â·þÎñÆ÷Á¬½Ó´íÎó".mysql_error());
-     mysql_select_db("db_wms",$conn) or die("Êý¾Ý¿â·ÃÎÊ´íÎó".mysql_error());
- 	 mysql_query("set character set gb2312");
-     mysql_query("set names gb2312");
+$conn = mysql_pconnect("localhost", "root", "123456") or die("æ•°æ®åº“æœåŠ¡å™¨è¿žæŽ¥é”™è¯¯" . mysql_error());
+mysql_select_db("wms", $conn) or die("æ•°æ®åº“è®¿é—®é”™è¯¯" . mysql_error());
+mysql_query("set character set utf-8");
+mysql_query("set names utf-8");
 ?>

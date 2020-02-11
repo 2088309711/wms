@@ -11,7 +11,7 @@
 
 class GB2312toUTF8 {
 // --------------------------------------------------------------------
-// This code table is used to translate GB2312 code (key) to 
+// This code table is used to translate utf-8 code (key) to
 // it's corresponding Unicode value (data)
 // --------------------------------------------------------------------
     private $codetable = array( 

@@ -1,55 +1,55 @@
 <?php
 include("conn/conn.php");
 include("inc/func.php");
-$username=$_POST[username];
-$userpwd=md5($_POST[userpwd]);
+$username = trim($_POST['username']);
+$userpwd = md5(trim($_POST['userpwd']));
 //$yz=$_POST[yz];
 //$num=$_POST[num];
 
-class chkinput{
-   var $name;
-   var $pwd;
+class chkinput
+{
+    var $name;
+    var $pwd;
 
-   function chkinput($x,$y){
-     $this->name=$x;
-     $this->pwd=$y;
+    function chkinput($x, $y)
+    {
+        $this->name = $x;
+        $this->pwd = $y;
     }
 
-   function checkinput(){
-     include("conn/conn.php");
-     $sql=mysql_query("select * from tb_admin where name='".$this->name."'",$conn);
-     $info=mysql_fetch_array($sql);
-     if($info==false){
-          echo "<script language='javascript'>alert('²»´æÔÚ´ËÓÃ»§£¡');history.back();</script>";
-          exit;
-       }
-      else{
-	      if($info[state]==0){
-			   echo "<script language='javascript'>alert('¸ÃÓÃ»§ÒÑ¾­±»¶³½á£¡');history.back();</script>";
-               exit;
-			}
-          
-          if($info[pwd]==$this->pwd)
-            {  
-			   session_start();
-	           $_SESSION[username]=$info[name];
-			   //session_register("producelist");
-			  // $producelist="";
-			  // session_register("quatity");
-			   // $quatity="";
-			    w_log($_POST[action],$_SESSION[username]);
-               header("location:main.php");
-               exit;
+    function checkinput()
+    {
+        include("conn/conn.php");
+        $sql = mysql_query("select * from tb_admin where name='" . $this->name . "'", $conn);
+        $info = mysql_fetch_array($sql);
+        if ($info == false) {
+            show_msg('ä¸å­˜åœ¨æ­¤ç”¨æˆ·ï¼');
+            exit;
+        } else {
+            if ($info[state] == 0) {
+                show_msg('è¯¥ç”¨æˆ·å·²ç»è¢«å†»ç»“ï¼');
+                exit;
             }
-          else {
-             echo "<script language='javascript'>alert('ÃÜÂëÊäÈë´íÎó£¡');history.back();</script>";
-             exit;
-           }
 
-      }    
-   }
- }
+            if ($info[pwd] == $this->pwd) {
+                session_start();
+                $_SESSION[username] = $info[name];
+                //session_register("producelist");
+                // $producelist="";
+                // session_register("quatity");
+                // $quatity="";
+                w_log($_POST[action], $_SESSION[username]);
+                header("location: main.php");
+                exit;
+            } else {
+                show_msg('å¯†ç è¾“å…¥é”™è¯¯ï¼');
+                exit;
+            }
 
-    $obj=new chkinput(trim($username),trim($userpwd));
-    $obj->checkinput();
+        }
+    }
+}
+
+$obj = new chkinput($username, $userpwd);
+$obj->checkinput();
 ?>

@@ -1,118 +1,126 @@
 <?php
-//È¨ÏŞÑéÖ¤¡ª¡ª
+//æƒé™éªŒè¯â€•â€•
 include("../../const.php");
-if ($authority[3]==0){  
-	echo "<script language='javascript'>alert('¶Ô²»Æğ£¬ÄãÃ»ÓĞ´Ë²Ù×÷È¨ÏŞ£¡');history.back();</script>";
-	exit;
+include("../../inc/func.php");
+if ($authority[3] == 0) {
+    echo "<script language='javascript'>alert('å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰æ­¤æ“ä½œæƒé™ï¼');history.back();</script>";
+    exit;
 }
-//È¨ÏŞÑéÖ¤¡ª¡ª
+//æƒé™éªŒè¯â€•â€•
 
-	include "../include.php";
-	include "../database.php";
-	
-	$pagesize = 10;//µ¥Ò³ÏÔÊ¾µÄÏîÄ¿Êı
-	$page = $_GET['page'];//URLÖĞÃ»ÓĞ¶¨ÒåpageÊ±£¬$page=0£»µ±Ç°Ò³Âë=$page+1£»
-	$orderby = $_GET['orderby'];//URLÖĞÃ»ÓĞ¶¨ÒåorderbyÊ±£¬$orderby=0£¬Ê¹ÓÃÄ¬ÈÏÅÅĞò·½Ê½
-	
-	$query="select count(*) as num from table_warehouse";//echo $query."<br>";
-	$result = mysql_query($query) or die("Invalid query: " . mysql_error());
-	$RS = mysql_fetch_array($result);
-	$num = $RS['num'];//¼ÆËãÊı¾İ¿âÖĞµÄÏîÄ¿×ÜÊı
-	for($i=0;$i*$pagesize<$num;$i++);//¼ÆËãÏÔÊ¾ËùÓĞµÄÏîÄ¿ĞèÒªµÄÒ³Êı
-	$total=$i;
-	
-	$string_order=" order by name";
-	$string_page=" limit " . $page*$pagesize . "," . ($page+1)*$pagesize;
-	
-	$query="select * from table_warehouse" . $string_order . $string_page;//echo $query."<br>";
-	$result = mysql_query($query) or die("Invalid query: " . mysql_error());
-	mysql_close();
-	
+include "../include.php";
+include "../database.php";
+
+$pagesize = 10;//å•é¡µæ˜¾ç¤ºçš„é¡¹ç›®æ•°
+$page = var_get('page');//URLä¸­æ²¡æœ‰å®šä¹‰pageæ—¶ï¼Œ$page=0ï¼›å½“å‰é¡µç =$page+1ï¼›
+$orderby = var_get('orderby');//URLä¸­æ²¡æœ‰å®šä¹‰orderbyæ—¶ï¼Œ$orderby=0ï¼Œä½¿ç”¨é»˜è®¤æ’åºæ–¹å¼
+
+$query = "select count(*) as num from table_warehouse";//echo $query."<br>";
+$result = mysql_query($query) or die("Invalid query: " . mysql_error());
+$RS = mysql_fetch_array($result);
+$num = $RS['num'];//è®¡ç®—æ•°æ®åº“ä¸­çš„é¡¹ç›®æ€»æ•°
+for ($i = 0; $i * $pagesize < $num; $i++) ;//è®¡ç®—æ˜¾ç¤ºæ‰€æœ‰çš„é¡¹ç›®éœ€è¦çš„é¡µæ•°
+$total = $i;
+
+$string_order = " order by name";
+$string_page = " limit " . $page * $pagesize . "," . ($page + 1) * $pagesize;
+
+$query = "select * from table_warehouse" . $string_order . $string_page;//echo $query."<br>";
+$result = mysql_query($query) or die("Invalid query: " . mysql_error());
+mysql_close();
+
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>²Ö¿â¹ÜÀí</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ä»“åº“ç®¡ç†</title>
 </head>
 <style type="text/css">
-a:link {
-	text-decoration: none;
-}
-a:visited {
-	text-decoration: none;
-}
-a:hover {
-	text-decoration: underline;
-}
-a:active {
-	text-decoration: none;
-}
-body {
-	width:800px;
-	font-size:14px
-}
-thead {
-	color: #330066
-}
+    a:link {
+        text-decoration: none;
+    }
+
+    a:visited {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    a:active {
+        text-decoration: none;
+    }
+
+    body {
+        width: 800px;
+        font-size: 14px
+    }
+
+    thead {
+        color: #330066
+    }
 </style>
 <body style="width:800px">
-<h3 align="center">²Ö¿âĞÅÏ¢¸ÅÀÀ</h3>
+<h3 align="center">ä»“åº“ä¿¡æ¯æ¦‚è§ˆ</h3>
 <div>
-<p><a href="warehouse_add.php">Ìí¼Ó²Ö¿â</a></p>
-<table width="100%" border="1" cellspacing="0" cellpadding="5" bordercolor="#9999FF">
-  <thead><tr align="center" bordercolor="#9999FF">
-    <td>²Ö¿â±àºÅ</td>
-	<td>²Ö¿âÃû³Æ</td>
-    <td>¸ºÔğÈË</td>
-    <td>²Ö¿âµç»°</td>
-    <td>²Ö¿âµØÖ·</td>
-    <td>±¸×¢</td>
-    <td>ĞŞ¸Ä</td>
-    <td>É¾³ı</td>
-  </tr></thead>
-  <tbody>
-  <?php
-	while($RS=mysql_fetch_array($result))
-	{
-		echo "<tr align='center' bordercolor='#9999FF'>";
-		echo "<td>".$RS['id']."</td>\n";
-		echo "<td>".$RS['name']."</td>\n";
-		echo "<td>".$RS['fuzeren']."</td>\n";
-		echo "<td>".$RS['phone']."</td>\n";
-		echo "<td>".$RS['address']."</td>\n";
-		echo "<td>".$RS['remark']."</td>\n";
-		echo "<td><a href='warehouse_modify.php?id=".$RS['id']."'><img src='../../image/modify.gif' alt='' border='0' /></a></td>\n";
-		echo "<td><a href=\"javascript:if(confirm('È·¶¨£¿')) location.href='../sql_delete_bg.php?db=warehouse&id=".$RS['id']."'\">";
-		echo "<img src='../../image/delete.gif' alt='' border='0' /></a></td>\n";
-		echo "</tr>";
-	}
-?></tbody>
-</table>
-</p>
-<p>
-  <?php
-$current=$page+1;
-echo "µÚ".$current."Ò³£¬¹²".$total."Ò³";
-echo "&nbsp;&nbsp;ÌøÒ³ÖÁ";
-echo "<select name='pagechoose' onchange='javascript:location.href=this.value;'>";
-for($i=0;$i<$total;$i++){
-	$string="";
-	if($i==$page) $string=" selected='selected' ";
-	$url_i = "warehouse_show.php?page=".$i;
-	echo "<option value='".$url_i."'".$string.">". ($i+1) ."</option>" ;
-	}
-echo "</select>";
+    <p><a href="warehouse_add.php">æ·»åŠ ä»“åº“</a></p>
+    <table width="100%" border="1" cellspacing="0" cellpadding="5" bordercolor="#9999FF">
+        <thead>
+        <tr align="center" bordercolor="#9999FF">
+            <td>ä»“åº“ç¼–å·</td>
+            <td>ä»“åº“åç§°</td>
+            <td>è´Ÿè´£äºº</td>
+            <td>ä»“åº“ç”µè¯</td>
+            <td>ä»“åº“åœ°å€</td>
+            <td>å¤‡æ³¨</td>
+            <td>ä¿®æ”¹</td>
+            <td>åˆ é™¤</td>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        while ($RS = mysql_fetch_array($result)) {
+            echo "<tr align='center' bordercolor='#9999FF'>";
+            echo "<td>" . $RS['id'] . "</td>\n";
+            echo "<td>" . $RS['name'] . "</td>\n";
+            echo "<td>" . $RS['fuzeren'] . "</td>\n";
+            echo "<td>" . $RS['phone'] . "</td>\n";
+            echo "<td>" . $RS['address'] . "</td>\n";
+            echo "<td>" . $RS['remark'] . "</td>\n";
+            echo "<td><a href='warehouse_modify.php?id=" . $RS['id'] . "'><img src='../../image/modify.gif' alt='' border='0' /></a></td>\n";
+            echo "<td><a href=\"javascript:if(confirm('ç¡®å®šï¼Ÿ')) location.href='../sql_delete_bg.php?db=warehouse&id=" . $RS['id'] . "'\">";
+            echo "<img src='../../image/delete.gif' alt='' border='0' /></a></td>\n";
+            echo "</tr>";
+        }
+        ?></tbody>
+    </table>
+    </p>
+    <p>
+        <?php
+        $current = $page + 1;
+        echo "ç¬¬" . $current . "é¡µï¼Œå…±" . $total . "é¡µ";
+        echo "&nbsp;&nbsp;è·³é¡µè‡³";
+        echo "<select name='pagechoose' onchange='javascript:location.href=this.value;'>";
+        for ($i = 0; $i < $total; $i++) {
+            $string = "";
+            if ($i == $page) $string = " selected='selected' ";
+            $url_i = "warehouse_show.php?page=" . $i;
+            echo "<option value='" . $url_i . "'" . $string . ">" . ($i + 1) . "</option>";
+        }
+        echo "</select>";
 
-if($current<$total){
-	echo "<a href='warehouse_show.php?page=".$current."'>ÏÂÒ»Ò³</a>";
-}
-if($current>1){
-	$pre = $current-2;
-	echo "<a href='warehouse_show.php?page=".$pre."'>ÉÏÒ»Ò³</a>";
-}   
-  
-?>
-</p></div>
+        if ($current < $total) {
+            echo "<a href='warehouse_show.php?page=" . $current . "'>ä¸‹ä¸€é¡µ</a>";
+        }
+        if ($current > 1) {
+            $pre = $current - 2;
+            echo "<a href='warehouse_show.php?page=" . $pre . "'>ä¸Šä¸€é¡µ</a>";
+        }
+
+        ?>
+    </p></div>
 </body>
 </html>

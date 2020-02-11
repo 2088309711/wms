@@ -5,7 +5,7 @@
 var itemp;
 var tobj="";
 itemp="";
-function leftBgOver(obj){//²Ëµ¥
+function leftBgOver(obj){//èœå•
 	obj.style.background="url(images/left_bg02.gif) center no-repeat";
 	//obj.style.position="center";
 	//obj.style.repeat="no-repeat":
@@ -87,7 +87,7 @@ img{border:none;}
 </tr>
 <tr>
 <td>
-<a href="javascript:expandAll()" target="_self"><img src="images/extand.gif" alt="Õ¹¿ª²Ëµ¥" onMouseOver=nereidFade(this,100,10,5) style="FILTER:alpha(opacity=50)" onMouseOut=nereidFade(this,50,10,5) /></a>&nbsp;<a href="javascript:collapseAll()" target="_self"><img src="images/collapse.gif" alt="ÊÕÂ£²Ëµ¥" onMouseOver=nereidFade(this,100,10,5) style="FILTER:alpha(opacity=50)" onMouseOut=nereidFade(this,50,10,5) /></a></td>
+<a href="javascript:expandAll()" target="_self"><img src="images/extand.gif" alt="å±•å¼€èœå•" onMouseOver=nereidFade(this,100,10,5) style="FILTER:alpha(opacity=50)" onMouseOut=nereidFade(this,50,10,5) /></a>&nbsp;<a href="javascript:collapseAll()" target="_self"><img src="images/collapse.gif" alt="æ”¶æ‹¢èœå•" onMouseOver=nereidFade(this,100,10,5) style="FILTER:alpha(opacity=50)" onMouseOut=nereidFade(this,50,10,5) /></a></td>
 </tr>
 <tr>
 
@@ -99,28 +99,28 @@ img{border:none;}
   
     <tr>
       <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='basic/company/company_show.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td>
-      <td>ÍùÀ´µ¥Î»¹ÜÀí</td>
+      <td>å¾€æ¥å•ä½ç®¡ç†</td>
       </tr></table></td>
     </tr>
 
     <tr>
-      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='basic/depart/depart_show.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>²¿ÃÅÉèÖÃ</td>
+      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='basic/depart/depart_show.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>éƒ¨é—¨è®¾ç½®</td>
       </tr></table></td>
     </tr>
 
  <tr>
       <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='basic/employee/employee_show.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td>
-      <td>Ô±¹¤¹ÜÀí</td>
+      <td>å‘˜å·¥ç®¡ç†</td>
       </tr></table></td>
     </tr>
 
     <tr>
-      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='basic/warehouse/warehouse_show.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>²Ö¿âÉèÖÃ</td>
+      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='basic/warehouse/warehouse_show.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>ä»“åº“è®¾ç½®</td>
       </tr></table></td>
     </tr>
 	<tr>
       <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='basic/inoutsetting.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td>
-      <td>³ö/Èë¿âÀà±ğÉèÖÃ</td>
+      <td>å‡º/å…¥åº“ç±»åˆ«è®¾ç½®</td>
       </tr></table></td>
     </tr>
       
@@ -139,22 +139,22 @@ img{border:none;}
   <tbody>
     <tr>
       <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='basic/itemclassify/itemclassify_show.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td>
-      <td>»õÆ··ÖÀà¹ÜÀí</td>
+      <td>è´§å“åˆ†ç±»ç®¡ç†</td>
       </tr></table></td>
     </tr>
     <tr>
       <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='product/showproduct?mtype=1&stype=1';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td>
-      <td>»õÆ·ĞÅÏ¢¹ÜÀí</td>
+      <td>è´§å“ä¿¡æ¯ç®¡ç†</td>
       </tr></table></td>
     </tr>
 	<tr>
       <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='product/addproduct.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td>
-      <td>Ìí¼ÓĞÂ»õÆ·</td>
+      <td>æ·»åŠ æ–°è´§å“</td>
       </tr></table></td>
     </tr>
     <tr>
       <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='basic/measureunit/measureunit_show.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td>
-      <td>¼ÆÁ¿µ¥Î»¹ÜÀí</td>
+      <td>è®¡é‡å•ä½ç®¡ç†</td>
       </tr></table></td>
     </tr>
 	<tr><td height="5"></td></tr>
@@ -169,23 +169,23 @@ img{border:none;}
   <tbody>
     <tr>
       <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='receipt_inout/receipt_in.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td>
-      <td>»õÆ·Èë¿â</td>
+      <td>è´§å“å…¥åº“</td>
       </tr></table></td>
     </tr>
     <tr>
       <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='receipt_inout/receipt_out.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td>
-      <td>»õÆ·³ö¿â</td>
+      <td>è´§å“å‡ºåº“</td>
       </tr></table></td>
     </tr>
 	
 	<tr>
       <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='inquire_inout/inquire_inout_item.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td>
-      <td>³öÈë¿âÃ÷Ï¸</td>
+      <td>å‡ºå…¥åº“æ˜ç»†</td>
       </tr></table></td>
     </tr>
     <tr>
       <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='inquire_inout/inquire_inout_receipt.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td>
-      <td>³öÈë¿â²éÑ¯</td>
+      <td>å‡ºå…¥åº“æŸ¥è¯¢</td>
       </tr></table></td>
     </tr>
     
@@ -199,28 +199,28 @@ img{border:none;}
 <td id="g_2"><table width="100%" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tbody>
     <tr>
-      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='receipt_exchange/receipt_exchange.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>¿â´æµ÷²¦</td>
+      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='receipt_exchange/receipt_exchange.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>åº“å­˜è°ƒæ‹¨</td>
       </tr></table></td>
     </tr>
     <tr>
       <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='receipt_check/receipt_check.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td>
-      <td>¿â´æÅÌµã</td>
+      <td>åº“å­˜ç›˜ç‚¹</td>
       </tr></table></td>
     </tr>
 	
 	<tr>
-      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='inquire_others/inquire_exchange_receipt.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>¿â´æµ÷²¦Ã÷Ï¸</td></tr></table></td>
+      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='inquire_others/inquire_exchange_receipt.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>åº“å­˜è°ƒæ‹¨æ˜ç»†</td></tr></table></td>
     </tr>
 	
     <tr>
       <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='inquire_others/inquire_check_receipt.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td>
-      <td>¿â´æÅÌµãÃ÷Ï¸</td>
+      <td>åº“å­˜ç›˜ç‚¹æ˜ç»†</td>
       </tr></table></td>
     </tr>
 	 
 	 <tr>
       <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='inquire_storage/inquire_storage_allitem.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td>
-      <td>¿â´æ²éÑ¯</td>
+      <td>åº“å­˜æŸ¥è¯¢</td>
       </tr></table></td>
     </tr>
 	 
@@ -239,16 +239,16 @@ img{border:none;}
   <tbody>
     
 	<tr>
-      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='system/adminsetting.php?name=<?php echo $_SESSION[username];?>';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>²Ù×÷ÓÃ»§¹ÜÀí</td></tr></table></td>
+      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='system/adminsetting.php?name=<?php echo $_SESSION[username];?>';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>æ“ä½œç”¨æˆ·ç®¡ç†</td></tr></table></td>
     </tr>
 	<tr>
-      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='system/databackup.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>Êı¾İ±¸·İ</td></tr></table></td>
+      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='system/databackup.php';" onMouseOver="leftBgOver(this);" onMouseOut="leftBgOut(this,'images/left_bg01.gif');"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>æ•°æ®å¤‡ä»½</td></tr></table></td>
     </tr>
 	<tr>
-      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='system/datarecovery.php';"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>Êı¾İ»¹Ô­</td></tr></table></td>
+      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='system/datarecovery.php';"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>æ•°æ®è¿˜åŸ</td></tr></table></td>
     </tr>
 	<tr>
-      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='system/slog.php';"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>ÏµÍ³µÇÂ½ÈÕÖ¾</td></tr></table></td>
+      <td height="30" align="center" background="images/left_bg01.gif" style="cursor:hand"  onclick="javascript:parent.right.location.href='system/slog.php';"><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50">&nbsp;</td><td>ç³»ç»Ÿç™»é™†æ—¥å¿—</td></tr></table></td>
     </tr>
 	<tr><td height="5"></td></tr>
   </tbody>

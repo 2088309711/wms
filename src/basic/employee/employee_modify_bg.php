@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 	include "../include.php";
 	include "../database.php";
@@ -12,14 +12,14 @@ $address = $_POST["address"];
 $depart = $_POST["depart"];
 
 if($id==''||$name==''||$gender==''||$job==''||$phone==''||$address==''||$depart=='')
-	$error='Ìá½»µÄ±íµ¥ÓĞÎó£¡';
+	$error='æäº¤çš„è¡¨å•æœ‰è¯¯ï¼';
 else{	
 	$query = "select * from table_employee where id = '$id'";//echo $query."<br>";
 	$result = mysql_query($query);
 	$RS = mysql_fetch_array($result);
 	
 	if(empty($RS))
-		$error = "ID´íÎó£¬ĞèĞŞ¸ÄµÄÄ¿±ê²»´æÔÚ£¡";	
+		$error = "IDé”™è¯¯ï¼Œéœ€ä¿®æ”¹çš„ç›®æ ‡ä¸å­˜åœ¨ï¼";	
 	else{
 		$query = "update table_employee set name='$name',gender='$gender',job='$job',phone='$phone',address='$address',depart='$depart' where id = '$id'";
 		$result = mysql_query($query);
@@ -33,16 +33,16 @@ var url;
 <?php
 if($error==''){
 	if($result == FALSE){
-		echo "alert('¸üĞÂÔ±¹¤ĞÅÏ¢Ê§°Ü!£¡·µ»ØÔ±¹¤ĞÅÏ¢ĞŞ¸ÄÒ³Ãæ£¡');";
+		echo "alert('æ›´æ–°å‘˜å·¥ä¿¡æ¯å¤±è´¥!ï¼è¿”å›å‘˜å·¥ä¿¡æ¯ä¿®æ”¹é¡µé¢ï¼');";
 		echo "var url = 'employee_modify.php?id=".$id."';";
 	}
 	else{
-		echo "alert('¸üĞÂÔ±¹¤ĞÅÏ¢³É¹¦£¡·µ»ØÔ±¹¤¹ÜÀí½çÃæ£¡\\n±àºÅ£º $id\\nĞÕÃû£º $name\\nĞÔ±ğ£º $gender\\nÖ°Î»£º $job\\nÁªÏµµç»°£º $phone\\n×¡Ö·£º $address\\nËùÊô²¿ÃÅ£º $depart');\n";
+		echo "alert('æ›´æ–°å‘˜å·¥ä¿¡æ¯æˆåŠŸï¼è¿”å›å‘˜å·¥ç®¡ç†ç•Œé¢ï¼\\nç¼–å·ï¼š $id\\nå§“åï¼š $name\\næ€§åˆ«ï¼š $gender\\nèŒä½ï¼š $job\\nè”ç³»ç”µè¯ï¼š $phone\\nä½å€ï¼š $address\\næ‰€å±éƒ¨é—¨ï¼š $depart');\n";
 		echo "var url = 'employee_show.php';";
 	}
 }
 else{
-	echo "alert('$error ·µ»ØÔ±¹¤ĞÅÏ¢ĞŞ¸ÄÒ³Ãæ£¡');";
+	echo "alert('$error è¿”å›å‘˜å·¥ä¿¡æ¯ä¿®æ”¹é¡µé¢ï¼');";
 	echo "var url = 'employee_modify.php?id=".$id."';";
 }
 ?>

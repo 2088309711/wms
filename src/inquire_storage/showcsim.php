@@ -2,51 +2,51 @@
 include "../basic/include.php";
 include "../basic/database.php";
 
-$warehouse = $_GET[warehouse];	
+$warehouse = $_GET['warehouse'];
 
-//ÉèÖÃ²éÑ¯²Ö¿âµÄÄ¬ÈÏÖµ
-if($warehouse=='')
-	$warehouse='0000';
-//»ñÈ¡²Ö¿âÖÐµÄ»õÆ·¿â´æÐÅÏ¢
+//è®¾ç½®æŸ¥è¯¢ä»“åº“çš„é»˜è®¤å€¼
+if ($warehouse == '')
+    $warehouse = '0000';
+//èŽ·å–ä»“åº“ä¸­çš„è´§å“åº“å­˜ä¿¡æ¯
 $query = "select * from table_warehouse_$warehouse order by id asc";//die($query);
 $result_item = mysql_query($query);
 
 $i = 0;
-while($RS = mysql_fetch_array($result_item)){
-	$data[$i] = $RS[num];
-	$query = "select * from tb_product where encode = '$RS[id]'";
-	$result_iteminfo = mysql_query($query);
-	$RS2 = mysql_fetch_array($result_iteminfo);
-	$name[$i] = $RS2[name];
-	
-	$targ[$i] = "inquire_storage_item.php?itemid=".$RS[id];
-	$alts[$i] = "val=%d";
-	$i++;
+while ($RS = mysql_fetch_array($result_item)) {
+    $data[$i] = $RS['num'];
+    $query = "select * from tb_product where encode = '$RS[id]'";
+    $result_iteminfo = mysql_query($query);
+    $RS2 = mysql_fetch_array($result_iteminfo);
+    $name[$i] = $RS2['name'];
+
+    $targ[$i] = "inquire_storage_item.php?itemid=" . $RS['id'];
+    $alts[$i] = "val=%d";
+    $i++;
 }
-$title = "²Ö¿â¿â´æ±ÈÀý¸ÅÀÀ";
+$title = "ä»“åº“åº“å­˜æ¯”ä¾‹æ¦‚è§ˆ";
 
-include_once ("jpgraph/jpgraph.php");
-include_once ("jpgraph/jpgraph_pie.php");
-include_once ("jpgraph/jpgraph_pie3d.php");			//ÒýÓÃ3D±ýÍ¼PiePlot3D¶ÔÏóËùÔÚµÄÀàÎÄ¼þ
+include_once("jpgraph/jpgraph.php");
+include_once("jpgraph/jpgraph_pie.php");
+include_once("jpgraph/jpgraph_pie3d.php");            //å¼•ç”¨3Dé¥¼å›¾PiePlot3Då¯¹è±¡æ‰€åœ¨çš„ç±»æ–‡ä»¶
 
-//$data = array(266036,295621,335851,254256,254254,685425);			//¶¨ÒåÊý×é
-$graph = new PieGraph(600,300,'auto');				//´´½¨»­²¼
-$graph->SetShadow();								//ÉèÖÃ»­²¼ÒõÓ°
+//$data = array(266036,295621,335851,254256,254254,685425);			//å®šä¹‰æ•°ç»„
+$graph = new PieGraph(600, 300, 'auto');                //åˆ›å»ºç”»å¸ƒ
+$graph->SetShadow();                                //è®¾ç½®ç”»å¸ƒé˜´å½±
 
-$graph->title->Set($title);			//´´½¨±êÌâ
-$graph->title->SetFont(FF_SIMSUN,FS_BOLD);			//ÉèÖÃ±êÌâ×ÖÌå
-$graph->legend->SetFont(FF_SIMSUN,FS_NORMAL);			//ÉèÖÃÍ¼Àý×ÖÌå
+$graph->title->Set($title);            //åˆ›å»ºæ ‡é¢˜
+$graph->title->SetFont(FF_SIMSUN, FS_BOLD);            //è®¾ç½®æ ‡é¢˜å­—ä½“
+$graph->legend->SetFont(FF_SIMSUN, FS_NORMAL);            //è®¾ç½®å›¾ä¾‹å­—ä½“
 
-$p1 = new PiePlot3D($data);							//´´½¨3D±ýÐÎÍ¼¶ÔÏó
+$p1 = new PiePlot3D($data);                            //åˆ›å»º3Dé¥¼å½¢å›¾å¯¹è±¡
 $p1->SetLegends($name);
 //$targ=array("pie3d_csimex1.php?v=1","pie3d_csimex1.php?v=2","pie3d_csimex1.php?v=3",
 //			"pie3d_csimex1.php?v=4","pie3d_csimex1.php?v=5","pie3d_csimex1.php?v=6");
 //$alts=array("val=%d","val=%d","val=%d","val=%d","val=%d","val=%d");
-$p1->SetCSIMTargets($targ,$alts);
+$p1->SetCSIMTargets($targ, $alts);
 
-$p1->SetCenter(0.4,0.5);					//ÉèÖÃ±ýÐÎÍ¼ËùÔÚ»­²¼µÄÎ»ÖÃ
-$graph->Add($p1);							//½«3D±ýÍ¼ÐÎÌí¼Óµ½Í¼ÏñÖÐ
-$graph->StrokeCSIM();						//Êä³öÍ¼Ïñµ½ä¯ÀÀÆ÷
+$p1->SetCenter(0.4, 0.5);                    //è®¾ç½®é¥¼å½¢å›¾æ‰€åœ¨ç”»å¸ƒçš„ä½ç½®
+$graph->Add($p1);                            //å°†3Dé¥¼å›¾å½¢æ·»åŠ åˆ°å›¾åƒä¸­
+$graph->StrokeCSIM();                        //è¾“å‡ºå›¾åƒåˆ°æµè§ˆå™¨
 
 ?>
 

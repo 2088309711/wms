@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 include "../basic/include.php";
 include "../basic/database.php";
@@ -12,32 +12,32 @@ $itemstr = $_POST[item_str];
 //echo "$yewuyuan||$date||$warehouse||$itemstr";die();
 
 if($yewuyuan==''||$date==''||$warehouse==''||$itemstr=='' )//$id==''||$company==''||$type==''
-	$error='Ìá½»µÄ±íµ¥ÓÐÎó£¡';
+	$error='æäº¤çš„è¡¨å•æœ‰è¯¯ï¼';
 else
 {	
 	$date2 = date("ymd");
 	$id = $date2."00";
 	
-	if(mysql_query("select * from table_warehouse_$warehouse")==false)//¼ì²éÄ¿±ê²Ö¿âÊý¾Ý±íÊÇ·ñ½¡ÔÚ
-		die("²Ö¿â$warehouse²»´æÔÚ£¡");
+	if(mysql_query("select * from table_warehouse_$warehouse")==false)//æ£€æŸ¥ç›®æ ‡ä»“åº“æ•°æ®è¡¨æ˜¯å¦å¥åœ¨
+		die("ä»“åº“$warehouseä¸å­˜åœ¨ï¼");
 		
 	$query = "select * from test_check where id = '$id'";
 	$result = mysql_query($query);
 	$RS = mysql_fetch_array($result);
 	
 	while(!empty($RS)){
-		if(($id = next_value($id))!="Overflow!"){//»ñÈ¡¿ÉÓÃID
+		if(($id = next_value($id))!="Overflow!"){//èŽ·å–å¯ç”¨ID
 			$query = "select * from test_check where id = '$id'";
 			$result = mysql_query($query);
 			$RS = mysql_fetch_array($result);
 		}
 		else{
-			$error='±àºÅÒç³ö£¡';
+			$error='ç¼–å·æº¢å‡ºï¼';
 			break;
 		}	
 	}
 	
-	if($error=='')//²åÈëÈë¿âµ¥
+	if($error=='')//æ’å…¥å…¥åº“å•
 	{
 		$query = "insert test_check values ('$id', '$date', '$yewuyuan', '$warehouse', '$remark', '$itemstr')";
 		$result = mysql_query($query);
@@ -51,11 +51,11 @@ echo 'var url;';
 if($error=='')
 {
 	if($result == FALSE){
-		echo "alert('Ìí¼ÓÊ§°Ü£¡');";
+		echo "alert('æ·»åŠ å¤±è´¥ï¼');";
 		echo "var url = 'receipt_check.php';";
 	}
 	else{
-		echo "alert('Ìí¼Ó³É¹¦£¡');\n";
+		echo "alert('æ·»åŠ æˆåŠŸï¼');\n";
 		echo "var url = 'receipt_check.php';";
 	}
 }

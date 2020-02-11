@@ -7,14 +7,14 @@
 			//move_uploaded_file($fileinfo['tmp_name'],"system/uploads/".$fileinfo['name']);
 			//move_uploaded_file($_FILES['upfile']['tmp_name'], $uploadfile);
 			move_uploaded_file($fileinfo['tmp_name'],"uploads/db_wms.sql");
-			echo "ÉÏ´«³É¹¦";
+			echo "ä¸Šä¼ æˆåŠŸ";
 		}else{
-			echo 'ÎÄ¼şÌ«´ó»òÎ´Öª';
+			echo 'æ–‡ä»¶å¤ªå¤§æˆ–æœªçŸ¥';
 		}
 	}
 
 	$mysqlstr = "mysql -uroot -phust db_wms<uploads\db_wms.sql";
 	//echo $mysqlstr;
 	exec($mysqlstr);
-	echo "<script>alert('»Ö¸´³É¹¦');location='../desk.php'</script>";
+	echo "<script>alert('æ¢å¤æˆåŠŸ');location='../desk.php'</script>";
 ?>

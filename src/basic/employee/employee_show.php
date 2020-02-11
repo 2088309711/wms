@@ -1,24 +1,24 @@
 <?php
-//È¨ÏŞÑéÖ¤¡ª¡ª
+//æƒé™éªŒè¯â€•â€•
 include("../../const.php");
 if ($authority[2]==0){  
-	echo "<script language='javascript'>alert('¶Ô²»Æğ£¬ÄãÃ»ÓĞ´Ë²Ù×÷È¨ÏŞ£¡');history.back();</script>";
+	echo "<script language='javascript'>alert('å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰æ­¤æ“ä½œæƒé™ï¼');history.back();</script>";
 	exit;
 }
-//È¨ÏŞÑéÖ¤¡ª¡ª
+//æƒé™éªŒè¯â€•â€•
 
 	include "../include.php";
 	include "../database.php";
 	
-	$pagesize = 10;//µ¥Ò³ÏÔÊ¾µÄÏîÄ¿Êı
-	$page = $_GET['page'];//URLÖĞÃ»ÓĞ¶¨ÒåpageÊ±£¬$page=0£»µ±Ç°Ò³Âë=$page+1£»
-	$orderby = $_GET['orderby'];//URLÖĞÃ»ÓĞ¶¨ÒåorderbyÊ±£¬$orderby=0£¬Ê¹ÓÃÄ¬ÈÏÅÅĞò·½Ê½
+	$pagesize = 10;//å•é¡µæ˜¾ç¤ºçš„é¡¹ç›®æ•°
+	$page = $_GET['page'];//URLä¸­æ²¡æœ‰å®šä¹‰pageæ—¶ï¼Œ$page=0ï¼›å½“å‰é¡µç =$page+1ï¼›
+	$orderby = $_GET['orderby'];//URLä¸­æ²¡æœ‰å®šä¹‰orderbyæ—¶ï¼Œ$orderby=0ï¼Œä½¿ç”¨é»˜è®¤æ’åºæ–¹å¼
 	
 	$query="select count(*) as num from table_employee";//echo $query."<br>";
 	$result = mysql_query($query) or die("Invalid query: " . mysql_error());
 	$RS = mysql_fetch_array($result);
-	$num = $RS['num'];//¼ÆËãÊı¾İ¿âÖĞµÄÏîÄ¿×ÜÊı
-	for($i=0;$i*$pagesize<$num;$i++);//¼ÆËãÏÔÊ¾ËùÓĞµÄÏîÄ¿ĞèÒªµÄÒ³Êı
+	$num = $RS['num'];//è®¡ç®—æ•°æ®åº“ä¸­çš„é¡¹ç›®æ€»æ•°
+	for($i=0;$i*$pagesize<$num;$i++);//è®¡ç®—æ˜¾ç¤ºæ‰€æœ‰çš„é¡¹ç›®éœ€è¦çš„é¡µæ•°
 	$total=$i;
 	
 	switch($orderby){
@@ -40,8 +40,8 @@ if ($authority[2]==0){
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>Ô±¹¤¹ÜÀí</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>å‘˜å·¥ç®¡ç†</title>
 </head>
 <style type="text/css">
 a:link {
@@ -66,29 +66,29 @@ thead {
 </style>
 <body>
 <div>
-<h3 align="center">Ô±¹¤ĞÅÏ¢¸ÅÀÀ</h3>
+<h3 align="center">å‘˜å·¥ä¿¡æ¯æ¦‚è§ˆ</h3>
 <p>
-<div align="left" style="width:100px;float:left"><a href="employee_add.php">Ìí¼ÓÔ±¹¤</a></div>
-<div align="right" style="width:200px;float:right">ÅÅĞò·½Ê½£º
+<div align="left" style="width:100px;float:left"><a href="employee_add.php">æ·»åŠ å‘˜å·¥</a></div>
+<div align="right" style="width:200px;float:right">æ’åºæ–¹å¼ï¼š
   <select name="orderby" onchange="location.href=this.value">
-    <option value="employee_show.php?orderby=id" <?php if($orderby==""||$orderby=="id") echo " selected='selected' "; ?>>±àºÅ</option>
-    <option value="employee_show.php?orderby=name" <?php if($orderby=="name") echo " selected='selected' "; ?>>ĞÕÃû</option>
-    <option value="employee_show.php?orderby=gender" <?php if($orderby=="gender") echo " selected='selected' "; ?>>ĞÔ±ğ</option>
-    <option value="employee_show.php?orderby=job" <?php if($orderby=="job") echo " selected='selected' "; ?>>Ö°Î»</option>
-    <option value="employee_show.php?orderby=depart" <?php if($orderby=="depart") echo " selected='selected' "; ?>>²¿ÃÅ</option>
+    <option value="employee_show.php?orderby=id" <?php if($orderby==""||$orderby=="id") echo " selected='selected' "; ?>>ç¼–å·</option>
+    <option value="employee_show.php?orderby=name" <?php if($orderby=="name") echo " selected='selected' "; ?>>å§“å</option>
+    <option value="employee_show.php?orderby=gender" <?php if($orderby=="gender") echo " selected='selected' "; ?>>æ€§åˆ«</option>
+    <option value="employee_show.php?orderby=job" <?php if($orderby=="job") echo " selected='selected' "; ?>>èŒä½</option>
+    <option value="employee_show.php?orderby=depart" <?php if($orderby=="depart") echo " selected='selected' "; ?>>éƒ¨é—¨</option>
   </select>
 </div>
 </p>
 <table width="100%" border="1" cellspacing="0" cellpadding="5" bordercolor="#9999FF">
   <tr align="center" bordercolor="#9999FF">
-    <td>Ô±¹¤±àºÅ</td>
-    <td>ĞÕÃû</td>
-    <td>ĞÔ±ğ</td>
-    <td>ÊÖ»ú</td>
-    <td>Ö°Î»</td>
-    <td>²¿ÃÅ</td>
-    <td>ĞŞ¸Ä</td>
-    <td>É¾³ı</td>
+    <td>å‘˜å·¥ç¼–å·</td>
+    <td>å§“å</td>
+    <td>æ€§åˆ«</td>
+    <td>æ‰‹æœº</td>
+    <td>èŒä½</td>
+    <td>éƒ¨é—¨</td>
+    <td>ä¿®æ”¹</td>
+    <td>åˆ é™¤</td>
   </tr>
   <?php
 	while($RS=mysql_fetch_array($result))
@@ -101,8 +101,8 @@ thead {
 		echo "<td>".$RS['job']."</td>\n";
 		echo "<td>".$RS['depart']."</td>\n";
 		echo "<td><a href='employee_modify.php?id=".$RS['id']."'><img src='/wms/image/modify.gif' alt='' border='0' /></a></td>\n";
-		echo "<td><a href=\"javascript:if(confirm('È·¶¨£¿')) location.href='../sql_delete_bg.php?db=employee&id=" . $RS['id'] . "'\">";
-		echo "<img src='/wms/image/delete.gif' alt='' border='0' /></a></td>\n";
+		echo "<td><a href=\"javascript:if(confirm('ç¡®å®šï¼Ÿ')) location.href='../sql_delete_bg.php?db=employee&id=" . $RS['id'] . "'\">";
+		echo "<img src='../image/delete.gif' alt='' border='0' /></a></td>\n";
 		echo "</tr>";
 	}
 ?>
@@ -111,8 +111,8 @@ thead {
 <p>
   <?php
 $current=$page+1;
-echo "µÚ".$current."Ò³£¬¹²".$total."Ò³";
-echo "&nbsp;&nbsp;ÌøÒ³ÖÁ";
+echo "ç¬¬".$current."é¡µï¼Œå…±".$total."é¡µ";
+echo "&nbsp;&nbsp;è·³é¡µè‡³";
 echo "<select name='pagechoose' onchange='javascript:location.href=this.value;'>";
 for($i=0;$i<$total;$i++){
 	$string="";
@@ -123,11 +123,11 @@ for($i=0;$i<$total;$i++){
 echo "</select>";
 
 if($current<$total){
-	echo "<a href='employee_show.php?".$string_url."page=".$current."'>ÏÂÒ»Ò³</a>";
+	echo "<a href='employee_show.php?".$string_url."page=".$current."'>ä¸‹ä¸€é¡µ</a>";
 }
 if($current>1){
 	$pre = $current-2;
-	echo "<a href='employee_show.php?".$string_url."page=".$pre."'>ÉÏÒ»Ò³</a>";
+	echo "<a href='employee_show.php?".$string_url."page=".$pre."'>ä¸Šä¸€é¡µ</a>";
 }   
   
 ?>

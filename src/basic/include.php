@@ -4,7 +4,7 @@ function next_value($value)
 {
 	$str='0123456789';
 	for($i=0; $i<strlen($value); $i++){
-		$current_key[$i]=strrpos($str, $value[$i]);//±£´æ×Ö·û´®Ã¿Ò»Î»ÔÚstrÖÐµÄÎ»ÖÃ
+		$current_key[$i]=strrpos($str, $value[$i]);//ä¿å­˜å­—ç¬¦ä¸²æ¯ä¸€ä½åœ¨strä¸­çš„ä½ç½®
 	}
  
 	$len=strlen($str)-1;

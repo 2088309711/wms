@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
-<title>╠М╦ЯеепР</title>
+<title>Х║╗Ф═╪Ф▌▓Е╨▐</title>
 <script type="text/javascript" src="/wms/js/TableSort.js"></script>
 </head>
 <body>
@@ -9,11 +9,11 @@
   <table border="1" id="MyTable">
     <thead>
       <tr>
-        <td onclick="SortTable('MyTable',0,'string')" style="cursor:pointer">м╪ф╛еепР <span id="col0">║Э</span></td>
-        <td onclick="SortTable('MyTable',1,'int')" style="cursor:pointer">уШйЩеепР <span id="col1">║Э</span></td>
-        <td onclick="SortTable('MyTable',2,'float')" style="cursor:pointer">╦║╣ЦйЩеепР <span id="col2">║Э</span></td>
-        <td onclick="SortTable('MyTable',3,'string')" style="cursor:pointer">вж╥Ш╢╝еепР <span id="col3">║Э</span></td>
-        <td onclick="SortTable('MyTable',4,'date')" style="cursor:pointer">хуфзеепР <span id="col4">║Э</span></td>
+        <td onclick="SortTable('MyTable',0,'string')" style="cursor:pointer">Е⌡╬Г┴┤Ф▌▓Е╨▐ <span id="col0">Б├▒</span></td>
+        <td onclick="SortTable('MyTable',1,'int')" style="cursor:pointer">Ф∙╢Ф∙╟Ф▌▓Е╨▐ <span id="col1">Б├▒</span></td>
+        <td onclick="SortTable('MyTable',2,'float')" style="cursor:pointer">Ф╣╝Г┌╧Ф∙╟Ф▌▓Е╨▐ <span id="col2">Б├▒</span></td>
+        <td onclick="SortTable('MyTable',3,'string')" style="cursor:pointer">Е╜≈Г╛╕Д╦╡Ф▌▓Е╨▐ <span id="col3">Б├▒</span></td>
+        <td onclick="SortTable('MyTable',4,'date')" style="cursor:pointer">Ф≈╔Ф°÷Ф▌▓Е╨▐ <span id="col4">Б├▒</span></td>
       </tr>
     </thead>
     <tbody>

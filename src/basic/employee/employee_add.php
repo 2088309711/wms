@@ -5,13 +5,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>лМ╪ст╠╧╓</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ф╥╩Е┼═Е▒≤Е╥╔</title>
 </head>
 <script language="javascript">
 function checkForm(){
 	if(document.getElementById('name').value==''){
-		alert("пуцШ╡╩дэн╙©уё║");
+		alert("Е╖⌠Е░█Д╦█Х┐╫Д╦╨Г╘╨О╪│");
 		document.getElementById('name').focus();
 		return false;
 	}
@@ -40,27 +40,27 @@ thead {
 }
 </style>
 <body>
-<h3>лМ╪ст╠╧╓</h3>
-<p>в╒сп*╣доНд©╡╩дэн╙©уё║ </p>
+<h3>Ф╥╩Е┼═Е▒≤Е╥╔</h3>
+<p>ФЁ╗Ф°┴*Г └И║╧Г⌡╝Д╦█Х┐╫Д╦╨Г╘╨О╪│ </p>
 <form id="employee_add" name="employee_add" method="post" action="employee_add_bg.php" onsubmit=" return checkForm()">
   <table border="1" cellpadding="5" cellspacing="0" bordercolor="#9999FF">
     <tr>
-      <td align="center">*пуцШё╨</td>
+      <td align="center">*Е╖⌠Е░█О╪ </td>
       <td><input id="name" name="name" type="text" size="10" maxlength="10" /></td>
     </tr>
     <tr>
-      <td align="center">*пт╠Пё╨</td>
-      <td><input name="gender" type="radio" value="дп" checked="checked" />
-        дп
-        <input name="gender" type="radio" value="е╝" />
-        е╝</td>
+      <td align="center">*Ф─╖Е┬╚О╪ </td>
+      <td><input name="gender" type="radio" value="Г■╥" checked="checked" />
+        Г■╥
+        <input name="gender" type="radio" value="Е╔Ё" />
+        Е╔Ё</td>
     </tr>
     <tr>
-      <td align="center">*ж╟н╩ё╨</td>
+      <td align="center">*Х│▄Д╫█О╪ </td>
       <td><input name="job" type="text" size="10" maxlength="10" /></td>
     </tr>
     <tr>
-      <td align="center">*╡©цеё╨</td>
+      <td align="center">*И┐╗И≈╗О╪ </td>
       <td><select name="depart">
           <?php 
 			$query = "select name from table_depart";
@@ -72,31 +72,31 @@ thead {
 				$i++;	
 			}
 			if($i == 0)
-				die("ц╩сп╡©цепео╒ё╛гКлМ╪с╡©це╨СтылМ╪ст╠╧╓");	
+				die("Ф╡║Ф°┴И┐╗И≈╗Д©║Ф│╞О╪▄Х╞╥Ф╥╩Е┼═И┐╗И≈╗Е░▌Е├█Ф╥╩Е┼═Е▒≤Е╥╔");	
 		  ?>
         </select>
       </td>
     </tr>
     <tr>
-      <td align="center">*йж╩Зё╨</td>
+      <td align="center">*Ф┴▀Ф°╨О╪ </td>
       <td><input name="phone" type="text" size="12" maxlength="11" 
 		onkeyup="value=value.replace(/[^\d]/g,'')"
-		onblur="if(value.length!=11) document.getElementById('span1').innerHTML='йж╩З╨ебК╢МнСё║';else document.getElementById('span1').innerHTML=''"
+		onblur="if(value.length!=11) document.getElementById('span1').innerHTML='Ф┴▀Ф°╨Е▐╥Г═│И■≥Х╞╞О╪│';else document.getElementById('span1').innerHTML=''"
 		/>
         <span id="span1"></span></td>
     </tr>
     <tr>
-      <td align="center">*в║ж╥ё╨</td>
+      <td align="center">*Д╫▐Е²─О╪ </td>
       <td><input name="address" type="text" size="40" maxlength="50" /></td>
     </tr>
     <tr>
-      <td align="center"><input name="submit" type="submit" value="лА╫╩" />
+      <td align="center"><input name="submit" type="submit" value="Ф▐░Д╨╓" />
       </td>
-      <td><input name="submit" type="reset" value="жьжц" />
+      <td><input name="submit" type="reset" value="И┤█Г╫╝" />
       </td>
     </tr>
   </table>
-  <p><a href="employee_show.php">╥╣╩ьиор╩рЁ</a></p>
+  <p><a href="employee_show.php">Х©■Е⌡·Д╦┼Д╦─И║╣</a></p>
 </form>
 </body>
 </html>

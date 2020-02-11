@@ -1,11 +1,11 @@
 <?php
-//È¨ÏŞÑéÖ¤¡ª¡ª
+//æƒé™éªŒè¯â€•â€•
 include("../const.php");
 if ($authority[12]==0){  
-	echo "<script language='javascript'>alert('¶Ô²»Æğ£¬ÄãÃ»ÓĞ´Ë²Ù×÷È¨ÏŞ£¡');history.back();</script>";
+	echo "<script language='javascript'>alert('å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰æ­¤æ“ä½œæƒé™ï¼');history.back();</script>";
 	exit;
 }
-//È¨ÏŞÑéÖ¤¡ª¡ª
+//æƒé™éªŒè¯â€•â€•
 
 	include "../basic/include.php";
 	include "../basic/database.php";
@@ -15,12 +15,12 @@ if ($authority[12]==0){
 	if($itemid=='')
 		$flag = 'none';
 	
-	if($flag == ''){//»ñÈ¡²Ö¿âĞÅÏ¢
+	if($flag == ''){//è·å–ä»“åº“ä¿¡æ¯
 		$query = "select * from table_warehouse order by id";//echo $query."<br>";
 		$result_warehouse = mysql_query($query);
 	}
 
-	if($flag == ''){//»ñÈ¡»õÆ·ĞÅÏ¢
+	if($flag == ''){//è·å–è´§å“ä¿¡æ¯
 		$query = "select * from tb_product where encode = '$itemid'";//echo $query."<br>";
 		$result_iteminfo = mysql_query($query);	
 	}
@@ -29,14 +29,14 @@ if ($authority[12]==0){
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>¿â´æ²éÑ¯-»õÆ·</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>åº“å­˜æŸ¥è¯¢-è´§å“</title>
 </head>
 <style>
 </style>
 <script type="text/javascript" src="../js/Calendar3.js"></script>
 <script language="javascript">
-function selectitem(){//Ñ¡Ôñ¶ÔÏó
+function selectitem(){//é€‰æ‹©å¯¹è±¡
 	//var url = 'item_choose.php';
 	var url = '../product/showproduct.php?stype=1&mtype=1';
 	window.open(url,'_blank','directorys=no,toolbar=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=853,height=470,top=176,left=161');
@@ -45,36 +45,36 @@ function selectitem(){//Ñ¡Ôñ¶ÔÏó
 <link rel="stylesheet" type="text/css" href="../css/iframe.css" media="screen" />
 <body style="width:800px">
 <form id="form" name="form" method="post" >
-  <h3>¿â´æ²éÑ¯-»õÆ·</h3>
+  <h3>åº“å­˜æŸ¥è¯¢-è´§å“</h3>
   <fieldset>
-  <legend>»õÆ·ĞÅÏ¢</legend>
-  <label>²éÑ¯»õÆ·</label>
+  <legend>è´§å“ä¿¡æ¯</legend>
+  <label>æŸ¥è¯¢è´§å“</label>
   <input id="item_id" name="item_id" type="text"  style="background-color:#CCCCCC" <?php echo "value = '$itemid'";?>  onclick="selectitem()"/>
-  <button type="button" onclick="location.href='inquire_storage_item.php?itemid='+document.getElementById('item_id').value">&nbsp;²éÑ¯&nbsp;</button>
+  <button type="button" onclick="location.href='inquire_storage_item.php?itemid='+document.getElementById('item_id').value">&nbsp;æŸ¥è¯¢&nbsp;</button>
   <input id="item_name" name="item_name" type="text" size="5" style="background-color:#CCCCCC;display:none" hidden />
   <input id="item_model" name="item_model" type="text" size="5" style="background-color:#CCCCCC;display:none" hidden />
   <input id="item_unit" name="item_unit" type="text" size="5" style="background-color:#CCCCCC;display:none" hidden />
   </fieldset>
   <fieldset>
-  <legend>»õÆ·ĞÅÏ¢</legend>
+  <legend>è´§å“ä¿¡æ¯</legend>
   <table id="iteminfo" width="500" border="1" cellspacing="0" cellpadding="5" style="font-size:12px; border:thin; border-color:#9999FF ">
     <tr align="center">
-      <td>»õÆ·±àºÅ</td>
-      <td>»õÆ·Ãû³Æ</td>
-      <td>¹æ¸ñĞÍºÅ</td>
-      <td>µ¥Î»</td>
-      <td>¿â´æÉÏÏŞ</td>
-      <td>¿â´æÏÂÏŞ</td>
+      <td>è´§å“ç¼–å·</td>
+      <td>è´§å“åç§°</td>
+      <td>è§„æ ¼å‹å·</td>
+      <td>å•ä½</td>
+      <td>åº“å­˜ä¸Šé™</td>
+      <td>åº“å­˜ä¸‹é™</td>
     </tr>
-    <?php //ÏÔÊ¾»õÆ·ĞÅÏ¢
+    <?php //æ˜¾ç¤ºè´§å“ä¿¡æ¯
 		echo "<tr align='center'>";
 		
 		if($flag == 'none')
-			echo "<td>ÇëÖ¸¶¨²éÑ¯µÄ»õÆ·ID</td>";
+			echo "<td>è¯·æŒ‡å®šæŸ¥è¯¢çš„è´§å“ID</td>";
 		else{
 			$RS = mysql_fetch_array($result_iteminfo);	
 			if(empty($RS))
-				echo "<td>¸Ã»õÆ·±àÂë²»´æÔÚ</td>";
+				echo "<td>è¯¥è´§å“ç¼–ç ä¸å­˜åœ¨</td>";
 			else{
 				echo "<td>$RS[encode]</td>";
 				echo "<td>$RS[name]</td>";
@@ -90,16 +90,16 @@ function selectitem(){//Ñ¡Ôñ¶ÔÏó
   </table>
   </fieldset>
   <fieldset>
-  <legend>¿â´æÁĞ±í</legend>
+  <legend>åº“å­˜åˆ—è¡¨</legend>
   <table id="storage_table" width="500" border="1" cellspacing="0" cellpadding="5" style="font-size:12px; border:thin; border-color:#9999FF ">
     <tr align="center">
-      <td>²Ö¿â±àºÅ</td>
-      <td>²Ö¿âÃû³Æ</td>
-      <td>¿â´æÊıÁ¿</td>
+      <td>ä»“åº“ç¼–å·</td>
+      <td>ä»“åº“åç§°</td>
+      <td>åº“å­˜æ•°é‡</td>
     </tr>
-    <?php //ÏÔÊ¾¸ÃÉÌÆ·µÄ¿â´æĞÅÏ¢
+    <?php //æ˜¾ç¤ºè¯¥å•†å“çš„åº“å­˜ä¿¡æ¯
 		
-		if($flag == ''){//²éÑ¯²Ö¿âÖĞ¸Ã»õÆ·µÄ¿â´æ
+		if($flag == ''){//æŸ¥è¯¢ä»“åº“ä¸­è¯¥è´§å“çš„åº“å­˜
 			$sum = 0;
 			while($RS = mysql_fetch_array($result_warehouse)){
 				echo "<tr align='center'>";
@@ -117,13 +117,13 @@ function selectitem(){//Ñ¡Ôñ¶ÔÏó
 				$sum += $RS2[num];
 			}
 		}
-		echo "<tr><td></td><td align='center'>×Ü¼Æ£º</td><td align='center' id='storage'>$sum</td></tr>";
+		echo "<tr><td></td><td align='center'>æ€»è®¡ï¼š</td><td align='center' id='storage'>$sum</td></tr>";
 		
 	?>
   </table>
   </fieldset>
   <fieldset>
-  <legend>Í¼±í</legend>
+  <legend>å›¾è¡¨</legend>
   <img src="showbar.php?itemid=<?php echo $itemid;?>" width="600" height="300" border="0" align="bottom">
   </fieldset>
 </form>
@@ -139,12 +139,12 @@ var upperlimit = Number(document.getElementById('upperlimit').innerHTML);
 var lowerlimit = Number(document.getElementById('lowerlimit').innerHTML);
 var storage = Number(document.getElementById('storage').innerHTML);
 if(storage > upperlimit)
-	alert("¿â´æ³¬³öÉÏÏŞ");
+	alert("åº“å­˜è¶…å‡ºä¸Šé™");
 else if(storage < lowerlimit)
-	alert("¿â´æµÍÓÚÏÂÏŞ");
+	alert("åº“å­˜ä½äºä¸‹é™");
 else
-	alert("¿â´æÕı³£");
+	alert("åº“å­˜æ­£å¸¸");
 </script>
-<p><a href="/wms/inquire_storage/inquire_storage_allitem.php">·µ»Ø¿â´æ²éÑ¯</a></p>
+<p><a href="/wms/inquire_storage/inquire_storage_allitem.php">è¿”å›åº“å­˜æŸ¥è¯¢</a></p>
 </body>
 </html>

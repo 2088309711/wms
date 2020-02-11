@@ -1,11 +1,11 @@
 <?php
-//È¨ÏŞÑéÖ¤¡ª¡ª
+//æƒé™éªŒè¯â€•â€•
 include("../../const.php");
 if ($authority[5]==0){  
-	echo "<script language='javascript'>alert('¶Ô²»Æğ£¬ÄãÃ»ÓĞ´Ë²Ù×÷È¨ÏŞ£¡');history.back();</script>";
+	echo "<script language='javascript'>alert('å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰æ­¤æ“ä½œæƒé™ï¼');history.back();</script>";
 	exit;
 }
-//È¨ÏŞÑéÖ¤¡ª¡ª
+//æƒé™éªŒè¯â€•â€•
 
 	include "../include.php";
 	include "../database.php";
@@ -18,17 +18,17 @@ if ($authority[5]==0){
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>»õÆ··ÖÀà¹ÜÀí</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>è´§å“åˆ†ç±»ç®¡ç†</title>
 </head>
 <script type="text/javascript"> 
-//ÒÆ³ıÓÒ±ßËùÓĞµÄÑ¡Ïî
+//ç§»é™¤å³è¾¹æ‰€æœ‰çš„é€‰é¡¹
 function removeAllOption(){
 	var right = document.getElementById("right");
 	for(;right.length!=0;)
 		right.remove(right.options[0]);
 }
-//¸ù¾İÑ¡ÖĞµÄÑ¡ÏîÏÔÊ¾ÓÒ±ßµÄÑ¡Ïî
+//æ ¹æ®é€‰ä¸­çš„é€‰é¡¹æ˜¾ç¤ºå³è¾¹çš„é€‰é¡¹
 function showOption(){
 	removeAllOption();
 	var left = document.getElementById("left");
@@ -54,7 +54,7 @@ function checkClassName(){
 	var error;
 	for(var i=0;i<left.length;i++){
 		if(left.options[i].text==rename && i!=left.selectedIndex){
-			alert("ÒÑ´æÔÚÖØ¸´µÄÑ¡Ïî£¡");
+			alert("å·²å­˜åœ¨é‡å¤çš„é€‰é¡¹ï¼");
 			document.getElementById("rename").value = left.options[left.selectedIndex].text;
 			error=1;
 			return false;
@@ -62,7 +62,7 @@ function checkClassName(){
 	}
 	return true;
 }
-//µ±ÓÒ±ßÑ¡Ïî·¢ÉúÔö¼õÊ±£¬¸Ä±ä×ó±ßÑ¡ÖĞµÄÑ¡ÏîµÄValue
+//å½“å³è¾¹é€‰é¡¹å‘ç”Ÿå¢å‡æ—¶ï¼Œæ”¹å˜å·¦è¾¹é€‰ä¸­çš„é€‰é¡¹çš„Value
 function changeValue(){
 	var right = document.getElementById("right");
 	var str = "";
@@ -90,7 +90,7 @@ function changeValue(){
 	
 	//alert("changeValue(): value = "+left.options[left.selectedIndex].value);
 }
-//É¾³ı×ó±ßÑ¡ÖĞµÄÑ¡Ïî£¬Íê³ÉÒ³ÃæÌø×ª
+//åˆ é™¤å·¦è¾¹é€‰ä¸­çš„é€‰é¡¹ï¼Œå®Œæˆé¡µé¢è·³è½¬
 function deleteOptionLeft(){
 	var left = document.getElementById("left");
 	var url = "";
@@ -98,19 +98,19 @@ function deleteOptionLeft(){
 		var option_str = left.options[left.selectedIndex].value;
 		var option_list = option_str.split("|");
 		url = "../sql_delete_bg.php?db=itemclassify&id="+option_list[0];
-		if(confirm("È·ÈÏÉ¾³ı£¿")==true)
+		if(confirm("ç¡®è®¤åˆ é™¤ï¼Ÿ")==true)
 		location.href = url;
 	}
 	//alert("deleteOptionLeft() runing!");
 		
 }
-//É¾³ıÓÒ±ßÑ¡ÖĞµÄÑ¡Ïî£¬¸Ä±ä×ó±ßÑ¡ÖĞµÄoptionµÄValue
+//åˆ é™¤å³è¾¹é€‰ä¸­çš„é€‰é¡¹ï¼Œæ”¹å˜å·¦è¾¹é€‰ä¸­çš„optionçš„Value
 function deleteOptionRight(){
 	var right = document.getElementById("right");
 	right.remove(right.selectedIndex);
 	changeValue();
 }
-//ÓÉ×ó±ßÑ¡Ïî¸Ä±äËùÒıÆğµÄ±ä»¯
+//ç”±å·¦è¾¹é€‰é¡¹æ”¹å˜æ‰€å¼•èµ·çš„å˜åŒ–
 function changeLeft(){
 	var rename = document.getElementById("rename");
 	var left = document.getElementById("left");
@@ -118,7 +118,7 @@ function changeLeft(){
 	showOption();
 	//alert("changeLeft() runing!");
 }
-//Ìí¼ÓÓÒ±ßÑ¡Ïî  (¿ÉÌí¼ÓÅĞ¶ÏÑ¡ÏîÊÇ·ñÖØ¸´µÄÅĞ¶¨)
+//æ·»åŠ å³è¾¹é€‰é¡¹  (å¯æ·»åŠ åˆ¤æ–­é€‰é¡¹æ˜¯å¦é‡å¤çš„åˆ¤å®š)
 function insertOption(){
 	var y = document.createElement('option');
 	y.text = document.getElementById("optiontext").value;
@@ -127,7 +127,7 @@ function insertOption(){
 	var error;
 	for(var i=0;i<right.length;i++){
 		if(right.options[i].text==y.text){
-			alert("ÒÑ´æÔÚÖØ¸´µÄÑ¡Ïî£¡");
+			alert("å·²å­˜åœ¨é‡å¤çš„é€‰é¡¹ï¼");
 			error=1;
 			break;
 		}
@@ -140,7 +140,7 @@ function insertOption(){
 function checkForm(){
 	alert("checkForm() runing!");
 }
-//½«Ñ¡ÖĞµÄÓÒ±ßÑ¡ÏîÉÏÒÆ
+//å°†é€‰ä¸­çš„å³è¾¹é€‰é¡¹ä¸Šç§»
 function upOption(){
 	var right = document.getElementById('right');
 	var text;
@@ -153,7 +153,7 @@ function upOption(){
 	}
 	//alert("upOption() runing!");
 }
-//½«Ñ¡ÖĞµÄÓÒ±ßÑ¡ÏîÏÂÒÆ
+//å°†é€‰ä¸­çš„å³è¾¹é€‰é¡¹ä¸‹ç§»
 function downOption(){
 	var right = document.getElementById('right');
 	var text;
@@ -166,7 +166,7 @@ function downOption(){
 	}
 	//alert("downOption() runing!");
 }
-//Ìí¼ÓĞÂµÄ·ÖÀà
+//æ·»åŠ æ–°çš„åˆ†ç±»
 function addNewClass(){
 	if(document.getElementById('new').value!=''){
 		var url = 'itemclassify_add_bg.php?name='+document.getElementById('new').value;
@@ -176,14 +176,14 @@ function addNewClass(){
 }
 </script>
 <body>
-<h3>»õÆ··ÖÀà£¨´óÀà¡¢Ğ¡Àà£©¹ÜÀí</h3>
+<h3>è´§å“åˆ†ç±»ï¼ˆå¤§ç±»ã€å°ç±»ï¼‰ç®¡ç†</h3>
 <form name="item_classify" id="item_classify" method="post" action="itemclassify_modify_bg.php" >
   <input name="hidden" id="hidden" type="hidden" >
   <table border="1" align="left" cellpadding="5" cellspacing="0" bordercolor="#CCCCFF">
     <tr>
-      <td valign="top">´óÀà£º</td>
+      <td valign="top">å¤§ç±»ï¼š</td>
       <td><select name="left" size="10" id="left" onChange="changeLeft()" ondblclick="deleteOptionLeft()">
-          <!--IE²»Ö§³Ö-->
+          <!--IEä¸æ”¯æŒ-->
           <?php 
 while($RS=mysql_fetch_array($result))
 	echo "<option value='$RS[id]|$RS[name]$RS[lowerclass]'>$RS[name]</option>";
@@ -191,40 +191,40 @@ while($RS=mysql_fetch_array($result))
         </select>
       </td>
       <td><input id="new" name="new" type="text" size="5">
-        <input name="add" type="button" id="add" onClick="addNewClass()" value="Ìí¼Ó" size="5">
+        <input name="add" type="button" id="add" onClick="addNewClass()" value="æ·»åŠ " size="5">
         <p>
           <input id="rename" name="rename" type="text" size="5" onChange="if(checkClassName()==true) changeValue();">
         </p></td>
-      <td valign="top">Ğ¡Àà£º</td>
+      <td valign="top">å°ç±»ï¼š</td>
       <td><select name="right" size="10" id="right" ondblclick="deleteOptionRight()">
-          <!--IE²»Ö§³Ö-->
+          <!--IEä¸æ”¯æŒ-->
           <script language="javascript">showOption();</script>
         </select>
       </td>
       <td><p>
-          <input type="button" name="up" value="¡Ä" onClick="upOption()">
+          <input type="button" name="up" value="âˆ§" onClick="upOption()">
         </p>
         <p>
           <input id="optiontext" name="optiontext" type="text" size="5" />
-          <input name="add" type="button" id="add" value="Ìí¼Ó" onClick="insertOption()"/>
+          <input name="add" type="button" id="add" value="æ·»åŠ " onClick="insertOption()"/>
         </p>
         <p>
-          <input type="button" name="down" value="¡Å" onClick="downOption()">
+          <input type="button" name="down" value="âˆ¨" onClick="downOption()">
         </p></td>
     </tr>
     <tr>
       <td></td>
-      <td><input name="delete_left" type="button" value="É¾³ı" onClick="deleteOptionLeft()"></td>
+      <td><input name="delete_left" type="button" value="åˆ é™¤" onClick="deleteOptionLeft()"></td>
       <td></td>
       <td></td>
-      <td><input name="delete_right" type="button" value="É¾³ı" onClick="deleteOptionRight()"></td>
+      <td><input name="delete_right" type="button" value="åˆ é™¤" onClick="deleteOptionRight()"></td>
       <td></td>
     </tr>
     <tr>
       <td></td>
       <td></td>
-      <td><input id="submit" type="submit" value="Ìá½»" disabled />
-        <input id="reset" type="button" value="ÖØÖÃ" onClick="location.reload(true)" /></td>
+      <td><input id="submit" type="submit" value="æäº¤" disabled />
+        <input id="reset" type="button" value="é‡ç½®" onClick="location.reload(true)" /></td>
       <td></td>
       <td></td>
       <td></td>

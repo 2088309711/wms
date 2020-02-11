@@ -8,7 +8,7 @@ $pwd=md5($_POST[pwd]);
 $state=$_POST[state];
 echo $name;
 
-for($k=0;$k<22;$k++)  //½«Êı×é¶ÔÓ¦µÄÈ¨ÏŞÖÃ0  
+for($k=0;$k<22;$k++)  //å°†æ•°ç»„å¯¹åº”çš„æƒé™ç½®0  
 {
 
   $array[$k]=0;
@@ -21,19 +21,19 @@ for($i=0;$i<count($_POST[auth]);$i++)
 }
 $authority=implode(",",$array);
 
-if($flag==1)   //ĞÂÔöÓÃ»§
+if($flag==1)   //æ–°å¢ç”¨æˆ·
  {
     $sql=mysql_query("select * from tb_admin where name='".$name."'",$conn);
     $info=mysql_fetch_array($sql);
    if($info==true)
    {
-      echo "<script>alert('¸ÃÓÃ»§ÃûÒÑ¾­´æÔÚ!');history.back();</script>";
+      echo "<script>alert('è¯¥ç”¨æˆ·åå·²ç»å­˜åœ¨!');history.back();</script>";
       exit;
 	}
 	else
 	{
 	    mysql_query("insert into tb_admin (name,pwd,authority,state) values('$name','$pwd','$authority','$state')",$conn);
-	    echo "<script>alert('Ìí¼Ó³É¹¦!');window.location='adminsetting.php';</script>";
+	    echo "<script>alert('æ·»åŠ æˆåŠŸ!');window.location='adminsetting.php';</script>";
 	 }
  }
  
@@ -41,7 +41,7 @@ if($flag==1)   //ĞÂÔöÓÃ»§
  {
     
 	   mysql_query("delete from tb_admin where name='".$name."'",$conn);
-	   echo "<script>alert('É¾³ı³É¹¦!');window.location='adminsetting.php';</script>";
+	   echo "<script>alert('åˆ é™¤æˆåŠŸ!');window.location='adminsetting.php';</script>";
       exit;
  }
  else
@@ -59,6 +59,6 @@ if($flag==1)   //ĞÂÔöÓÃ»§
 	   mysql_query("update tb_admin set name='$name',pwd='$pwd',authority='$authority',state='$state' where name='".$name."'",$conn);
 	}
 	
-    echo "<script>alert('ĞŞ¸Ä³É¹¦!');window.location='adminsetting.php';</script>";
+    echo "<script>alert('ä¿®æ”¹æˆåŠŸ!');window.location='adminsetting.php';</script>";
  }
 ?>

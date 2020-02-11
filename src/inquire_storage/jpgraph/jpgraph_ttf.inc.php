@@ -25,7 +25,7 @@ DEFINE("FF_VERASERIF",20);
 
 // Chinese font
 DEFINE("FF_SIMSUN",30);
-DEFINE("FF_SIMSUN_UTF8",32); //声明该常量，注意数字上使用不同的就可以了
+DEFINE("FF_SIMSUN_UTF8",32); //澹版槑璇ュ父閲忥紝娉ㄦ剰鏁板瓧涓婁娇鐢ㄤ笉鍚岀殑灏卞彲浠ヤ簡
 DEFINE("FF_CHINESE",31);
 DEFINE("FF_BIG5",31);
 

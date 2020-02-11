@@ -2,8 +2,8 @@
 var IsAsc=true;
 
 function SortTable(TableID,Col,DataType){ 
-	var imgSort=document.getElementById('col'+Col); //ÅÅĞòµÄÒ»¸ö±êÖ¾
-	//ÅĞ¶ÏÊÇÄæĞò»¹ÊÇË³Ğò 
+	var imgSort=document.getElementById('col'+Col); //æ’åºçš„ä¸€ä¸ªæ ‡å¿—
+	//åˆ¤æ–­æ˜¯é€†åºè¿˜æ˜¯é¡ºåº 
 	if(IsAsc==true){ 
 		imgSort.src='img/arrow_small_down.png'; 
 	} 
@@ -19,29 +19,29 @@ function SortTable(TableID,Col,DataType){
 	for(var i=0;i<DataRows.length;i++){ 
 		MyArr[i]=DataRows[i]; 
 	} 
-	//ÅĞ¶ÏÉÏ´ÎÅÅĞòµÄÁĞºÍÕâ´ÎÊÇ·ñÎªÍ¬Ò»ÁĞ 
+	//åˆ¤æ–­ä¸Šæ¬¡æ’åºçš„åˆ—å’Œè¿™æ¬¡æ˜¯å¦ä¸ºåŒä¸€åˆ— 
 	if(DBody.CurrentCol==Col){ 
-		MyArr.reverse(); //½«Êı×éµ¹ÖÃ 
+		MyArr.reverse(); //å°†æ•°ç»„å€’ç½® 
 	} 
 	else{ 
 		MyArr.sort(CustomCompare(Col,DataType)); 
 	} 
-//´´½¨Ò»¸öÎÄµµËéÆ¬£¬½«ËùÓĞµÄĞĞ¶¼Ìí¼Ó½øÈ¥£¬Ïàµ±ÓÚÒ»¸öÔİ´æ¼Ü£¬Ä¿µÄÊÇ£¨Èç¹ûÖ±½Ó¼Óµ½document.bodyÀïÃæ£¬»á²åÈëÒ»ĞĞ£¬¾ÍË¢ĞÂÒ»´Î£¬Èç¹ûÊı¾İ¶àÁË¾Í»áÓ°ÏìÓÃ»§ÌåÑé£© 
-//ÏÈ½«ĞĞÈ«²¿·ÅÔÚÔİ´æ¼ÜÀïÃæ£¬È»ºó½«Ôİ´æ¼ÜÀïÃæµÄĞĞ Ò»ÆğÌí¼Óµ½document.body£¬ÕâÑù±í¸ñÖ»»áË¢ĞÂÒ»´Î¡£ 
-//¾ÍÏñÄãÈ¥ÉÌµê¹ºÎï£¬ÒªÏÈ½«ÒªÂòµÄÎïÆ·£¨ĞĞ£©È«²¿Ğ´ÔÚµ¥×ÓÉÏ£¨ÎÄµµËéÆ¬£©£¬È»ºó³¬ÊĞÈ«²¿¹ºÂò£¬¶ø²»»áÏëµ½Ò»Ñù¶«Î÷¾ÍÈ¥Ò»´Î£¬ÄÇÃ´ 
+//åˆ›å»ºä¸€ä¸ªæ–‡æ¡£ç¢ç‰‡ï¼Œå°†æ‰€æœ‰çš„è¡Œéƒ½æ·»åŠ è¿›å»ï¼Œç›¸å½“äºä¸€ä¸ªæš‚å­˜æ¶ï¼Œç›®çš„æ˜¯ï¼ˆå¦‚æœç›´æ¥åŠ åˆ°document.bodyé‡Œé¢ï¼Œä¼šæ’å…¥ä¸€è¡Œï¼Œå°±åˆ·æ–°ä¸€æ¬¡ï¼Œå¦‚æœæ•°æ®å¤šäº†å°±ä¼šå½±å“ç”¨æˆ·ä½“éªŒï¼‰ 
+//å…ˆå°†è¡Œå…¨éƒ¨æ”¾åœ¨æš‚å­˜æ¶é‡Œé¢ï¼Œç„¶åå°†æš‚å­˜æ¶é‡Œé¢çš„è¡Œ ä¸€èµ·æ·»åŠ åˆ°document.bodyï¼Œè¿™æ ·è¡¨æ ¼åªä¼šåˆ·æ–°ä¸€æ¬¡ã€‚ 
+//å°±åƒä½ å»å•†åº—è´­ç‰©ï¼Œè¦å…ˆå°†è¦ä¹°çš„ç‰©å“ï¼ˆè¡Œï¼‰å…¨éƒ¨å†™åœ¨å•å­ä¸Šï¼ˆæ–‡æ¡£ç¢ç‰‡ï¼‰ï¼Œç„¶åè¶…å¸‚å…¨éƒ¨è´­ä¹°ï¼Œè€Œä¸ä¼šæƒ³åˆ°ä¸€æ ·ä¸œè¥¿å°±å»ä¸€æ¬¡ï¼Œé‚£ä¹ˆ 
 	var frag=document.createDocumentFragment(); 
 	for(var i=0;i<MyArr.length;i++){ 
-		frag.appendChild(MyArr[i]); //½«Êı×éÀïµÄĞĞÈ«²¿Ìí¼Óµ½ÎÄµµËéÆ¬ÖĞ 
+		frag.appendChild(MyArr[i]); //å°†æ•°ç»„é‡Œçš„è¡Œå…¨éƒ¨æ·»åŠ åˆ°æ–‡æ¡£ç¢ç‰‡ä¸­ 
 	} 
-	DBody.appendChild(frag);//½«ÎÄµµËéÆ¬ÖĞµÄĞĞÈ«²¿Ìí¼Óµ½ bodyÖĞ 
-	DBody.CurrentCol=Col; //¼ÇÂ¼ÏÂµ±Ç°ÅÅĞòµÄÁĞ 
+	DBody.appendChild(frag);//å°†æ–‡æ¡£ç¢ç‰‡ä¸­çš„è¡Œå…¨éƒ¨æ·»åŠ åˆ° bodyä¸­ 
+	DBody.CurrentCol=Col; //è®°å½•ä¸‹å½“å‰æ’åºçš„åˆ— 
 } 
 
-//×Ô¶¨ÒåµÄÅÅĞò·½Ê½
+//è‡ªå®šä¹‰çš„æ’åºæ–¹å¼
 function CustomCompare(Col,DataType){ 
 	return function CompareTRs(TR1,TR2){ 
 		var value1,value2; 
-		//ÅĞ¶ÏÊÇ²»ÊÇÓĞcustomvalueÕâ¸öÊôĞÔ 
+		//åˆ¤æ–­æ˜¯ä¸æ˜¯æœ‰customvalueè¿™ä¸ªå±æ€§ 
 		if(TR1.cells[Col].getAttribute("customvalue")){ 
 			value1=convert(TR1.cells[Col].getAttribute("customvalue"),DataType); 
 			value2=convert(TR2.cells[Col].getAttribute("customvalue"),DataType); 
@@ -58,7 +58,7 @@ function CustomCompare(Col,DataType){
 			return 0; 
 	}; 
 } 
-//¸ñÊ½×ª»»
+//æ ¼å¼è½¬æ¢
 function convert(DataValue,DataType){ 
 	switch(DataType){ 
 		case "int": 

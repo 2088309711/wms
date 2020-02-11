@@ -14,9 +14,9 @@
 	echo '<script language="javascript">';
 
 	if($result==false)
-		echo "alert('Êı¾İÉ¾³ıÊ§°Ü£¡');";
+		echo "alert('æ•°æ®åˆ é™¤å¤±è´¥ï¼');";
 	else
-		echo "alert('Êı¾İÉ¾³ı³É¹¦£¡');";
+		echo "alert('æ•°æ®åˆ é™¤æˆåŠŸï¼');";
 
 	echo "var url='$db/".$db."_show.php';";
 	echo 'location.href=url;';

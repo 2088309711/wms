@@ -26,5 +26,5 @@ $path = "sql/" . $filename;
 		fclose($file);
 		exit;
 	} 
-	echo "<script>alert('数据备份成功!');window.location='../desk.php';</script>";
+	echo "<script>alert('鏁版嵁澶囦唤鎴愬姛!');window.location='../desk.php';</script>";
 ?>

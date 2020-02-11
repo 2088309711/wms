@@ -1,17 +1,17 @@
 <?php
-//È¨ÏŞÑéÖ¤¡ª¡ª
+//æƒé™éªŒè¯â€•â€•
 include("../const.php");
 if ($authority[17]==0){  
-	echo "<script language='javascript'>alert('¶Ô²»Æğ£¬ÄãÃ»ÓĞ´Ë²Ù×÷È¨ÏŞ£¡');history.back();</script>";
+	echo "<script language='javascript'>alert('å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰æ­¤æ“ä½œæƒé™ï¼');history.back();</script>";
 	exit;
 }
-//È¨ÏŞÑéÖ¤¡ª¡ª
+//æƒé™éªŒè¯â€•â€•
 	include "../basic/include.php";
 	include "../basic/database.php";
 
 	$limit_string = '';
 	$option = $_GET[option];//echo $option;
-	if($option == 'date'){ //°´ÈÕÆÚ·¶Î§²éÑ¯
+	if($option == 'date'){ //æŒ‰æ—¥æœŸèŒƒå›´æŸ¥è¯¢
 		$date1 = $_GET[date1];
 		$date2 = $_GET[date2];
 		if($date1 != '' && $date2 == '')
@@ -36,15 +36,15 @@ if ($authority[17]==0){
 	$result_receipt = mysql_query($query);
 	
 	$query = "select * from table_warehouse order by id";//echo $query."<br>";
-	$result_warehouse = mysql_query($query);//»ñÈ¡²Ö¿âÁĞ±í
+	$result_warehouse = mysql_query($query);//è·å–ä»“åº“åˆ—è¡¨
 
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>ÅÌµãµ¥²éÑ¯</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ç›˜ç‚¹å•æŸ¥è¯¢</title>
 <style type="text/css">
 <!--
 a:link {
@@ -88,60 +88,60 @@ function hideAll(){
 </script>
 <script type="text/javascript" src="../js/TableSort_mains.js"></script>
 <body style="width:800px; font-size:14px">
-<h3>ÅÌµãµ¥²éÑ¯</h3>
+<h3>ç›˜ç‚¹å•æŸ¥è¯¢</h3>
 <?php
-echo "<p>¹²ÓĞ $num Ìõ¼ÇÂ¼</p>";
+echo "<p>å…±æœ‰ $num æ¡è®°å½•</p>";
 ?>
-<p>µ¥»÷µ¥¾İ±àºÅ²é¿´ÏêÇé</p>
-<!--¾«È·²éÑ¯¿ò¼Ü-->
+<p>å•å‡»å•æ®ç¼–å·æŸ¥çœ‹è¯¦æƒ…</p>
+<!--ç²¾ç¡®æŸ¥è¯¢æ¡†æ¶-->
 <div style="margin-bottom:8px; height:20px">
-¾«È·²éÑ¯£º
-<input id="receipt_id" name="receipt_id" type="text" value="ÇëÊäÈëµ¥¾İID" onclick="this.value=''" onblur="if(this.value=='') this.value='ÇëÊäÈëµ¥¾İID'"/>
-<input name="search" type="button" value="²éÕÒ" onclick="url='../receipt_check/receipt_show_check.php?id=' + document.getElementById('receipt_id').value;window.open(url,'_blank')"/>
+ç²¾ç¡®æŸ¥è¯¢ï¼š
+<input id="receipt_id" name="receipt_id" type="text" value="è¯·è¾“å…¥å•æ®ID" onclick="this.value=''" onblur="if(this.value=='') this.value='è¯·è¾“å…¥å•æ®ID'"/>
+<input name="search" type="button" value="æŸ¥æ‰¾" onclick="url='../receipt_check/receipt_show_check.php?id=' + document.getElementById('receipt_id').value;window.open(url,'_blank')"/>
 </div>
-<!--¾«È·²éÑ¯¿ò¼Ü-->
-<!--²éÑ¯¿ò¼Ü-->
+<!--ç²¾ç¡®æŸ¥è¯¢æ¡†æ¶-->
+<!--æŸ¥è¯¢æ¡†æ¶-->
 <div style="margin-bottom:8px; height:20px">
-  <!--²éÑ¯·½Ê½Ñ¡Ôñ-->
-  <div style="float:left">²éÑ¯·½Ê½£º
+  <!--æŸ¥è¯¢æ–¹å¼é€‰æ‹©-->
+  <div style="float:left">æŸ¥è¯¢æ–¹å¼ï¼š
     <select id="inquiry" name="inquiry" onchange="optionChange(this)">
-      <option value="none" selected="selected">ÎŞ</option>
-      <option value="inquiry_time">Ê±¼ä·¶Î§</option>
-      <option value="inquiry_warehouse">²Ö¿â</option>
+      <option value="none" selected="selected">æ— </option>
+      <option value="inquiry_time">æ—¶é—´èŒƒå›´</option>
+      <option value="inquiry_warehouse">ä»“åº“</option>
     </select>
   </div>
-  <!--²éÑ¯·½Ê½Ñ¡Ôñ-->
-  <!--ÈÕÆÚ-->
-  <div id="inquiry_time"  style="float:left"> ´Ó
+  <!--æŸ¥è¯¢æ–¹å¼é€‰æ‹©-->
+  <!--æ—¥æœŸ-->
+  <div id="inquiry_time"  style="float:left"> ä»
     <input name="date1" type="text" id="date1" onclick="new Calendar().show(this);" size="8" maxlength="10"/>
-    µ½
+    åˆ°
     <input name="date2" type="text" id="date2" onclick="new Calendar().show(this);" size="8" maxlength="10" />
-    <input name="search" type="button" value="²éÕÒ" onclick="location.href='inquire_check_receipt.php?option=date&date1=' + document.getElementById('date1').value + '&date2=' + document.getElementById('date2').value"/>
+    <input name="search" type="button" value="æŸ¥æ‰¾" onclick="location.href='inquire_check_receipt.php?option=date&date1=' + document.getElementById('date1').value + '&date2=' + document.getElementById('date2').value"/>
   </div>
-  <!--ÈÕÆÚ-->
-  <!--²Ö¿â-->
+  <!--æ—¥æœŸ-->
+  <!--ä»“åº“-->
   <div id="inquiry_warehouse">
     <select name="menu1" onchange="location.href='inquire_check_receipt.php?option=warehouse&id='+this.value">
-      <option value="none">ÇëÑ¡Ôñ</option>
+      <option value="none">è¯·é€‰æ‹©</option>
       <?php 
 	  	while($RS = mysql_fetch_array($result_warehouse))
 			echo "<option value='$RS[id]'>$RS[name]</option>";
 	  ?>
     </select>
   </div>
-  <!--²Ö¿â-->
+  <!--ä»“åº“-->
 </div>
-<!--²éÑ¯¿ò¼Ü-->
+<!--æŸ¥è¯¢æ¡†æ¶-->
 <script language="javascript">hideAll();</script>
-<div><input name="" type="button" value="ÏÔÊ¾È«²¿" onclick="location.href='inquire_check_receipt.php'"/></div>
+<div><input name="" type="button" value="æ˜¾ç¤ºå…¨éƒ¨" onclick="location.href='inquire_check_receipt.php'"/></div>
 <table id="MyTable" width="100%" border="1" cellspacing="0" cellpadding="5" bordercolor="#9999FF">
   <thead style="color: #330066">
   <tr align="center" bordercolor="#9999FF">
-    <td onclick="SortTable('MyTable',0,'string')" style="cursor:pointer">µ¥¾İ±àºÅ</td>
-    <td onclick="SortTable('MyTable',1,'string')" style="cursor:pointer">ÖÆµ¥ÈÕÆÚ</td>
-	<td onclick="SortTable('MyTable',2,'string')" style="cursor:pointer">ÒµÎñÔ±</td>
-	<td onclick="SortTable('MyTable',3,'string')" style="cursor:pointer">ÅÌµã²Ö¿â</td>
-    <td>±¸×¢</td>
+    <td onclick="SortTable('MyTable',0,'string')" style="cursor:pointer">å•æ®ç¼–å·</td>
+    <td onclick="SortTable('MyTable',1,'string')" style="cursor:pointer">åˆ¶å•æ—¥æœŸ</td>
+	<td onclick="SortTable('MyTable',2,'string')" style="cursor:pointer">ä¸šåŠ¡å‘˜</td>
+	<td onclick="SortTable('MyTable',3,'string')" style="cursor:pointer">ç›˜ç‚¹ä»“åº“</td>
+    <td>å¤‡æ³¨</td>
   </tr>
   </thead>
   <tbody>
@@ -155,7 +155,7 @@ echo "<p>¹²ÓĞ $num Ìõ¼ÇÂ¼</p>";
 		$query = "select name from table_warehouse where id = '$RS[warehouse]'";//echo $query."<br>";
 		$result = mysql_query($query);
 		$RS2 = mysql_fetch_array($result);
-		echo "<td>$RS2[name]</td>\n";//²Ö¿âÃû³Æ
+		echo "<td>$RS2[name]</td>\n";//ä»“åº“åç§°
 		echo "<td>$RS[remark]</td>\n";
 		echo "</tr>";
 	}

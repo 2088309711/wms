@@ -1,203 +1,216 @@
 <?php
-//È¨ÏŞÑéÖ¤¡ª¡ª
+//æƒé™éªŒè¯â€•â€•
 include("../const.php");
-if ($authority[12]==0){  
-	echo "<script language='javascript'>alert('¶Ô²»Æğ£¬ÄãÃ»ÓĞ´Ë²Ù×÷È¨ÏŞ£¡');history.back();</script>";
-	exit;
+if ($authority[12] == 0) {
+    echo "<script language='javascript'>alert('å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰æ­¤æ“ä½œæƒé™ï¼');history.back();</script>";
+    exit;
 }
-//È¨ÏŞÑéÖ¤¡ª¡ª
-	include "../basic/include.php";
-	include "../basic/database.php";
-	
-	$query = "select count(*) as num from tb_product where 1";//echo $query."<br>";die();
-	$result = mysql_query($query) or die("Invalid query: " . mysql_error());
-	$RS = mysql_fetch_array($result);
-	$num = $RS[num];
-	
-	$query = "select * from tb_product where 1 order by encode";//echo $query."<br>";die();
-	$result_product = mysql_query($query);
+//æƒé™éªŒè¯â€•â€•
+include "../basic/include.php";
+include "../basic/database.php";
+
+$query = "select count(*) as num from tb_product where 1";//echo $query."<br>";die();
+$result = mysql_query($query) or die("Invalid query: " . mysql_error());
+$RS = mysql_fetch_array($result);
+$num = $RS['num'];
+
+$query = "select * from tb_product where 1 order by encode";//echo $query."<br>";die();
+$result_product = mysql_query($query);
+
+
+$option = isset($_GET['option']) ? $_GET['option'] : 0;
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>¿â´æ²éÑ¯-ËùÓĞ»õÆ·</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>åº“å­˜æŸ¥è¯¢-æ‰€æœ‰è´§å“</title>
 </head>
 <style type="text/css">
-<!--
-a:link {
-	text-decoration: none;
-}
-a:visited {
-	text-decoration: none;
-}
-a:hover {
-	text-decoration: underline;
-}
-a:active {
-	text-decoration: none;
-}
--->
+    <!--
+    a:link {
+        text-decoration: none;
+    }
+
+    a:visited {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    a:active {
+        text-decoration: none;
+    }
+
+    -->
 </style>
 <script type="text/javascript" src="../js/Calendar3.js"></script>
 <script type="text/javascript" src="../js/TableSort_mains.js"></script>
 <script language="javascript">
-function gotoURL(target){
-	var id = target.innerHTML;
-	var url = "inquire_storage_item.php?itemid="+id;
-	//location.href = url;
-	window.open(url,'_blank','directorys=no,toolbar=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=640,height=480,top=176,left=161');
-}
-function gotoURL2(target){
-	var value = target.value;
-	var url = "inquire_storage_allitem.php?option="+value;
-	location.href = url;
-}
+    function gotoURL(target) {
+        var id = target.innerHTML;
+        var url = "inquire_storage_item.php?itemid=" + id;
+        //location.href = url;
+        window.open(url, '_blank', 'directorys=no,toolbar=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=640,height=480,top=176,left=161');
+    }
+
+    function gotoURL2(target) {
+        var value = target.value;
+        var url = "inquire_storage_allitem.php?option=" + value;
+        location.href = url;
+    }
 </script>
 <body style="width:800px; font-size:14px">
 <div>
-  <h3>¿â´æ²éÑ¯-ËùÓĞ»õÆ·</h3>
-  <p>¹²ÓĞ <?php echo $num; ?> Ìõ»õÆ·¼ÇÂ¼¡£</p>
-  <div style="float:left">µ¥»÷»õÆ·±àºÅ¿ÉÒÔ²é¿´¸ÃÎïÆ·¿â´æÏêÇé¡£</div>
-  <div style="float:right">É¸Ñ¡£º
-    <select name="filter" onchange="gotoURL2(this)">
-      <option value="0" <?php if($_GET[option]==0) echo 'selected';?>>È«²¿</option>
-      <option value="1" <?php if($_GET[option]==1) echo 'selected';?>>Õı³£</option>
-      <option value="2" <?php if($_GET[option]==2) echo 'selected';?>>³¬³öÉÏÏŞ</option>
-      <option value="3" <?php if($_GET[option]==3) echo 'selected';?>>µÍÓÚÏÂÏŞ</option>
-    </select>
-  </div>
-  <table id="table_storage" width="100%" border="1" cellspacing="0" cellpadding="5" bordercolor="#9999FF">
-    <thead style="color: #330066">
-      <tr align="center" bordercolor="#9999FF">
-        <td onclick="SortTable('table_storage',0,'string')" style="cursor:pointer">»õÆ·±àºÅ</td>
-        <td onclick="SortTable('table_storage',1,'string')" style="cursor:pointer">»õÆ·Ãû³Æ</td>
-        <td onclick="SortTable('table_storage',2,'string')" style="cursor:pointer">ĞÍºÅ</td>
-        <td onclick="SortTable('table_storage',3,'string')" style="cursor:pointer">µ¥Î»</td>
-        <td onclick="SortTable('table_storage',4,'int')" style="cursor:pointer">¿â´æÉÏÏŞ</td>
-        <td onclick="SortTable('table_storage',5,'int')" style="cursor:pointer">¿â´æÏÂÏŞ</td>
-        <td onclick="SortTable('table_storage',6,'int')" style="cursor:pointer">¿â´æÁ¿</td>
-        <td onclick="SortTable('table_storage',7,'string')" style="cursor:pointer">Ô¤¾¯ĞÅÏ¢</td>
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-	while($RS = mysql_fetch_array($result_product))
-	{
-		$sum = 0;
-		$query = "select id from table_warehouse order by id";//echo $query."<br>";
-		$result_warehouse = mysql_query($query);//»ñÈ¡²Ö¿âÁĞ±í
-		while($RS2 = mysql_fetch_array($result_warehouse)){
-			$query = "select num from table_warehouse_$RS2[id] where id = '$RS[encode]'";//echo $query."<br>";
-			$result_num = mysql_query($query);
-			$RS3 = mysql_fetch_array($result_num);
-			$sum += $RS3[num];
-		}
-		if($sum > $RS[upperlimit]){
-			$string = "³¬³öÉÏÏŞ";
-			$color = 'red';
-		}
-		else if($sum < $RS[lowerlimit]){
-			$string = "µÍÓÚÏÂÏŞ";
-			$color = 'gray';
-		}
-		else{
-			$string = "Õı³£";
-		 	$color = 'green';
-		}
-		$option = $_GET[option];
-		if($option==0 || ($option==1&&$string=="Õı³£") || ($option==2&&$string=="³¬³öÉÏÏŞ") || ($option==3&&$string=="µÍÓÚÏÂÏŞ")){		
-			echo "<tr align='center' bordercolor='#9999FF'>";
-			echo "<td customvalue='$RS[encode]'><a href='inquire_storage_item.php?itemid=$RS[encode]'>$RS[encode]</a></td>\n";
-			echo "<td>$RS[name]</td>\n";
-			echo "<td>$RS[size]</td>\n";
-			echo "<td>$RS[unit]</td>\n";
-			echo "<td>$RS[upperlimit]</td>\n";
-			echo "<td>$RS[lowerlimit]</td>\n";
-			echo "<td>$sum</td>\n";
-			echo "<td style='color:$color'>$string</td>\n";
-			echo "</tr>";
-		}
-	}
-?>
-    </tbody>
-  </table>
-  <p>
-    <input name="" type="button" value="µ¼³öµ½WORD" onclick=" AllAreaWord()"/>
-    <input name="" type="button" value="µ¼³öµ½EXCEL" onclick="AutomateExcel()"/>
-  </p>
-<script language="javascript">
-function AllAreaWord() 
-{
-	if(document.all("table_storage").rows.length==0){
-		alert("Ã»ÓĞÄÚÈİ¿Éµ¼£¡");
-		return;
-	}
-	try{
-		var oWD = new ActiveXObject("Word.Application"); 
-	}
-	catch(e){
-		alert("ÎŞ·¨µ÷ÓÃOffice¶ÔÏó£¬ÇëÈ·±£ÄúµÄ»úÆ÷ÒÑ°²×°ÁËOffice²¢ÒÑ½«±¾ÏµÍ³µÄÕ¾µãÃû¼ÓÈëµ½IEµÄĞÅÈÎÕ¾µãÁĞ±íÖĞ£¡");
-		return;
-	}
-	var oDC = oWD.Documents.Add("",0,1); 
-	var oRange =oDC.Range(0,1); 
-	var sel = document.body.createTextRange(); 
-	sel.moveToElementText(table_storage); //tab Îªµ¼³öÊı¾İËùÔÚµÄ±í¸ñID
-	sel.select(); 
-	sel.execCommand("Copy"); 
-	oRange.Paste(); 
-	oWD.Application.Visible = true; 
-}
+    <h3>åº“å­˜æŸ¥è¯¢-æ‰€æœ‰è´§å“</h3>
+    <p>å…±æœ‰ <?php echo $num; ?> æ¡è´§å“è®°å½•ã€‚</p>
+    <div style="float:left">å•å‡»è´§å“ç¼–å·å¯ä»¥æŸ¥çœ‹è¯¥ç‰©å“åº“å­˜è¯¦æƒ…ã€‚</div>
+    <div style="float:right">ç­›é€‰ï¼š
+        <select name="filter" onchange="gotoURL2(this)">
+            <option value="0" <?php if ($option == 0) echo 'selected'; ?>>å…¨éƒ¨</option>
+            <option value="1" <?php if ($option == 1) echo 'selected'; ?>>æ­£å¸¸</option>
+            <option value="2" <?php if ($option == 2) echo 'selected'; ?>>è¶…å‡ºä¸Šé™</option>
+            <option value="3" <?php if ($option == 3) echo 'selected'; ?>>ä½äºä¸‹é™</option>
+        </select>
+    </div>
+    <table id="table_storage" width="100%" border="1" cellspacing="0" cellpadding="5" bordercolor="#9999FF">
+        <thead style="color: #330066">
+        <tr align="center" bordercolor="#9999FF">
+            <td onclick="SortTable('table_storage',0,'string')" style="cursor:pointer">è´§å“ç¼–å·</td>
+            <td onclick="SortTable('table_storage',1,'string')" style="cursor:pointer">è´§å“åç§°</td>
+            <td onclick="SortTable('table_storage',2,'string')" style="cursor:pointer">å‹å·</td>
+            <td onclick="SortTable('table_storage',3,'string')" style="cursor:pointer">å•ä½</td>
+            <td onclick="SortTable('table_storage',4,'int')" style="cursor:pointer">åº“å­˜ä¸Šé™</td>
+            <td onclick="SortTable('table_storage',5,'int')" style="cursor:pointer">åº“å­˜ä¸‹é™</td>
+            <td onclick="SortTable('table_storage',6,'int')" style="cursor:pointer">åº“å­˜é‡</td>
+            <td onclick="SortTable('table_storage',7,'string')" style="cursor:pointer">é¢„è­¦ä¿¡æ¯</td>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        while ($RS = mysql_fetch_array($result_product)) {
+            $sum = 0;
+            $query = "select id from table_warehouse order by id";//echo $query."<br>";
+            $result_warehouse = mysql_query($query);//è·å–ä»“åº“åˆ—è¡¨
+            while ($RS2 = mysql_fetch_array($result_warehouse)) {
+                $query = "select num from table_warehouse_$RS2[id] where id = '$RS[encode]'";//echo $query."<br>";
+                $result_num = mysql_query($query);
+                $RS3 = mysql_fetch_array($result_num);
+                $sum += $RS3['num'];
+            }
+            if ($sum > $RS['upperlimit']) {
+                $string = "è¶…å‡ºä¸Šé™";
+                $color = 'red';
+            } else if ($sum < $RS['lowerlimit']) {
+                $string = "ä½äºä¸‹é™";
+                $color = 'gray';
+            } else {
+                $string = "æ­£å¸¸";
+                $color = 'green';
+            }
 
-function AutomateExcel(){	
-	try{
-		var appExcel = new ActiveXObject( "Excel.Application" ); 
-	}
-	catch(e){
-	  alert("ÎŞ·¨µ÷ÓÃOffice¶ÔÏó£¬ÇëÈ·±£ÄúµÄ»úÆ÷ÒÑ°²×°ÁËOffice²¢ÒÑ½«±¾ÏµÍ³µÄÕ¾µãÃû¼ÓÈëµ½IEµÄĞÅÈÎÕ¾µãÁĞ±íÖĞ£¡");
-	  return;
-	}
-	var elTable = document.getElementById("table_storage"); //outtable Îªµ¼³öÊı¾İËùÔÚµÄ±í¸ñID£»
-	var oRangeRef = document.body.createTextRange(); 
-	
-	oRangeRef.moveToElementText( elTable ); 
-	oRangeRef.execCommand( "Copy" );
-	
-	appExcel.Visible = true; 
-	appExcel.Workbooks.Add().Worksheets.Item(1).Paste(); 
-	appExcel = null;
-}
-function selectitem(){//Ñ¡Ôñ¶ÔÏó
-	//var url = 'item_choose.php';
-	var url = '../../wms/product/showproduct.php?stype=1&mtype=1';
-	window.open(url,'_blank','directorys=no,toolbar=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=853,height=470,top=176,left=161');
-}
-</script>
-  <p>
-  <div>ÆäËü²éÑ¯·½Ê½£º</div>
-  <div> °´ÎïÆ·²éÑ¯£º
-    <input id="item_id" name="item_id" type="text"  style="background-color:#CCCCCC" value="Çëµ¥»÷Ñ¡ÔñÎïÆ·" onclick="selectitem()"/>
-    <button type="button" onclick="if(document.getElementById('item_id').value!='Çëµ¥»÷Ñ¡ÔñÎïÆ·'){url='inquire_storage_item.php?itemid='+document.getElementById('item_id').value;window.open(url,'_self');}">&nbsp;²éÑ¯&nbsp;</button>
-    <input id="item_name" name="item_name" type="text" size="5" style="background-color:#CCCCCC; visibility:hidden"/>
-    <input id="item_model" name="item_model" type="text" size="5" style="background-color:#CCCCCC; visibility:hidden"/>
-    <input id="item_unit" name="item_unit" type="text" size="5" style="background-color:#CCCCCC; visibility:hidden"/>
-  </div>
-  <div> °´²Ö¿â²éÑ¯£º
-    <select id="warehouse" name="warehouse" onchange="if(this.value!='none'){url='inquire_storage_warehouse.php?warehouse='+this.value;window.open(url,'_self')}">
-      <option value='none'>-ÇëÑ¡Ôñ-</option>
-      <?php 
-	$query = "select * from table_warehouse order by name";//echo $query."<br>";
-	$result_warehouse = mysql_query($query);//»ñÈ¡²Ö¿âÁĞ±í
-	
-	while($RS = mysql_fetch_array($result_warehouse))
-		echo "<option value='$RS[id]'>$RS[name]</option>";
-	?>
-    </select>
-  </div>
-  </p>
+            if ($option == 0 || ($option == 1 && $string == "æ­£å¸¸") || ($option == 2 && $string == "è¶…å‡ºä¸Šé™") || ($option == 3 && $string == "ä½äºä¸‹é™")) {
+                echo "<tr align='center' bordercolor='#9999FF'>";
+                echo "<td customvalue='$RS[encode]'><a href='inquire_storage_item.php?itemid=$RS[encode]'>$RS[encode]</a></td>\n";
+                echo "<td>$RS[name]</td>\n";
+                echo "<td>$RS[size]</td>\n";
+                echo "<td>$RS[unit]</td>\n";
+                echo "<td>$RS[upperlimit]</td>\n";
+                echo "<td>$RS[lowerlimit]</td>\n";
+                echo "<td>$sum</td>\n";
+                echo "<td style='color:$color'>$string</td>\n";
+                echo "</tr>";
+            }
+        }
+        ?>
+        </tbody>
+    </table>
+    <p>
+        <input name="" type="button" value="å¯¼å‡ºåˆ°WORD" onclick=" AllAreaWord()"/>
+        <input name="" type="button" value="å¯¼å‡ºåˆ°EXCEL" onclick="AutomateExcel()"/>
+    </p>
+    <script language="javascript">
+        function AllAreaWord() {
+            if (document.all("table_storage").rows.length == 0) {
+                alert("æ²¡æœ‰å†…å®¹å¯å¯¼ï¼");
+                return;
+            }
+            try {
+                var oWD = new ActiveXObject("Word.Application");
+            }
+            catch (e) {
+                alert("æ— æ³•è°ƒç”¨Officeå¯¹è±¡ï¼Œè¯·ç¡®ä¿æ‚¨çš„æœºå™¨å·²å®‰è£…äº†Officeå¹¶å·²å°†æœ¬ç³»ç»Ÿçš„ç«™ç‚¹ååŠ å…¥åˆ°IEçš„ä¿¡ä»»ç«™ç‚¹åˆ—è¡¨ä¸­ï¼");
+                return;
+            }
+            var oDC = oWD.Documents.Add("", 0, 1);
+            var oRange = oDC.Range(0, 1);
+            var sel = document.body.createTextRange();
+            sel.moveToElementText(table_storage); //tab ä¸ºå¯¼å‡ºæ•°æ®æ‰€åœ¨çš„è¡¨æ ¼ID
+            sel.select();
+            sel.execCommand("Copy");
+            oRange.Paste();
+            oWD.Application.Visible = true;
+        }
+
+        function AutomateExcel() {
+            try {
+                var appExcel = new ActiveXObject("Excel.Application");
+            }
+            catch (e) {
+                alert("æ— æ³•è°ƒç”¨Officeå¯¹è±¡ï¼Œè¯·ç¡®ä¿æ‚¨çš„æœºå™¨å·²å®‰è£…äº†Officeå¹¶å·²å°†æœ¬ç³»ç»Ÿçš„ç«™ç‚¹ååŠ å…¥åˆ°IEçš„ä¿¡ä»»ç«™ç‚¹åˆ—è¡¨ä¸­ï¼");
+                return;
+            }
+            var elTable = document.getElementById("table_storage"); //outtable ä¸ºå¯¼å‡ºæ•°æ®æ‰€åœ¨çš„è¡¨æ ¼IDï¼›
+            var oRangeRef = document.body.createTextRange();
+
+            oRangeRef.moveToElementText(elTable);
+            oRangeRef.execCommand("Copy");
+
+            appExcel.Visible = true;
+            appExcel.Workbooks.Add().Worksheets.Item(1).Paste();
+            appExcel = null;
+        }
+
+        function selectitem() {//é€‰æ‹©å¯¹è±¡
+            //var url = 'item_choose.php';
+            var url = '../product/showproduct.php?stype=1&mtype=1';
+            window.open(url, '_blank', 'directorys=no,toolbar=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=853,height=470,top=176,left=161');
+        }
+    </script>
+    <p>
+    <div>å…¶å®ƒæŸ¥è¯¢æ–¹å¼ï¼š</div>
+    <div> æŒ‰ç‰©å“æŸ¥è¯¢ï¼š
+        <input id="item_id" name="item_id" type="text" style="background-color:#CCCCCC" value="è¯·å•å‡»é€‰æ‹©ç‰©å“"
+               onclick="selectitem()"/>
+        <button type="button"
+                onclick="if(document.getElementById('item_id').value!='è¯·å•å‡»é€‰æ‹©ç‰©å“'){url='inquire_storage_item.php?itemid='+document.getElementById('item_id').value;window.open(url,'_self');}">
+            &nbsp;æŸ¥è¯¢&nbsp;
+        </button>
+        <input id="item_name" name="item_name" type="text" size="5"
+               style="background-color:#CCCCCC; visibility:hidden"/>
+        <input id="item_model" name="item_model" type="text" size="5"
+               style="background-color:#CCCCCC; visibility:hidden"/>
+        <input id="item_unit" name="item_unit" type="text" size="5"
+               style="background-color:#CCCCCC; visibility:hidden"/>
+    </div>
+    <div> æŒ‰ä»“åº“æŸ¥è¯¢ï¼š
+        <select id="warehouse" name="warehouse"
+                onchange="if(this.value!='none'){url='inquire_storage_warehouse.php?warehouse='+this.value;window.open(url,'_self')}">
+            <option value='none'>-è¯·é€‰æ‹©-</option>
+            <?php
+            $query = "select * from table_warehouse order by name";//echo $query."<br>";
+            $result_warehouse = mysql_query($query);//è·å–ä»“åº“åˆ—è¡¨
+
+            while ($RS = mysql_fetch_array($result_warehouse))
+                echo "<option value='$RS[id]'>$RS[name]</option>";
+            ?>
+        </select>
+    </div>
+    </p>
 </div>
-</div>
+
 </body>
 </html>

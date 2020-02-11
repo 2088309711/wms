@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 	include "../include.php";
 	include "../database.php";
@@ -11,7 +11,7 @@ $address = $_POST["address"];
 $remark = $_POST["remark"];
 
 if($name=='')//||$fuzeren==''||$phone==''||$address==''||$remark==''
-	$error='Ìá½»µÄ±íµ¥ÓÐÎó£¡';
+	$error='æäº¤çš„è¡¨å•æœ‰è¯¯ï¼';
 else
 {	
 	$query = "select * from table_warehouse where id = '$id'";
@@ -19,13 +19,13 @@ else
 	$RS = mysql_fetch_array($result);
 	
 	if(empty($RS))
-		$error='ID´íÎó£¬ÐèÐÞ¸ÄµÄÄ¿±ê²»´æÔÚ£¡';
+		$error='IDé”™è¯¯ï¼Œéœ€ä¿®æ”¹çš„ç›®æ ‡ä¸å­˜åœ¨ï¼';
 	else{
 		$query = "select * from table_warehouse where name = '$name'";
 		$result = mysql_query($query);
 		$RS = mysql_fetch_array($result);
 		if(!empty($RS)&&($RS['name']!=$name))
-			$error='²Ö¿âÃû³ÆÖØ¸´£¡';
+			$error='ä»“åº“åç§°é‡å¤ï¼';
 	}
 	
 	if($error=='')
@@ -44,17 +44,17 @@ var url;
 if($error=='')
 {
 	if($result == FALSE){
-		echo "alert('ÐÞ¸Ä²Ö¿âÐÅÏ¢Ê§°Ü£¡·µ»Ø²Ö¿âÐÞ¸ÄÒ³Ãæ£¡');";
+		echo "alert('ä¿®æ”¹ä»“åº“ä¿¡æ¯å¤±è´¥ï¼è¿”å›žä»“åº“ä¿®æ”¹é¡µé¢ï¼');";
 		echo "var url = 'warehouse_modify.php?id=".$id."';";
 	}
 	else{
-		echo "alert('ÐÞ¸Ä²Ö¿âÐÅÏ¢³É¹¦£¡·µ»Ø²Ö¿â¹ÜÀí½çÃæ£¡\\n±àºÅ£º $id\\n²Ö¿âÃû³Æ£º $name\\n¸ºÔðÈË£º $fuzeren\\n²Ö¿âµç»°£º $phone\\n²Ö¿âµØÖ·£º $address\\n±¸×¢£º $remark');\n";
+		echo "alert('ä¿®æ”¹ä»“åº“ä¿¡æ¯æˆåŠŸï¼è¿”å›žä»“åº“ç®¡ç†ç•Œé¢ï¼\\nç¼–å·ï¼š $id\\nä»“åº“åç§°ï¼š $name\\nè´Ÿè´£äººï¼š $fuzeren\\nä»“åº“ç”µè¯ï¼š $phone\\nä»“åº“åœ°å€ï¼š $address\\nå¤‡æ³¨ï¼š $remark');\n";
 		echo "var url = 'warehouse_show.php';";
 	}
 }
 else
 {
-	echo "alert('$error ·µ»Ø²Ö¿âÌí¼ÓÒ³Ãæ£¡');";
+	echo "alert('$error è¿”å›žä»“åº“æ·»åŠ é¡µé¢ï¼');";
 	echo "var url = 'warehouse_modify.php?id=".$id."';";
 }
 ?>

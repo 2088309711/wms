@@ -1,11 +1,11 @@
 <?php
-//È¨ÏŞÑéÖ¤¡ª¡ª
+//æƒé™éªŒè¯â€•â€•
 include("../../const.php");
 if ($authority[7]==0){  
-	echo "<script language='javascript'>alert('¶Ô²»Æğ£¬ÄãÃ»ÓĞ´Ë²Ù×÷È¨ÏŞ£¡');history.back();</script>";
+	echo "<script language='javascript'>alert('å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰æ­¤æ“ä½œæƒé™ï¼');history.back();</script>";
 	exit;
 }
-//È¨ÏŞÑéÖ¤¡ª¡ª
+//æƒé™éªŒè¯â€•â€•
 
 	include "../include.php";
 	include "../database.php";
@@ -18,60 +18,60 @@ if ($authority[7]==0){
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>¼ÆÁ¿µ¥Î»¹ÜÀí</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>è®¡é‡å•ä½ç®¡ç†</title>
 </head>
 <script language="javascript">
-//É¾³ıÄ³¸öµ¥Î»¡ª¡ª¡ª¡ª
+//åˆ é™¤æŸä¸ªå•ä½â€•â€•â€•â€•
 function removeUnit(){
 	var x = document.getElementById("unit_list");
 	if(x.selectedIndex != -1){
 		var url = "../sql_delete_bg.php?db=measureunit&id="+x.options[x.selectedIndex].value;
-		if(confirm("È·ÈÏÉ¾³ı£¿")==true)
+		if(confirm("ç¡®è®¤åˆ é™¤ï¼Ÿ")==true)
 		location.href = url;
 	}
 	//alert("deleteOptionLeft() runing!");	
 }
-//É¾³ıÄ³¸öµ¥Î»¡ª¡ª¡ª¡ª
-//¼ì²éµ¥Î»Ãû³ÆÊÇ·ñÎª¿Õ»òÔÚÁĞ±íÖĞÊÇ·ñ´æÔÚ£¬±ÜÃâÎŞÎ½µÄÁ÷Á¿¡ª¡ª¡ª¡ª
+//åˆ é™¤æŸä¸ªå•ä½â€•â€•â€•â€•
+//æ£€æŸ¥å•ä½åç§°æ˜¯å¦ä¸ºç©ºæˆ–åœ¨åˆ—è¡¨ä¸­æ˜¯å¦å­˜åœ¨ï¼Œé¿å…æ— è°“çš„æµé‡â€•â€•â€•â€•
 function checkForm(){
 	var x = document.getElementById("unit_list");
 	var y = document.getElementById("name");
 	if(y.value == ''){
-		alert("¼ÆÁ¿µ¥Î»Ãû³Æ²»Îª¿Õ£¡");
+		alert("è®¡é‡å•ä½åç§°ä¸ä¸ºç©ºï¼");
 		return false;
 	}
 	for(var i=0;i<x.length;i++)
 		if(y.value == x.options[i].text){
-			alert("¸Ã¼ÆÁ¿µ¥Î»ÒÑ´æÔÚ£¡");
+			alert("è¯¥è®¡é‡å•ä½å·²å­˜åœ¨ï¼");
 			return false;
 		}
 	return true;
 	//alert("deleteOptionLeft() runing!");	
 }
-//¼ì²éµ¥Î»Ãû³ÆÊÇ·ñÎª¿Õ»òÔÚÁĞ±íÖĞÊÇ·ñ´æÔÚ£¬±ÜÃâÎŞÎ½µÄÁ÷Á¿¡ª¡ª¡ª¡ª
+//æ£€æŸ¥å•ä½åç§°æ˜¯å¦ä¸ºç©ºæˆ–åœ¨åˆ—è¡¨ä¸­æ˜¯å¦å­˜åœ¨ï¼Œé¿å…æ— è°“çš„æµé‡â€•â€•â€•â€•
 </script>
 <body style="width:800px">
-<h3>¼ÆÁ¿µ¥Î»/Á¿´Ê¹ÜÀí</h3>
+<h3>è®¡é‡å•ä½/é‡è¯ç®¡ç†</h3>
 <form id="unitForm" name="unitForm" method="post" action="measureunit_add_bg.php" onsubmit="return checkForm()">
   <table border="1" cellpadding="5" cellspacing="0" bordercolor="#CC99FF">
     <tr valign="top" align="left">
-      <td>ÏÖÓĞµ¥Î»£º</td>
+      <td>ç°æœ‰å•ä½ï¼š</td>
       <td>
         <select id="unit_list" name="unit_list" size="10" ondblclick="removeUnit()">
           <?php while($RS=mysql_fetch_array($result)) echo "<option value='$RS[id]'>$RS[name]</option>"; ?>
         </select></td>
       <td>&nbsp;
         <input id="name" name="name" type="text" size="5" />
-        <input name="add" type="submit" value="Ìí¼Ó" /></td>
+        <input name="add" type="submit" value="æ·»åŠ " /></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td><input name="remove" type="button" id="remove" value="É¾³ı" onClick="removeUnit()"/></td>
+      <td><input name="remove" type="button" id="remove" value="åˆ é™¤" onClick="removeUnit()"/></td>
       <td>&nbsp;</td>
     </tr>
   </table>
 </form>
-<p><a href="">·µ»ØÉÏÒ»Ò³</a></p>
+<p><a href="">è¿”å›ä¸Šä¸€é¡µ</a></p>
 </body>
 </html>

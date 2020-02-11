@@ -1,7 +1,9 @@
-<?php 
-session_start();
-if(!isset($_SESSION[username]))
-	echo "<script>alert('ƒ˙Œﬁ»®∑√Œ ');location='index.php';</script>";
-if($_SERVER['HTTP_REFERER'] == "")
-	echo "<script>alert('±æœµÕ≥≤ª‘ –Ì¥”µÿ÷∑¿∏∑√Œ ');window.close();</script>";
-?>
+<?php
+include(__DIR__ . "/func.php");
+
+if (!isset($_SESSION['username'])) {
+    show_msg('ÊÇ®Êó†ÊùÉËÆøÈóÆ', 'index.php');
+}
+if ($_SERVER['HTTP_REFERER'] == "") {
+    show_msg('Êú¨Á≥ªÁªü‰∏çÂÖÅËÆ∏‰ªéÂú∞ÂùÄÊ†èËÆøÈóÆ', 'close');
+}

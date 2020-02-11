@@ -3,20 +3,20 @@
 function AllAreaWord() 
 {
 	if(document.all("table_storage").rows.length==0){
-		alert("Ã»ÓÐÄÚÈÝ¿Éµ¼£¡");
+		alert("æ²¡æœ‰å†…å®¹å¯å¯¼ï¼");
 		return;
 	}
 	try{
 		var oWD = new ActiveXObject("Word.Application"); 
 	}
 	catch(e){
-		alert("ÎÞ·¨µ÷ÓÃOffice¶ÔÏó£¬ÇëÈ·±£ÄúµÄ»úÆ÷ÒÑ°²×°ÁËOffice²¢ÒÑ½«±¾ÏµÍ³µÄÕ¾µãÃû¼ÓÈëµ½IEµÄÐÅÈÎÕ¾µãÁÐ±íÖÐ£¡");
+		alert("æ— æ³•è°ƒç”¨Officeå¯¹è±¡ï¼Œè¯·ç¡®ä¿æ‚¨çš„æœºå™¨å·²å®‰è£…äº†Officeå¹¶å·²å°†æœ¬ç³»ç»Ÿçš„ç«™ç‚¹ååŠ å…¥åˆ°IEçš„ä¿¡ä»»ç«™ç‚¹åˆ—è¡¨ä¸­ï¼");
 		return;
 	}
 	var oDC = oWD.Documents.Add("",0,1); 
 	var oRange =oDC.Range(0,1); 
 	var sel = document.body.createTextRange(); 
-	sel.moveToElementText(table_storage); //tab Îªµ¼³öÊý¾ÝËùÔÚµÄ±í¸ñID
+	sel.moveToElementText(table_storage); //tab ä¸ºå¯¼å‡ºæ•°æ®æ‰€åœ¨çš„è¡¨æ ¼ID
 	sel.select(); 
 	sel.execCommand("Copy"); 
 	oRange.Paste(); 
@@ -27,10 +27,10 @@ function AutomateExcel(){
 		var appExcel = new ActiveXObject( "Excel.Application" ); 
 	}
 	catch(e){
-	  alert("ÎÞ·¨µ÷ÓÃOffice¶ÔÏó£¬ÇëÈ·±£ÄúµÄ»úÆ÷ÒÑ°²×°ÁËOffice²¢ÒÑ½«±¾ÏµÍ³µÄÕ¾µãÃû¼ÓÈëµ½IEµÄÐÅÈÎÕ¾µãÁÐ±íÖÐ£¡");
+	  alert("æ— æ³•è°ƒç”¨Officeå¯¹è±¡ï¼Œè¯·ç¡®ä¿æ‚¨çš„æœºå™¨å·²å®‰è£…äº†Officeå¹¶å·²å°†æœ¬ç³»ç»Ÿçš„ç«™ç‚¹ååŠ å…¥åˆ°IEçš„ä¿¡ä»»ç«™ç‚¹åˆ—è¡¨ä¸­ï¼");
 	  return;
 	}
-	var elTable = document.getElementById("table_storage"); //outtable Îªµ¼³öÊý¾ÝËùÔÚµÄ±í¸ñID£»
+	var elTable = document.getElementById("table_storage"); //outtable ä¸ºå¯¼å‡ºæ•°æ®æ‰€åœ¨çš„è¡¨æ ¼IDï¼›
 	var oRangeRef = document.body.createTextRange(); 
 	
 	oRangeRef.moveToElementText( elTable ); 
@@ -43,26 +43,26 @@ function AutomateExcel(){
 //-->
 </SCRIPT>
 
-<input type="button" name="tab" onClick="AutomateExcel();" value="µ¼³öµ½excel" class="notPrint">
+<input type="button" name="tab" onClick="AutomateExcel();" value="å¯¼å‡ºåˆ°excel" class="notPrint">
 <table border="1" cellpadding="0" cellspacing="0" id=outtable>
   <tr height="28">
-    <td width="27" height="86" rowspan="4" bgcolor="#ffffcc">ÐòºÅ</td>
-    <td width="111" rowspan="4" bgcolor="#ffffcc"><div align="center">·þÎñÍøµã</div></td>
-    <td width="402" colspan="7" bgcolor="#ffffcc"><div align="center">ÓÃ»§ÂúÒâ¶È</div></td>
+    <td width="27" height="86" rowspan="4" bgcolor="#ffffcc">åºå·</td>
+    <td width="111" rowspan="4" bgcolor="#ffffcc"><div align="center">æœåŠ¡ç½‘ç‚¹</div></td>
+    <td width="402" colspan="7" bgcolor="#ffffcc"><div align="center">ç”¨æˆ·æ»¡æ„åº¦</div></td>
   </tr>
   <tr height="19">
-    <td width="100" height="39" colspan="3" rowspan="2" bgcolor="#ffffcc"><div align="center">Ñù±¾ÊýÁ¿</div></td>
-    <td width="218" colspan="3" rowspan="2" bgcolor="#ffffcc">¶Ô¸Ã·þÎñÍøµãÊµÊ©±¾´Î»î¶¯µÄÕûÌåÆÀ¼Û£¬Âú·Ö10·Ö£¨Æ½¾ù·ÖÊý£©</td>
-    <td width="84" rowspan="3" bgcolor="#ffffcc"><div align="center">¼¾¶ÈÆ½¾ù·Ö</div></td>
+    <td width="100" height="39" colspan="3" rowspan="2" bgcolor="#ffffcc"><div align="center">æ ·æœ¬æ•°é‡</div></td>
+    <td width="218" colspan="3" rowspan="2" bgcolor="#ffffcc">å¯¹è¯¥æœåŠ¡ç½‘ç‚¹å®žæ–½æœ¬æ¬¡æ´»åŠ¨çš„æ•´ä½“è¯„ä»·ï¼Œæ»¡åˆ†10åˆ†ï¼ˆå¹³å‡åˆ†æ•°ï¼‰</td>
+    <td width="84" rowspan="3" bgcolor="#ffffcc"><div align="center">å­£åº¦å¹³å‡åˆ†</div></td>
   </tr>
   <tr height="20"> </tr>
   <tr height="19">
-    <td width="29" height="19" bgcolor="#ffffcc"><div align="center">4ÔÂ</div></td>
-    <td width="29" bgcolor="#ffffcc"><div align="center">5ÔÂ</div></td>
-    <td width="42" bgcolor="#ffffcc"><div align="center">ºÏ¼Æ</div></td>
-    <td width="68" bgcolor="#ffffcc"><div align="center">4ÔÂ</div></td>
-    <td width="68" bgcolor="#ffffcc"><div align="center">5ÔÂ</div></td>
-    <td width="82" bgcolor="#ffffcc"><div align="center">ºÏ¼Æ</div></td>
+    <td width="29" height="19" bgcolor="#ffffcc"><div align="center">4æœˆ</div></td>
+    <td width="29" bgcolor="#ffffcc"><div align="center">5æœˆ</div></td>
+    <td width="42" bgcolor="#ffffcc"><div align="center">åˆè®¡</div></td>
+    <td width="68" bgcolor="#ffffcc"><div align="center">4æœˆ</div></td>
+    <td width="68" bgcolor="#ffffcc"><div align="center">5æœˆ</div></td>
+    <td width="82" bgcolor="#ffffcc"><div align="center">åˆè®¡</div></td>
   </tr>
   <tr>
     <td>&nbsp;</td>

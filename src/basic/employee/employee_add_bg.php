@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 	include "../include.php";
 	include "../database.php";
@@ -11,7 +11,7 @@ $address = $_POST["address"];
 $depart = $_POST["depart"];
 
 if($name==''||$gender==''||$job==''||$phone==''||$address==''||$depart=='')
-	$error='Ìá½»µÄ±íµ¥ÓÐÎó£¡';
+	$error='æäº¤çš„è¡¨å•æœ‰è¯¯ï¼';
 else
 {
 	$date = date("ymd");
@@ -28,7 +28,7 @@ else
 			$RS = mysql_fetch_array($result);
 		}
 		else{
-			$error='±àºÅÒç³ö£¡';
+			$error='ç¼–å·æº¢å‡ºï¼';
 			break;
 		}	
 	}
@@ -47,17 +47,17 @@ var url;
 if($error=='')
 {
 	if($result == FALSE){
-		echo "alert('Ìí¼ÓÔ±¹¤Ê§°Ü£¡·µ»ØÔ±¹¤Ìí¼ÓÒ³Ãæ£¡');";
+		echo "alert('æ·»åŠ å‘˜å·¥å¤±è´¥ï¼è¿”å›žå‘˜å·¥æ·»åŠ é¡µé¢ï¼');";
 		echo "var url = 'employee_add.php';";
 	}
 	else{
-		echo "alert('Ìí¼ÓÔ±¹¤³É¹¦£¡·µ»ØÔ±¹¤¹ÜÀí½çÃæ£¡\\n±àºÅ£º $id\\nÐÕÃû£º $name\\nÐÔ±ð£º $gender\\nÖ°Î»£º $job\\nÊÖ»ú£º $phone\\n×¡Ö·£º $address\\nËùÊô²¿ÃÅ£º $depart');\n";
+		echo "alert('æ·»åŠ å‘˜å·¥æˆåŠŸï¼è¿”å›žå‘˜å·¥ç®¡ç†ç•Œé¢ï¼\\nç¼–å·ï¼š $id\\nå§“åï¼š $name\\næ€§åˆ«ï¼š $gender\\nèŒä½ï¼š $job\\næ‰‹æœºï¼š $phone\\nä½å€ï¼š $address\\næ‰€å±žéƒ¨é—¨ï¼š $depart');\n";
 		echo "var url = 'employee_show.php';";
 	}
 }
 else
 {
-	echo "alert('$error ·µ»ØÔ±¹¤Ìí¼ÓÒ³Ãæ£¡');";
+	echo "alert('$error è¿”å›žå‘˜å·¥æ·»åŠ é¡µé¢ï¼');";
 	echo "var url = 'employee_add.php';";
 }
 ?>

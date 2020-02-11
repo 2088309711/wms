@@ -9,7 +9,7 @@ if($id!="")
        $sql=mysql_query("select * from tb_inout where id='".$id."'",$conn);
       $info=mysql_fetch_array($sql);
 	  mysql_query("update tb_inout set type='$type',cost='$cost' where id='".$id."'",$conn);
-	  echo "<script>alert('ĞŞ¸Ä³É¹¦!');window.location='inoutsetting.php';</script>";
+	  echo "<script>alert('ä¿®æ”¹æˆåŠŸ!');window.location='inoutsetting.php';</script>";
 }
 else
 { 
@@ -17,13 +17,13 @@ else
    $info=mysql_fetch_array($sql);
    if($info==true)
    {
-      echo "<script>alert('¸ÃÀà±ğÒÑ¾­´æÔÚ!');history.back();</script>";
+      echo "<script>alert('è¯¥ç±»åˆ«å·²ç»å­˜åœ¨!');history.back();</script>";
       exit;
 	}
 	else
 	{
 	    mysql_query("insert into tb_inout(type,name,cost) values('$type','$name','$cost')",$conn);
-	    echo "<script>alert('Ìí¼Ó³É¹¦!');history.back();</script>";
+	    echo "<script>alert('æ·»åŠ æˆåŠŸ!');history.back();</script>";
 	 }
 }
 

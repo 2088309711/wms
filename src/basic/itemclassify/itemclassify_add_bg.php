@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <?php
 	include "../include.php";
@@ -11,14 +11,14 @@ if($name == '')
 $lowerclass = $_POST["lowerclass"];
 
 if($id==''||$name=='')//||$contact==''||$phone==''||$fax==''||...
-	$error='Ìá½»µÄ±íµ¥ÓÐÎó£¡';
+	$error='æäº¤çš„è¡¨å•æœ‰è¯¯ï¼';
 else{	
 	$query = "select * from table_itemclassify where name = '$name'";
 	$result = mysql_query($query);
 	$RS = mysql_fetch_array($result);
 	
 	if(!empty($RS))
-		$error="¸ÃÃû³ÆÒÑ´æÔÚ£¡";
+		$error="è¯¥åç§°å·²å­˜åœ¨ï¼";
 	
 	$query = "select * from table_itemclassify where id = '$id'";
 	$result = mysql_query($query);
@@ -33,7 +33,7 @@ else{
 		}
 		else
 		{
-			$error='±àºÅÒç³ö£¡';
+			$error='ç¼–å·æº¢å‡ºï¼';
 			break;
 		}
 	}	
@@ -52,11 +52,11 @@ var url;
 if($error=='')
 {
 	if($result == FALSE){
-		echo "alert('Ìí¼ÓÊ§°Ü£¡');";
+		echo "alert('æ·»åŠ å¤±è´¥ï¼');";
 		echo "var url = 'itemclassify_show.php';";
 	}
 	else{
-		echo "alert('Ìí¼Ó³É¹¦£¡\\n±àºÅ£º $id\\n·ÖÀàÃû³Æ£º $name\\n');\n";
+		echo "alert('æ·»åŠ æˆåŠŸï¼\\nç¼–å·ï¼š $id\\nåˆ†ç±»åç§°ï¼š $name\\n');\n";
 		echo "var url = 'itemclassify_show.php';";
 	}
 }

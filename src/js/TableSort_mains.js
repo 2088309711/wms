@@ -11,29 +11,29 @@ function SortTable(TableID,Col,DataType){
 	for(var i=0;i<DataRows.length;i++){ 
 		MyArr[i]=DataRows[i]; 
 	} 
-	//ÅÐ¶ÏÉÏ´ÎÅÅÐòµÄÁÐºÍÕâ´ÎÊÇ·ñÎªÍ¬Ò»ÁÐ 
+	//åˆ¤æ–­ä¸Šæ¬¡æŽ’åºçš„åˆ—å’Œè¿™æ¬¡æ˜¯å¦ä¸ºåŒä¸€åˆ— 
 	if(DBody.CurrentCol==Col){ 
-		MyArr.reverse(); //½«Êý×éµ¹ÖÃ 
+		MyArr.reverse(); //å°†æ•°ç»„å€’ç½® 
 	} 
 	else{ 
 		MyArr.sort(CustomCompare(Col,DataType)); 
 	} 
-//´´½¨Ò»¸öÎÄµµËéÆ¬£¬½«ËùÓÐµÄÐÐ¶¼Ìí¼Ó½øÈ¥£¬Ïàµ±ÓÚÒ»¸öÔÝ´æ¼Ü£¬Ä¿µÄÊÇ£¨Èç¹ûÖ±½Ó¼Óµ½document.bodyÀïÃæ£¬»á²åÈëÒ»ÐÐ£¬¾ÍË¢ÐÂÒ»´Î£¬Èç¹ûÊý¾Ý¶àÁË¾Í»áÓ°ÏìÓÃ»§ÌåÑé£© 
-//ÏÈ½«ÐÐÈ«²¿·ÅÔÚÔÝ´æ¼ÜÀïÃæ£¬È»ºó½«ÔÝ´æ¼ÜÀïÃæµÄÐÐ Ò»ÆðÌí¼Óµ½document.body£¬ÕâÑù±í¸ñÖ»»áË¢ÐÂÒ»´Î¡£ 
-//¾ÍÏñÄãÈ¥ÉÌµê¹ºÎï£¬ÒªÏÈ½«ÒªÂòµÄÎïÆ·£¨ÐÐ£©È«²¿Ð´ÔÚµ¥×ÓÉÏ£¨ÎÄµµËéÆ¬£©£¬È»ºó³¬ÊÐÈ«²¿¹ºÂò£¬¶ø²»»áÏëµ½Ò»Ñù¶«Î÷¾ÍÈ¥Ò»´Î£¬ÄÇÃ´ 
+//åˆ›å»ºä¸€ä¸ªæ–‡æ¡£ç¢Žç‰‡ï¼Œå°†æ‰€æœ‰çš„è¡Œéƒ½æ·»åŠ è¿›åŽ»ï¼Œç›¸å½“äºŽä¸€ä¸ªæš‚å­˜æž¶ï¼Œç›®çš„æ˜¯ï¼ˆå¦‚æžœç›´æŽ¥åŠ åˆ°document.bodyé‡Œé¢ï¼Œä¼šæ’å…¥ä¸€è¡Œï¼Œå°±åˆ·æ–°ä¸€æ¬¡ï¼Œå¦‚æžœæ•°æ®å¤šäº†å°±ä¼šå½±å“ç”¨æˆ·ä½“éªŒï¼‰ 
+//å…ˆå°†è¡Œå…¨éƒ¨æ”¾åœ¨æš‚å­˜æž¶é‡Œé¢ï¼Œç„¶åŽå°†æš‚å­˜æž¶é‡Œé¢çš„è¡Œ ä¸€èµ·æ·»åŠ åˆ°document.bodyï¼Œè¿™æ ·è¡¨æ ¼åªä¼šåˆ·æ–°ä¸€æ¬¡ã€‚ 
+//å°±åƒä½ åŽ»å•†åº—è´­ç‰©ï¼Œè¦å…ˆå°†è¦ä¹°çš„ç‰©å“ï¼ˆè¡Œï¼‰å…¨éƒ¨å†™åœ¨å•å­ä¸Šï¼ˆæ–‡æ¡£ç¢Žç‰‡ï¼‰ï¼Œç„¶åŽè¶…å¸‚å…¨éƒ¨è´­ä¹°ï¼Œè€Œä¸ä¼šæƒ³åˆ°ä¸€æ ·ä¸œè¥¿å°±åŽ»ä¸€æ¬¡ï¼Œé‚£ä¹ˆ 
 	var frag=document.createDocumentFragment(); 
 	for(var i=0;i<MyArr.length;i++){ 
-		frag.appendChild(MyArr[i]); //½«Êý×éÀïµÄÐÐÈ«²¿Ìí¼Óµ½ÎÄµµËéÆ¬ÖÐ 
+		frag.appendChild(MyArr[i]); //å°†æ•°ç»„é‡Œçš„è¡Œå…¨éƒ¨æ·»åŠ åˆ°æ–‡æ¡£ç¢Žç‰‡ä¸­ 
 	} 
-	DBody.appendChild(frag);//½«ÎÄµµËéÆ¬ÖÐµÄÐÐÈ«²¿Ìí¼Óµ½ bodyÖÐ 
-	DBody.CurrentCol=Col; //¼ÇÂ¼ÏÂµ±Ç°ÅÅÐòµÄÁÐ 
+	DBody.appendChild(frag);//å°†æ–‡æ¡£ç¢Žç‰‡ä¸­çš„è¡Œå…¨éƒ¨æ·»åŠ åˆ° bodyä¸­ 
+	DBody.CurrentCol=Col; //è®°å½•ä¸‹å½“å‰æŽ’åºçš„åˆ— 
 } 
 
-//×Ô¶¨ÒåµÄÅÅÐò·½Ê½
+//è‡ªå®šä¹‰çš„æŽ’åºæ–¹å¼
 function CustomCompare(Col,DataType){ 
 	return function CompareTRs(TR1,TR2){ 
 		var value1,value2; 
-		//ÅÐ¶ÏÊÇ²»ÊÇÓÐcustomvalueÕâ¸öÊôÐÔ 
+		//åˆ¤æ–­æ˜¯ä¸æ˜¯æœ‰customvalueè¿™ä¸ªå±žæ€§ 
 		if(TR1.cells[Col].getAttribute("customvalue")){ 
 			value1=convert(TR1.cells[Col].getAttribute("customvalue"),DataType); 
 			value2=convert(TR2.cells[Col].getAttribute("customvalue"),DataType); 
@@ -50,7 +50,7 @@ function CustomCompare(Col,DataType){
 			return 0; 
 	}; 
 } 
-//¸ñÊ½×ª»»
+//æ ¼å¼è½¬æ¢
 function convert(DataValue,DataType){ 
 	switch(DataType){ 
 		case "int": 

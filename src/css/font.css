@@ -17,7 +17,7 @@ TD,TH {
 	FONT-SIZE:12px; COLOR: #006699;
 }
 .buttoncss {
-    font-family: "Tahoma", "ËÎÌå";
+    font-family: "Tahoma", "å®‹ä½“";
     font-size: 9pt; color: #003399;
     border: 1px #003399 solid;
     color:006699;
@@ -33,7 +33,7 @@ TD,TH {
 .inputcss {  
     font-size: 9pt; 
     color: #003399; 
-    font-family: "ËÎÌå"; 
+    font-family: "å®‹ä½“"; 
     font-style: normal; 	
     border-color: #93BEE2 #93BEE2 #93BEE2 #93BEE2 ; 
     border: 1px #93BEE2 solid; 
@@ -41,7 +41,7 @@ TD,TH {
 .inputcssnull {  
     font-size: 9pt; 
     color: #003399; 
-    font-family: "ËÎÌå"; 
+    font-family: "å®‹ä½“"; 
     font-style: normal; 	
     border: 0px #93BEE2 solid; 
 }

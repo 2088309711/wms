@@ -11,7 +11,7 @@
    
   if ($authority[18]==0)
  {  
-      echo "<script language='javascript'>alert('¶Ô²»Æğ£¬ÄãÃ»ÓĞ´Ë²Ù×÷È¨ÏŞ£¡');history.back();</script>";
+      echo "<script language='javascript'>alert('å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰æ­¤æ“ä½œæƒé™ï¼');history.back();</script>";
       exit;
   }
 ?>
@@ -21,7 +21,7 @@ function chkinput(form)
 	{
 	  if(form.adminname.value=="")
 	   {
-	     alert("ÇëÊäÈëÓÃ»§Ãû!");
+	     alert("è¯·è¾“å…¥ç”¨æˆ·å!");
 		 form.adminname.select();
 		 return(false);
 	   }
@@ -62,7 +62,7 @@ function chAll(name,flag)
 <table width="853" border="1" cellpadding="0" cellspacing="0" class="big_td">
 	<tr>
 		<td width="46" height="33" background="../iages/list.jpg" id="list">&nbsp;</td>
-	    <td width="841" background="../images/list.jpg" id="list">²Ù×÷Ô±ÉèÖÃ</td>
+	    <td width="841" background="../images/list.jpg" id="list">æ“ä½œå‘˜è®¾ç½®</td>
 	</tr>
 </table>
 <form name="form" method="post" action="saveadmin.php?flag=0" onSubmit="return chkinput(this)">
@@ -87,19 +87,19 @@ function chAll(name,flag)
 		   $auth=explode(",",$info[authority]);
 		  
 	 ?>
-    <td width="827" height="49" align="left" valign="top" scope="col"><label>ÓÃ»§Ãû£º
+    <td width="827" height="49" align="left" valign="top" scope="col"><label>ç”¨æˆ·åï¼š
         <span class="STYLE1">
         <input name="adminname" type="text" value="<?php echo $info[name];?>" class="big_td" />
-        </span></label><label>ÃÜÂë£º
+        </span></label><label>å¯†ç ï¼š
         <input type="password" name="pwd" />
-        <a href="addadmin.php" target="_self"><img src="../images/adduser.jpg" alt="Ìí¼ÓÓÃ»§" width="30" height="30" border="3" /></a>Ìí¼ÓĞÂÓÃ»§        <br />
+        <a href="addadmin.php" target="_self"><img src="../images/adduser.jpg" alt="æ·»åŠ ç”¨æˆ·" width="30" height="30" border="3" /></a>æ·»åŠ æ–°ç”¨æˆ·        <br />
      </label></td>
   </tr>
   <tr>
     <td height="5" align="left" valign="top" scope="col"><img src="../images/line.gif" width="600" height="4" /></td>
   </tr>
   <tr>
-    <td height="10" align="left" valign="top" scope="col"><label><span class="STYLE1">È¨ÏŞ</span><br />
+    <td height="10" align="left" valign="top" scope="col"><label><span class="STYLE1">æƒé™</span><br />
     </label>
       <label></label></td>
   </tr>
@@ -108,83 +108,83 @@ function chAll(name,flag)
       <tr>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>" <?php if($auth[0] == 1){ ?>checked="checked" <?php } ?>/>
-          ÍùÀ´µ¥Î»¹ÜÀí</label></td>
+          å¾€æ¥å•ä½ç®¡ç†</label></td>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>"<?php if($auth[1] == 1){ ?>checked="checked" <?php } ?>/>
-          ²¿ÃÅÉèÖÃ</label>
+          éƒ¨é—¨è®¾ç½®</label>
         </td>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>" <?php if($auth[2] == 1){ ?>checked="checked" <?php } ?>/>
-          Ô±¹¤¹ÜÀí</label></td>
+          å‘˜å·¥ç®¡ç†</label></td>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>" <?php if($auth[3] == 1){ ?>checked="checked" <?php } ?>/>
-          ²Ö¿âÉèÖÃ</label></td>
+          ä»“åº“è®¾ç½®</label></td>
       </tr>
       <tr>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>"<?php if($auth[4] == 1){ ?>checked="checked" <?php } ?>/>
-          ³öÈë¿â·ÖÀà</label></td>
+          å‡ºå…¥åº“åˆ†ç±»</label></td>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>"<?php if($auth[5] == 1){ ?>checked="checked" <?php } ?>/>
-          »õÆ··ÖÀà¹ÜÀí</label></td>
+          è´§å“åˆ†ç±»ç®¡ç†</label></td>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>"<?php if($auth[6] == 1){ ?>checked="checked" <?php } ?>/>
-          »õÆ·ĞÅÏ¢¹ÜÀí</label></td>
+          è´§å“ä¿¡æ¯ç®¡ç†</label></td>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>"<?php if($auth[7] == 1){ ?>checked="checked" <?php } ?> />
-          ¼ÆÁ¿µ¥Î»¹ÜÀí</label></td>
+          è®¡é‡å•ä½ç®¡ç†</label></td>
       </tr>
       <tr>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>" <?php if($auth[8] == 1){ ?>checked="checked" <?php } ?>/>
-          Èë¿â¹ÜÀí</label></td>
+          å…¥åº“ç®¡ç†</label></td>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>"<?php if($auth[9] == 1){ ?>checked="checked" <?php } ?>/>
-          ³ö¿â¹ÜÀí</label>
+          å‡ºåº“ç®¡ç†</label>
         </td>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>"<?php if($auth[10] == 1){ ?>checked="checked" <?php } ?>/>
-          ¿â´æµ÷²¦</label></td>
+          åº“å­˜è°ƒæ‹¨</label></td>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>"<?php if($auth[11] == 1){ ?>checked="checked" <?php } ?>/>
-          ¿â´æÅÌµã</label></td>
+          åº“å­˜ç›˜ç‚¹</label></td>
       </tr>
       <tr>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>" <?php if($auth[12] == 1){ ?>checked="checked" <?php } ?>/>
-          ¿â´æ²éÑ¯</label></td>
+          åº“å­˜æŸ¥è¯¢</label></td>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>" <?php if($auth[13] == 1){ ?>checked="checked" <?php } ?>/>
-          ¿â´æÔ¤¾¯</label></td>
+          åº“å­˜é¢„è­¦</label></td>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>"<?php if($auth[14] == 1){ ?>checked="checked" <?php } ?>/>
-          Èë¿âÍ³¼Æ</label></td>
+          å…¥åº“ç»Ÿè®¡</label></td>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>"<?php if($auth[15] == 1){ ?>checked="checked" <?php } ?>/>
-          ³ö¿âÍ³¼Æ</label></td>
+          å‡ºåº“ç»Ÿè®¡</label></td>
       </tr>
       <tr>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>"<?php if($auth[16] == 1){ ?>checked="checked" <?php } ?>/>
-          µ÷²¦Í³¼Æ</label></td>
+          è°ƒæ‹¨ç»Ÿè®¡</label></td>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>" <?php if($auth[17] == 1){ ?>checked="checked" <?php } ?>/>
-          ÅÌµãÍ³¼Æ</label>
+          ç›˜ç‚¹ç»Ÿè®¡</label>
         </td>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>" <?php if($auth[18] == 1){ ?>checked="checked" <?php } ?>/>
-          ²Ù×÷ÓÃ»§ÉèÖÃ</label></td>
+          æ“ä½œç”¨æˆ·è®¾ç½®</label></td>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>"<?php if($auth[19] == 1){ ?>checked="checked" <?php } ?>/>
-          Êı¾İ±¸·İ</label></td>
+          æ•°æ®å¤‡ä»½</label></td>
       </tr>
       <tr>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>"<?php if($auth[20] == 1){ ?>checked="checked" <?php } ?>/>
-          Êı¾İ»Ö¸´</label></td>
+          æ•°æ®æ¢å¤</label></td>
         <td><label>
           <input name="auth[]" type="checkbox" class="big_td" value="<?php echo $i++;?>"<?php if($auth[21] == 1){ ?>checked="checked" <?php } ?>/>
-          ²é¿´ÏµÍ³²Ù×÷ÈÕÖ¾</label></td>
+          æŸ¥çœ‹ç³»ç»Ÿæ“ä½œæ—¥å¿—</label></td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
       </tr>
@@ -192,20 +192,20 @@ function chAll(name,flag)
   </tr>
   <tr>
     <td height="33" colspan="3" align="left" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     ÊÇ·ñÆôÓÃ
+     æ˜¯å¦å¯ç”¨
       <select name="state">
-         <option value="1"  <?php if($info[state]==1 ){ ?>selected="selected"<?php } ?>>ÆôÓÃ</option>
-         <option value="0" <?php if($info[state]==0 ){?>selected="selected"<?php } ?>>Í£ÓÃ</option>
-		 <option value="2" >É¾³ı</option>
+         <option value="1"  <?php if($info[state]==1 ){ ?>selected="selected"<?php } ?>>å¯ç”¨</option>
+         <option value="0" <?php if($info[state]==0 ){?>selected="selected"<?php } ?>>åœç”¨</option>
+		 <option value="2" >åˆ é™¤</option>
       </select>
       <label>
       <input type="checkbox" name="choall" value="checkbox" onclick="chAll('auth[]',this.checked)" />
-      È«Ñ¡/È«²»Ñ¡ </label></td>
+      å…¨é€‰/å…¨ä¸é€‰ </label></td>
   </tr>
   <tr>
     <td height="34" colspan="3" align="center" valign="middle">
-      <input type="submit" name="Submit" value="Ìá½»" />
-      <input name="button" type="button" onclick="javascript:window.open('adminsetting.php?name=<?php echo $name;?>', '_self')" value="È¡Ïû" />   </td>
+      <input type="submit" name="Submit" value="æäº¤" />
+      <input name="button" type="button" onclick="javascript:window.open('adminsetting.php?name=<?php echo $name;?>', '_self')" value="å–æ¶ˆ" />   </td>
   </tr>
   <tr>
     <td height="67" colspan="3" align="center" valign="middle">&nbsp;</td>

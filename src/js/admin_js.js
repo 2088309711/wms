@@ -1,18 +1,18 @@
 // JavaScript Document
-//µÇÂ¼Ò³ÃæÑéÖ¤
+//ç™»å½•é¡µé¢éªŒè¯
 function check(){
 	if(login.username.value==""){
-		alert("ÇëÊäÈëÓÃ»§Ãû!!");
+		alert("è¯·è¾“å…¥ç”¨æˆ·å!!");
 		login.username.focus();
 		return false;		
 	}
 	if(login.pwd.value==""){
-		alert("ÇëÊäÈëÃÜÂë!!");
+		alert("è¯·è¾“å…¥å¯†ç !!");
 		login.pwd.focus();
 		return false;
 	}
 }
-//leftÏÂÀ­²Ëµ¥
+//leftä¸‹æ‹‰èœå•
 function clickList() {
   var targetId, srcElement, targetElement;
   srcElement = window.event.srcElement;
@@ -26,76 +26,76 @@ function clickList() {
      }
   }
 }
-//Ìí¼Ó²¿ÃÅÒ³ÃæÑéÖ¤
+//æ·»åŠ éƒ¨é—¨é¡µé¢éªŒè¯
 function a_check(){
 	if(	document.a_depart.d_name.value == ""){
-			alert("ÇëÊäÈë²¿ÃÅÃû³Æ");
+			alert("è¯·è¾“å…¥éƒ¨é—¨åç§°");
 			document.a_depart.d_name.focus();
 			return false;
 		}
 }
-//¶¯Ì¬ÏÂÀ­²Ëµ¥
+//åŠ¨æ€ä¸‹æ‹‰èœå•
 function ShowTR(objImg,objTr)
 {
 	if(objTr.style.display == "block")
 	{
 		objTr.style.display = "none";
 		objImg.src="../Images/jia.gif";
-		objImg.alt = "Õ¹¿ª";		
+		objImg.alt = "å±•å¼€";		
 	}
 	else
 	{
 		objTr.style.display = "block";
 		objImg.src="../Images/jian.gif";
-		objImg.alt = "ÕÛµş";		
+		objImg.alt = "æŠ˜å ";		
 	}
 }
-//É¾³ıÈ·ÈÏ
+//åˆ é™¤ç¡®è®¤
 function cfm(){
-	if(confirm('È·ÈÏÒªÉ¾³ı²¿ÃÅÂğ£¿'))
+	if(confirm('ç¡®è®¤è¦åˆ é™¤éƒ¨é—¨å—ï¼Ÿ'))
 		return true;
 	else
 		return false;
 }
-//Ö°Ô±²éÑ¯
+//èŒå‘˜æŸ¥è¯¢
 function chk_null(){
 	if(document.found.u_key.value == ""){
-	 alert("ÇëÊÇÊäÈë¹Ø¼ü×Ö");
+	 alert("è¯·æ˜¯è¾“å…¥å…³é”®å­—");
 	 return false;
 	} 
 }
-//É¾³ıÖ°Ô±
+//åˆ é™¤èŒå‘˜
 function del_chk(){
-	if(confirm('È·ÈÏÒªÉ¾³ıÂğ£¿'))
+	if(confirm('ç¡®è®¤è¦åˆ é™¤å—ï¼Ÿ'))
 		return true;
 	else
 		return false;
 }
-//Ìí¼ÓÖ°Ô±ĞÅÏ¢
+//æ·»åŠ èŒå‘˜ä¿¡æ¯
 function add_check(){
 	var das = document.add_staf;
 	if(das.u_user.value == ""){
-		alert("ÕËºÅ²»ÔÊĞíÎª¿Õ");
+		alert("è´¦å·ä¸å…è®¸ä¸ºç©º");
 		return false;
 	}
 	if(das.u_name.value == ""){
-		alert("ĞÕÃû²»ÔÊĞíÎª¿Õ");
+		alert("å§“åä¸å…è®¸ä¸ºç©º");
 		return false;
 	}
 	if(das.u_pwd.value == ""){
-		alert("ÃÜÂë²»ÔÊĞíÎª¿Õ");
+		alert("å¯†ç ä¸å…è®¸ä¸ºç©º");
 		return false;
 	}
 }
-//ĞŞ¸ÄÔ±¹¤ĞÅÏ¢
+//ä¿®æ”¹å‘˜å·¥ä¿¡æ¯
 function mod_check(){
 	var das = document.mod_staf;
 	if(das.u_user.value == ""){
-		alert("ÕËºÅ²»ÔÊĞíÎª¿Õ");
+		alert("è´¦å·ä¸å…è®¸ä¸ºç©º");
 		return false;
 	}
 	if(das.u_name.value == ""){
-		alert("ĞÕÃû²»ÔÊĞíÎª¿Õ");
+		alert("å§“åä¸å…è®¸ä¸ºç©º");
 		return false;
 	}
 }
@@ -104,7 +104,7 @@ function glist(){
 	var len = document.form1.right.length;
 	var list = "";
 	if(form1.u_group.value == ""){
-		alert("ÓÃ»§×éÃû³Æ²»ÄÜÎª¿Õ");
+		alert("ç”¨æˆ·ç»„åç§°ä¸èƒ½ä¸ºç©º");
 		return false;
 	}
 	for(var i = 0; i < len; i++){
@@ -121,7 +121,7 @@ function glist1(){
 	form1.g_list.value = list;
 }
 
-//ÒÆ¶¯selectµÄ²¿·ÖÄÚÈİ,±ØĞë´æÔÚvalue£¬´Ëº¯ÊıÒÔvalueÎª±ê×¼½øĞĞÒÆ¶¯
+//ç§»åŠ¨selectçš„éƒ¨åˆ†å†…å®¹,å¿…é¡»å­˜åœ¨valueï¼Œæ­¤å‡½æ•°ä»¥valueä¸ºæ ‡å‡†è¿›è¡Œç§»åŠ¨
 function moveSelected(oSourceSel,oTargetSel)
 {
      var arrSelValue = new Array();
@@ -148,39 +148,39 @@ function moveSelected(oSourceSel,oTargetSel)
          oSourceSel.removeChild(arrValueTextRelation[arrSelValue[i]]);
      }
  }
- //É¾³ı
+ //åˆ é™¤
 function chk_del(){
-	if(confirm("È·¶¨ÒªÉ¾³ıÑ¡ÖĞµÄÏîÄ¿Âğ£¿Ò»µ©É¾³ı½«²»ÄÜ»Ö¸´£¡"))
+	if(confirm("ç¡®å®šè¦åˆ é™¤é€‰ä¸­çš„é¡¹ç›®å—ï¼Ÿä¸€æ—¦åˆ é™¤å°†ä¸èƒ½æ¢å¤ï¼"))
 		return true;
 	else
 		return false;
 }
-//ĞŞ¸Ä¹ÜÀíÔ±ÃÜÂë
+//ä¿®æ”¹ç®¡ç†å‘˜å¯†ç 
 function mod_chk(){
 	var dmp = document.mod_pwd;
 	if(dmp.old_pwd.value == "" || dmp.new_pwd.value == "" || dmp.two_pwd.value == ""){
-		alert("ÃÜÂë¿ò²»ÔÊĞíÎª¿Õ");
+		alert("å¯†ç æ¡†ä¸å…è®¸ä¸ºç©º");
 		return false;
 	}
 	if(dmp.new_pwd.value != dmp.two_pwd.value){
-		alert("Á½´ÎÃÜÂë²»Ò»ÖÂ");
+		alert("ä¸¤æ¬¡å¯†ç ä¸ä¸€è‡´");
 		return false;
 	}
 }
-//É¾³ı±¸·İ
+//åˆ é™¤å¤‡ä»½
 function del_bak(){
-if(confirm("È·¶¨ÒªÉ¾³ı±¸·İÎÄ¼şÂğ£¿Ò»µ©É¾³ı½«²»ÄÜ»Ö¸´£¡"))
+if(confirm("ç¡®å®šè¦åˆ é™¤å¤‡ä»½æ–‡ä»¶å—ï¼Ÿä¸€æ—¦åˆ é™¤å°†ä¸èƒ½æ¢å¤ï¼"))
 		return true;
 	else
 		return false;
 }
-//»Ö¸´±¸·İ
+//æ¢å¤å¤‡ä»½
 function re_bak(){
 	if(document.rebak.r_name.value == ""){
-		alert("ÔİÊ±Ã»ÓĞ¾ÉµÄ±¸·İÎÄ¼ş");
+		alert("æš‚æ—¶æ²¡æœ‰æ—§çš„å¤‡ä»½æ–‡ä»¶");
 		return false;
 	}
-	if(confirm("È·¶¨Òª»Ö¸´±¸·İÂğ£¿"))
+	if(confirm("ç¡®å®šè¦æ¢å¤å¤‡ä»½å—ï¼Ÿ"))
 		return true;
 	else
 		return false;

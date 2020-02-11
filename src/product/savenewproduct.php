@@ -1,14 +1,14 @@
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <?php
 include("../conn/conn.php");
 if(is_numeric($_POST[upperlimit])==false || is_numeric($_POST[lowerlimit])==false)
  {
-   echo "<script>alert('库存只能为数字！');history.back();</script>";
+   echo "<script>alert('搴撳瓨鍙兘涓烘暟瀛楋紒');history.back();</script>";
    exit;
  }
 if(is_numeric($_POST[inprice])==false || is_numeric($_POST[outprice])==false)
  {
-   echo "<script>alert('价格只能为数字！');history.back();</script>";
+   echo "<script>alert('浠锋牸鍙兘涓烘暟瀛楋紒');history.back();</script>";
    exit;
  }
  
@@ -35,7 +35,7 @@ if($flag==1)
   $info=mysql_fetch_array($sql);
   if($info==true)
   {
-      echo "<script>alert('该该货品编号已经存在!');history.back();</script>";
+      echo "<script>alert('璇ヨ璐у搧缂栧彿宸茬粡瀛樺湪!');history.back();</script>";
       exit;
    }
  }
@@ -79,7 +79,7 @@ if($flag==1)
 {
 
    mysql_query("insert into     tb_product(maintype,subtype,name,encode,barcode,size,unit,upperlimit,lowerlimit,inprice,outprice,tupian,jianjie,addtime)values('$maintype','$subtype','$name','$encode','$barcode','$size','$unit','$upperlimit','$lowerlimit','$inprice','$outprice','$uploadfile','$jianjie','$addtime')",$conn);
-echo "<script>alert('货品".$name."添加成功!');window.location.href='addproduct.php';</script>";
+echo "<script>alert('璐у搧".$name."娣诲姞鎴愬姛!');window.location.href='addproduct.php';</script>";
 }
 
 if($flag==0)
@@ -95,7 +95,7 @@ if($flag==0)
     mysql_query("update tb_product set maintype='$maintype',subtype='$subtype',name='$name',encode='$encode',barcode='$barcode',size='$size',unit='$unit',upperlimit='$upperlimit',lowerlimit='$lowerlimit',inprice='$inprice',outprice='$outprice',tupian='$uploadfile',jianjie='$jianjie' where id=".$_GET[id]."",$conn);
 
 }
-echo "<script>alert('货品".$name."修改成功!');window.location.href='showproduct.php?mtype=1&stype=1';</script>";
+echo "<script>alert('璐у搧".$name."淇敼鎴愬姛!');window.location.href='showproduct.php?mtype=1&stype=1';</script>";
 }
 
 ?>

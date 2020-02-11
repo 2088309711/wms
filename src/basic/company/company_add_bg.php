@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <?php
 include "../include.php";
@@ -20,18 +20,18 @@ $address = $_POST["adress"];
 $zipcode = $_POST["zipcode"];
 
 if($id==''||$name=='')//||$contact==''||$phone==''||$fax==''||...
-	$error='Ìá½»µÄ±íµ¥ÓÐÎó£¡';
+	$error='æäº¤çš„è¡¨å•æœ‰è¯¯ï¼';
 else{
-//	$con = mysql_connect("localhost","root","1234") or die("²»ÄÜÁ¬½Óµ½Mysql Server");
-//	mysql_select_db("db_wms", $con) or die("Êý¾Ý¿âÑ¡ÔñÊ§°Ü");
-//	mysql_query("set names gb2312");
+//	$con = mysql_connect("localhost","root","1234") or die("ä¸èƒ½è¿žæŽ¥åˆ°Mysql Server");
+//	mysql_select_db("db_wms", $con) or die("æ•°æ®åº“é€‰æ‹©å¤±è´¥");
+//	mysql_query("set names utf-8");
 	
 	$query = "select * from table_company where name = '$name'";
 	$result = mysql_query($query);
 	$RS = mysql_fetch_array($result);
 	
 	if(!empty($RS))
-		$error="¸ÃÃû³ÆÒÑ´æÔÚ£¡";
+		$error="è¯¥åç§°å·²å­˜åœ¨ï¼";
 	
 	$query = "select * from table_company where id = '$id'";
 	$result = mysql_query($query);
@@ -46,7 +46,7 @@ else{
 		}
 		else
 		{
-			$error='±àºÅÒç³ö£¡';
+			$error='ç¼–å·æº¢å‡ºï¼';
 			break;
 		}
 	}	
@@ -65,17 +65,17 @@ var url;
 if($error=='')
 {
 	if($result == FALSE){
-		echo "alert('Ìí¼ÓÊ§°Ü£¡·µ»ØÌí¼ÓÒ³Ãæ£¡');";
+		echo "alert('æ·»åŠ å¤±è´¥ï¼è¿”å›žæ·»åŠ é¡µé¢ï¼');";
 		echo "var url = 'company_add.php';";
 	}
 	else{
-		echo "alert('Ìí¼Ó³É¹¦£¡·µ»Ø¹ÜÀí½çÃæ£¡\\n±àºÅ£º $id\\nÃû³Æ£º $name\\n');\n";
+		echo "alert('æ·»åŠ æˆåŠŸï¼è¿”å›žç®¡ç†ç•Œé¢ï¼\\nç¼–å·ï¼š $id\\nåç§°ï¼š $name\\n');\n";
 		echo "var url = 'company_show.php';";
 	}
 }
 else
 {
-	echo "alert('$error ·µ»ØÌí¼ÓÒ³Ãæ£¡');";
+	echo "alert('$error è¿”å›žæ·»åŠ é¡µé¢ï¼');";
 	echo "var url = 'company_add.php';";
 }
 ?>

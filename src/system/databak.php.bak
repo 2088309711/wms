@@ -19,8 +19,8 @@ class Db
       mysql_select_db($db,$this->conn);   
 
      // mysql_query("SET NAMES 'UTF-8'");   
-	 mysql_query("set character set gb2312");
-     mysql_query("set names gb2312");
+	 mysql_query("set character set utf-8");
+     mysql_query("set names utf-8");
 
     }   
 

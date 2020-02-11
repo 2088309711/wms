@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>лМ╪с╡©це</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ф╥╩Е┼═И┐╗И≈╗</title>
 </head>
 <style type="text/css">
 a:link {
@@ -26,33 +26,33 @@ thead {
 }
 </style>
 <body>
-<h3>лМ╪с╡©це</h3>
-<p>в╒сп*╣доНд©╡╩дэн╙©уё║</p>
+<h3>Ф╥╩Е┼═И┐╗И≈╗</h3>
+<p>ФЁ╗Ф°┴*Г └И║╧Г⌡╝Д╦█Х┐╫Д╦╨Г╘╨О╪│</p>
 <form id="depart_add" name="depart_add" method="post" action="depart_add_bg.php">
   <table border="1" cellpadding="5" cellspacing="0" bordercolor="#9999FF">
     <tr>
-      <td align="center">*╡©цецШЁфё╨</td>
+      <td align="center">*И┐╗И≈╗Е░█Г╖╟О╪ </td>
       <td>&nbsp;
         <input name="name" type="text" size="10" maxlength="10" /></td>
     </tr>
     <tr>
-      <td align="center">*╡©цежВ╧эё╨</td>
+      <td align="center">*И┐╗И≈╗Д╦╩Г╝║О╪ </td>
       <td>&nbsp;
         <input name="major" type="text" size="10" maxlength="10" /></td>
     </tr>
     <tr>
-      <td align="center">*╡©це╣Г╩╟ё╨</td>
+      <td align="center">*И┐╗И≈╗Г■╣Х╞²О╪ </td>
       <td>&nbsp;
         <input name="phone" type="text" size="11" maxlength="11" /></td>
     </tr>
     <tr>
       <td align="center">&nbsp;
-      <input name="submit" type="submit" value="лА╫╩" /></td>
+      <input name="submit" type="submit" value="Ф▐░Д╨╓" /></td>
       <td>&nbsp;
-        <input name="submit" type="reset" value="жьжц" /></td>
+        <input name="submit" type="reset" value="И┤█Г╫╝" /></td>
     </tr>
   </table>
 </form>
-<p>&nbsp;<a href="depart_show.php">╥╣╩ьиор╩рЁ</a></p>
+<p>&nbsp;<a href="depart_show.php">Х©■Е⌡·Д╦┼Д╦─И║╣</a></p>
 </body>
 </html>

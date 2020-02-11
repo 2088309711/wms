@@ -1,17 +1,17 @@
 <?php
 	$id = $_GET[id];
 	if($id == '')
-		die('IDÎ´Ö¸¶¨£¡');
+		die('IDæœªæŒ‡å®šï¼');
 	
 	$con = mysql_connect("localhost","root","1234");
 	mysql_select_db("db_wms", $con);
-	mysql_query("set names gb2312 ");
+	mysql_query("set names utf-8 ");
 	
 	$query = "select * from test_receipt where id = '$id'";//echo $query."<br>";
 	$result = mysql_query($query);
 	$RS = mysql_fetch_array($result);
 	if(empty($RS))
-		die('Î´ÕÒµ½Ö¸¶¨ÏîÄ¿£¡');
+		die('æœªæ‰¾åˆ°æŒ‡å®šé¡¹ç›®ï¼');
 	$date = $RS[date];
 	$yewuyuan = $RS[yewuyuan];
 	$itemstr = $RS[itemstring];
@@ -38,8 +38,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>³öÈë¿âµ¥¾İÏêÏ¸ĞÅÏ¢</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>å‡ºå…¥åº“å•æ®è¯¦ç»†ä¿¡æ¯</title>
 </head>
 <style>
 </style>
@@ -50,43 +50,43 @@
 </script>
 <body>
 <form id="item_in" name="item_in" method="post" action="../test/receipt_in_bg.php" onsubmit=" return checkForm()">
-  <h3>µ¥¾İÏêÇé</h3>
+  <h3>å•æ®è¯¦æƒ…</h3>
   <fieldset>
-  <legend>µ¥¾İĞÅÏ¢</legend>
-  <label>µ¥¾İ±àºÅ</label>
+  <legend>å•æ®ä¿¡æ¯</legend>
+  <label>å•æ®ç¼–å·</label>
   <input id="id" name="id" type="text" value="<?php echo $id;?>" style="background-color:#CCCCCC" readonly/>
-  <label>¹©Ó¦ÉÌ</label>
+  <label>ä¾›åº”å•†</label>
   <select name="company" id="company" disabled>
     <?php echo "<option value='$RS[company]'>$company</option>";?>
   </select>
   <p>&nbsp;</p>
-  <label>Â¼µ¥ÈÕÆÚ</label>
+  <label>å½•å•æ—¥æœŸ</label>
   <input name="date" id="date" type="text" value="<?php echo $date;?>" style="background-color:#CCCCCC" readonly/>
-  <label>´æ»õ²Ö¿â</label>
+  <label>å­˜è´§ä»“åº“</label>
   <select id="warehouse" name="warehouse" disabled>
     <?php echo "<option value='$RS[warehouse]'>$warehouse</option>";?>
   </select>
   <p>&nbsp;</p>
-  <label>ÒµÎñÔ±</label>
+  <label>ä¸šåŠ¡å‘˜</label>
   <input id="yewuyuan" name="yewuyuan" type="text" value="<?php echo $yewuyuan;?>" style="background-color:#CCCCCC" readonly/>
-  <label>Èë¿âÀàĞÍ</label>
+  <label>å…¥åº“ç±»å‹</label>
   <select id="type" name="type" disabled>
     <?php echo "<option value='$RS[type]'>$type</option>";?>
   </select>
   </fieldset>
   <textarea name="item_str" id="item_str" hidden><?php echo $itemstr;?></textarea>
-  <!--Éè¶¨ÎªÒş²ØÓò-->
+  <!--è®¾å®šä¸ºéšè—åŸŸ-->
   <fieldset>
-  <legend>»õÆ·ÁĞ±í</legend>
+  <legend>è´§å“åˆ—è¡¨</legend>
   <table id="item_list" border="1" width="100%" cellspacing="0" cellpadding="5" style="font-size:12px; border:thin; border-color:#9999FF ">
     <tr align="center">
-      <td>±àºÅ</td>
-      <td>Ãû³Æ</td>
-      <td>¹æ¸ñĞÍºÅ</td>
-      <td>µ¥Î»</td>
-      <td>ÊıÁ¿</td>
-      <td>µ¥¼Û</td>
-      <td>Ğ¡¼Æ</td>
+      <td>ç¼–å·</td>
+      <td>åç§°</td>
+      <td>è§„æ ¼å‹å·</td>
+      <td>å•ä½</td>
+      <td>æ•°é‡</td>
+      <td>å•ä»·</td>
+      <td>å°è®¡</td>
     </tr>
 	<?php
 		$item_list = explode('|',$itemstr);//print_r($list);
@@ -123,11 +123,11 @@
 	?>
   </table>
   <p>&nbsp;</p>
-  <label>×Ü¼Æ£º</label><label><?php echo $sum_str;?></label> 
+  <label>æ€»è®¡ï¼š</label><label><?php echo $sum_str;?></label> 
   </fieldset>
   <fieldset>
-  <legend>ÆäËü</legend>
-  <label>±¸×¢</label>
+  <legend>å…¶å®ƒ</legend>
+  <label>å¤‡æ³¨</label>
   <textarea name="remark" cols="15" rows="3" disabled><?php echo $remark;?></textarea>
   </fieldset>
 </form>

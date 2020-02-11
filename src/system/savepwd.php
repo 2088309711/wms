@@ -10,7 +10,7 @@ $pwd_new=$_POST[pwd_new];
 if($info==false)
 {
 
-    echo "<script>alert('Ô­ÃÜÂë´íÎó!');history.back();</script>";
+    echo "<script>alert('åŸå¯†ç é”™è¯¯!');history.back();</script>";
     exit;
 }
 
@@ -18,7 +18,7 @@ else
 	{
 	
 	    mysql_query("update tb_admin set pwd='".md5(pwd_new)."' where name='".$_SESSION[username]."'",$conn);
-	    echo "<script>alert('ÃÜÂëĞŞ¸Ä³É¹¦!');window.location='../desk.php';</script>";
+	    echo "<script>alert('å¯†ç ä¿®æ”¹æˆåŠŸ!');window.location='../desk.php';</script>";
 	   
 	}
 	

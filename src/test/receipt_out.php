@@ -2,15 +2,15 @@
 	$warehouse = $_GET[warehouse];
 	$con = mysql_connect("localhost","root","1234");
 	mysql_select_db("db_wms", $con);
-	mysql_query("set names gb2312 ");
+	mysql_query("set names utf-8 ");
 		
 	$query = "select * from table_warehouse order by name";//echo $query."<br>";
 	$result_warehouse = mysql_query($query);
 	
-	$query = "select * from table_company where type='¾­ÏúÉÌ' order by name";
+	$query = "select * from table_company where type='ç»é”€å•†' order by name";
 	$result_company = mysql_query($query);
 	
-	$query = "select * from tb_inout where type='³ö¿â' order by name";
+	$query = "select * from tb_inout where type='å‡ºåº“' order by name";
 	$result_inout = mysql_query($query);
 	
 	if($warehouse=='')
@@ -24,8 +24,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>»õÆ·³ö¿â</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>è´§å“å‡ºåº“</title>
 </head>
 <style>
 </style>
@@ -33,35 +33,35 @@
 <link rel="stylesheet" type="text/css" href="../css/iframe.css" media="screen" />
 <script language="javascript">
 var MAX = 10;
-//±íµ¥¼ì²é
-function checkForm(){//ÔÚÌá½»±íµ¥Ö®Ç°¼ì²éÕû¸ö±íµ¥ÊäÈë£¬´æÔÚ´íÎóÔò²»Ìá½»
+//è¡¨å•æ£€æŸ¥
+function checkForm(){//åœ¨æäº¤è¡¨å•ä¹‹å‰æ£€æŸ¥æ•´ä¸ªè¡¨å•è¾“å…¥ï¼Œå­˜åœ¨é”™è¯¯åˆ™ä¸æäº¤
 	/*var element = document.getElementById('id');
 	if(element.value==''){
-		alert('µ¥¾İ±àºÅ²»ÄÜÎª¿Õ£¡');
+		alert('å•æ®ç¼–å·ä¸èƒ½ä¸ºç©ºï¼');
 		element.focus();
 		return false;
 	}*/
-	element = document.getElementById('control_date');//¼ì²éÈÕÆÚ
-	if(element.value==''||element.value=='µ¥»÷Ñ¡ÔñÈÕÆÚ'){
-		alert('Â¼µ¥ÈÕÆÚ²»ÄÜÎª¿Õ£¡');
+	element = document.getElementById('control_date');//æ£€æŸ¥æ—¥æœŸ
+	if(element.value==''||element.value=='å•å‡»é€‰æ‹©æ—¥æœŸ'){
+		alert('å½•å•æ—¥æœŸä¸èƒ½ä¸ºç©ºï¼');
 		element.focus();
 		return false;
 	}
-	element = document.getElementById('yewuyuan');//¼ì²éÒµÎñÔ±
+	element = document.getElementById('yewuyuan');//æ£€æŸ¥ä¸šåŠ¡å‘˜
 	if(element.value==''){
-		alert('ÒµÎñÔ±²»ÄÜÎª¿Õ£¡');
+		alert('ä¸šåŠ¡å‘˜ä¸èƒ½ä¸ºç©ºï¼');
 		element.focus();
 		return false;
 	}
-	element = document.getElementById('item_str');//¼ì²é»õÆ·
+	element = document.getElementById('item_str');//æ£€æŸ¥è´§å“
 	if(element.value==''){
-		alert('±íµ¥ÖĞ»õÆ·²»ÄÜÎª¿Õ£¡');
+		alert('è¡¨å•ä¸­è´§å“ä¸èƒ½ä¸ºç©ºï¼');
 		//element.focus();
 		return false;
 	}
 	return true;
 }
-function chooseItem(button){//Ñ¡Ôñ¶ÔÏó
+function chooseItem(button){//é€‰æ‹©å¯¹è±¡
 	var tr = button.parentNode.parentNode;
 	document.getElementById('item_id').value = tr.cells[0].innerHTML;
 	document.getElementById('item_name').value = tr.cells[1].innerHTML;
@@ -69,18 +69,18 @@ function chooseItem(button){//Ñ¡Ôñ¶ÔÏó
 	document.getElementById('item_unit').value = tr.cells[3].innerHTML;
 	document.getElementById('item_num').focus();
 }
-function checkInput(){//¼ì²é£º»õÆ·ÊÇ·ñÒÑ´æÔÚ£»µ¥¼ÛÊÇ·ñ¹æ·¶£»ÊıÁ¿ÊÇ·ñ¹æ·¶£¬ÊÇ·ñ³¬³ö×î´ó¿â´æÁ¿µÈ¡£
+function checkInput(){//æ£€æŸ¥ï¼šè´§å“æ˜¯å¦å·²å­˜åœ¨ï¼›å•ä»·æ˜¯å¦è§„èŒƒï¼›æ•°é‡æ˜¯å¦è§„èŒƒï¼Œæ˜¯å¦è¶…å‡ºæœ€å¤§åº“å­˜é‡ç­‰ã€‚
 	var table = document.getElementById('item_list');
 	var length = table.rows.length;
 	
-	var item_id = document.getElementById('item_id').value;//¼ì²é»õÆ·ID
-	if(item_id == 'µ¥»÷Ñ¡Ôñ»õÆ·'){//Èç¹ûÃ»ÓĞÑ¡Ôñ»õÆ·
-		alert('Çëµ¥»÷Ñ¡Ôñ»õÆ·£¡');
+	var item_id = document.getElementById('item_id').value;//æ£€æŸ¥è´§å“ID
+	if(item_id == 'å•å‡»é€‰æ‹©è´§å“'){//å¦‚æœæ²¡æœ‰é€‰æ‹©è´§å“
+		alert('è¯·å•å‡»é€‰æ‹©è´§å“ï¼');
 		return false;
 	}
-	var item_num = document.getElementById('item_num');//¼ì²éÊıÁ¿
+	var item_num = document.getElementById('item_num');//æ£€æŸ¥æ•°é‡
 	if(item_num.value == ''){
-		alert('»õÆ·ÊıÁ¿²»ÄÜÎª¿Õ£¡');
+		alert('è´§å“æ•°é‡ä¸èƒ½ä¸ºç©ºï¼');
 		item_num.focus();
 		return false;
 	}
@@ -93,31 +93,31 @@ function checkInput(){//¼ì²é£º»õÆ·ÊÇ·ñÒÑ´æÔÚ£»µ¥¼ÛÊÇ·ñ¹æ·¶£»ÊıÁ¿ÊÇ·ñ¹æ·¶£¬ÊÇ·ñ³¬
 			pos2 = i;
 					
 	if(pos2 == 0){
-		alert('³ö´í£¡Ã»ÓĞÕÒµ½¶ÔÓ¦µÄĞĞ£¡');
+		alert('å‡ºé”™ï¼æ²¡æœ‰æ‰¾åˆ°å¯¹åº”çš„è¡Œï¼');
 		return false;
 	}
 	else{
 		var limit = Number(table2.rows[pos2].cells[4].innerHTML);
 		if(num > limit){
-			alert("³¬³ö³ö¿â¶î¶È£¡");
+			alert("è¶…å‡ºå‡ºåº“é¢åº¦ï¼");
 			item_num.focus();
 			return false;
 		}
 	}	
 	
-	var item_price = document.getElementById('item_price');//¼ì²é¼Û¸ñ
+	var item_price = document.getElementById('item_price');//æ£€æŸ¥ä»·æ ¼
 	if(item_price.value == ''){
-		alert('»õÆ·¼Û¸ñ²»ÄÜÎª¿Õ£¡');
+		alert('è´§å“ä»·æ ¼ä¸èƒ½ä¸ºç©ºï¼');
 		item_price.focus();
 		return false;
 	}
 	
 	for(var i=1;i<length;i++)
-		if(item_id == table.rows[i].firstChild.innerHTML){//Èç¹ûÑ¡ÔñµÄ»õÆ·ÒÑ´æÔÚ
-			if(confirm('Ñ¡ÔñµÄ»õÆ·ÒÑ´æÔÚ£¬Èç¹û¼ÌĞøÌí¼Ó½«»á¸²¸ÇÔ­ĞÅÏ¢£¡')==true){
+		if(item_id == table.rows[i].firstChild.innerHTML){//å¦‚æœé€‰æ‹©çš„è´§å“å·²å­˜åœ¨
+			if(confirm('é€‰æ‹©çš„è´§å“å·²å­˜åœ¨ï¼Œå¦‚æœç»§ç»­æ·»åŠ å°†ä¼šè¦†ç›–åŸä¿¡æ¯ï¼')==true){
 				if(editRow2()==true){
 					updateStr();
-					return false;//ĞŞ¸ÄĞÅÏ¢³É¹¦£¬Ôò²»Ìí¼ÓĞÂµÄĞĞ£¬·ñÔò°´Ìí¼ÓĞÂĞĞ´¦Àí
+					return false;//ä¿®æ”¹ä¿¡æ¯æˆåŠŸï¼Œåˆ™ä¸æ·»åŠ æ–°çš„è¡Œï¼Œå¦åˆ™æŒ‰æ·»åŠ æ–°è¡Œå¤„ç†
 				}
 				else{
 					return true;
@@ -125,16 +125,16 @@ function checkInput(){//¼ì²é£º»õÆ·ÊÇ·ñÒÑ´æÔÚ£»µ¥¼ÛÊÇ·ñ¹æ·¶£»ÊıÁ¿ÊÇ·ñ¹æ·¶£¬ÊÇ·ñ³¬
 			}
 			else return false;
 		}
-	//ÆäËü¼ì²éÏîÄ¿ 
+	//å…¶å®ƒæ£€æŸ¥é¡¹ç›® 
 	
 	
 	return true;
 }
-function addRow(){//ÔÚ±í¸ñÖĞÌí¼ÓÒ»ĞĞ
+function addRow(){//åœ¨è¡¨æ ¼ä¸­æ·»åŠ ä¸€è¡Œ
 	var table = document.getElementById('item_list');
 	var pos = table.rows.length;
 	if(pos >= MAX+1){
-		alert('»õÆ·ÏîÄ¿ÒÑ´ïµ½×î´óÖµ£ºMAX = ' + MAX);
+		alert('è´§å“é¡¹ç›®å·²è¾¾åˆ°æœ€å¤§å€¼ï¼šMAX = ' + MAX);
 		return false;
 	}
 	var tr = table.insertRow(pos);
@@ -158,13 +158,13 @@ function addRow(){//ÔÚ±í¸ñÖĞÌí¼ÓÒ»ĞĞ
 	var price = document.getElementById('item_num').value*document.getElementById('item_price').value;
 	var price_str = price.toFixed(2);
 	td6.innerHTML = price_str;
-	td7.innerHTML = '<a onclick="removeRow(this)">É¾³ı</a>';
-	td8.innerHTML = '<a onclick="editRow(this)">ĞŞ¸Ä</a>';
-	updateStr();//¸üĞÂÒş²ØÓòµÄÖµ
-	//resetInput()//»Ö¸´Ä¬ÈÏµÄ±à¼­¿ò
+	td7.innerHTML = '<a onclick="removeRow(this)">åˆ é™¤</a>';
+	td8.innerHTML = '<a onclick="editRow(this)">ä¿®æ”¹</a>';
+	updateStr();//æ›´æ–°éšè—åŸŸçš„å€¼
+	//resetInput()//æ¢å¤é»˜è®¤çš„ç¼–è¾‘æ¡†
 	
 }
-function updateStr(){//¸üĞÂÒş²ØÓòµÄÖµ
+function updateStr(){//æ›´æ–°éšè—åŸŸçš„å€¼
 	var item_str = document.getElementById('item_str');
 	var table = document.getElementById('item_list');
 	var i,j;
@@ -189,13 +189,13 @@ function updateStr(){//¸üĞÂÒş²ØÓòµÄÖµ
 	alert(item_str.value);
 	resetInput()
 }
-function removeRow(button){//É¾³ı¸ÃĞĞ
+function removeRow(button){//åˆ é™¤è¯¥è¡Œ
 	var tr = button.parentNode.parentNode;
 	var table = tr.parentNode;
  	table.deleteRow(tr.rowIndex);
 	updateStr();
 }
-function editRow(button){//ĞŞ¸Ä¸ÃĞĞĞÅÏ¢£¬½«¸ÃĞĞµÄÖµ¸³¸ø±à¼­Óò
+function editRow(button){//ä¿®æ”¹è¯¥è¡Œä¿¡æ¯ï¼Œå°†è¯¥è¡Œçš„å€¼èµ‹ç»™ç¼–è¾‘åŸŸ
 	var tr = button.parentNode.parentNode;
 	document.getElementById('item_id').value = tr.cells[0].innerHTML;
 	document.getElementById('item_name').value = tr.cells[1].innerHTML;
@@ -204,7 +204,7 @@ function editRow(button){//ĞŞ¸Ä¸ÃĞĞĞÅÏ¢£¬½«¸ÃĞĞµÄÖµ¸³¸ø±à¼­Óò
 	document.getElementById('item_num').value = tr.cells[4].innerHTML;
 	document.getElementById('item_price').value = tr.cells[5].innerHTML;
 }
-function editRow2(){//ĞŞ¸Ä¸ÃĞĞĞÅÏ¢£¬½«±à¼­ÓòµÄÖµ¸²¸ÇÔ­ÓĞµÄÖµ
+function editRow2(){//ä¿®æ”¹è¯¥è¡Œä¿¡æ¯ï¼Œå°†ç¼–è¾‘åŸŸçš„å€¼è¦†ç›–åŸæœ‰çš„å€¼
 	var table = document.getElementById('item_list');
 	var length = table.rows.length;
 	var pos = 0;
@@ -213,7 +213,7 @@ function editRow2(){//ĞŞ¸Ä¸ÃĞĞĞÅÏ¢£¬½«±à¼­ÓòµÄÖµ¸²¸ÇÔ­ÓĞµÄÖµ
 			pos = i;
 			
 	if(pos == 0){
-		alert('³ö´í£¡Ã»ÓĞÕÒµ½¶ÔÓ¦µÄĞĞ£¡½«Ìí¼ÓĞÂµÄĞĞ£¡');
+		alert('å‡ºé”™ï¼æ²¡æœ‰æ‰¾åˆ°å¯¹åº”çš„è¡Œï¼å°†æ·»åŠ æ–°çš„è¡Œï¼');
 		return false;
 	}
 	else{
@@ -231,15 +231,15 @@ function editRow2(){//ĞŞ¸Ä¸ÃĞĞĞÅÏ¢£¬½«±à¼­ÓòµÄÖµ¸²¸ÇÔ­ÓĞµÄÖµ
 		return true;
 	}
 }
-function resetInput(){//Ìá½»ÊäÈëºó£¬½«ÊäÈë¿ò×Ö·ûÉèÎªÄ¬ÈÏ£¨½¨ÒéÄÚÇ¶ÓÚupdateStrÖĞ£©
-	document.getElementById('item_id').value = "µ¥»÷Ñ¡Ôñ»õÆ·";
+function resetInput(){//æäº¤è¾“å…¥åï¼Œå°†è¾“å…¥æ¡†å­—ç¬¦è®¾ä¸ºé»˜è®¤ï¼ˆå»ºè®®å†…åµŒäºupdateSträ¸­ï¼‰
+	document.getElementById('item_id').value = "å•å‡»é€‰æ‹©è´§å“";
 	document.getElementById('item_name').value = "";
 	document.getElementById('item_model').value = "";
 	document.getElementById('item_unit').value = "";
 	document.getElementById('item_num').value = "";
 	document.getElementById('item_price').value = "";
 }
-function valueLimit(input){//ÏŞÖÆÊäÈëµÄ¼Û¸ñĞÎÊ½
+function valueLimit(input){//é™åˆ¶è¾“å…¥çš„ä»·æ ¼å½¢å¼
 	var str = input.value;
 	var list = str.split('.');
 	if(list.length>2)
@@ -253,7 +253,7 @@ function valueLimit(input){//ÏŞÖÆÊäÈëµÄ¼Û¸ñĞÎÊ½
 		input.value = list[0].substring(0,5);
 	}
 }
-function numLimit(input){//ÏŞÖÆ³ö¿âÊıÁ¿Ğ¡ÓÚ²Ö¿âÖĞ»õÆ·µÄÊıÁ¿
+function numLimit(input){//é™åˆ¶å‡ºåº“æ•°é‡å°äºä»“åº“ä¸­è´§å“çš„æ•°é‡
 	var id = document.getElementById('item_id').value;
 	var num = Number(input.value);
 	var str = input.value;
@@ -265,14 +265,14 @@ function numLimit(input){//ÏŞÖÆ³ö¿âÊıÁ¿Ğ¡ÓÚ²Ö¿âÖĞ»õÆ·µÄÊıÁ¿
 			pos = i;
 					
 	if(pos == 0){
-		//alert('³ö´í£¡Ã»ÓĞÕÒµ½¶ÔÓ¦µÄĞĞ£¡');
+		//alert('å‡ºé”™ï¼æ²¡æœ‰æ‰¾åˆ°å¯¹åº”çš„è¡Œï¼');
 		return false;
 	}
 	else{
 		var limit = Number(table.rows[pos].cells[4].innerHTML);
 		if(num > limit){
 			input.value = str.substr(0,str.length-1);
-			//alert("³¬³ö³ö¿â¶î¶È£¡");
+			//alert("è¶…å‡ºå‡ºåº“é¢åº¦ï¼");
 		}
 	}
 }
@@ -280,10 +280,10 @@ function numLimit(input){//ÏŞÖÆ³ö¿âÊıÁ¿Ğ¡ÓÚ²Ö¿âÖĞ»õÆ·µÄÊıÁ¿
 </script>
 <body>
 <form id="item_in" name="item_in" method="post" action="../test/receipt_out_bg.php" onsubmit=" return checkForm()">
-  <h3>»õÆ·³ö¿â</h3>
+  <h3>è´§å“å‡ºåº“</h3>
   <fieldset>
-  <legend>²Ö¿âĞÅÏ¢</legend>
-  <label>³ö»õ²Ö¿â</label>
+  <legend>ä»“åº“ä¿¡æ¯</legend>
+  <label>å‡ºè´§ä»“åº“</label>
   <select id="warehouse" name="warehouse" onchange="location.href='receipt_out.php?warehouse='+this.value">
     <?php 
 	while($RS = mysql_fetch_array($result_warehouse))
@@ -293,18 +293,18 @@ function numLimit(input){//ÏŞÖÆ³ö¿âÊıÁ¿Ğ¡ÓÚ²Ö¿âÖĞ»õÆ·µÄÊıÁ¿
 			echo "<option value='$RS[id]'>$RS[name]</option>";
 	?>
   </select>
-  <p><a href="/wms/basic/warehouse/warehouse_show.php" target="_blank"><img src="/wms/image/delete.gif" alt="²Ö¿â¹ÜÀí" width="25" height="19" border="0"/></a></p>
+  <p><a href="/wms/basic/warehouse/warehouse_show.php" target="_blank"><img src="../image/delete.gif" alt="ä»“åº“ç®¡ç†" width="25" height="19" border="0"/></a></p>
   </fieldset>
   <fieldset>
-  <legend>¿â´æÁĞ±í</legend>
+  <legend>åº“å­˜åˆ—è¡¨</legend>
   <table id="storage" width="500" border="1" cellspacing="0" cellpadding="5" style="font-size:12px; border:thin; border-color:#9999FF ">
     <tr align="center">
-      <td>»õÆ·±àºÅ</td>
-      <td>»õÆ·Ãû³Æ</td>
-      <td>¹æ¸ñĞÍºÅ</td>
-      <td>µ¥Î»</td>
-      <td>ÊıÁ¿</td>
-      <td>Ñ¡Ôñ</td>
+      <td>è´§å“ç¼–å·</td>
+      <td>è´§å“åç§°</td>
+      <td>è§„æ ¼å‹å·</td>
+      <td>å•ä½</td>
+      <td>æ•°é‡</td>
+      <td>é€‰æ‹©</td>
     </tr>
     <?php
 	while($RS = mysql_fetch_array($result_item)){
@@ -325,74 +325,74 @@ function numLimit(input){//ÏŞÖÆ³ö¿âÊıÁ¿Ğ¡ÓÚ²Ö¿âÖĞ»õÆ·µÄÊıÁ¿
 			echo "<td></td>";
 		}
 		echo "<td>$RS[num]</td>";
-		echo "<td><button type='button' onclick='chooseItem(this)'>Ñ¡Ôñ</button></td>";
+		echo "<td><button type='button' onclick='chooseItem(this)'>é€‰æ‹©</button></td>";
 		echo "</tr>";
 	}
 	?>
   </table>
   </fieldset>
   <fieldset>
-  <legend>±íµ¥ĞÅÏ¢</legend>
-  <label>µ¥¾İ±àºÅ</label>
+  <legend>è¡¨å•ä¿¡æ¯</legend>
+  <label>å•æ®ç¼–å·</label>
   <input id="id" name="id" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" style="background-color:#CCCCCC" readonly/>
-  <label>¾­ÏúÉÌ</label>
+  <label>ç»é”€å•†</label>
   <select name="company" id="company">
     <?php while($RS = mysql_fetch_array($result_company))echo "<option value='$RS[id]'>$RS[name]</option>";	?>
   </select>
-  <p><a href="/wms/basic/company/company_show.php" target="_blank"><img src="/wms/image/delete.gif" alt="ÍùÀ´¹«Ë¾¹ÜÀí" width="25" height="19" border="0"/></a></p>
-  <label>Â¼µ¥ÈÕÆÚ</label>
+  <p><a href="/wms/basic/company/company_show.php" target="_blank"><img src="../image/delete.gif" alt="å¾€æ¥å…¬å¸ç®¡ç†" width="25" height="19" border="0"/></a></p>
+  <label>å½•å•æ—¥æœŸ</label>
   <input name="date" type="text" id="control_date" style="background-color:#CCCCCC" onclick="new Calendar().show(this);"  maxlength="10" readonly/>
-  <label>³ö¿âÀàĞÍ</label>
+  <label>å‡ºåº“ç±»å‹</label>
   <select id="type" name="type">
     <?php while($RS = mysql_fetch_array($result_inout))echo "<option value='$RS[id]'>$RS[name]</option>";?>
   </select>
-  <p><a href="_blank" target="_blank"><img src="/wms/image/delete.gif" alt="³öÈë¿âÀàĞÍ¹ÜÀí" width="25" height="19" border="0"/></a></p>
-  <label>ÒµÎñÔ±</label>
+  <p><a href="_blank" target="_blank"><img src="../image/delete.gif" alt="å‡ºå…¥åº“ç±»å‹ç®¡ç†" width="25" height="19" border="0"/></a></p>
+  <label>ä¸šåŠ¡å‘˜</label>
   <input id="yewuyuan" name="yewuyuan" type="text" />
   </fieldset>
   <textarea name="item_str" id="item_str" hidden></textarea>
-  <!--Éè¶¨ÎªÒş²ØÓò-->
+  <!--è®¾å®šä¸ºéšè—åŸŸ-->
   <fieldset>
-  <legend>³ö¿âÁĞ±í</legend>
+  <legend>å‡ºåº“åˆ—è¡¨</legend>
   <table id="item_list" width="60%" border="1" cellspacing="0" cellpadding="5" style="font-size:12px; border:thin; border-color:#9999FF ">
     <tr align="center">
-      <td>»õÆ·±àºÅ</td>
-      <td>»õÆ·Ãû³Æ</td>
-      <td>¹æ¸ñĞÍºÅ</td>
-      <td>µ¥Î»</td>
-      <td>ÊıÁ¿</td>
-      <td>µ¥¼Û</td>
-      <td>Ğ¡¼Æ</td>
-      <td>É¾³ı</td>
-      <td>ĞŞ¸Ä</td>
+      <td>è´§å“ç¼–å·</td>
+      <td>è´§å“åç§°</td>
+      <td>è§„æ ¼å‹å·</td>
+      <td>å•ä½</td>
+      <td>æ•°é‡</td>
+      <td>å•ä»·</td>
+      <td>å°è®¡</td>
+      <td>åˆ é™¤</td>
+      <td>ä¿®æ”¹</td>
     </tr>
   </table>
   </fieldset>
   <fieldset>
-  <legend>Ìí¼Ó»õÆ·</legend>
-  <label>±àºÅ</label>
-  <input id="item_id" name="item_id" type="text" onclick="selectitem()" value="µ¥»÷Ñ¡Ôñ»õÆ·" size="10" style="background-color:#CCCCCC" readonly />
-  <label>Ãû³Æ</label>
+  <legend>æ·»åŠ è´§å“</legend>
+  <label>ç¼–å·</label>
+  <input id="item_id" name="item_id" type="text" onclick="selectitem()" value="å•å‡»é€‰æ‹©è´§å“" size="10" style="background-color:#CCCCCC" readonly />
+  <label>åç§°</label>
   <input id="item_name" name="item_name" type="text" size="5" style="background-color:#CCCCCC" readonly />
-  <label>¹æ¸ñ</label>
+  <label>è§„æ ¼</label>
   <input id="item_model" name="item_model" type="text" size="5" style="background-color:#CCCCCC" readonly />
-  <label>µ¥Î»</label>
+  <label>å•ä½</label>
   <input id="item_unit" name="item_unit" type="text" size="5" style="background-color:#CCCCCC" readonly />
   <p>&nbsp;</p>
-  <label>ÊıÁ¿</label>
+  <label>æ•°é‡</label>
   <input name="item_num" type="text" id="item_num" onkeyup="value=value.replace(/[^\d]/g,'');numLimit(this)" maxlength="4" />
   <!--onchange="valueLimit(this)"-->
-  <label>µ¥¼Û</label>
+  <label>å•ä»·</label>
   <input name="item_price" type="text" id="item_price" onkeyup="value=value.replace(/[^.\d]/g,'');valueLimit(this)" maxlength="8" />
-  <button type="button" onclick="if(checkInput()==true) addRow();">&nbsp;Ìí¼Ó&nbsp;</button>
+  <button type="button" onclick="if(checkInput()==true) addRow();">&nbsp;æ·»åŠ &nbsp;</button>
   </fieldset>
   <fieldset>
-  <legend>ÆäËü</legend>
-  <label>±¸×¢</label>
+  <legend>å…¶å®ƒ</legend>
+  <label>å¤‡æ³¨</label>
   <textarea name="remark" cols="15" rows="3" onkeyup="if(this.innerHTML.length>50) this.innerHTML=this.innerHTML.substr(0,50)"></textarea>
-  <button type="submit" style="margin-left:50px">&nbsp;Ìá½»±íµ¥&nbsp;</button>
+  <button type="submit" style="margin-left:50px">&nbsp;æäº¤è¡¨å•&nbsp;</button>
   </fieldset>
 </form>
-<p><a href="../basic/company/company_show.php">·µ»ØÉÏÒ»Ò³</a></p>
+<p><a href="../basic/company/company_show.php">è¿”å›ä¸Šä¸€é¡µ</a></p>
 </body>
 </html>

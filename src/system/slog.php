@@ -9,7 +9,7 @@
    
   if ($authority[21]==0)
  {  
-      echo "<script language='javascript'>alert('�Բ�����û�д˲���Ȩ�ޣ�');history.back();</script>";
+      echo "<script language='javascript'>alert('对不起，你没有此操作权限！');history.back();</script>";
       exit;
   }
 ?>
@@ -19,12 +19,12 @@
 <tr><td align="center" valign="middle">
 <table width="341" border="0" cellpadding="0" cellspacing="0">
 	<tr>
-		<td colspan="3" height="30" align="center" valign="middle"><a href="del_slog_chk.php" onClick="return del_chk();">�����־</a></td>
+		<td colspan="3" height="30" align="center" valign="middle"><a href="del_slog_chk.php" onClick="return del_chk();">清除日志</a></td>
 	</tr>
 	<tr>
-		<td width="48" height="25" align="center">��¼�˺�</td>
-		<td width="156" height="25" align="center">��¼ʱ��</td>
-		<td width="137" height="25" align="center">��¼IP</td>
+		<td width="48" height="25" align="center">登录账号</td>
+		<td width="156" height="25" align="center">登录时间</td>
+		<td width="137" height="25" align="center">登录IP</td>
 		</tr>
 <?php
 	$filename =  "../log.txt";
@@ -42,7 +42,7 @@
 		fclose($f_open);
 	}
 	else
-		echo "<script>alert('��û����־�ļ���');history.go(-1);</script>";
+		echo "<script>alert('还没有日志文件！');history.go(-1);</script>";
 ?>
 </table>
 </td></tr></table>

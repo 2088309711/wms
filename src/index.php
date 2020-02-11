@@ -1,120 +1,179 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>µÇÂ¼-²Ö¿â¹ÜÀíÏµÍ³</title>
-  <link rel="shortcut icon" href="images/icon.jpg" type="image/x-icon" />
-  <link rel="stylesheet" type="text/css" href="css/font.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ç™»å½•-ä»“åº“ç®¡ç†ç³»ç»Ÿ</title>
+    <link rel="shortcut icon" href="images/icon.jpg" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
 </head>
 <style type="text/css">
-@import url("css/button.css");
+    @import url("css/button.css");
 
-form{width:400px;margin:10px auto;border:solid 1px #E0DEDE;background:#6699FF;padding:30px;box-shadow:0 1px 10px rgba(0,0,0,0.1) inset;}
-label{display:block;height:40px;position:relative;margin:20px 0;}
-span{position:absolute;float:left;line-height:40px;left:10px;color:#BCBCBC;cursor:text;}
-.input_txt{width:398px;border:solid 1px #ccc;box-shadow:0 1px 10px rgba(0,0,0,0.1) inset;height:38px;text-indent:10px;}
-.input_txt:focus{box-shadow:0 0 4px rgba(255,153,164,0.8);border:solid 1px #B00000;}
-.border_radius{border-radius:5px;color:#B00000;}
-h2{font-family:"Î¢ÈíÑÅºÚ";text-shadow:1px 1px 3px #fff;}
-.STYLE3 {border-radius: 5px; color: #0000FF; }
-.STYLE5 {font-size: 18px}
-.STYLE6 {font-size: 16px}
+    form {
+        width: 400px;
+        margin: 10px auto;
+        border: solid 1px #E0DEDE;
+        background: #6699FF;
+        padding: 30px;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1) inset;
+    }
+
+    label {
+        display: block;
+        height: 40px;
+        position: relative;
+        margin: 20px 0;
+    }
+
+    span {
+        position: absolute;
+        float: left;
+        line-height: 40px;
+        left: 10px;
+        color: #BCBCBC;
+        cursor: text;
+    }
+
+    .input_txt {
+        width: 398px;
+        border: solid 1px #ccc;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1) inset;
+        height: 38px;
+        text-indent: 10px;
+    }
+
+    .input_txt:focus {
+        box-shadow: 0 0 4px rgba(255, 153, 164, 0.8);
+        border: solid 1px #B00000;
+    }
+
+    .border_radius {
+        border-radius: 5px;
+        color: #B00000;
+    }
+
+    h2 {
+        font-family: "å¾®è½¯é›…é»‘";
+        text-shadow: 1px 1px 3px #fff;
+    }
+
+    .STYLE3 {
+        border-radius: 5px;
+        color: #0000FF;
+    }
+
+    .STYLE5 {
+        font-size: 18px
+    }
+
+    .STYLE6 {
+        font-size: 16px
+    }
 </style>
 <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-	$("#focus .input_txt").each(function(){
-		var thisVal=$(this).val();
-		//ÅĞ¶ÏÎÄ±¾¿òµÄÖµÊÇ·ñÎª¿Õ£¬ÓĞÖµµÄÇé¿ö¾ÍÒş²ØÌáÊ¾Óï£¬Ã»ÓĞÖµ¾ÍÏÔÊ¾
-		if(thisVal!=""){
-			$(this).siblings("span").hide();
-		}else{
-			$(this).siblings("span").show();
-		}
-		//¾Û½¹ĞÍÊäÈë¿òÑéÖ¤
-		$(this).focus(function(){
-			$(this).siblings("span").hide();
-		}).blur(function(){
-			var val=$(this).val();
-			if(val!=""){
-				$(this).siblings("span").hide();
-			}else{
-				$(this).siblings("span").show();
-			}
-		});
-	})
-	$("#keydown .input_txt").each(function(){
-		var thisVal=$(this).val();
-		//ÅĞ¶ÏÎÄ±¾¿òµÄÖµÊÇ·ñÎª¿Õ£¬ÓĞÖµµÄÇé¿ö¾ÍÒş²ØÌáÊ¾Óï£¬Ã»ÓĞÖµ¾ÍÏÔÊ¾
-		if(thisVal!=""){
-			$(this).siblings("span").hide();
-		}else{
-			$(this).siblings("span").show();
-		}
-		$(this).keyup(function(){
-			var val=$(this).val();
-			$(this).siblings("span").hide();
-		}).blur(function(){
-			var val=$(this).val();
-			if(val!=""){
-				$(this).siblings("span").hide();
-			}else{
-				$(this).siblings("span").show();
-			}
-		})
-	})
-})
+    $(document).ready(function () {
+        $("#focus .input_txt").each(function () {
+            var thisVal = $(this).val();
+            //åˆ¤æ–­æ–‡æœ¬æ¡†çš„å€¼æ˜¯å¦ä¸ºç©ºï¼Œæœ‰å€¼çš„æƒ…å†µå°±éšè—æç¤ºè¯­ï¼Œæ²¡æœ‰å€¼å°±æ˜¾ç¤º
+            if (thisVal != "") {
+                $(this).siblings("span").hide();
+            } else {
+                $(this).siblings("span").show();
+            }
+            //èšç„¦å‹è¾“å…¥æ¡†éªŒè¯
+            $(this).focus(function () {
+                $(this).siblings("span").hide();
+            }).blur(function () {
+                var val = $(this).val();
+                if (val != "") {
+                    $(this).siblings("span").hide();
+                } else {
+                    $(this).siblings("span").show();
+                }
+            });
+        })
+        $("#keydown .input_txt").each(function () {
+            var thisVal = $(this).val();
+            //åˆ¤æ–­æ–‡æœ¬æ¡†çš„å€¼æ˜¯å¦ä¸ºç©ºï¼Œæœ‰å€¼çš„æƒ…å†µå°±éšè—æç¤ºè¯­ï¼Œæ²¡æœ‰å€¼å°±æ˜¾ç¤º
+            if (thisVal != "") {
+                $(this).siblings("span").hide();
+            } else {
+                $(this).siblings("span").show();
+            }
+            $(this).keyup(function () {
+                var val = $(this).val();
+                $(this).siblings("span").hide();
+            }).blur(function () {
+                var val = $(this).val();
+                if (val != "") {
+                    $(this).siblings("span").hide();
+                } else {
+                    $(this).siblings("span").show();
+                }
+            })
+        })
+    })
 </script>
- <script language="javascript">
-							 function chkuserinput(form){
-							   if(form.username.value==""){
-								  alert("ÇëÊäÈëÓÃ»§Ãû!");
-								  form.username.select();
-								  return(false);
-								}		
-								if(form.userpwd.value==""){
-								  alert("ÇëÊäÈëÓÃ»§ÃÜÂë!");
-								  form.userpwd.select();
-								  return(false);
-								}	
-								if(form.yz.value==""){
-								  alert("ÇëÊäÈëÑéÖ¤Âë!");
-								  form.yz.select();
-								  return(false);
-								}	
-							   return(true);				 
-							 }
-						  </script>
-						    <script language="javascript">
-						    function openfindpwd(){
-							window.open("openfindpwd.php","newframe","left=200,top=200,width=200,height=100,menubar=no,toolbar=no,location=no,scrollbars=no,location=no");
-							   }
-						</script>
+<script language="javascript">
+    function chkuserinput(form) {
+        if (form.username.value == "") {
+            alert("è¯·è¾“å…¥ç”¨æˆ·å!");
+            form.username.select();
+            return (false);
+        }
+        if (form.userpwd.value == "") {
+            alert("è¯·è¾“å…¥ç”¨æˆ·å¯†ç !");
+            form.userpwd.select();
+            return (false);
+        }
+        if (form.yz.value == "") {
+            alert("è¯·è¾“å…¥éªŒè¯ç !");
+            form.yz.select();
+            return (false);
+        }
+        return (true);
+    }
+</script>
+<script language="javascript">
+    function openfindpwd() {
+        window.open("openfindpwd.php", "newframe", "left=200,top=200,width=200,height=100,menubar=no,toolbar=no,location=no,scrollbars=no,location=no");
+    }
+</script>
 <body onload="form.username.focus();">
 <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <th width="800" align="left" bgcolor="#FFFFFF" scope="col"><img src="images/login.jpg" width="646" height="114" /></th>
-    <th width="200" align="left" bgcolor="#FFFFFF" scope="col"><img src="images/login1.jpg" width="468" height="114" /></th>
-  </tr>
-  <tr>
-    <th scope="row">  <div class="pic"><img src="images/login2.jpg" width="401" height="411" align="left" /><img src="images/login3.gif" width="174" height="412" align="left" /></div></th>
-    <th rowspan="2" scope="row"><form id="focus" name="form" class="border_radius" method="post" action="chkuser.php" onSubmit="return chkuserinput(this)">
-      <h2 class="STYLE3">WMS ¹ÜÀíÔ±µÇÂ¼</h2>
-      <label><span>ÇëÊäÈëÓÃ»§Ãû</span><input type="text" name="username" class="input_txt border_radius"></label>
-  <label><span>ÇëÊäÈëÃÜÂë</span><input type="password" name="userpwd" class="input_txt border_radius"></label>
-  <a href="reg.php" target="_blank"></a>&nbsp;&nbsp;&nbsp;&nbsp; 
-  <input name="submit" type="submit" class="btnx" value="µÇÂ¼">
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:openfindpwd()">Íü¼ÇµÇÂ¼ÃÜÂë</a>
-    </form></th>
-  </tr>
-  <tr>
-    <th scope="row">&nbsp;</th>
-  </tr>
-  <tr>
-    <th colspan="2" scope="row">
-      <p class="STYLE5">ÁªÏµµç»°: 027-87413985 ¼¼ÊõÖ§³ÖQQ:1210380695 623696552</p>
-      <p class="STYLE6">¿ª·¢ÈËÔ±£ºÕÅĞÇ »Æº£·å ÍõÓñÀ¤ µÔ³¯Ë§ Web¿â´æ¹ÜÀíÏµÍ³ - ²Ö¿â¹ÜÀíÈí¼şB/S°æ</p></th>
-  </tr>
+    <tr>
+        <th width="800" align="left" bgcolor="#FFFFFF" scope="col"><img src="images/login.jpg" width="646"
+                                                                        height="114"/></th>
+        <th width="200" align="left" bgcolor="#FFFFFF" scope="col"><img src="images/login1.jpg" width="468"
+                                                                        height="114"/></th>
+    </tr>
+    <tr>
+        <th scope="row">
+            <div class="pic"><img src="images/login2.jpg" width="401" height="411" align="left"/><img
+                        src="images/login3.gif" width="174" height="412" align="left"/></div>
+        </th>
+        <th rowspan="2" scope="row">
+            <form id="focus" name="form" class="border_radius" method="post" action="chkuser.php"
+                  onSubmit="return chkuserinput(this)">
+                <h2 class="STYLE3">WMS ç®¡ç†å‘˜ç™»å½•</h2>
+                <label><span>è¯·è¾“å…¥ç”¨æˆ·å</span><input type="text" name="username" class="input_txt border_radius"></label>
+                <label><span>è¯·è¾“å…¥å¯†ç </span><input type="password" name="userpwd" class="input_txt border_radius"></label>
+                <a href="reg.php" target="_blank"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="submit" type="submit" class="btnx" value="ç™»å½•">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:openfindpwd()">å¿˜è®°ç™»å½•å¯†ç </a>
+            </form>
+        </th>
+    </tr>
+    <tr>
+        <th scope="row">&nbsp;</th>
+    </tr>
+    <tr>
+        <th colspan="2" scope="row">
+            <p class="STYLE5">è”ç³»ç”µè¯: 027-87413985 æŠ€æœ¯æ”¯æŒQQ:1210380695 623696552</p>
+            <p class="STYLE6">å¼€å‘äººå‘˜ï¼šå¼ æ˜Ÿ é»„æµ·å³° ç‹ç‰å¤ ç¿Ÿæœå¸… Webåº“å­˜ç®¡ç†ç³»ç»Ÿ - ä»“åº“ç®¡ç†è½¯ä»¶B/Sç‰ˆ</p></th>
+    </tr>
 </table>
 </body>
 </html>

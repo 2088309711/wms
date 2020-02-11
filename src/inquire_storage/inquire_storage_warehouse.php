@@ -1,16 +1,16 @@
 <?php
-//È¨ÏŞÑéÖ¤¡ª¡ª
+//æƒé™éªŒè¯â€•â€•
 include("../const.php");
 if ($authority[12]==0){  
-	echo "<script language='javascript'>alert('¶Ô²»Æğ£¬ÄãÃ»ÓĞ´Ë²Ù×÷È¨ÏŞ£¡');history.back();</script>";
+	echo "<script language='javascript'>alert('å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰æ­¤æ“ä½œæƒé™ï¼');history.back();</script>";
 	exit;
 }
-//È¨ÏŞÑéÖ¤¡ª¡ª
+//æƒé™éªŒè¯â€•â€•
 
 	include "../basic/include.php";
 	include "../basic/database.php";
 	
-	$warehouse = $_GET[warehouse];	
+	$warehouse = $_GET['warehouse'];
 	$query = "select * from table_warehouse order by name";//echo $query."<br>";
 	$result_warehouse = mysql_query($query);
 	
@@ -25,8 +25,8 @@ if ($authority[12]==0){
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>¿â´æ²éÑ¯-²Ö¿â</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>åº“å­˜æŸ¥è¯¢-ä»“åº“</title>
 </head>
 <style>
 </style>
@@ -34,10 +34,10 @@ if ($authority[12]==0){
 <link rel="stylesheet" type="text/css" href="../css/iframe.css" media="screen" />
 <body style="width:800px">
 <form id="item_in" name="item_in" method="post" action="../receipt_inout/receipt_out_bg.php" onsubmit=" return checkForm()">
-  <h3>¿â´æ²éÑ¯-²Ö¿â</h3>
+  <h3>åº“å­˜æŸ¥è¯¢-ä»“åº“</h3>
   <fieldset>
-  <legend>²Ö¿âĞÅÏ¢</legend>
-  <label>²éÑ¯²Ö¿â</label>
+  <legend>ä»“åº“ä¿¡æ¯</legend>
+  <label>æŸ¥è¯¢ä»“åº“</label>
   <select id="warehouse" name="warehouse" onchange="location.href='inquire_storage_warehouse.php?warehouse='+this.value">
     <?php 
 	while($RS = mysql_fetch_array($result_warehouse))
@@ -49,14 +49,14 @@ if ($authority[12]==0){
   </select>
   </fieldset>
   <fieldset>
-  <legend>¿â´æÁĞ±í</legend>
+  <legend>åº“å­˜åˆ—è¡¨</legend>
   <table id="storage" width="500" border="1" cellspacing="0" cellpadding="5" style="font-size:12px; border:thin; border-color:#9999FF ">
     <tr align="center">
-      <td>»õÆ·±àºÅ</td>
-      <td>»õÆ·Ãû³Æ</td>
-      <td>¹æ¸ñĞÍºÅ</td>
-      <td>µ¥Î»</td>
-      <td>ÊıÁ¿</td>
+      <td>è´§å“ç¼–å·</td>
+      <td>è´§å“åç§°</td>
+      <td>è§„æ ¼å‹å·</td>
+      <td>å•ä½</td>
+      <td>æ•°é‡</td>
     </tr>
     <?php
 	while($RS = mysql_fetch_array($result_item)){
@@ -84,10 +84,10 @@ if ($authority[12]==0){
   </table>
   </fieldset>
     <fieldset>
-  <legend>Í¼±í</legend>
-  <iframe src="/wms/inquire_storage/showcsim.php?warehouse=<?php echo $warehouse;?>" width="620" height="320" />
+  <legend>å›¾è¡¨</legend>
+  <iframe src="showcsim.php?warehouse=<?php echo $warehouse;?>" width="620" height="320" />
   </fieldset>
 </form>
-<p><a href="../basic/company/company_show.php">·µ»ØÉÏÒ»Ò³</a></p>
+<p><a href="../basic/company/company_show.php">è¿”å›ä¸Šä¸€é¡µ</a></p>
 </body>
 </html>

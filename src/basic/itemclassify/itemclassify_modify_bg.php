@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 	include "../include.php";
 	include "../database.php";
@@ -6,7 +6,7 @@
 $string = $_POST[hidden];
 
 if($string == "")
-	$error='Ìá½»µÄ±íµ¥ÓÐÎó£¡';
+	$error='æäº¤çš„è¡¨å•æœ‰è¯¯ï¼';
 else
 {
 	$str_array = explode("|",$string,3);
@@ -19,7 +19,7 @@ else
 	$RS = mysql_fetch_array($result);
 	
 	if(empty($RS))
-		$error = "ID´íÎó£¬ÐèÐÞ¸ÄµÄÄ¿±ê²»´æÔÚ£¡";	
+		$error = "IDé”™è¯¯ï¼Œéœ€ä¿®æ”¹çš„ç›®æ ‡ä¸å­˜åœ¨ï¼";	
 	else{
 		$query = "update table_itemclassify set name='$name', lowerclass='$lowerclass' where id = '$id'";
 		$result = mysql_query($query);
@@ -33,11 +33,11 @@ var url;
 <?php
 if($error==''){
 	if($result == FALSE){
-		echo "alert('ÐÞ¸ÄÊ§°Ü!£¡');";
+		echo "alert('ä¿®æ”¹å¤±è´¥!ï¼');";
 		echo "var url = 'itemclassify_show.php';";
 	}
 	else{
-		echo "alert('ÐÞ¸Ä³É¹¦£¡\\n±àºÅ£º $id\\n·ÖÀàÃû³Æ£º $name\\n');\n";
+		echo "alert('ä¿®æ”¹æˆåŠŸï¼\\nç¼–å·ï¼š $id\\nåˆ†ç±»åç§°ï¼š $name\\n');\n";
 		echo "var url = 'itemclassify_show.php';";
 	}
 }

@@ -5,8 +5,8 @@
 ?>
 <html>
 <head>
-<title>修改密码</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>淇敼瀵嗙爜</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="../style/style.css" rel="stylesheet" type="text/css">
 <style>
 body {
@@ -18,13 +18,13 @@ function check()
 {
 if (document.form1.pwd_new.value=="")
 {
-alert("请输入新密码！");
+alert("璇疯緭鍏ユ柊瀵嗙爜锛�");
 document.form1.pwd_new.focus();
 return false;
 }
 if (document.form1.pwd_new.value!=document.form1.pwd_new2.value)
 {
-alert("两次密码输入不一致！");
+alert("涓ゆ瀵嗙爜杈撳叆涓嶄竴鑷达紒");
 return false;
 }
 }
@@ -39,7 +39,7 @@ return false;
 <td width="100%" background="../images/r_0.gif">
   <table cellpadding="0" cellspacing="0" width="100%">
     <tr>
-      <td>&nbsp;修改密码</td>
+      <td>&nbsp;淇敼瀵嗙爜</td>
 	  <td align="right">&nbsp;</td>
     </tr>
   </table>
@@ -51,22 +51,22 @@ return false;
 <td>
 <table align="center" cellpadding="4" cellspacing="1" class="toptable grid" border="1">
       <tr>
-        <td width="25%" height="30" align="right">原密码：</td>
+        <td width="25%" height="30" align="right">鍘熷瘑鐮侊細</td>
         <td width="75%" class="category"><input type="text" name="pwd_old" style="width:200px"></td>
       </tr>
       <tr>
-        <td align="right" height="30">新密码：</td>
+        <td align="right" height="30">鏂板瘑鐮侊細</td>
         <td class="category"><input type="text" name="pwd_new" style="width:200px"></td>
       </tr>
       <tr>
-        <td align="right" height="30">确认新密码：</td>
+        <td align="right" height="30">纭鏂板瘑鐮侊細</td>
         <td class="category"><input type="text" name="pwd_new2" style="width:200px"></td>
       </tr>	  	  
       <tr>
 	    <td height="30">&nbsp;</td>
         <td class="category">
-		  <input type="submit" value=" 确认修改 " onClick="return check()" class="button">&nbsp;&nbsp;&nbsp;&nbsp;
-		  <input type="reset" value=" 重置 " class="button">
+		  <input type="submit" value=" 纭淇敼 " onClick="return check()" class="button">&nbsp;&nbsp;&nbsp;&nbsp;
+		  <input type="reset" value=" 閲嶇疆 " class="button">
 		  </td>
       </tr>	    
 </table>

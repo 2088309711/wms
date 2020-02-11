@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 include "../basic/include.php";
 
@@ -13,43 +13,43 @@ $itemstr = $_POST[item_str];
 //echo "$yewuyuan||$date||$warehouse||$warehouse2||$type||$itemstr";die();
 
 if($yewuyuan==''||$date==''||$warehouse==''||$warehouse2==''||$type==''||$itemstr=='' )//$id==''||
-	$error='Ìá½»µÄ±íµ¥ÓĞÎó£¡';
+	$error='æäº¤çš„è¡¨å•æœ‰è¯¯ï¼';
 else
 {	
 	$date2 = date("ymd");
 	$id = $date2."00";
-	$con = mysql_connect("localhost","root","1234") or die("²»ÄÜÁ¬½Óµ½Mysql Server");
-	mysql_select_db("db_wms", $con) or die("Êı¾İ¿âÑ¡ÔñÊ§°Ü");
-	mysql_query("set names gb2312");
+	$con = mysql_connect("localhost","root","1234") or die("ä¸èƒ½è¿æ¥åˆ°Mysql Server");
+	mysql_select_db("db_wms", $con) or die("æ•°æ®åº“é€‰æ‹©å¤±è´¥");
+	mysql_query("set names utf-8");
 	
-	if(mysql_query("select * from table_warehouse_$warehouse")==false)//¼ì²éÄ¿±ê²Ö¿âÊé¿â±íÊÇ·ñ½¡ÔÚ
-		die("²Ö¿â$warehouse²»´æÔÚ£¡");
-	if(mysql_query("select * from table_warehouse_$warehouse2")==false)//¼ì²éÄ¿±ê²Ö¿âÊé¿â±íÊÇ·ñ½¡ÔÚ
-		die("²Ö¿â$warehouse2²»´æÔÚ£¡");
+	if(mysql_query("select * from table_warehouse_$warehouse")==false)//æ£€æŸ¥ç›®æ ‡ä»“åº“ä¹¦åº“è¡¨æ˜¯å¦å¥åœ¨
+		die("ä»“åº“$warehouseä¸å­˜åœ¨ï¼");
+	if(mysql_query("select * from table_warehouse_$warehouse2")==false)//æ£€æŸ¥ç›®æ ‡ä»“åº“ä¹¦åº“è¡¨æ˜¯å¦å¥åœ¨
+		die("ä»“åº“$warehouse2ä¸å­˜åœ¨ï¼");
 		
 	$query = "select * from test_exchange where id = '$id'";
 	$result = mysql_query($query);
 	$RS = mysql_fetch_array($result);
 	
 	while(!empty($RS)){
-		if(($id = next_value($id))!="Overflow!"){//»ñÈ¡¿ÉÓÃID
+		if(($id = next_value($id))!="Overflow!"){//è·å–å¯ç”¨ID
 			$query = "select * from test_exchange where id = '$id'";
 			$result = mysql_query($query);
 			$RS = mysql_fetch_array($result);
 		}
 		else{
-			$error='±àºÅÒç³ö£¡';
+			$error='ç¼–å·æº¢å‡ºï¼';
 			break;
 		}	
 	}
 	
-	if($error=='')//²åÈëÈë¿âµ¥
+	if($error=='')//æ’å…¥å…¥åº“å•
 	{
 		$query = "insert test_exchange values ('$id', '$date', '$yewuyuan', '$type', '$warehouse', '$warehouse2', '$remark', '$itemstr')";
 		$result = mysql_query($query);
 	}
 	
-	//´¦Àí»õÆ·ÁĞ±í¡ª¡ª¡ª¡ª¡ª¡ª
+	//å¤„ç†è´§å“åˆ—è¡¨â€•â€•â€•â€•â€•â€•
 	$list = explode('|',$itemstr);//print_r($list);
 	foreach($list as $str){
 		$info = explode('+',$str);//print_r($info);die();
@@ -62,26 +62,26 @@ else
 		$result = mysql_query($query);
 		$RS = mysql_fetch_array($result);
 		while(!empty($RS)){
-			if(($inout_id = next_value($inout_id))!="Overflow!"){//»ñÈ¡¿ÉÓÃID
+			if(($inout_id = next_value($inout_id))!="Overflow!"){//è·å–å¯ç”¨ID
 				$query = "select * from test_inout where id = '$inout_id'";
 				$result = mysql_query($query);
 				$RS = mysql_fetch_array($result);
 			}
 			else{
-				$error='±àºÅÒç³ö£¡';
+				$error='ç¼–å·æº¢å‡ºï¼';
 				break;
 			}	
 		}
-		if($error=='')//²åÈëÈë¿â¼ÇÂ¼
+		if($error=='')//æ’å…¥å…¥åº“è®°å½•
 		{
 			$query = "insert test_inout values ('$inout_id', '$item_id', '$item_num', '0', '$id', '$type')";
 			$result = mysql_query($query);
 		}
 		
-		$query = "select * from table_warehouse_$warehouse where id = '$item_id'";//¸ü¸Ä²Ö¿âÖĞÏàÓ¦»õÆ·ÊıÁ¿
+		$query = "select * from table_warehouse_$warehouse where id = '$item_id'";//æ›´æ”¹ä»“åº“ä¸­ç›¸åº”è´§å“æ•°é‡
 		$result = mysql_query($query );
 		$RS = mysql_fetch_array($result);
-		if(empty($RS)){//Èç¹û¸Ã²Ö¿âÖĞÖ®Ç°Ã»ÓĞ´Ë»õÆ·£¬Ôò²åÈëÏîÄ¿£»·ñÔò¸üĞÂÏîÄ¿
+		if(empty($RS)){//å¦‚æœè¯¥ä»“åº“ä¸­ä¹‹å‰æ²¡æœ‰æ­¤è´§å“ï¼Œåˆ™æ’å…¥é¡¹ç›®ï¼›å¦åˆ™æ›´æ–°é¡¹ç›®
 			$query = "insert table_warehouse_$warehouse values('$item_id' , $item_num )";echo "<br>".$query."<br>";
 			mysql_query($query);
 		}
@@ -92,10 +92,10 @@ else
 			mysql_query($query);
 		}
 		
-		$query = "select * from table_warehouse_$warehouse2 where id = '$item_id'";//¸ü¸Ä²Ö¿âÖĞÏàÓ¦»õÆ·ÊıÁ¿
+		$query = "select * from table_warehouse_$warehouse2 where id = '$item_id'";//æ›´æ”¹ä»“åº“ä¸­ç›¸åº”è´§å“æ•°é‡
 		$result = mysql_query($query );
 		$RS = mysql_fetch_array($result);
-		if(empty($RS)){//Èç¹û¸Ã²Ö¿âÖĞÖ®Ç°Ã»ÓĞ´Ë»õÆ·£¬Ôò²åÈëÏîÄ¿£»·ñÔò¸üĞÂÏîÄ¿
+		if(empty($RS)){//å¦‚æœè¯¥ä»“åº“ä¸­ä¹‹å‰æ²¡æœ‰æ­¤è´§å“ï¼Œåˆ™æ’å…¥é¡¹ç›®ï¼›å¦åˆ™æ›´æ–°é¡¹ç›®
 			$query = "insert table_warehouse_$warehouse2 values('$item_id' , $item_num )";echo "<br>".$query."<br>";
 			mysql_query($query);
 		}
@@ -127,11 +127,11 @@ echo 'var url;';
 if($error=='')
 {
 	if($result == FALSE){
-		echo "alert('Ìí¼ÓÊ§°Ü£¡');";
+		echo "alert('æ·»åŠ å¤±è´¥ï¼');";
 		echo "var url = 'receipt_exchange.php';";
 	}
 	else{
-		echo "alert('Ìí¼Ó³É¹¦£¡');\n";
+		echo "alert('æ·»åŠ æˆåŠŸï¼');\n";
 		echo "var url = 'receipt_exchange.php';";
 	}
 }

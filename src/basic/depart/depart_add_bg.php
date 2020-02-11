@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <?php
 	include "../include.php";
@@ -10,14 +10,14 @@ $major = $_POST["major"];
 $phone = $_POST["phone"];
 
 if($id==''||$name=='')
-	$error='Ìá½»µÄ±íµ¥ÓÐÎó£¡';
+	$error='æäº¤çš„è¡¨å•æœ‰è¯¯ï¼';
 else{
 	$query = "select * from table_depart where name = '$name'";
 	$result = mysql_query($query);
 	$RS = mysql_fetch_array($result);
 	
 	if(!empty($RS))
-		$error="¸Ã²¿ÃÅÒÑ´æÔÚ£¡";
+		$error="è¯¥éƒ¨é—¨å·²å­˜åœ¨ï¼";
 	
 	$query = "select * from table_depart where id = '$id'";
 	$result = mysql_query($query);
@@ -30,7 +30,7 @@ else{
 			$RS = mysql_fetch_array($result);
 		}
 		else{
-			$error='±àºÅÒç³ö£¡';
+			$error='ç¼–å·æº¢å‡ºï¼';
 			break;
 		}
 	}	
@@ -49,17 +49,17 @@ var url;
 if($error=='')
 {
 	if($result == FALSE){
-		echo "alert('Ìí¼Ó²¿ÃÅÊ§°Ü£¡·µ»Ø²¿ÃÅÌí¼ÓÒ³Ãæ£¡');";
+		echo "alert('æ·»åŠ éƒ¨é—¨å¤±è´¥ï¼è¿”å›žéƒ¨é—¨æ·»åŠ é¡µé¢ï¼');";
 		echo "var url = 'depart_add.php';";
 	}
 	else{
-		echo "alert('Ìí¼Ó²¿ÃÅ³É¹¦£¡·µ»Ø²¿ÃÅ¹ÜÀí½çÃæ£¡\\n²¿ÃÅ±àºÅ£º $id\\n²¿ÃÅÃû³Æ£º $name\\n²¿ÃÅÖ÷¹Ü£º $major\\n²¿ÃÅµç»°£º $phonet');\n";
+		echo "alert('æ·»åŠ éƒ¨é—¨æˆåŠŸï¼è¿”å›žéƒ¨é—¨ç®¡ç†ç•Œé¢ï¼\\néƒ¨é—¨ç¼–å·ï¼š $id\\néƒ¨é—¨åç§°ï¼š $name\\néƒ¨é—¨ä¸»ç®¡ï¼š $major\\néƒ¨é—¨ç”µè¯ï¼š $phonet');\n";
 		echo "var url = 'depart_show.php';";
 	}
 }
 else
 {
-	echo "alert('$error ·µ»Ø²¿ÃÅÌí¼ÓÒ³Ãæ£¡');";
+	echo "alert('$error è¿”å›žéƒ¨é—¨æ·»åŠ é¡µé¢ï¼');";
 	echo "var url = 'depart_add.php';";
 }
 ?>

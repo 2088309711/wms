@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <?php
 	include "../include.php";
@@ -11,14 +11,14 @@ $phone = $_POST["phone"];
 
 
 if($id==''||$name=='')//||$major==''||$phone==''
-	$error='Ìá½»µÄ±íµ¥ÓĞÎó£¡';
+	$error='æäº¤çš„è¡¨å•æœ‰è¯¯ï¼';
 else{
 	$query = "select * from table_depart where id = '$id'";//echo $query."<br>";
 	$result = mysql_query($query);
 	$RS = mysql_fetch_array($result);
 	
 	if(empty($RS))
-		$error = "ID´íÎó£¬ĞèĞŞ¸ÄµÄÄ¿±ê²»´æÔÚ£¡";	
+		$error = "IDé”™è¯¯ï¼Œéœ€ä¿®æ”¹çš„ç›®æ ‡ä¸å­˜åœ¨ï¼";	
 	else{
 		$query = "update table_depart set name='$name',major='$major',phone='$phone' where id = '$id'";//,major='$major',phone='$phone'
 		$result = mysql_query($query);
@@ -33,16 +33,16 @@ var url;
 <?php
 if($error==''){
 	if($result == FALSE){
-		echo "alert('¸üĞÂ²¿ÃÅĞÅÏ¢Ê§°Ü!£¡·µ»Ø²¿ÃÅĞÅÏ¢ĞŞ¸ÄÒ³Ãæ£¡');";
+		echo "alert('æ›´æ–°éƒ¨é—¨ä¿¡æ¯å¤±è´¥!ï¼è¿”å›éƒ¨é—¨ä¿¡æ¯ä¿®æ”¹é¡µé¢ï¼');";
 		echo "var url = 'depart_modify.php?id=".$id."';";
 	}
 	else{
-		echo "alert('¸üĞÂ²¿ÃÅĞÅÏ¢³É¹¦£¡·µ»Ø²¿ÃÅ¹ÜÀí½çÃæ£¡\\n²¿ÃÅ±àºÅ£º $id\\n²¿ÃÅÃû³Æ£º $name\\n²¿ÃÅÖ÷¹Ü£º $major\\nÁªÏµµç»°£º $phone');\n";
+		echo "alert('æ›´æ–°éƒ¨é—¨ä¿¡æ¯æˆåŠŸï¼è¿”å›éƒ¨é—¨ç®¡ç†ç•Œé¢ï¼\\néƒ¨é—¨ç¼–å·ï¼š $id\\néƒ¨é—¨åç§°ï¼š $name\\néƒ¨é—¨ä¸»ç®¡ï¼š $major\\nè”ç³»ç”µè¯ï¼š $phone');\n";
 		echo "var url = 'depart_show.php';";
 	}
 }
 else{
-	echo "alert('$error ·µ»Ø²¿ÃÅĞÅÏ¢ĞŞ¸ÄÒ³Ãæ£¡');";
+	echo "alert('$error è¿”å›éƒ¨é—¨ä¿¡æ¯ä¿®æ”¹é¡µé¢ï¼');";
 	echo "var url = 'depart_modify.php?id=".$id."';";
 }
 ?>
