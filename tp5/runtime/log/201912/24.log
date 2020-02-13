@@ -1,0 +1,76 @@
+---------------------------------------------------------------
+[ 2019-12-24T00:49:52+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news?city=&city=&city=&city=
+[运行时间：0.032688s] [吞吐率：30.59req/s] [内存消耗：1,172.64kb] [文件加载：38]
+[ error ] [8]unserialize(): Error at offset 10 of 15 bytes[D:\php-workspace\MyCms\tp5\thinkphp\library\think\cache\driver\File.php:126]
+---------------------------------------------------------------
+[ 2019-12-24T00:49:54+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news?city=&city=&city=&city=
+[运行时间：0.030796s] [吞吐率：32.47req/s] [内存消耗：1,172.65kb] [文件加载：38]
+[ error ] [8]unserialize(): Error at offset 10 of 15 bytes[D:\php-workspace\MyCms\tp5\thinkphp\library\think\cache\driver\File.php:126]
+---------------------------------------------------------------
+[ 2019-12-24T00:49:59+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news?city=&city=&city=&city=
+[运行时间：0.034701s] [吞吐率：28.82req/s] [内存消耗：1,172.65kb] [文件加载：38]
+[ error ] [8]unserialize(): Error at offset 10 of 11 bytes[D:\php-workspace\MyCms\tp5\thinkphp\library\think\cache\driver\File.php:126]
+---------------------------------------------------------------
+[ 2019-12-24T00:50:00+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news?city=&city=&city=&city=
+[运行时间：0.027185s] [吞吐率：36.79req/s] [内存消耗：1,172.65kb] [文件加载：38]
+[ error ] [8]unserialize(): Error at offset 10 of 11 bytes[D:\php-workspace\MyCms\tp5\thinkphp\library\think\cache\driver\File.php:126]
+---------------------------------------------------------------
+[ 2019-12-24T00:50:02+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news?city=&city=&city=&city=
+[运行时间：0.031657s] [吞吐率：31.59req/s] [内存消耗：1,172.65kb] [文件加载：38]
+[ error ] [8]unserialize(): Error at offset 2 of 8 bytes[D:\php-workspace\MyCms\tp5\thinkphp\library\think\cache\driver\File.php:126]
+---------------------------------------------------------------
+[ 2019-12-24T00:50:03+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news?city=&city=&city=&city=
+[运行时间：0.026202s] [吞吐率：38.17req/s] [内存消耗：1,172.65kb] [文件加载：38]
+[ error ] [8]unserialize(): Error at offset 2 of 8 bytes[D:\php-workspace\MyCms\tp5\thinkphp\library\think\cache\driver\File.php:126]
+---------------------------------------------------------------
+[ 2019-12-24T00:50:03+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news?city=&city=&city=&city=
+[运行时间：0.028179s] [吞吐率：35.49req/s] [内存消耗：1,172.65kb] [文件加载：38]
+[ error ] [8]unserialize(): Error at offset 2 of 8 bytes[D:\php-workspace\MyCms\tp5\thinkphp\library\think\cache\driver\File.php:126]
+---------------------------------------------------------------
+[ 2019-12-24T00:50:03+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news?city=&city=&city=&city=
+[运行时间：0.026006s] [吞吐率：38.45req/s] [内存消耗：1,172.65kb] [文件加载：38]
+[ error ] [8]unserialize(): Error at offset 2 of 8 bytes[D:\php-workspace\MyCms\tp5\thinkphp\library\think\cache\driver\File.php:126]
+---------------------------------------------------------------
+[ 2019-12-24T01:08:36+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news?city=&city=&city=&city=
+[运行时间：0.024169s] [吞吐率：41.38req/s] [内存消耗：849.15kb] [文件加载：27]
+[ error ] [0]语法解析错误: syntax error, unexpected ';', expecting ']'[D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php:38]
+---------------------------------------------------------------
+[ 2019-12-24T01:08:44+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news?city=&city=&city=&city=
+[运行时间：0.022286s] [吞吐率：44.87req/s] [内存消耗：849.15kb] [文件加载：27]
+[ error ] [0]语法解析错误: syntax error, unexpected ';', expecting ']'[D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php:38]
+---------------------------------------------------------------
+[ 2019-12-24T01:10:26+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news?city=&city=&city=&city=
+[运行时间：0.048160s] [吞吐率：20.76req/s] [内存消耗：1,298.33kb] [文件加载：38]
+[ error ] [8]未定义变量: showspecial[D:\php-workspace\MyCms\tp5\runtime\temp\d6b36512d911fcbe214ce35e60e01860.php:77]
+---------------------------------------------------------------
+[ 2019-12-24T01:24:17+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data?page=1&limit=10
+[运行时间：0.095015s] [吞吐率：10.52req/s] [内存消耗：1,998.59kb] [文件加载：44]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php:38]
+---------------------------------------------------------------
+[ 2019-12-24T01:24:36+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data?page=1&limit=10
+[运行时间：0.099491s] [吞吐率：10.05req/s] [内存消耗：1,998.89kb] [文件加载：44]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php:41]
+---------------------------------------------------------------
+[ 2019-12-24T01:24:39+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data?page=1&limit=10
+[运行时间：0.078935s] [吞吐率：12.67req/s] [内存消耗：1,998.89kb] [文件加载：44]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php:41]
+---------------------------------------------------------------
+[ 2019-12-24T01:25:08+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data?page=1&limit=10
+[运行时间：0.085660s] [吞吐率：11.67req/s] [内存消耗：1,998.89kb] [文件加载：44]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php:39]
+---------------------------------------------------------------
+[ 2019-12-24T01:25:17+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data?page=1&limit=10
+[运行时间：0.097559s] [吞吐率：10.25req/s] [内存消耗：1,998.89kb] [文件加载：44]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php:39]
+---------------------------------------------------------------
+[ 2019-12-24T01:27:26+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data?page=1&limit=10
+[运行时间：0.092360s] [吞吐率：10.83req/s] [内存消耗：1,998.89kb] [文件加载：44]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php:39]
+---------------------------------------------------------------
+[ 2019-12-24T15:24:01+08:00 ] 127.0.0.1 GET mycms.com/index.php/admin
+[运行时间：0.027375s] [吞吐率：36.53req/s] [内存消耗：1,119.63kb] [文件加载：34]
+[ error ] [0]模板文件不存在:D:\php-workspace\MyCms/tp5/application/admin\view\index\index.html[D:\php-workspace\MyCms\tp5\thinkphp\library\think\view\driver\Think.php:82]
+---------------------------------------------------------------
+[ 2019-12-24T17:46:04+08:00 ] 127.0.0.1 GET mycms.com/index.php/admin
+[运行时间：0.032710s] [吞吐率：30.57req/s] [内存消耗：1,121.57kb] [文件加载：34]
+[ error ] [0]模板文件不存在:[D:\php-workspace\MyCms\tp5\thinkphp\library\think\Template.php:1074]

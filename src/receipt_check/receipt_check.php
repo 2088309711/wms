@@ -250,7 +250,7 @@ function resetInput(){//提交输入后，将输入框字符设为默认（建�
 			echo "<option value='$RS[id]'>$RS[name]</option>";
 	?>
   </select>
-  <a href="/wms/basic/warehouse/warehouse_show.php" target="_self"><img src="../image/delete.gif" alt="仓库管理" width="25" height="19" border="0"/></a>
+  <a href="../basic/warehouse/warehouse_show.php" target="_self"><img src="../image/delete.gif" alt="仓库管理" width="25" height="19" border="0"/></a>
   
   </fieldset>
   <input name="item_str" id="item_str" style="display:none" hidden/>

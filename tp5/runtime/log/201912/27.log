@@ -1,0 +1,12 @@
+---------------------------------------------------------------
+[ 2019-12-27T15:06:04+08:00 ] 127.0.0.1 GET mycms.com/index.php/admin
+[运行时间：0.035493s] [吞吐率：28.17req/s] [内存消耗：1,487.78kb] [文件加载：37]
+[ error ] [0]致命错误: Call to undefined function phpversion0()[D:\php-workspace\MyCms\tp5\runtime\temp\9b2ab671b2ec84822d70dc6a78455351.php:196]
+---------------------------------------------------------------
+[ 2019-12-27T15:15:04+08:00 ] 127.0.0.1 GET mycms.com/index.php/admin
+[运行时间：0.040039s] [吞吐率：24.98req/s] [内存消耗：1,483.80kb] [文件加载：37]
+[ error ] [0]致命错误: Call to undefined function do_eGetDBVer()[D:\php-workspace\MyCms\tp5\runtime\temp\9b2ab671b2ec84822d70dc6a78455351.php:207]
+---------------------------------------------------------------
+[ 2019-12-27T15:18:06+08:00 ] 127.0.0.1 GET mycms.com/index.php/admin
+[运行时间：0.039625s] [吞吐率：25.24req/s] [内存消耗：1,489.94kb] [文件加载：38]
+[ error ] [8]Use of undefined constant MAGIC_QUOTES_GPC - assumed 'MAGIC_QUOTES_GPC'[D:\php-workspace\MyCms\tp5\runtime\temp\9b2ab671b2ec84822d70dc6a78455351.php:228]

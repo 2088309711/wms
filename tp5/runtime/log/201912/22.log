@@ -1,0 +1,12 @@
+---------------------------------------------------------------
+[ 2019-12-22T20:53:54+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.117522s] [吞吐率：8.51req/s] [内存消耗：1,976.44kb] [文件加载：42]
+[ error ] [0]variable type error： array[D:\php-workspace\MyCms\tp5\thinkphp\library\think\Response.php:316]
+---------------------------------------------------------------
+[ 2019-12-22T22:26:51+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.033479s] [吞吐率：29.87req/s] [内存消耗：848.16kb] [文件加载：27]
+[ error ] [0]语法解析错误: syntax error, unexpected '，30' (T_STRING), expecting ',' or ')'[D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php:35]
+---------------------------------------------------------------
+[ 2019-12-22T22:29:57+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.075127s] [吞吐率：13.31req/s] [内存消耗：1,992.07kb] [文件加载：42]
+[ error ] [0]variable type error： array[D:\php-workspace\MyCms\tp5\thinkphp\library\think\Response.php:316]

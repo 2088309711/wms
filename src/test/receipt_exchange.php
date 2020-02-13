@@ -310,7 +310,7 @@ function showRight(){//根据入库仓库，限定出库仓库
   <select id="right" name="warehouse2" >
     <script language="javascript">showRight()</script>
   </select>
-  <a href="/wms/basic/warehouse/warehouse_show.php" target="_blank"><img src="../image/delete.gif" alt="仓库管理" width="25" height="19" border="0"/></a>
+  <a href="../basic/warehouse/warehouse_show.php" target="_blank"><img src="../image/delete.gif" alt="仓库管理" width="25" height="19" border="0"/></a>
   </fieldset>
   <fieldset>
   <legend>库存列表</legend>

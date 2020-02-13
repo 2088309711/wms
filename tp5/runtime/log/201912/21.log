@@ -1,0 +1,146 @@
+---------------------------------------------------------------
+[ 2019-12-21T07:42:15+00:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.041802s] [吞吐率：23.92req/s] [内存消耗：2,383.24kb] [文件加载：24]
+[ error ] [64]think\App::main(): Failed opening required 'D:\php-workspace\MyCms\tp5\apple/config/config.php' (include_path='.;C:\php\pear')[D:\php-workspace\MyCms\tp5\application\common.php:117]
+---------------------------------------------------------------
+[ 2019-12-21T07:44:47+00:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.045506s] [吞吐率：21.98req/s] [内存消耗：2,384.25kb] [文件加载：24]
+[ error ] [64]think\App::main(): Failed opening required 'D:\php-workspace\MyCms\tp5\apple/config/config.php' (include_path='.;C:\php\pear')[D:\php-workspace\MyCms\tp5\application\common.php:121]
+---------------------------------------------------------------
+[ 2019-12-21T07:44:48+00:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.047073s] [吞吐率：21.24req/s] [内存消耗：2,384.25kb] [文件加载：24]
+[ error ] [64]think\App::main(): Failed opening required 'D:\php-workspace\MyCms\tp5\apple/config/config.php' (include_path='.;C:\php\pear')[D:\php-workspace\MyCms\tp5\application\common.php:121]
+---------------------------------------------------------------
+[ 2019-12-21T07:44:48+00:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.049025s] [吞吐率：20.40req/s] [内存消耗：2,384.25kb] [文件加载：24]
+[ error ] [64]think\App::main(): Failed opening required 'D:\php-workspace\MyCms\tp5\apple/config/config.php' (include_path='.;C:\php\pear')[D:\php-workspace\MyCms\tp5\application\common.php:121]
+---------------------------------------------------------------
+[ 2019-12-21T07:44:48+00:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.045597s] [吞吐率：21.93req/s] [内存消耗：2,384.25kb] [文件加载：24]
+[ error ] [64]think\App::main(): Failed opening required 'D:\php-workspace\MyCms\tp5\apple/config/config.php' (include_path='.;C:\php\pear')[D:\php-workspace\MyCms\tp5\application\common.php:121]
+---------------------------------------------------------------
+[ 2019-12-21T07:45:11+00:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.047403s] [吞吐率：21.10req/s] [内存消耗：2,384.25kb] [文件加载：24]
+[ error ] [64]think\App::main(): Failed opening required 'D:\php-workspace\MyCms\tp5\apple/config/config.php' (include_path='.;C:\php\pear')[D:\php-workspace\MyCms\tp5\application\common.php:121]
+---------------------------------------------------------------
+[ 2019-12-21T07:45:12+00:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.048797s] [吞吐率：20.49req/s] [内存消耗：2,384.25kb] [文件加载：24]
+[ error ] [64]think\App::main(): Failed opening required 'D:\php-workspace\MyCms\tp5\apple/config/config.php' (include_path='.;C:\php\pear')[D:\php-workspace\MyCms\tp5\application\common.php:121]
+---------------------------------------------------------------
+[ 2019-12-21T07:45:20+00:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.040003s] [吞吐率：25.00req/s] [内存消耗：2,384.25kb] [文件加载：24]
+[ error ] [64]think\App::main(): Failed opening required 'D:\php-workspace\MyCms\tp5\apple/config/config.php' (include_path='.;C:\php\pear')[D:\php-workspace\MyCms\tp5\application\common.php:121]
+---------------------------------------------------------------
+[ 2019-12-21T15:45:44+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：1.073105s] [吞吐率：0.93req/s] [内存消耗：2,887.94kb] [文件加载：36]
+[ error ] [2]mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO)[D:\php-workspace\MyCms\e\class\db\db_mysqli.php:15]
+---------------------------------------------------------------
+[ 2019-12-21T07:45:53+00:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.023124s] [吞吐率：43.25req/s] [内存消耗：540.33kb] [文件加载：22]
+[ error ] [0]Parse error: syntax error, unexpected 'console_log' (T_STRING)[D:\php-workspace\MyCms\tp5\application\common.php:58]
+---------------------------------------------------------------
+[ 2019-12-21T15:47:57+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：1.073874s] [吞吐率：0.93req/s] [内存消耗：2,887.95kb] [文件加载：36]
+[ error ] [2]mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO)[D:\php-workspace\MyCms\e\class\db\db_mysqli.php:15]
+---------------------------------------------------------------
+[ 2019-12-21T15:48:15+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：1.043927s] [吞吐率：0.96req/s] [内存消耗：2,888.00kb] [文件加载：36]
+[ error ] [2]mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO)[D:\php-workspace\MyCms\e\class\db\db_mysqli.php:15]
+---------------------------------------------------------------
+[ 2019-12-21T15:49:03+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：1.049774s] [吞吐率：0.95req/s] [内存消耗：2,887.95kb] [文件加载：36]
+[ error ] [2]mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO)[D:\php-workspace\MyCms\e\class\db\db_mysqli.php:15]
+---------------------------------------------------------------
+[ 2019-12-21T15:49:44+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.051567s] [吞吐率：19.39req/s] [内存消耗：2,969.82kb] [文件加载：40]
+[ error ] [2]Missing argument 1 for halt(), called in D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php on line 34 and defined[D:\php-workspace\MyCms\tp5\thinkphp\helper.php:536]
+[ error ] [8]未定义变量: var[D:\php-workspace\MyCms\tp5\thinkphp\helper.php:538]
+---------------------------------------------------------------
+[ 2019-12-21T15:49:45+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.044280s] [吞吐率：22.58req/s] [内存消耗：2,969.88kb] [文件加载：40]
+[ error ] [2]Missing argument 1 for halt(), called in D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php on line 34 and defined[D:\php-workspace\MyCms\tp5\thinkphp\helper.php:536]
+[ error ] [8]未定义变量: var[D:\php-workspace\MyCms\tp5\thinkphp\helper.php:538]
+---------------------------------------------------------------
+[ 2019-12-21T15:50:00+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：1.039996s] [吞吐率：0.96req/s] [内存消耗：2,888.05kb] [文件加载：36]
+[ error ] [2]mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO)[D:\php-workspace\MyCms\e\class\db\db_mysqli.php:15]
+---------------------------------------------------------------
+[ 2019-12-21T15:50:10+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：1.061690s] [吞吐率：0.94req/s] [内存消耗：2,887.99kb] [文件加载：36]
+[ error ] [2]mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO)[D:\php-workspace\MyCms\e\class\db\db_mysqli.php:15]
+---------------------------------------------------------------
+[ 2019-12-21T15:50:16+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：1.044766s] [吞吐率：0.96req/s] [内存消耗：2,887.99kb] [文件加载：36]
+[ error ] [2]mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO)[D:\php-workspace\MyCms\e\class\db\db_mysqli.php:15]
+---------------------------------------------------------------
+[ 2019-12-21T15:50:47+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.062006s] [吞吐率：16.13req/s] [内存消耗：2,949.93kb] [文件加载：38]
+[ error ] [0]致命错误: Call to undefined function app\admin\controller\db_connect()[D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php:34]
+---------------------------------------------------------------
+[ 2019-12-21T15:50:54+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：1.069174s] [吞吐率：0.94req/s] [内存消耗：2,887.99kb] [文件加载：36]
+[ error ] [2]mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO)[D:\php-workspace\MyCms\e\class\db\db_mysqli.php:15]
+---------------------------------------------------------------
+[ 2019-12-21T15:51:10+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：1.056295s] [吞吐率：0.95req/s] [内存消耗：2,887.99kb] [文件加载：36]
+[ error ] [2]mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO)[D:\php-workspace\MyCms\e\class\db\db_mysqli.php:15]
+---------------------------------------------------------------
+[ 2019-12-21T15:52:07+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：1.047844s] [吞吐率：0.95req/s] [内存消耗：2,887.97kb] [文件加载：36]
+[ error ] [2]mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO)[D:\php-workspace\MyCms\e\class\db\db_mysqli.php:15]
+---------------------------------------------------------------
+[ 2019-12-21T15:53:05+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：1.054830s] [吞吐率：0.95req/s] [内存消耗：2,887.91kb] [文件加载：36]
+[ error ] [2]mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO)[D:\php-workspace\MyCms\e\class\db\db_mysqli.php:15]
+---------------------------------------------------------------
+[ 2019-12-21T15:57:21+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.051570s] [吞吐率：19.39req/s] [内存消耗：2,950.06kb] [文件加载：38]
+[ error ] [0]致命错误: Class 'app\admin\controller\mysqlquery' not found[D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php:35]
+---------------------------------------------------------------
+[ 2019-12-21T16:38:17+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.033091s] [吞吐率：30.22req/s] [内存消耗：1,319.75kb] [文件加载：37]
+[ error ] [2]Missing argument 1 for think\Model::get(), called in D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php on line 31 and defined[D:\php-workspace\MyCms\tp5\thinkphp\library\think\Model.php:1696]
+---------------------------------------------------------------
+[ 2019-12-21T16:43:23+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.060300s] [吞吐率：16.58req/s] [内存消耗：1,940.18kb] [文件加载：44]
+[ error ] [8]Use of undefined constant tbname - assumed 'tbname'[D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php:35]
+---------------------------------------------------------------
+[ 2019-12-21T16:43:36+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.059360s] [吞吐率：16.85req/s] [内存消耗：1,940.18kb] [文件加载：44]
+[ error ] [8]Use of undefined constant tbname - assumed 'tbname'[D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php:35]
+---------------------------------------------------------------
+[ 2019-12-21T16:43:38+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.054632s] [吞吐率：18.30req/s] [内存消耗：1,940.18kb] [文件加载：44]
+[ error ] [8]Use of undefined constant tbname - assumed 'tbname'[D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php:35]
+---------------------------------------------------------------
+[ 2019-12-21T16:43:54+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.059505s] [吞吐率：16.81req/s] [内存消耗：1,940.05kb] [文件加载：44]
+[ error ] [8]Use of undefined constant tbname - assumed 'tbname'[D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php:35]
+---------------------------------------------------------------
+[ 2019-12-21T16:43:55+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.053622s] [吞吐率：18.65req/s] [内存消耗：1,940.05kb] [文件加载：44]
+[ error ] [8]Use of undefined constant tbname - assumed 'tbname'[D:\php-workspace\MyCms\tp5\application\admin\controller\ListNews.php:35]
+---------------------------------------------------------------
+[ 2019-12-21T16:44:14+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.070778s] [吞吐率：14.13req/s] [内存消耗：1,966.27kb] [文件加载：45]
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'my_cms.nj_news' doesn't exist[D:\php-workspace\MyCms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2019-12-21T16:44:59+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.077980s] [吞吐率：12.82req/s] [内存消耗：1,966.27kb] [文件加载：45]
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'my_cms.nj_news' doesn't exist[D:\php-workspace\MyCms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2019-12-21T16:52:15+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.071001s] [吞吐率：14.08req/s] [内存消耗：1,976.20kb] [文件加载：42]
+[ error ] [0]variable type error： array[D:\php-workspace\MyCms\tp5\thinkphp\library\think\Response.php:316]
+---------------------------------------------------------------
+[ 2019-12-21T17:40:59+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.072084s] [吞吐率：13.87req/s] [内存消耗：1,977.03kb] [文件加载：42]
+[ error ] [0]variable type error： array[D:\php-workspace\MyCms\tp5\thinkphp\library\think\Response.php:316]
+---------------------------------------------------------------
+[ 2019-12-21T17:41:01+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.085250s] [吞吐率：11.73req/s] [内存消耗：1,977.03kb] [文件加载：42]
+[ error ] [0]variable type error： array[D:\php-workspace\MyCms\tp5\thinkphp\library\think\Response.php:316]
+---------------------------------------------------------------
+[ 2019-12-21T17:41:03+08:00 ] 127.0.0.1 GET mycms.com/index.php/list_news_get_data
+[运行时间：0.075278s] [吞吐率：13.28req/s] [内存消耗：1,976.98kb] [文件加载：42]
+[ error ] [0]variable type error： array[D:\php-workspace\MyCms\tp5\thinkphp\library\think\Response.php:316]

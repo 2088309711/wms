@@ -1,0 +1,54 @@
+{extend name="base" /}
+{block name="nav"}{include file="nav_Storeroom" /}{/block}
+{block name="content"}
+<div id="main-content" class="layui-body" style="bottom:0;">
+
+
+    <div class="layui-row layui-col-space10" style="padding: 10px;">
+
+
+        <div class="layui-col-md6">
+            <div id="test1" style="border: 1px solid #e6e6e6; padding: 10px 10px 15px; overflow: auto;"></div>
+        </div>
+        <div class="layui-col-md6">
+            <div style="border: 1px solid #e6e6e6; padding: 10px;">请选择栏目节点</div>
+        </div>
+    </div>
+
+</div>
+{/block}
+
+
+{block name="jsScript"}
+<script>
+    layui.use('tree', function () {
+        var tree = layui.tree, layer = layui.layer;
+        //渲染
+        var inst1 = tree.render({
+            elem: '#test1'  //绑定元素
+            , data: [{
+                title: '江西' //一级菜单
+                , children: [{
+                    title: '南昌' //二级菜单
+                    , children: [{
+                        title: '高新区' //三级菜单
+
+                    }]
+                }]
+            }, {
+                title: '陕西' //一级菜单
+                , children: [{
+                    title: '西安' //二级菜单
+                }]
+            }]
+            , click: function (obj) {
+                layer.msg(JSON.stringify(obj.data)); //得到当前点击的节点数据
+                // layer.msg(JSON.stringify(obj.state)); //得到当前节点的展开状态：open、close、normal
+                // layer.msg(JSON.stringify(obj.elem)); //得到当前节点元素
+                // layer.msg(JSON.stringify(obj.data.children)); //当前节点下是否有子节点
+            }
+        });
+    });
+</script>
+
+{/block}

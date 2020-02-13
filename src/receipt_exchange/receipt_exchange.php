@@ -330,7 +330,7 @@ $result_item = mysql_query($query);
         <select id="right" name="warehouse2">
             <script language="javascript">showRight()</script>
         </select>
-        <a href="/wms/basic/warehouse/warehouse_show.php" target="_self"><img src="../image/delete.gif" alt="仓库管理"
+        <a href="../basic/warehouse/warehouse_show.php" target="_self"><img src="../image/delete.gif" alt="仓库管理"
                                                                               width="25" height="19" border="0"/></a>
     </fieldset>
     <fieldset>

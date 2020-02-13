@@ -249,7 +249,7 @@ mysql_close();
         <select name="company" id="company">
             <?php while ($RS = mysql_fetch_array($result_company)) echo "<option value=$RS[id]>$RS[name]</option>"; ?>
         </select>
-        <p><a href="/wms/basic/company/company_show.php" target="_self"><img src="../image/delete.gif" alt="往来公司管理"
+        <p><a href="../basic/company/company_show.php" target="_self"><img src="../image/delete.gif" alt="往来公司管理"
                                                                              width="25" height="19" border="0"/></a></p>
         <label>录单日期</label>
         <input name="date" type="text" id="control_date" style="background-color:#CCCCCC"
@@ -258,7 +258,7 @@ mysql_close();
         <select id="warehouse" name="warehouse">
             <?php while ($RS = mysql_fetch_array($result_warehouse)) echo "<option value=$RS[id]>$RS[name]</option>"; ?>
         </select>
-        <p><a href="/wms/basic/warehouse/warehouse_show.php" target="_self"><img src="../image/delete.gif" alt="仓库管理"
+        <p><a href="../basic/warehouse/warehouse_show.php" target="_self"><img src="../image/delete.gif" alt="仓库管理"
                                                                                  width="25" height="19" border="0"/></a>
         </p>
         <label>业务员</label>
