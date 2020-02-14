@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"D:\php-workspace\wms/tp5/application/admin\view\quality\index.html";i:1577255143;s:57:"D:\php-workspace\wms\tp5\application\admin\view\base.html";i:1581607954;s:65:"D:\php-workspace\wms\tp5\application\admin\view\nav_nj_class.html";i:1577270052;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"D:\php-workspace\wms/tp5/application/admin\view\quality\index.html";i:1581653485;s:57:"D:\php-workspace\wms\tp5\application\admin\view\base.html";i:1581686795;s:64:"D:\php-workspace\wms\tp5\application\admin\view\nav_Quality.html";i:1581653189;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,8 +47,8 @@
                 <i class="layui-icon layui-icon-tabs"></i> 货品</a></li>
             <li class="layui-nav-item"><a href="/index.php/repertory">
                 <i class="layui-icon layui-icon-template"></i> 库存</a></li>
-            <li class="layui-nav-item"><a href="/index.php/user_manage">
-                <i class="layui-icon layui-icon-user"></i> 用户</a></li>
+            <li class="layui-nav-item"><a href="/index.php/basics">
+                <i class="layui-icon layui-icon-user"></i> 基础</a></li>
             <li class="layui-nav-item"><a href="/index.php/plug_in">
                 <i class="layui-icon layui-icon-component"></i> 插件</a></li>
             <li class="layui-nav-item"><a href="/index.php/shopping_mall">
@@ -63,7 +63,7 @@
                     用户名
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="/index.php/update_user_data">安全设置</a></dd>
+                    <dd><a href="/index.php/update_password">修改密码</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item"><a href="">退出</a></li>
@@ -73,161 +73,10 @@
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item">
-    <a class="" href="javascript:;">信息相关管理</a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/manage_info">管理信息</a></dd>
-        <dd><a href="/index.php/audit_info">审核信息</a></dd>
-        <dd><a href="/index.php/issue_info">签发信息</a></dd>
-        <dd><a href="/index.php/manage_review">管理评论</a></dd>
-        <dd><a href="/index.php/update_fragments">更新碎片</a></dd>
-        <dd><a href="/index.php/update_topic">更新专题</a></dd>
-        <dd><a href="/index.php/data_count">数据统计</a></dd>
-        <dd><a href="/index.php/rank_count">排行统计</a></dd>
-    </dl>
-</li>
-<li class="layui-nav-item">
-    <a href="javascript:;">栏目管理</a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/manage_class">管理栏目</a></dd>
-        <dd><a href="/index.php/manage_class_pageing">管理栏目(分页)</a></dd>
-        <dd><a href="/index.php/class_custom_field">栏目自定义字段</a></dd>
-        <dd><a href="/index.php/batch_set_class_pro">批量设置栏目属性</a></dd>
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;">专题管理</a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/manage_topic_class">管理专题分类</a></dd>
-        <dd><a href="/index.php/manage_topics">管理专题</a></dd>
-        <dd><a href="/index.php/theme_custom_fields">专题自定义字段</a></dd>
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;">标题分类管理</a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/add_title_category">增加标题分类</a></dd>
-        <dd><a href="/index.php/manage_title_type">管理标题分类</a></dd>
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;">碎片管理</a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/manage_type">管理碎片分类</a></dd>
-        <dd><a href="/index.php/management_debris">管理碎片</a></dd>
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;">自定义页面</a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/manage_custom_page_type">管理自定义页面分类</a></dd>
-        <dd><a href="/index.php/add_custom_page">增加自定义页面</a></dd>
-        <dd><a href="/index.php/manage_custom_page">管理自定义页面</a></dd>
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;">自定义列表</a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/manage_custom_list_class">管理自定义列表分类</a></dd>
-        <dd><a href="/index.php/add_custom_list">增加自定义列表</a></dd>
-        <dd><a href="/index.php/manage_custom_lists">管理自定义列表</a></dd>
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;">自定义JS</a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/manage_custom_js_type">管理自定义JS分类</a></dd>
-        <dd><a href="/index.php/add_custom_js">增加自定义JS</a></dd>
-        <dd><a href="/index.php/manage_custom_js">管理自定义JS</a></dd>
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> TAGS管理 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/set_tags_param"> 设置TAGS参数 </a></dd>
-        <dd><a href="/index.php/manage_tags_type"> 管理TAGS分类 </a></dd>
-        <dd><a href="/index.php/manage_tags"> 管理TAGS </a></dd>
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 头条/推荐级别 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/manage_headline_levels"> 管理头条级别 </a></dd>
-        <dd><a href="/index.php/manage_recommendation_levels"> 管理推荐级别 </a></dd>
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item"><a href="/index.php/manage_annex">管理附件</a></li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 采集管理 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/add_acquisition_node"> 增加采集节点 </a></dd>
-        <dd><a href="/index.php/manage_collection_nodes"> 管理采集节点 </a></dd>
-        <dd><a href="/index.php/manage_collection_node_paging"> 管理采集节点(分页) </a></dd>
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 全站全文搜索 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/site_wide_search_settings"> 全站搜索设置 </a></dd>
-        <dd><a href="/index.php/manage_search_data_sources"> 管理搜索数据源 </a></dd>
-        <dd><a href="/index.php/clean_up_search_data"> 清理搜索数据 </a></dd>
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> WAP管理 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/wap_set"> WAP设置 </a></dd>
-        <dd><a href="/index.php/manage_wap_templates"> 管理WAP模板 </a></dd>
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 其他相关 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/count_info_data"> 统计信息数据 </a></dd>
-        <dd><a href="/index.php/user_publish_count"> 用户发布统计 </a></dd>
-        <dd><a href="/index.php/manage_search_keyword"> 管理搜索关键字 </a></dd>
-        <dd><a href="/index.php/batch_replace_field_value"> 批量替换字段值 </a></dd>
-        <dd><a href="/index.php/batch_transfer_info"> 批量转移信息 </a></dd>
-        <dd><a href="/index.php/mass_archiving_info"> 信息批量归档 </a></dd>
-        <dd><a href="/index.php/bulk_del_info"> 批量删除信息 </a></dd>
-        <dd><a href="/index.php/manage_default_voting"> 管理预设投票 </a></dd>
-
-    </dl>
-</li>
+                <li class="layui-nav-item"><a href="/index.php/sort_management">分类管理</a></li>
+<li class="layui-nav-item"><a href="/index.php/information_management">信息管理</a></li>
+<li class="layui-nav-item"><a href="/index.php/add_quality">添加货品</a></li>
+<li class="layui-nav-item"><a href="/index.php/unit_management">计量单位管理</a></li>
 
 
 
@@ -239,8 +88,42 @@
         </div>
     </div>
 
-    
-<div id="main-content" class="layui-body" style="bottom:0;">class</div>
+    <div id="main-content" class="layui-body layui-bg-gray">
+        
+
+
+<div class="layui-fluid">
+
+    <div class="layui-card" style="margin: 15px 0;">
+        <div class="layui-card-header">货品入库</div>
+        <div class="layui-card-body">
+            <fieldset class="layui-elem-field">
+                <legend>单据信息</legend>
+                <div class="layui-field-box">
+
+                    内容
+
+                </div>
+            </fieldset>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+
+
+    <div id="bottom-copyright" class="layui-footer">
+        <div style="float: left;">© 8kqq.com - 柠吉仓库管理系统</div>
+        <div style="float: right;">
+            <span>2020-2-14 10:36:39</span> |
+            <span>操作用户：admin</span> |
+            <span>版本：v1.0(20200214)</span>
+        </div>
+    </div>
 
 
 </div>
@@ -251,17 +134,20 @@
 
     function fold_nav(operation) {
         // alert(operation)
-        var icon = $('#nav-switch').children('i'), nav = $('#main-nav'), content = $('#main-content');
+        var icon = $('#nav-switch').children('i'), nav = $('#main-nav'),
+            content = $('#main-content'), bottomCopyright = $('#bottom-copyright');
         switch (operation) {
             case 'open':
                 nav.data('switch', 1);
                 content.animate({'left': 200});
+                bottomCopyright.animate({'left': 200});
                 nav.animate({'left': 0, opacity: 1});
                 icon.removeClass('layui-icon-spread-left').addClass('layui-icon-shrink-right');
                 break;
             case 'close':
                 nav.data('switch', 0);
                 content.animate({'left': 0});
+                bottomCopyright.animate({'left': 0});
                 nav.animate({'left': -200, opacity: 0});
                 icon.removeClass('layui-icon-shrink-right').addClass('layui-icon-spread-left');
                 break;
@@ -279,6 +165,22 @@
             execute_event();
         })
     });
+</script>
+
+<script>
+
+
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+
 </script>
 
 </body>

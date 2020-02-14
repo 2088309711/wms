@@ -35,6 +35,9 @@ $num = $RS['num'];
 $query = "select * from test_inout where 1" . $limit_string;//echo $query."<br>";
 $result_receipt = mysql_query($query);
 
+
+
+
 $query = "select * from tb_inout order by id";//echo $query."<br>";
 $result_type = mysql_query($query);//获取出入库类型列表
 
@@ -199,6 +202,9 @@ echo "<p>共有 $num 条记录</p>";
         echo "<td>$RS[num]</td>";
         echo "<td>$RS[price]</td>";
 
+
+
+
         if ($RS['type'] != 'none') {
             $query = "select name from tb_inout where id = '$RS[type]'";//echo $query."<br>";
             $result = mysql_query($query);
@@ -211,11 +217,15 @@ echo "<p>共有 $num 条记录</p>";
             echo "<td customvalue='$RS[receipt]'><a href='../receipt_inout/receipt_show_inout.php?id=$RS[receipt]'>$RS[receipt]</a></td>\n";
             $query = "select warehouse from test_receipt where id = '$RS[receipt]'";//echo $query."<br>";
             $result = mysql_query($query);
+
+
+
             $RS2 = mysql_fetch_array($result);
             $query = "select name from table_warehouse where id = '$RS2[warehouse]'";//echo $query."<br>";
             $result = mysql_query($query);
             $RS3 = mysql_fetch_array($result);
             echo "<td>$RS3[name]</td>\n";
+
         } else {
             echo "<td customvalue='$RS[receipt]'><a href='../receipt_exchange/receipt_show_exchange.php?id=$RS[receipt]'>$RS[receipt]</a></td>\n";
             $query = "select warehouse from test_exchange where id = '$RS[receipt]'";//echo $query."<br>";
@@ -226,6 +236,9 @@ echo "<p>共有 $num 条记录</p>";
             $RS3 = mysql_fetch_array($result);
             echo "<td>$RS3[name]</td>\n";
         }
+
+
+
         echo "</tr>";
     }
     ?></tbody>

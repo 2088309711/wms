@@ -24,7 +24,12 @@ class System extends Controller
     /**
      * 系统参数设置
      */
-    public function systemParamSet()
+    public function operationalUserManagement()
+    {
+        return $this->fetch();
+    }
+
+    public function updatePassword()
     {
         return $this->fetch();
     }
@@ -33,7 +38,7 @@ class System extends Controller
     /**
      *
      */
-    public function pseudoStaticParamSet()
+    public function dataBackup()
     {
         return $this->fetch();
     }
@@ -42,7 +47,7 @@ class System extends Controller
     /**
      *
      */
-    public function dynamicPageCacheSet()
+    public function reductionOfData()
     {
         return $this->fetch();
     }
@@ -51,196 +56,7 @@ class System extends Controller
     /**
      *
      */
-    public function diggTopSet()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function extendedVariables()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function securityParamConfig()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function websiteFirewall()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function dataUpdateCenter()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function updateInfoPageAddress()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function updateDynamicPageCache()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function dataCollation()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function remotePublish()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function newDataTable()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function managementDataSheet()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function manageRefreshTasks()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function manageScheduledTasks()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function addWorkflow()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function manageWorkflow()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function managementOptimizationPlan()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function manageSiteVisitors()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function managementMenu()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function backupData()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function restoreData()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function manageBackupDirectories()
-    {
-        return $this->fetch();
-    }
-
-
-    /**
-     *
-     */
-    public function executeSqlStatement()
+    public function operatingLog()
     {
         return $this->fetch();
     }

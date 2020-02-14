@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"D:\php-workspace\wms/tp5/application/admin\view\user_manage\index.html";i:1577257406;s:57:"D:\php-workspace\wms\tp5\application\admin\view\base.html";i:1581607954;s:68:"D:\php-workspace\wms\tp5\application\admin\view\nav_user_manage.html";i:1577280120;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"D:\php-workspace\wms/tp5/application/admin\view\user_manage\index.html";i:1577257406;s:57:"D:\php-workspace\wms\tp5\application\admin\view\base.html";i:1581648135;s:68:"D:\php-workspace\wms\tp5\application\admin\view\nav_user_manage.html";i:1577280120;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -138,8 +138,21 @@
         </div>
     </div>
 
-    
+    <div id="main-content" class="layui-body layui-bg-gray">
+        
 <div id="main-content" class="layui-body" style="bottom:0;">user_man</div>
+
+    </div>
+
+
+    <div id="bottom-copyright" class="layui-footer">
+        <div style="float: left;">© 8kqq.com - 柠吉仓库管理系统</div>
+        <div style="float: right;">
+            <span>2020-2-14 10:36:39</span> |
+            <span>操作用户：admin</span> |
+            <span>版本：v1.0(20200214)</span>
+        </div>
+    </div>
 
 
 </div>
@@ -150,17 +163,20 @@
 
     function fold_nav(operation) {
         // alert(operation)
-        var icon = $('#nav-switch').children('i'), nav = $('#main-nav'), content = $('#main-content');
+        var icon = $('#nav-switch').children('i'), nav = $('#main-nav'),
+            content = $('#main-content'), bottomCopyright = $('#bottom-copyright');
         switch (operation) {
             case 'open':
                 nav.data('switch', 1);
                 content.animate({'left': 200});
+                bottomCopyright.animate({'left': 200});
                 nav.animate({'left': 0, opacity: 1});
                 icon.removeClass('layui-icon-spread-left').addClass('layui-icon-shrink-right');
                 break;
             case 'close':
                 nav.data('switch', 0);
                 content.animate({'left': 0});
+                bottomCopyright.animate({'left': 0});
                 nav.animate({'left': -200, opacity: 0});
                 icon.removeClass('layui-icon-shrink-right').addClass('layui-icon-spread-left');
                 break;

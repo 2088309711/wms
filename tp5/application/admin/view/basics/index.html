@@ -1,0 +1,44 @@
+{extend name="base" /}
+{block name="nav"}{include file="nav_basics" /}{/block}
+{block name="content"}
+
+
+<div class="layui-fluid">
+
+    <div class="layui-card" style="margin: 15px 0;">
+        <div class="layui-card-header">货品入库</div>
+        <div class="layui-card-body">
+            <fieldset class="layui-elem-field">
+                <legend>单据信息</legend>
+                <div class="layui-field-box">
+
+                    内容
+
+                </div>
+            </fieldset>
+
+
+        </div>
+    </div>
+</div>
+
+
+{/block}
+
+{block name="jsScript"}
+<script>
+
+
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+
+</script>
+{/block}

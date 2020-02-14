@@ -35,10 +35,28 @@ Route::get([
 
 //    货品
     'Quality' => 'admin/Quality/index',
+    'sort_management' => 'admin/Quality/sortManagement',
+    'information_management' => 'admin/Quality/informationManagement',
+    'add_quality' => 'admin/Quality/addQuality',
+    'unit_management' => 'admin/Quality/unitManagement',
 
 
 //    库存
     'repertory' => 'admin/Repertory/index',
+    'inventory_allocation' => 'admin/Repertory/inventoryAllocation',
+    'inventory_allocation_details' => 'admin/Repertory/inventoryAllocationDetails',
+    'inventory_details' => 'admin/Repertory/inventoryDetails',
+    'inventory_query' => 'admin/Repertory/inventoryQuery',
+    'inventory_verification' => 'admin/Repertory/inventoryVerification',
+
+
+//    基础
+    'basics' => 'admin/basics/index',
+    'exchange_unit_management' => 'admin/basics/exchangeUnitManagement',
+    'sector_setup' => 'admin/basics/sectorSetup',
+    'staff_management' => 'admin/basics/staffManagement',
+    'warehouse' => 'admin/basics/warehouse',
+    'come_enter_lib_set' => 'admin/basics/comeEnterLibSet',
 
 
     'admin_login' => 'admin/Login/index',
@@ -46,32 +64,15 @@ Route::get([
     'admin' => 'admin/Index/index',
     'menu' => 'admin/Index/menu',
 
+
+//    系统
     'system' => 'admin/System/index',
-    'system_param_set' => 'admin/System/systemParamSet',
-    'pseudo_static_param_set' => 'admin/System/pseudoStaticParamSet',
-    'dynamic_page_cache_set' => 'admin/System/dynamicPageCacheSet',
-    'digg_top_set' => 'admin/System/diggTopSet',
-    'extended_variables' => 'admin/System/extendedVariables',
-    'security_param_config' => 'admin/System/securityParamConfig',
-    'website_firewall' => 'admin/System/websiteFirewall',
-    'data_update_center' => 'admin/System/dataUpdateCenter',
-    'update_info_page_address' => 'admin/System/updateInfoPageAddress',
-    'update_dynamic_page_cache' => 'admin/System/updateDynamicPageCache',
-    'data_collation' => 'admin/System/dataCollation',
-    'remote_publish' => 'admin/System/remotePublish',
-    'new_data_table' => 'admin/System/newDataTable',
-    'management_data_sheet' => 'admin/System/managementDataSheet',
-    'manage_refresh_tasks' => 'admin/System/manageRefreshTasks',
-    'manage_scheduled_tasks' => 'admin/System/manageScheduledTasks',
-    'add_workflow' => 'admin/System/addWorkflow',
-    'manage_workflow' => 'admin/System/manageWorkflow',
-    'management_optimization_plan' => 'admin/System/managementOptimizationPlan',
-    'manage_site_visitors' => 'admin/System/manageSiteVisitors',
-    'management_menu' => 'admin/System/managementMenu',
-    'backup_data' => 'admin/System/backupData',
-    'restore_data' => 'admin/System/restoreData',
-    'manage_backup_directories' => 'admin/System/manageBackupDirectories',
-    'execute_sql_statement' => 'admin/System/executeSqlStatement',
+    'operational_user_management' => 'admin/System/operationalUserManagement',
+    'update_password' => 'admin/System/updatePassword',
+    'data_backup' => 'admin/System/dataBackup',
+    'reduction_of_data' => 'admin/System/reductionOfData',
+    'operating_log' => 'admin/System/operatingLog',
+
 
     'class' => 'admin/NjClass/index',
     'manage_info' => 'admin/NjClass/manageInfo',
@@ -256,6 +257,11 @@ Route::post([
     'delete' => 'red_pack/index/delete',
     'update' => 'red_pack/index/update',
     'admin_login' => 'admin/login/index',
+
+
+//    仓库
+
+
 ]);
 
 

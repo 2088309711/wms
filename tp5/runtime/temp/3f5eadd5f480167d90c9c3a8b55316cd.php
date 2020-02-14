@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"D:\php-workspace\wms/tp5/application/admin\view\repertory\index.html";i:1577257374;s:57:"D:\php-workspace\wms\tp5\application\admin\view\base.html";i:1581607954;s:65:"D:\php-workspace\wms\tp5\application\admin\view\nav_template.html";i:1577276766;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"D:\php-workspace\wms/tp5/application/admin\view\repertory\index.html";i:1581682127;s:57:"D:\php-workspace\wms\tp5\application\admin\view\base.html";i:1581683629;s:66:"D:\php-workspace\wms\tp5\application\admin\view\nav_Repertory.html";i:1581682684;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,8 +47,8 @@
                 <i class="layui-icon layui-icon-tabs"></i> 货品</a></li>
             <li class="layui-nav-item"><a href="/index.php/repertory">
                 <i class="layui-icon layui-icon-template"></i> 库存</a></li>
-            <li class="layui-nav-item"><a href="/index.php/user_manage">
-                <i class="layui-icon layui-icon-user"></i> 用户</a></li>
+            <li class="layui-nav-item"><a href="/index.php/basics">
+                <i class="layui-icon layui-icon-user"></i> 基础</a></li>
             <li class="layui-nav-item"><a href="/index.php/plug_in">
                 <i class="layui-icon layui-icon-component"></i> 插件</a></li>
             <li class="layui-nav-item"><a href="/index.php/shopping_mall">
@@ -73,195 +73,11 @@
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/index.php/view_tag_syntax"> 查看标签语法 </a></li>
-<li class="layui-nav-item"><a href="/index.php/automatically_generate_label"> 自动生成标签 </a></li>
-<li class="layui-nav-item"><a href="/index.php/dynamic_page_template_manage"> 动态页面模板管理 </a></li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 首页模板 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/home_template"> 首页模板 </a></dd>
-        <dd><a href="/index.php/manage_index_scheme"> 管理首页方案 </a></dd>
-
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 封面模板 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/manage_cover_template_type"> 管理封面模板分类 </a></dd>
-        <dd><a href="/index.php/manage_cover_page_template"> 管理封面模板 </a></dd>
-
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 列表模板 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/manage_list_template_type"> 管理列表模板分类 </a></dd>
-        <dd><a href="/index.php/manage_list_template"> 管理列表模板 </a></dd>
-
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 内容模板 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/manage_content_template_categories"> 管理内容模板分类 </a></dd>
-        <dd><a href="/index.php/manage_content_template"> 管理内容模板 </a></dd>
-
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 搜索模板 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/manage_search_template_type"> 管理搜索模板分类 </a></dd>
-        <dd><a href="/index.php/manage_search_template"> 管理搜索模板 </a></dd>
-
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 标签模板 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/manage_label_template_type"> 管理标签模板分类 </a></dd>
-        <dd><a href="/index.php/manage_label_template"> 管理标签模板 </a></dd>
-
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 公共模板变量 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/manage_template_var_type"> 管理模板变量分类 </a></dd>
-        <dd><a href="/index.php/manage_template_var"> 管理模板变量 </a></dd>
-
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 公共模板 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/control_panel_template"> 控制面板模板 </a></dd>
-        <dd><a href="/index.php/site_wide_search_template"> 全站搜索模板 </a></dd>
-        <dd><a href="/index.php/advanced_search_form_template"> 高级搜索表单模板 </a></dd>
-        <dd><a href="/index.php/search_js_templates_horizontally"> 横向搜索JS模板 </a></dd>
-        <dd><a href="/index.php/vertical_search_js_template"> 纵向搜索JS模板 </a></dd>
-        <dd><a href="/index.php/related_info_template"> 相关信息模板 </a></dd>
-        <dd><a href="/index.php/message_board_template"> 留言板模板 </a></dd>
-        <dd><a href="/index.php/comment_js_call_template"> 评论JS调用模板 </a></dd>
-        <dd><a href="/index.php/final_download_page_template"> 最终下载页模板 </a></dd>
-        <dd><a href="/index.php/download_address_template"> 下载地址模板 </a></dd>
-        <dd><a href="/index.php/online_play_address_template"> 在线播放地址模板 </a></dd>
-        <dd><a href="/index.php/list_page_template"> 列表分页模板 </a></dd>
-        <dd><a href="/index.php/login_status_template"> 登陆状态模板 </a></dd>
-        <dd><a href="/index.php/js_call_login_template"> JS调用登陆模板 </a></dd>
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> JS模板 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/manage_js_template_type"> 管理JS模板分类 </a></dd>
-        <dd><a href="/index.php/manage_js_template"> 管理JS模板 </a></dd>
-
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 评论列表模板 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/add_comment_template"> 增加评论模板 </a></dd>
-        <dd><a href="/index.php/manage_comment_template"> 管理评论模板 </a></dd>
-
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 打印模板 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/add_print_template"> 增加打印模板 </a></dd>
-        <dd><a href="/index.php/manage_print_template"> 管理打印模板 </a></dd>
-
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 自定义页面模板 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/add_custom_page_template"> 增加自定义页面模板 </a></dd>
-        <dd><a href="/index.php/manage_custom_page_template"> 管理自定义页面模板 </a></dd>
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 投票模板 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/add_voting_template"> 增加投票模板 </a></dd>
-        <dd><a href="/index.php/manage_voting_template"> 管理投票模板 </a></dd>
-
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 标签 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/manage_label_type"> 管理标签分类 </a></dd>
-        <dd><a href="/index.php/manage_label"> 管理标签 </a></dd>
-
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 模板组管理 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/modify_template_id"> 修改模板ID </a></dd>
-        <dd><a href="/index.php/export_template_group"> 导入/导出模板组 </a></dd>
-
-
-    </dl>
-</li>
-
-
-<li class="layui-nav-item">
-    <a href="javascript:;"> 其他相关 </a>
-    <dl class="layui-nav-child">
-        <dd><a href="/index.php/batch_import_class_template"> 批量导入栏目模板 </a></dd>
-        <dd><a href="/index.php/batch_change_list_template"> 批量更换列表模板 </a></dd>
-        <dd><a href="/index.php/batch_replace_template_char"> 批量替换模板字符 </a></dd>
-
-
-    </dl>
-</li>
+                <li class="layui-nav-item"><a href="/index.php/inventory_allocation">库存调拨</a></li>
+<li class="layui-nav-item"><a href="/index.php/inventory_verification">库存盘点</a></li>
+<li class="layui-nav-item"><a href="/index.php/inventory_allocation_details">库存调拨明细</a></li>
+<li class="layui-nav-item"><a href="/index.php/inventory_details">库存盘点明细</a></li>
+<li class="layui-nav-item"><a href="/index.php/inventory_query">库存查询</a></li>
 
 
 
@@ -274,8 +90,42 @@
         </div>
     </div>
 
-    
-<div id="main-content" class="layui-body" style="bottom:0;">temp</div>
+    <div id="main-content" class="layui-body layui-bg-gray">
+        
+
+
+<div class="layui-fluid">
+
+    <div class="layui-card" style="margin: 15px 0;">
+        <div class="layui-card-header">货品入库</div>
+        <div class="layui-card-body">
+            <fieldset class="layui-elem-field">
+                <legend>单据信息</legend>
+                <div class="layui-field-box">
+
+                    内容
+
+                </div>
+            </fieldset>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+
+
+    <div id="bottom-copyright" class="layui-footer">
+        <div style="float: left;">© 8kqq.com - 柠吉仓库管理系统</div>
+        <div style="float: right;">
+            <span>2020-2-14 10:36:39</span> |
+            <span>操作用户：admin</span> |
+            <span>版本：v1.0(20200214)</span>
+        </div>
+    </div>
 
 
 </div>
@@ -286,17 +136,20 @@
 
     function fold_nav(operation) {
         // alert(operation)
-        var icon = $('#nav-switch').children('i'), nav = $('#main-nav'), content = $('#main-content');
+        var icon = $('#nav-switch').children('i'), nav = $('#main-nav'),
+            content = $('#main-content'), bottomCopyright = $('#bottom-copyright');
         switch (operation) {
             case 'open':
                 nav.data('switch', 1);
                 content.animate({'left': 200});
+                bottomCopyright.animate({'left': 200});
                 nav.animate({'left': 0, opacity: 1});
                 icon.removeClass('layui-icon-spread-left').addClass('layui-icon-shrink-right');
                 break;
             case 'close':
                 nav.data('switch', 0);
                 content.animate({'left': 0});
+                bottomCopyright.animate({'left': 0});
                 nav.animate({'left': -200, opacity: 0});
                 icon.removeClass('layui-icon-shrink-right').addClass('layui-icon-spread-left');
                 break;
@@ -314,6 +167,22 @@
             execute_event();
         })
     });
+</script>
+
+<script>
+
+
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+
 </script>
 
 </body>
