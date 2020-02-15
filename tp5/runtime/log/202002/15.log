@@ -1,56 +1,100 @@
 ---------------------------------------------------------------
-[ 2020-02-15T00:00:31+08:00 ] 0.0.0.0 GET localhost/index.php/storage_record
-[运行时间：0.232790s] [吞吐率：4.30req/s] [内存消耗：3,188.16kb] [文件加载：47]
-[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\admin\controller\Storeroom.php:69]
+[ 2020-02-15T13:38:15+08:00 ] 0.0.0.0 GET localhost/add_warehouse
+[运行时间：0.067202s] [吞吐率：14.88req/s] [内存消耗：1,634.10kb] [文件加载：34]
+[ error ] [0]模板文件不存在:D:\php-workspace\wms/tp5/application/admin\view\basics\add_warehouse.html[D:\php-workspace\wms\tp5\thinkphp\library\think\view\driver\Think.php:82]
 ---------------------------------------------------------------
-[ 2020-02-15T00:00:50+08:00 ] 0.0.0.0 GET localhost/index.php/storage_record
-[运行时间：0.231120s] [吞吐率：4.33req/s] [内存消耗：3,200.98kb] [文件加载：45]
-[ error ] [0]variable type error： array[D:\php-workspace\wms\tp5\thinkphp\library\think\Response.php:316]
+[ 2020-02-15T13:39:41+08:00 ] 0.0.0.0 GET localhost/add_warehouse
+[运行时间：0.065202s] [吞吐率：15.34req/s] [内存消耗：1,634.11kb] [文件加载：34]
+[ error ] [0]模板文件不存在:D:\php-workspace\wms/tp5/application/admin\view\basics\add_warehouse.html[D:\php-workspace\wms\tp5\thinkphp\library\think\view\driver\Think.php:82]
 ---------------------------------------------------------------
-[ 2020-02-15T00:01:02+08:00 ] 0.0.0.0 GET localhost/index.php/storage_record
-[运行时间：0.183775s] [吞吐率：5.44req/s] [内存消耗：2,980.11kb] [文件加载：44]
-[ error ] [0]variable type error： array[D:\php-workspace\wms\tp5\thinkphp\library\think\Response.php:316]
+[ 2020-02-15T16:55:14+08:00 ] 0.0.0.0 POST localhost/reg
+[运行时间：0.127027s] [吞吐率：7.87req/s] [内存消耗：2,940.08kb] [文件加载：45]
+[ error ] [8]未定义数组索引: pwd[D:\php-workspace\wms\tp5\application\user\controller\Login.php:129]
 ---------------------------------------------------------------
-[ 2020-02-15T00:01:12+08:00 ] 0.0.0.0 GET localhost/index.php/storage_record
-[运行时间：0.167914s] [吞吐率：5.96req/s] [内存消耗：2,980.11kb] [文件加载：44]
-[ error ] [0]variable type error： array[D:\php-workspace\wms\tp5\thinkphp\library\think\Response.php:316]
+[ 2020-02-15T16:57:15+08:00 ] 0.0.0.0 POST localhost/reg
+[运行时间：0.124255s] [吞吐率：8.05req/s] [内存消耗：2,935.41kb] [文件加载：44]
+[ error ] [0]数据表字段不存在:[create_time][D:\php-workspace\wms\tp5\thinkphp\library\think\db\Builder.php:115]
 ---------------------------------------------------------------
-[ 2020-02-15T00:01:51+08:00 ] 0.0.0.0 GET localhost/index.php/storage_record
-[运行时间：0.291910s] [吞吐率：3.43req/s] [内存消耗：3,188.32kb] [文件加载：47]
-[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\admin\controller\Storeroom.php:69]
+[ 2020-02-15T16:57:43+08:00 ] 0.0.0.0 POST localhost/reg
+[运行时间：0.121751s] [吞吐率：8.21req/s] [内存消耗：2,936.43kb] [文件加载：44]
+[ error ] [0]数据表字段不存在:[update_time][D:\php-workspace\wms\tp5\thinkphp\library\think\db\Builder.php:115]
 ---------------------------------------------------------------
-[ 2020-02-15T00:02:08+08:00 ] 0.0.0.0 GET localhost/index.php/storage_record
-[运行时间：0.187905s] [吞吐率：5.32req/s] [内存消耗：3,052.84kb] [文件加载：46]
-[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\admin\controller\Storeroom.php:65]
+[ 2020-02-15T17:36:27+08:00 ] 0.0.0.0 POST localhost/login
+[运行时间：0.107025s] [吞吐率：9.34req/s] [内存消耗：2,943.41kb] [文件加载：45]
+[ error ] [8]未定义数组索引: username[D:\php-workspace\wms\tp5\application\user\controller\Login.php:58]
 ---------------------------------------------------------------
-[ 2020-02-15T00:02:35+08:00 ] 0.0.0.0 GET localhost/index.php/storage_record
-[运行时间：0.190472s] [吞吐率：5.25req/s] [内存消耗：3,052.84kb] [文件加载：46]
-[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\admin\controller\Storeroom.php:65]
+[ 2020-02-15T17:40:36+08:00 ] 0.0.0.0 GET localhost/admin
+[运行时间：0.076317s] [吞吐率：13.10req/s] [内存消耗：1,678.81kb] [文件加载：34]
+[ error ] [0]模板文件不存在:[D:\php-workspace\wms\tp5\thinkphp\library\think\Template.php:1074]
 ---------------------------------------------------------------
-[ 2020-02-15T00:02:36+08:00 ] 0.0.0.0 GET localhost/index.php/storage_record
-[运行时间：0.189011s] [吞吐率：5.29req/s] [内存消耗：3,052.84kb] [文件加载：46]
-[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\admin\controller\Storeroom.php:65]
+[ 2020-02-15T17:40:45+08:00 ] 0.0.0.0 GET localhost/admin
+[运行时间：0.081972s] [吞吐率：12.20req/s] [内存消耗：1,678.81kb] [文件加载：34]
+[ error ] [0]模板文件不存在:[D:\php-workspace\wms\tp5\thinkphp\library\think\Template.php:1074]
 ---------------------------------------------------------------
-[ 2020-02-15T00:02:36+08:00 ] 0.0.0.0 GET localhost/index.php/storage_record
-[运行时间：0.194248s] [吞吐率：5.15req/s] [内存消耗：3,052.84kb] [文件加载：46]
-[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\admin\controller\Storeroom.php:65]
+[ 2020-02-15T17:41:51+08:00 ] 0.0.0.0 GET localhost/user
+[运行时间：0.084345s] [吞吐率：11.86req/s] [内存消耗：1,678.50kb] [文件加载：34]
+[ error ] [0]模板文件不存在:[D:\php-workspace\wms\tp5\thinkphp\library\think\Template.php:1074]
 ---------------------------------------------------------------
-[ 2020-02-15T00:03:36+08:00 ] 0.0.0.0 GET localhost/index.php/storage_record
-[运行时间：0.206887s] [吞吐率：4.83req/s] [内存消耗：3,052.86kb] [文件加载：46]
-[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\admin\controller\Storeroom.php:65]
+[ 2020-02-15T17:45:14+08:00 ] 0.0.0.0 GET localhost/out_storage
+[运行时间：0.079784s] [吞吐率：12.53req/s] [内存消耗：1,838.12kb] [文件加载：38]
+[ error ] [8]未定义变量: user_name[D:\php-workspace\wms\tp5\runtime\temp\0764077542801543a2c57d63835a9c7f.php:63]
 ---------------------------------------------------------------
-[ 2020-02-15T00:46:35+08:00 ] 0.0.0.0 GET localhost/index.php/storage_record
-[运行时间：0.199618s] [吞吐率：5.01req/s] [内存消耗：3,052.86kb] [文件加载：46]
-[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\admin\controller\Storeroom.php:65]
+[ 2020-02-15T17:45:36+08:00 ] 0.0.0.0 GET localhost/out_storage
+[运行时间：0.066842s] [吞吐率：14.96req/s] [内存消耗：1,838.20kb] [文件加载：38]
+[ error ] [8]未定义变量: user_name[D:\php-workspace\wms\tp5\runtime\temp\0764077542801543a2c57d63835a9c7f.php:63]
 ---------------------------------------------------------------
-[ 2020-02-15T00:48:23+08:00 ] 0.0.0.0 GET localhost/index.php/storage_record
-[运行时间：0.264507s] [吞吐率：3.78req/s] [内存消耗：3,200.98kb] [文件加载：45]
-[ error ] [0]variable type error： array[D:\php-workspace\wms\tp5\thinkphp\library\think\Response.php:316]
+[ 2020-02-15T17:51:07+08:00 ] 0.0.0.0 GET localhost/warehouse?page=1&limit=6
+[运行时间：0.068165s] [吞吐率：14.67req/s] [内存消耗：1,645.64kb] [文件加载：35]
+[ error ] [1]Class 'app\admin\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:50]
 ---------------------------------------------------------------
-[ 2020-02-15T00:48:30+08:00 ] 0.0.0.0 GET localhost/index.php/storage_record
-[运行时间：0.230940s] [吞吐率：4.33req/s] [内存消耗：3,200.98kb] [文件加载：45]
-[ error ] [0]variable type error： array[D:\php-workspace\wms\tp5\thinkphp\library\think\Response.php:316]
+[ 2020-02-15T18:00:03+08:00 ] 0.0.0.0 GET localhost/warehouse?page=1&limit=6
+[运行时间：0.079110s] [吞吐率：12.64req/s] [内存消耗：1,645.64kb] [文件加载：35]
+[ error ] [1]Class 'app\admin\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:50]
 ---------------------------------------------------------------
-[ 2020-02-15T01:20:00+08:00 ] 0.0.0.0 GET localhost/index.php/storage_record?page=1&limit=6
-[运行时间：0.333365s] [吞吐率：3.00req/s] [内存消耗：3,315.60kb] [文件加载：48]
-[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\admin\controller\Storeroom.php:79]
+[ 2020-02-15T18:17:14+08:00 ] 0.0.0.0 GET localhost/warehouse?page=1&limit=6
+[运行时间：0.054787s] [吞吐率：18.25req/s] [内存消耗：1,646.09kb] [文件加载：35]
+[ error ] [1]Class 'app\admin\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:50]
+---------------------------------------------------------------
+[ 2020-02-15T18:17:15+08:00 ] 0.0.0.0 GET localhost/warehouse?page=1&limit=6
+[运行时间：0.054329s] [吞吐率：18.41req/s] [内存消耗：1,646.09kb] [文件加载：35]
+[ error ] [1]Class 'app\admin\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:50]
+---------------------------------------------------------------
+[ 2020-02-15T18:17:17+08:00 ] 0.0.0.0 GET localhost/warehouse?page=1&limit=6
+[运行时间：0.055978s] [吞吐率：17.86req/s] [内存消耗：1,646.09kb] [文件加载：35]
+[ error ] [1]Class 'app\admin\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:50]
+---------------------------------------------------------------
+[ 2020-02-15T18:17:18+08:00 ] 0.0.0.0 GET localhost/warehouse?page=1&limit=6
+[运行时间：0.055353s] [吞吐率：18.07req/s] [内存消耗：1,646.09kb] [文件加载：35]
+[ error ] [1]Class 'app\admin\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:50]
+---------------------------------------------------------------
+[ 2020-02-15T18:17:18+08:00 ] 0.0.0.0 GET localhost/warehouse?page=1&limit=6
+[运行时间：0.056649s] [吞吐率：17.65req/s] [内存消耗：1,646.09kb] [文件加载：35]
+[ error ] [1]Class 'app\admin\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:50]
+---------------------------------------------------------------
+[ 2020-02-15T18:19:38+08:00 ] 0.0.0.0 GET localhost/warehouse?page=1&limit=6
+[运行时间：0.055767s] [吞吐率：17.93req/s] [内存消耗：1,646.09kb] [文件加载：35]
+[ error ] [1]Class 'app\admin\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:50]
+---------------------------------------------------------------
+[ 2020-02-15T18:19:39+08:00 ] 0.0.0.0 GET localhost/warehouse?page=1&limit=6
+[运行时间：0.060131s] [吞吐率：16.63req/s] [内存消耗：1,646.09kb] [文件加载：35]
+[ error ] [1]Class 'app\admin\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:50]
+---------------------------------------------------------------
+[ 2020-02-15T18:29:07+08:00 ] 0.0.0.0 GET localhost/warehouse?page=1&limit=6
+[运行时间：0.060396s] [吞吐率：16.56req/s] [内存消耗：1,653.08kb] [文件加载：36]
+[ error ] [1]Class 'app\admin\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:50]
+---------------------------------------------------------------
+[ 2020-02-15T18:33:30+08:00 ] 0.0.0.0 GET localhost/warehouse?page=1&limit=6
+[运行时间：0.106911s] [吞吐率：9.35req/s] [内存消耗：2,767.39kb] [文件加载：46]
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'wms.table_warehouse' doesn't exist[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2020-02-15T18:37:52+08:00 ] 0.0.0.0 GET localhost/warehouse?page=1&limit=6
+[运行时间：0.108774s] [吞吐率：9.19req/s] [内存消耗：2,768.25kb] [文件加载：46]
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'wms.table_warehouse' doesn't exist[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2020-02-15T18:55:48+08:00 ] 0.0.0.0 POST localhost/add_warehouse
+[运行时间：0.125197s] [吞吐率：7.99req/s] [内存消耗：2,769.95kb] [文件加载：44]
+[ error ] [0]数据表字段不存在:[create_time][D:\php-workspace\wms\tp5\thinkphp\library\think\db\Builder.php:115]
+---------------------------------------------------------------
+[ 2020-02-15T23:48:44+08:00 ] 0.0.0.0 GET localhost/add_staff
+[运行时间：0.058398s] [吞吐率：17.12req/s] [内存消耗：1,447.01kb] [文件加载：35]
+[ error ] [0]模板文件不存在:D:\php-workspace\wms/tp5/application/user\view\basics\add_staff.html[D:\php-workspace\wms\tp5\thinkphp\library\think\view\driver\Think.php:82]

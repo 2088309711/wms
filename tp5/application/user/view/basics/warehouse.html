@@ -1,0 +1,62 @@
+{extend name="base" /}
+{block name="nav"}{include file="nav_basics" /}{/block}
+{block name="content"}
+
+
+<div class="layui-fluid">
+
+    <div class="layui-card" style="margin: 15px 0;">
+        <div class="layui-card-header">仓库信息概览</div>
+        <div class="layui-card-body">
+
+            <table class="layui-table" lay-data="{ toolbar: '#toolbarDemo', url:'#', page: true, limit: 6, limits:[6]}">
+                <thead>
+                <tr>
+                    <th lay-data="{field:'id',align:'center'}">仓库编号</th>
+                    <th lay-data="{field:'name',align:'center'}">仓库名称</th>
+                    <th lay-data="{field:'principal',align:'center'}">负责人</th>
+                    <th lay-data="{field:'phone_principal',align:'center'}">负责人电话</th>
+                    <th lay-data="{field:'phone',align:'center'}">仓库电话</th>
+                    <th lay-data="{field:'address',align:'center'}">仓库地址</th>
+                    <th lay-data="{field:'remark',align:'center'}">备注</th>
+                    <th lay-data="{fixed: 'right', width: 160, align: 'center', toolbar: '#barDemo'}">操作</th>
+                </tr>
+                </thead>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <a href="/add_warehouse" class="layui-btn layui-btn-sm">添加仓库</a>
+    </div>
+</script>
+
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">按钮1</a>
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">按钮2</a>
+</script>
+
+
+{/block}
+
+{block name="jsScript"}
+<script>
+
+    //Demo
+    layui.use(['form', 'table'], function () {
+        var form = layui.form, table = layui.table;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            // layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+
+</script>
+{/block}

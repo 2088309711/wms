@@ -1,0 +1,101 @@
+{extend name="base" /}
+{block name="nav"}{include file="nav_basics" /}{/block}
+{block name="content"}
+
+
+<div class="layui-fluid">
+
+    <div class="layui-card" style="margin: 15px 0;">
+        <div class="layui-card-header">添加仓库</div>
+        <div class="layui-card-body">
+
+
+            <form class="layui-form" method="post">
+
+                {:token()}
+                <div class="layui-form-item">
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">仓库名称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="name" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">负责人</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="principal" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">负责人电话</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="phone_principal" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">仓库电话</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="phone" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">仓库地址</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="address" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">备注</label>
+                    <div class="layui-input-block">
+                        <textarea name="remark" placeholder="请输入内容" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+{/block}
+
+{block name="jsScript"}
+<script>
+
+
+    //Demo
+    layui.use(['form', 'table'], function () {
+        var form = layui.form, table = layui.table;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            layer.msg(JSON.stringify(data.field));
+            // return false;
+        });
+    });
+
+</script>
+{/block}

@@ -11,37 +11,43 @@
 <body class="layui-bg-gray">
 
 
-<div class="layui-card" style="width: 450px; margin: 100px auto;">
-    <div class="layui-card-header">
-        <strong>
-            <i class="layui-icon layui-icon-speaker"></i>
-            系统提示
-        </strong>
-    </div>
-    <div class="layui-card-body">
+<div class="layui-container">
 
 
-        <div style="text-align: center;padding: 20px 0 10px 0;">
-
-
-            <?php switch ($code) {?>
-            <?php case 1:?>
-            <i class="layui-icon layui-icon-face-smile" style="font-size: 40px; color: #1E9FFF;"></i>
-            <?php break;?>
-            <?php case 0:?>
-            <i class="layui-icon layui-icon-face-cry" style="font-size: 40px; color: #FF5722;"></i>
-            <?php break;?>
-            <?php } ?>
-
-            <h2 style="margin-top: 15px;"><?php echo(strip_tags($msg));?></h2>
-
-            <p style="margin-top: 10px;">
-                页面自动 <a id="href" href="<?php echo($url);?>" style="color: #ff0300">跳转</a> 等待时间：
-                <strong id="wait"><?php echo($wait);?></strong> 秒
-            </p>
+    <div class="layui-card" style="margin: 30px 0;">
+        <div class="layui-card-header">
+            <strong>
+                <i class="layui-icon layui-icon-speaker"></i>
+                系统提示
+            </strong>
         </div>
+        <div class="layui-card-body">
 
+
+            <div style="text-align: center;padding: 100px 0;">
+
+
+                <?php switch ($code) {?>
+                <?php case 1:?>
+                <i class="layui-icon layui-icon-face-smile" style="font-size: 50px; color: #1E9FFF;"></i>
+                <?php break;?>
+                <?php case 0:?>
+                <i class="layui-icon layui-icon-face-cry" style="font-size: 50px; color: #FF5722;"></i>
+                <?php break;?>
+                <?php } ?>
+
+                <h1 style="margin-top: 30px;"><?php echo(strip_tags($msg));?></h1>
+
+                <p style="margin-top: 20px;">
+                    页面自动 <a id="href" href="<?php echo($url);?>" style="color: #ff0300">跳转</a> 等待时间：
+                    <strong id="wait"><?php echo($wait);?></strong> 秒
+                </p>
+            </div>
+
+        </div>
     </div>
+
+
 </div>
 
 <script type="text/javascript">

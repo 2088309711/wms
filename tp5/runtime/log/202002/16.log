@@ -1,0 +1,4 @@
+---------------------------------------------------------------
+[ 2020-02-16T00:04:54+08:00 ] 0.0.0.0 POST localhost/add_staff
+[运行时间：0.134549s] [吞吐率：7.43req/s] [内存消耗：2,570.25kb] [文件加载：44]
+[ error ] [0]数据表字段不存在:[create_time][D:\php-workspace\wms\tp5\thinkphp\library\think\db\Builder.php:115]

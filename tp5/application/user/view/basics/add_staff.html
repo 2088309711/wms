@@ -1,0 +1,98 @@
+{extend name="base" /}
+{block name="nav"}{include file="nav_basics" /}{/block}
+{block name="content"}
+
+
+<div class="layui-fluid">
+
+    <div class="layui-card" style="margin: 15px 0;">
+        <div class="layui-card-header">添加员工</div>
+        <div class="layui-card-body">
+
+
+            <form class="layui-form" method="post">
+
+                {:token()}
+                <div class="layui-form-item">
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">姓名</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="name" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">性别</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="sex" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">职位</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="post" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">电话</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="phone" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">地址</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="address" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">部门</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="depart" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+{/block}
+
+{block name="jsScript"}
+<script>
+
+
+    //Demo
+    layui.use(['form', 'table'], function () {
+        var form = layui.form, table = layui.table;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            // layer.msg(JSON.stringify(data.field));
+            // return false;
+        });
+    });
+
+</script>
+{/block}

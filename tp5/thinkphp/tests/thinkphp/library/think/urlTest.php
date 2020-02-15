@@ -123,7 +123,7 @@ class urlTest extends \PHPUnit_Framework_TestCase
         Url::root('/index.php');
         Route::get('blog/:id', 'index/blog/read');
         Config::set('url_html_suffix', 'shtml');
-        $this->assertEquals('/index.php/blog/10/name/thinkphp.shtml', Url::build('index/blog/read?id=10&name=thinkphp'));
+        $this->assertEquals('/blog/10/name/thinkphp.shtml', Url::build('index/blog/read?id=10&name=thinkphp'));
 
     }
 }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:78:"D:\php-workspace\wms/tp5/application/admin\view\basics\come_enter_lib_set.html";i:1581683909;s:57:"D:\php-workspace\wms\tp5\application\admin\view\base.html";i:1581683629;s:63:"D:\php-workspace\wms\tp5\application\admin\view\nav_basics.html";i:1581684251;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:78:"D:\php-workspace\wms/tp5/application/admin\view\basics\come_enter_lib_set.html";i:1581683909;s:57:"D:\php-workspace\wms\tp5\application\admin\view\base.html";i:1581743400;s:63:"D:\php-workspace\wms\tp5\application\admin\view\nav_basics.html";i:1581743400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +28,7 @@
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-        <a href="/index.php/admin" title="后台主页">
+        <a href="/admin" title="后台主页">
             <div class="layui-logo" style="color: #fff; font-weight: bold;">柠吉仓库管理系统</div>
         </a>
         <div id="nav-switch">
@@ -37,23 +37,23 @@
 
 
         <ul class="layui-nav layui-layout-left" style="left:260px;">
-            <li class="layui-nav-item"><a href="/index.php/menu">
+            <li class="layui-nav-item"><a href="/menu">
                 <i class="layui-icon layui-icon-app"></i> 功能</a></li>
-            <li class="layui-nav-item"><a href="/index.php/system">
+            <li class="layui-nav-item"><a href="/system">
                 <i class="layui-icon layui-icon-console"></i> 系统</a></li>
-            <li class="layui-nav-item"><a href="/index.php/Storeroom">
+            <li class="layui-nav-item"><a href="/Storeroom">
                 <i class="layui-icon layui-icon-form"></i> 仓库</a></li>
-            <li class="layui-nav-item"><a href="/index.php/quality">
+            <li class="layui-nav-item"><a href="/quality">
                 <i class="layui-icon layui-icon-tabs"></i> 货品</a></li>
-            <li class="layui-nav-item"><a href="/index.php/repertory">
+            <li class="layui-nav-item"><a href="/repertory">
                 <i class="layui-icon layui-icon-template"></i> 库存</a></li>
-            <li class="layui-nav-item"><a href="/index.php/basics">
+            <li class="layui-nav-item"><a href="/basics">
                 <i class="layui-icon layui-icon-user"></i> 基础</a></li>
-            <li class="layui-nav-item"><a href="/index.php/plug_in">
+            <li class="layui-nav-item"><a href="/plug_in">
                 <i class="layui-icon layui-icon-component"></i> 插件</a></li>
-            <li class="layui-nav-item"><a href="/index.php/shopping_mall">
+            <li class="layui-nav-item"><a href="/shopping_mall">
                 <i class="layui-icon layui-icon-cart"></i> 商城</a></li>
-            <li class="layui-nav-item"><a href="/index.php/other">
+            <li class="layui-nav-item"><a href="/other">
                 <i class="layui-icon layui-icon-util"></i> 其他</a></li>
         </ul>
         <ul class="layui-nav layui-layout-right">
@@ -63,7 +63,7 @@
                     用户名
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="/index.php/update_user_data">安全设置</a></dd>
+                    <dd><a href="/update_password">修改密码</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item"><a href="">退出</a></li>
@@ -73,11 +73,11 @@
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/index.php/exchange_unit_management">往来单位管理</a></li>
-<li class="layui-nav-item"><a href="/index.php/sector_setup ">部门设置</a></li>
-<li class="layui-nav-item"><a href="/index.php/staff_management">员工管理</a></li>
-<li class="layui-nav-item"><a href="/index.php/warehouse">仓库管理</a></li>
-<li class="layui-nav-item"><a href="/index.php/come_enter_lib_set">出入库类别设置</a></li>
+                <li class="layui-nav-item"><a href="/exchange_unit_management">往来单位管理</a></li>
+<li class="layui-nav-item"><a href="/sector_setup ">部门设置</a></li>
+<li class="layui-nav-item"><a href="/staff_management">员工管理</a></li>
+<li class="layui-nav-item"><a href="/warehouse">仓库管理</a></li>
+<li class="layui-nav-item"><a href="/come_enter_lib_set">出入库类别设置</a></li>
 
 
 
