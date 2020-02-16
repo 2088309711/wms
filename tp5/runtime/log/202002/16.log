@@ -2,3 +2,15 @@
 [ 2020-02-16T00:04:54+08:00 ] 0.0.0.0 POST localhost/add_staff
 [运行时间：0.134549s] [吞吐率：7.43req/s] [内存消耗：2,570.25kb] [文件加载：44]
 [ error ] [0]数据表字段不存在:[create_time][D:\php-workspace\wms\tp5\thinkphp\library\think\db\Builder.php:115]
+---------------------------------------------------------------
+[ 2020-02-16T21:03:04+08:00 ] 0.0.0.0 GET localhost/add_company
+[运行时间：0.059251s] [吞吐率：16.88req/s] [内存消耗：1,453.82kb] [文件加载：35]
+[ error ] [0]模板文件不存在:D:\php-workspace\wms/tp5/application/user\view\basics\add_company.html[D:\php-workspace\wms\tp5\thinkphp\library\think\view\driver\Think.php:82]
+---------------------------------------------------------------
+[ 2020-02-16T21:13:35+08:00 ] 0.0.0.0 POST localhost/add_company
+[运行时间：0.092231s] [吞吐率：10.84req/s] [内存消耗：2,527.13kb] [文件加载：44]
+[ error ] [8]未定义数组索引: sex[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:58]
+---------------------------------------------------------------
+[ 2020-02-16T23:58:34+08:00 ] 0.0.0.0 GET localhost/add_categories
+[运行时间：0.070241s] [吞吐率：14.24req/s] [内存消耗：1,463.77kb] [文件加载：35]
+[ error ] [0]模板文件不存在:D:\php-workspace\wms/tp5/application/user\view\basics\add_categories.html[D:\php-workspace\wms\tp5\thinkphp\library\think\view\driver\Think.php:82]

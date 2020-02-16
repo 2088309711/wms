@@ -6,7 +6,7 @@
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
-        <div class="layui-card-header">员工管理</div>
+        <div class="layui-card-header">部门管理</div>
         <div class="layui-card-body">
 
 
@@ -14,9 +14,12 @@
                 <thead>
                 <tr>
                     <th lay-data="{field:'id',align:'center'}">编号</th>
-                    <th lay-data="{field:'type',align:'center'}">类型</th>
-                    <th lay-data="{field:'name',align:'center'}">名称</th>
-                    <th lay-data="{field:'cost',align:'center'}">是否参与库存成本核算</th>
+                    <th lay-data="{field:'name',align:'center'}">姓名</th>
+                    <th lay-data="{field:'major',align:'center'}">部门主管</th>
+
+                    <th lay-data="{field:'phone',align:'center'}">电话</th>
+
+
                     <th lay-data="{fixed: 'right', width: 160, align: 'center', toolbar: '#barDemo'}">操作</th>
                 </tr>
                 </thead>
@@ -29,7 +32,7 @@
 
 <script type="text/html" id="toolbarDemo">
     <div class="layui-btn-container">
-        <a href="/add_categories" class="layui-btn layui-btn-sm">添加类别</a>
+        <a href="/add_depart" class="layui-btn layui-btn-sm">添加部门</a>
 
     </div>
 </script>

@@ -8,6 +8,9 @@
 
 namespace app\user\controller;
 
+use app\user\model\Categories;
+use app\user\model\Company;
+use app\user\model\Depart;
 use app\user\model\Employee;
 use app\user\model\Warehouse;
 use think\Controller;
@@ -22,13 +25,128 @@ class Basics extends Filter
 
     public function exchangeUnitManagement()
     {
-        return $this->fetch();
+        if (request()->isAjax()) {
+
+
+            $employee = Company::all();
+
+
+            $result = [
+                "code" => 0,
+                "msg" => "",
+                "count" => Company::count(),
+                "data" => $employee
+            ];
+
+            return $result;
+
+        } else {
+
+            return $this->fetch();
+
+        }
     }
 
-    public function sectorSetup()
+
+    public function addCompany()
     {
-        return $this->fetch();
+        if (request()->isPost()) {
+
+            $data = input();
+
+
+            $w = new Company;
+            $w->name = $data['name'];
+            $w->type = $data['type'];
+            $w->contacts = $data['contacts'];
+            $w->phone = $data['phone'];
+            $w->fax = $data['fax'];
+            $w->email = $data['email'];
+
+
+            $w->bank = $data['bank'];
+            $w->bankaccount = $data['bankaccount'];
+            $w->tariff = $data['tariff'];
+            $w->area = $data['area'];
+            $w->province = $data['province'];
+            $w->city = $data['city'];
+            $w->address = $data['address'];
+            $w->zipcode = $data['zipcode'];
+            $w->remark = $data['remark'];
+
+
+            $w->user = $this->getUserName();
+            if ($w->save()) {
+                $this->redirect('/exchange_unit_management');
+            } else {
+                $this->error('添加失败');
+            }
+
+        } else {
+
+            return $this->fetch();
+        }
+
     }
+
+
+    public function sectorManagement()
+    {
+        if (request()->isAjax()) {
+
+
+            $employee = Depart::all();
+
+
+            $result = [
+                "code" => 0,
+                "msg" => "",
+                "count" => Depart::count(),
+                "data" => $employee
+            ];
+
+            return $result;
+
+        } else {
+
+            return $this->fetch();
+
+        }
+    }
+
+
+    public function addDepart()
+    {
+
+        if (request()->isPost()) {
+
+            $data = input();
+
+
+            $w = new Depart;
+            $w->name = $data['name'];
+            $w->major = $data['major'];
+            $w->phone = $data['phone'];
+
+
+            $w->remark = $data['remark'];
+
+
+            $w->user = $this->getUserName();
+            if ($w->save()) {
+                $this->redirect('/sector_management');
+            } else {
+                $this->error('添加失败');
+            }
+
+        } else {
+
+            return $this->fetch();
+        }
+
+
+    }
+
 
     public function staffManagement()
     {
@@ -154,7 +272,55 @@ class Basics extends Filter
 
     public function comeEnterLibSet()
     {
-        return $this->fetch();
+        if (request()->isAjax()) {
+
+
+            $employee = Categories::all();
+
+
+            $result = [
+                "code" => 0,
+                "msg" => "",
+                "count" => Categories::count(),
+                "data" => $employee
+            ];
+
+            return $result;
+
+        } else {
+
+            return $this->fetch();
+
+        }
+    }
+
+
+    public function addCategories()
+    {
+
+        if (request()->isPost()) {
+
+            $data = input();
+
+
+            $w = new Categories;
+            $w->name = $data['name'];
+            $w->type = $data['type'];
+            $w->cost = $data['cost'];
+
+            $w->user = $this->getUserName();
+            if ($w->save()) {
+                $this->redirect('/come_enter_lib_set');
+            } else {
+                $this->error('添加失败');
+            }
+
+        } else {
+
+            return $this->fetch();
+        }
+
+
     }
 
 

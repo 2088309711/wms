@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"D:\php-workspace\wms/tp5/application/user\view\basics\index.html";i:1581683909;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581760047;s:62:"D:\php-workspace\wms\tp5\application\user\view\nav_basics.html";i:1581870660;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"D:\php-workspace\wms/tp5/application/user\view\basics\sector_management.html";i:1581871335;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581760047;s:62:"D:\php-workspace\wms\tp5\application\user\view\nav_basics.html";i:1581870660;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,21 +94,42 @@
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
-        <div class="layui-card-header">货品入库</div>
+        <div class="layui-card-header">部门管理</div>
         <div class="layui-card-body">
-            <fieldset class="layui-elem-field">
-                <legend>单据信息</legend>
-                <div class="layui-field-box">
 
-                    内容
 
-                </div>
-            </fieldset>
+            <table class="layui-table" lay-data="{ toolbar: '#toolbarDemo', url:'#', page: true, limit: 6, limits:[6]}">
+                <thead>
+                <tr>
+                    <th lay-data="{field:'id',align:'center'}">编号</th>
+                    <th lay-data="{field:'name',align:'center'}">姓名</th>
+                    <th lay-data="{field:'major',align:'center'}">部门主管</th>
 
+                    <th lay-data="{field:'phone',align:'center'}">电话</th>
+
+
+                    <th lay-data="{fixed: 'right', width: 160, align: 'center', toolbar: '#barDemo'}">操作</th>
+                </tr>
+                </thead>
+            </table>
 
         </div>
     </div>
 </div>
+
+
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <a href="/add_depart" class="layui-btn layui-btn-sm">添加部门</a>
+
+    </div>
+</script>
+
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">按钮1</a>
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">按钮2</a>
+</script>
 
 
 
@@ -170,8 +191,8 @@
 
 
     //Demo
-    layui.use('form', function () {
-        var form = layui.form;
+    layui.use(['form', 'table'], function () {
+        var form = layui.form, table = layui.table;
 
         //监听提交
         form.on('submit(formDemo)', function (data) {

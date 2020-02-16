@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:83:"D:\php-workspace\wms/tp5/application/user\view\basics\exchange_unit_management.html";i:1581683909;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581760047;s:62:"D:\php-workspace\wms\tp5\application\user\view\nav_basics.html";i:1581743400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:83:"D:\php-workspace\wms/tp5/application/user\view\basics\exchange_unit_management.html";i:1581858085;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581760047;s:62:"D:\php-workspace\wms\tp5\application\user\view\nav_basics.html";i:1581870660;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,7 +74,7 @@
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
                 <li class="layui-nav-item"><a href="/exchange_unit_management">往来单位管理</a></li>
-<li class="layui-nav-item"><a href="/sector_setup ">部门设置</a></li>
+<li class="layui-nav-item"><a href="/sector_management">部门管理</a></li>
 <li class="layui-nav-item"><a href="/staff_management">员工管理</a></li>
 <li class="layui-nav-item"><a href="/warehouse">仓库管理</a></li>
 <li class="layui-nav-item"><a href="/come_enter_lib_set">出入库类别设置</a></li>
@@ -94,21 +94,42 @@
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
-        <div class="layui-card-header">货品入库</div>
+        <div class="layui-card-header">来往单位管理</div>
         <div class="layui-card-body">
-            <fieldset class="layui-elem-field">
-                <legend>单据信息</legend>
-                <div class="layui-field-box">
 
-                    内容
 
-                </div>
-            </fieldset>
-
+            <table class="layui-table" lay-data="{ toolbar: '#toolbarDemo', url:'#', page: true, limit: 6, limits:[6]}">
+                <thead>
+                <tr>
+                    <th lay-data="{field:'id',align:'center'}">编号</th>
+                    <th lay-data="{field:'name',align:'center'}">单位名称</th>
+                    <th lay-data="{field:'type',align:'center'}">类型</th>
+                    <th lay-data="{field:'contacts',align:'center'}">联系人</th>
+                    <th lay-data="{field:'phone',align:'center'}">电话</th>
+                    <th lay-data="{field:'area',align:'center'}">地区</th>
+                    <th lay-data="{field:'province',align:'center'}">省份</th>
+                    <th lay-data="{fixed: 'right', width: 160, align: 'center', toolbar: '#barDemo'}">操作</th>
+                </tr>
+                </thead>
+            </table>
 
         </div>
     </div>
 </div>
+
+
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <a href="/add_company" class="layui-btn layui-btn-sm">添加来往单位</a>
+
+    </div>
+</script>
+
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">按钮1</a>
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">按钮2</a>
+</script>
 
 
 
@@ -170,8 +191,8 @@
 
 
     //Demo
-    layui.use('form', function () {
-        var form = layui.form;
+    layui.use(['form', 'table'], function () {
+        var form = layui.form, table = layui.table;
 
         //监听提交
         form.on('submit(formDemo)', function (data) {

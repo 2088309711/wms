@@ -53,12 +53,15 @@ Route::get([
 //    基础
     'basics' => 'user/basics/index',
     'exchange_unit_management' => 'user/basics/exchangeUnitManagement',
-    'sector_setup' => 'user/basics/sectorSetup',
+    'add_company' => 'user/basics/addCompany',
+    'sector_management' => 'user/basics/sectorManagement',
+    'add_depart' => 'user/basics/addDepart',
     'staff_management' => 'user/basics/staffManagement',
     'add_staff' => 'user/basics/addStaff',
     'warehouse' => 'user/basics/warehouse',
     'add_warehouse' => 'user/basics/addWarehouse',
     'come_enter_lib_set' => 'user/basics/comeEnterLibSet',
+    'add_categories' => 'user/basics/addCategories',
 
 
 //    用户登录
@@ -80,14 +83,6 @@ Route::get([
     'operating_log' => 'user/System/operatingLog',
 
 
-
-
-
-
-
-
-
-
 ]);
 
 Route::post([
@@ -103,6 +98,9 @@ Route::post([
     'reg' => 'user/login/register',
     'add_warehouse' => 'user/Basics/addWarehouse',
     'add_staff' => 'user/basics/addStaff',
+    'add_company' => 'user/basics/addCompany',
+    'add_categories' => 'user/basics/addCategories',
+    'add_depart' => 'user/basics/addDepart',
 
 //    仓库
 

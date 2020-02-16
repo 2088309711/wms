@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"D:\php-workspace\wms/tp5/application/user\view\basics\index.html";i:1581683909;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581760047;s:62:"D:\php-workspace\wms\tp5\application\user\view\nav_basics.html";i:1581870660;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:69:"D:\php-workspace\wms/tp5/application/user\view\basics\add_depart.html";i:1581871542;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581760047;s:62:"D:\php-workspace\wms\tp5\application\user\view\nav_basics.html";i:1581870660;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,17 +94,65 @@
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
-        <div class="layui-card-header">货品入库</div>
+        <div class="layui-card-header">添加部门</div>
         <div class="layui-card-body">
-            <fieldset class="layui-elem-field">
-                <legend>单据信息</legend>
-                <div class="layui-field-box">
 
-                    内容
+
+            <form class="layui-form" method="post">
+
+                <?php echo token(); ?>
+                <div class="layui-form-item">
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="name" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">部门主管</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="major" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">电话</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="phone" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+
+
 
                 </div>
-            </fieldset>
 
+
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">备注</label>
+                    <div class="layui-input-block">
+                        <textarea name="remark" placeholder="请输入内容" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+
+
+
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+
+            </form>
 
         </div>
     </div>
@@ -170,13 +218,13 @@
 
 
     //Demo
-    layui.use('form', function () {
-        var form = layui.form;
+    layui.use(['form', 'table'], function () {
+        var form = layui.form, table = layui.table;
 
         //监听提交
         form.on('submit(formDemo)', function (data) {
-            layer.msg(JSON.stringify(data.field));
-            return false;
+            // layer.msg(JSON.stringify(data.field));
+            // return false;
         });
     });
 
