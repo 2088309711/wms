@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"D:\php-workspace\wms/tp5/application/user\view\basics\add_staff.html";i:1581782954;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:62:"D:\php-workspace\wms\tp5\application\user\view\nav_basics.html";i:1581870660;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:75:"D:\php-workspace\wms/tp5/application/user\view\quality\sort_management.html";i:1581655986;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:63:"D:\php-workspace\wms\tp5\application\user\view\nav_Quality.html";i:1581882226;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,11 +71,12 @@
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/exchange_unit_management">往来单位管理</a></li>
-<li class="layui-nav-item"><a href="/sector_management">部门管理</a></li>
-<li class="layui-nav-item"><a href="/staff_management">员工管理</a></li>
-<li class="layui-nav-item"><a href="/warehouse">仓库管理</a></li>
-<li class="layui-nav-item"><a href="/come_enter_lib_set">出入库类别设置</a></li>
+                <li class="layui-nav-item"><a href="/add_quality">添加货品</a></li>
+<li class="layui-nav-item"><a href="/quality_management">货品管理</a></li>
+<li class="layui-nav-item"><a href="/sort_management">分类管理</a></li>
+<li class="layui-nav-item"><a href="/unit_management">计量单位管理</a></li>
+
+
 
 
 
@@ -92,71 +93,10 @@
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
-        <div class="layui-card-header">添加员工</div>
+        <div class="layui-card-header">货品分类管理</div>
         <div class="layui-card-body">
 
-
-            <form class="layui-form" method="post">
-
-                <?php echo token(); ?>
-                <div class="layui-form-item">
-
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">姓名</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="name" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">性别</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="sex" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">职位</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="post" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">电话</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="phone" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">地址</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="address" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">部门</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="depart" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
-                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                    </div>
-                </div>
-
-            </form>
+            <div id="test9" class="demo-tree demo-tree-box"></div>
 
         </div>
     </div>
@@ -222,13 +162,84 @@
 
 
     //Demo
-    layui.use(['form', 'table'], function () {
-        var form = layui.form, table = layui.table;
+    layui.use(['tree', 'util'], function () {
+        var tree = layui.tree, layer = layui.layer, util = layui.util
 
-        //监听提交
-        form.on('submit(formDemo)', function (data) {
-            // layer.msg(JSON.stringify(data.field));
-            // return false;
+        var data1 = [{
+            title: '江西'
+            , id: 1
+            , children: [{
+                title: '南昌'
+                , id: 1000
+                , children: [{
+                    title: '青山湖区'
+                    , id: 10001
+                }, {
+                    title: '高新区'
+                    , id: 10002
+                }]
+            }, {
+                title: '九江'
+                , id: 1001
+            }, {
+                title: '赣州'
+                , id: 1002
+            }]
+        }, {
+            title: '广西'
+            , id: 2
+            , children: [{
+                title: '南宁'
+                , id: 2000
+            }, {
+                title: '桂林'
+                , id: 2001
+            }]
+        }, {
+            title: '陕西'
+            , id: 3
+            , children: [{
+                title: '西安'
+                , id: 3000
+            }, {
+                title: '延安'
+                , id: 3001
+            }]
+        }];
+
+
+        //开启节点操作图标
+        tree.render({
+            elem: '#test9'
+            , data: data1
+            , edit: ['add', 'update', 'del'] //操作节点的图标
+            , click: function (obj) {
+                layer.msg(JSON.stringify(obj.data));
+            }
+
+
+            , operate: function (obj) {
+                var type = obj.type; //得到操作类型：add、edit、del
+                var data = obj.data; //得到当前节点的数据
+                var elem = obj.elem; //得到当前节点元素
+
+
+                //Ajax 操作
+                var id = data.id; //得到节点索引
+                if (type === 'add') { //增加节点
+
+                    //返回 key 值
+                    return 123;
+                } else if (type === 'update') { //修改节点
+
+                    console.log(elem.find('.layui-tree-txt').html()); //得到修改后的内容
+                } else if (type === 'del') { //删除节点
+
+
+                }
+            }
+
+
         });
     });
 

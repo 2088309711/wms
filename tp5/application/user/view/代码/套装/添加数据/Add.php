@@ -14,34 +14,34 @@ class Add
 
 
     public function addStaff()
-{
+    {
 
-    if (request()->isPost()) {
+        if (request()->isPost()) {
 
-        $data = input();
+            $data = input();
 
 
-        $w = new Employee;
-        $w->name = $data['name'];
-        $w->sex = $data['sex'];
-        $w->phone = $data['phone'];
-        $w->address = $data['address'];
-        $w->post = $data['post'];
-        $w->depart = $data['depart'];
-        $w->user = $this->getUserName();
-        if ($w->save()) {
-            $this->redirect('/staff_management');
+            $w = new Employee;
+            $w->name = $data['name'];
+            $w->sex = $data['sex'];
+            $w->phone = $data['phone'];
+            $w->address = $data['address'];
+            $w->post = $data['post'];
+            $w->depart = $data['depart'];
+            $w->user = $this->getUserName();
+            if ($w->save()) {
+                $this->redirect('/staff_management');
+            } else {
+                $this->error('添加失败');
+            }
+
         } else {
-            $this->error('添加失败');
+
+            return $this->fetch();
         }
 
-    } else {
 
-        return $this->fetch();
     }
-
-
-}
 
 
 }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"D:\php-workspace\wms/tp5/application/user\view\basics\add_staff.html";i:1581782954;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:62:"D:\php-workspace\wms\tp5\application\user\view\nav_basics.html";i:1581870660;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:72:"D:\php-workspace\wms/tp5/application/user\view\system\operating_log.html";i:1581685685;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:62:"D:\php-workspace\wms\tp5\application\user\view\nav_system.html";i:1581743400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,11 +71,12 @@
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/exchange_unit_management">往来单位管理</a></li>
-<li class="layui-nav-item"><a href="/sector_management">部门管理</a></li>
-<li class="layui-nav-item"><a href="/staff_management">员工管理</a></li>
-<li class="layui-nav-item"><a href="/warehouse">仓库管理</a></li>
-<li class="layui-nav-item"><a href="/come_enter_lib_set">出入库类别设置</a></li>
+                <li class="layui-nav-item"><a href="/operational_user_management">操作用户管理</a></li>
+<li class="layui-nav-item"><a href="/update_password">修改密码</a></li>
+<li class="layui-nav-item"><a href="/data_backup">数据备份</a></li>
+<li class="layui-nav-item"><a href="/reduction_of_data">数据还原</a></li>
+<li class="layui-nav-item"><a href="/operating_log">系统登录日志</a></li>
+
 
 
 
@@ -92,71 +93,17 @@
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
-        <div class="layui-card-header">添加员工</div>
+        <div class="layui-card-header">货品入库</div>
         <div class="layui-card-body">
+            <fieldset class="layui-elem-field">
+                <legend>单据信息</legend>
+                <div class="layui-field-box">
 
+                    内容
 
-            <form class="layui-form" method="post">
-
-                <?php echo token(); ?>
-                <div class="layui-form-item">
-
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">姓名</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="name" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">性别</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="sex" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">职位</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="post" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">电话</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="phone" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">地址</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="address" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">部门</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="depart" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
                 </div>
+            </fieldset>
 
-
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
-                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                    </div>
-                </div>
-
-            </form>
 
         </div>
     </div>
@@ -222,13 +169,13 @@
 
 
     //Demo
-    layui.use(['form', 'table'], function () {
-        var form = layui.form, table = layui.table;
+    layui.use('form', function () {
+        var form = layui.form;
 
         //监听提交
         form.on('submit(formDemo)', function (data) {
-            // layer.msg(JSON.stringify(data.field));
-            // return false;
+            layer.msg(JSON.stringify(data.field));
+            return false;
         });
     });
 

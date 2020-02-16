@@ -18,3 +18,67 @@
 [ 2020-02-17T00:44:02+08:00 ] 0.0.0.0 GET localhost/add_depart
 [运行时间：0.048908s] [吞吐率：20.45req/s] [内存消耗：1,470.09kb] [文件加载：35]
 [ error ] [0]模板文件不存在:D:\php-workspace\wms/tp5/application/user\view\basics\add_depart.html[D:\php-workspace\wms\tp5\thinkphp\library\think\view\driver\Think.php:82]
+---------------------------------------------------------------
+[ 2020-02-17T00:59:35+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.073769s] [吞吐率：13.56req/s] [内存消耗：1,464.05kb] [文件加载：36]
+[ error ] [1]Class 'app\admin\model\TestInout' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:50]
+---------------------------------------------------------------
+[ 2020-02-17T00:59:40+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.066242s] [吞吐率：15.10req/s] [内存消耗：1,464.05kb] [文件加载：36]
+[ error ] [1]Class 'app\admin\model\TestInout' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:50]
+---------------------------------------------------------------
+[ 2020-02-17T03:28:35+08:00 ] 0.0.0.0 GET localhost/unit_management?page=1&limit=6
+[运行时间：0.062862s] [吞吐率：15.91req/s] [内存消耗：1,456.31kb] [文件加载：36]
+[ error ] [1]Class 'app\user\controller\Employee' not found[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:43]
+---------------------------------------------------------------
+[ 2020-02-17T03:35:17+08:00 ] 0.0.0.0 GET localhost/add_measureunit
+[运行时间：0.063266s] [吞吐率：15.81req/s] [内存消耗：1,450.39kb] [文件加载：35]
+[ error ] [0]模板文件不存在:D:\php-workspace\wms/tp5/application/user\view\quality\add_measureunit.html[D:\php-workspace\wms\tp5\thinkphp\library\think\view\driver\Think.php:82]
+---------------------------------------------------------------
+[ 2020-02-17T03:35:19+08:00 ] 0.0.0.0 GET localhost/add_measureunit
+[运行时间：0.064458s] [吞吐率：15.51req/s] [内存消耗：1,450.55kb] [文件加载：35]
+[ error ] [0]模板文件不存在:D:\php-workspace\wms/tp5/application/user\view\quality\add_measureunit.html[D:\php-workspace\wms\tp5\thinkphp\library\think\view\driver\Think.php:82]
+---------------------------------------------------------------
+[ 2020-02-17T03:44:06+08:00 ] 0.0.0.0 GET localhost/quality_management
+[运行时间：0.065436s] [吞吐率：15.28req/s] [内存消耗：1,450.48kb] [文件加载：35]
+[ error ] [0]模板文件不存在:D:\php-workspace\wms/tp5/application/user\view\quality\quality_management.html[D:\php-workspace\wms\tp5\thinkphp\library\think\view\driver\Think.php:82]
+---------------------------------------------------------------
+[ 2020-02-17T03:47:13+08:00 ] 0.0.0.0 GET localhost/quality_management?page=1&limit=6
+[运行时间：0.064825s] [吞吐率：15.43req/s] [内存消耗：1,462.97kb] [文件加载：36]
+[ error ] [1]Class 'app\user\controller\Employee' not found[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:33]
+---------------------------------------------------------------
+[ 2020-02-17T03:58:58+08:00 ] 0.0.0.0 GET localhost/quality_management?page=1&limit=6
+[运行时间：0.067959s] [吞吐率：14.71req/s] [内存消耗：1,462.97kb] [文件加载：36]
+[ error ] [1]Class 'app\user\controller\Employee' not found[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:33]
+---------------------------------------------------------------
+[ 2020-02-17T03:58:59+08:00 ] 0.0.0.0 GET localhost/quality_management?page=1&limit=6
+[运行时间：0.080758s] [吞吐率：12.38req/s] [内存消耗：1,462.97kb] [文件加载：36]
+[ error ] [1]Class 'app\user\controller\Employee' not found[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:33]
+---------------------------------------------------------------
+[ 2020-02-17T03:59:01+08:00 ] 0.0.0.0 GET localhost/quality_management?page=1&limit=6
+[运行时间：0.063279s] [吞吐率：15.80req/s] [内存消耗：1,462.97kb] [文件加载：36]
+[ error ] [1]Class 'app\user\controller\Employee' not found[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:33]
+---------------------------------------------------------------
+[ 2020-02-17T03:59:02+08:00 ] 0.0.0.0 GET localhost/quality_management?page=1&limit=6
+[运行时间：0.063571s] [吞吐率：15.73req/s] [内存消耗：1,462.97kb] [文件加载：36]
+[ error ] [1]Class 'app\user\controller\Employee' not found[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:33]
+---------------------------------------------------------------
+[ 2020-02-17T03:59:04+08:00 ] 0.0.0.0 GET localhost/quality_management?page=1&limit=6
+[运行时间：0.064304s] [吞吐率：15.55req/s] [内存消耗：1,462.97kb] [文件加载：36]
+[ error ] [1]Class 'app\user\controller\Employee' not found[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:33]
+---------------------------------------------------------------
+[ 2020-02-17T03:59:04+08:00 ] 0.0.0.0 GET localhost/quality_management?page=1&limit=6
+[运行时间：0.080205s] [吞吐率：12.47req/s] [内存消耗：1,462.97kb] [文件加载：36]
+[ error ] [1]Class 'app\user\controller\Employee' not found[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:33]
+---------------------------------------------------------------
+[ 2020-02-17T04:02:14+08:00 ] 0.0.0.0 GET localhost/quality_management?page=1&limit=6
+[运行时间：0.061627s] [吞吐率：16.23req/s] [内存消耗：1,462.97kb] [文件加载：36]
+[ error ] [1]Class 'app\user\controller\Employee' not found[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:33]
+---------------------------------------------------------------
+[ 2020-02-17T04:02:15+08:00 ] 0.0.0.0 GET localhost/quality_management?page=1&limit=6
+[运行时间：0.063008s] [吞吐率：15.87req/s] [内存消耗：1,462.97kb] [文件加载：36]
+[ error ] [1]Class 'app\user\controller\Employee' not found[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:33]
+---------------------------------------------------------------
+[ 2020-02-17T04:02:17+08:00 ] 0.0.0.0 GET localhost/quality_management?page=1&limit=6
+[运行时间：0.060356s] [吞吐率：16.57req/s] [内存消耗：1,462.97kb] [文件加载：36]
+[ error ] [1]Class 'app\user\controller\Employee' not found[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:33]

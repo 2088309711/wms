@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"D:\php-workspace\wms/tp5/application/user\view\basics\add_staff.html";i:1581782954;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:62:"D:\php-workspace\wms\tp5\application\user\view\nav_basics.html";i:1581870660;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:75:"D:\php-workspace\wms/tp5/application/user\view\quality\add_measureunit.html";i:1581881894;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:63:"D:\php-workspace\wms\tp5\application\user\view\nav_Quality.html";i:1581743400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,11 +71,12 @@
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/exchange_unit_management">往来单位管理</a></li>
-<li class="layui-nav-item"><a href="/sector_management">部门管理</a></li>
-<li class="layui-nav-item"><a href="/staff_management">员工管理</a></li>
-<li class="layui-nav-item"><a href="/warehouse">仓库管理</a></li>
-<li class="layui-nav-item"><a href="/come_enter_lib_set">出入库类别设置</a></li>
+                <li class="layui-nav-item"><a href="/sort_management">分类管理</a></li>
+<li class="layui-nav-item"><a href="/information_management">信息管理</a></li>
+<li class="layui-nav-item"><a href="/add_quality">添加货品</a></li>
+<li class="layui-nav-item"><a href="/unit_management">计量单位管理</a></li>
+
+
 
 
 
@@ -92,7 +93,7 @@
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
-        <div class="layui-card-header">添加员工</div>
+        <div class="layui-card-header">添加计量单位</div>
         <div class="layui-card-body">
 
 
@@ -103,48 +104,20 @@
 
 
                     <div class="layui-inline">
-                        <label class="layui-form-label">姓名</label>
+                        <label class="layui-form-label">名称</label>
                         <div class="layui-input-inline">
                             <input type="text" name="name" autocomplete="off" class="layui-input">
                         </div>
                     </div>
 
 
-                    <div class="layui-inline">
-                        <label class="layui-form-label">性别</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="sex" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">职位</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="post" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
+                </div>
 
 
-                    <div class="layui-inline">
-                        <label class="layui-form-label">电话</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="phone" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">地址</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="address" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">部门</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="depart" autocomplete="off" class="layui-input">
-                        </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">备注</label>
+                    <div class="layui-input-block">
+                        <textarea name="remark" placeholder="请输入内容" class="layui-textarea"></textarea>
                     </div>
                 </div>
 

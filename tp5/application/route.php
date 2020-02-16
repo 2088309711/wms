@@ -36,10 +36,11 @@ Route::get([
 //    货品
     'Quality' => 'user/Quality/index',
     'sort_management' => 'user/Quality/sortManagement',
-    'information_management' => 'user/Quality/informationManagement',
+    'quality_management' => 'user/Quality/qualityManagement',
     'add_quality' => 'user/Quality/addQuality',
     'unit_management' => 'user/Quality/unitManagement',
 
+    'add_measureunit' => 'user/Quality/addMeasureunit',
 
 //    库存
     'repertory' => 'user/Repertory/index',
@@ -104,6 +105,10 @@ Route::post([
 
 //    仓库
 
+
+//    货品
+    'add_measureunit' => 'user/Quality/addMeasureunit',
+    'add_quality' => 'user/Quality/addQuality',
 
 ]);
 

@@ -6,7 +6,7 @@
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
-        <div class="layui-card-header">计量单位管理</div>
+        <div class="layui-card-header">货品管理</div>
         <div class="layui-card-body">
 
 
@@ -14,9 +14,11 @@
                 <thead>
                 <tr>
                     <th lay-data="{field:'id',align:'center'}">编号</th>
-                    <th lay-data="{field:'name',align:'center'}">计量单位</th>
-                    <th lay-data="{field:'remark',align:'center'}">备注</th>
-
+                    <th lay-data="{field:'name',align:'center'}">货品名称</th>
+                    <th lay-data="{field:'size',align:'center'}">规格</th>
+                    <th lay-data="{field:'unit',align:'center'}">计量单位</th>
+                    <th lay-data="{field:'upperlimit',align:'center'}">库存上限</th>
+                    <th lay-data="{field:'lowerlimit',align:'center'}">库存下限</th>
                     <th lay-data="{fixed: 'right', width: 160, align: 'center', toolbar: '#barDemo'}">操作</th>
                 </tr>
                 </thead>
@@ -29,7 +31,7 @@
 
 <script type="text/html" id="toolbarDemo">
     <div class="layui-btn-container">
-        <a href="/add_measureunit" class="layui-btn layui-btn-sm">添加计量单位</a>
+        <a href="/add_quality" class="layui-btn layui-btn-sm">添加货品</a>
 
     </div>
 </script>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"D:\php-workspace\wms/tp5/application/user\view\basics\add_staff.html";i:1581782954;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:62:"D:\php-workspace\wms\tp5\application\user\view\nav_basics.html";i:1581870660;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"D:\php-workspace\wms/tp5/application/user\view\quality\add_quality.html";i:1581884023;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:63:"D:\php-workspace\wms\tp5\application\user\view\nav_Quality.html";i:1581882226;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,11 +71,12 @@
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/exchange_unit_management">往来单位管理</a></li>
-<li class="layui-nav-item"><a href="/sector_management">部门管理</a></li>
-<li class="layui-nav-item"><a href="/staff_management">员工管理</a></li>
-<li class="layui-nav-item"><a href="/warehouse">仓库管理</a></li>
-<li class="layui-nav-item"><a href="/come_enter_lib_set">出入库类别设置</a></li>
+                <li class="layui-nav-item"><a href="/add_quality">添加货品</a></li>
+<li class="layui-nav-item"><a href="/quality_management">货品管理</a></li>
+<li class="layui-nav-item"><a href="/sort_management">分类管理</a></li>
+<li class="layui-nav-item"><a href="/unit_management">计量单位管理</a></li>
+
+
 
 
 
@@ -92,18 +93,26 @@
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
-        <div class="layui-card-header">添加员工</div>
+        <div class="layui-card-header">添加货品</div>
         <div class="layui-card-body">
 
 
             <form class="layui-form" method="post">
 
-                <?php echo token(); ?>
+
                 <div class="layui-form-item">
 
 
                     <div class="layui-inline">
-                        <label class="layui-form-label">姓名</label>
+                        <label class="layui-form-label">货品类别</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="type" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">货品名称</label>
                         <div class="layui-input-inline">
                             <input type="text" name="name" autocomplete="off" class="layui-input">
                         </div>
@@ -111,52 +120,109 @@
 
 
                     <div class="layui-inline">
-                        <label class="layui-form-label">性别</label>
+                        <label class="layui-form-label">货品编码</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="sex" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">职位</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="post" autocomplete="off" class="layui-input">
+                            <input type="text" name="encode" autocomplete="off" class="layui-input">
                         </div>
                     </div>
 
 
+
                     <div class="layui-inline">
-                        <label class="layui-form-label">电话</label>
+                        <label class="layui-form-label">规格型号</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="phone" autocomplete="off" class="layui-input">
+                            <input type="text" name="size" autocomplete="off" class="layui-input">
                         </div>
                     </div>
 
 
                     <div class="layui-inline">
-                        <label class="layui-form-label">地址</label>
+                        <label class="layui-form-label">库存上限</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="address" autocomplete="off" class="layui-input">
+                            <input type="text" name="upperlimit" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">库存下限</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="lowerlimit" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">入库参考价</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="inprice" autocomplete="off" class="layui-input">
                         </div>
                     </div>
 
                     <div class="layui-inline">
-                        <label class="layui-form-label">部门</label>
+                        <label class="layui-form-label">出库参考价</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="depart" autocomplete="off" class="layui-input">
+                            <input type="text" name="outprice" autocomplete="off" class="layui-input">
                         </div>
                     </div>
-                </div>
 
 
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
-                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">计量单位</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="unit" autocomplete="off" class="layui-input">
+                        </div>
                     </div>
+
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">货品条码</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="barcode" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">货品图片</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="tupian" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">货品简介</label>
+                        <div class="layui-input-block">
+                            <textarea name="abstract" placeholder="请输入内容" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <textarea name="remark" placeholder="请输入内容" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+
+
+
                 </div>
 
             </form>
+
 
         </div>
     </div>
@@ -222,8 +288,8 @@
 
 
     //Demo
-    layui.use(['form', 'table'], function () {
-        var form = layui.form, table = layui.table;
+    layui.use('form', function () {
+        var form = layui.form;
 
         //监听提交
         form.on('submit(formDemo)', function (data) {
