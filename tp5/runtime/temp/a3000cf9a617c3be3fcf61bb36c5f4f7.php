@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:75:"D:\php-workspace\wms/tp5/application/user\view\quality\add_measureunit.html";i:1581881894;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:63:"D:\php-workspace\wms\tp5\application\user\view\nav_Quality.html";i:1581743400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:75:"D:\php-workspace\wms/tp5/application/user\view\quality\add_measureunit.html";i:1581881894;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:63:"D:\php-workspace\wms\tp5\application\user\view\nav_Quality.html";i:1581882226;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,9 +71,9 @@
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/sort_management">分类管理</a></li>
-<li class="layui-nav-item"><a href="/information_management">信息管理</a></li>
-<li class="layui-nav-item"><a href="/add_quality">添加货品</a></li>
+                <li class="layui-nav-item"><a href="/add_quality">添加货品</a></li>
+<li class="layui-nav-item"><a href="/quality_management">货品管理</a></li>
+<li class="layui-nav-item"><a href="/sort_management">分类管理</a></li>
 <li class="layui-nav-item"><a href="/unit_management">计量单位管理</a></li>
 
 

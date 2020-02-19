@@ -1,0 +1,96 @@
+---------------------------------------------------------------
+[ 2020-02-20T00:20:26+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.093212s] [吞吐率：10.73req/s] [内存消耗：2,598.21kb] [文件加载：43]
+[ error ] [0]variable type error： array[D:\php-workspace\wms\tp5\thinkphp\library\think\Response.php:316]
+---------------------------------------------------------------
+[ 2020-02-20T00:46:10+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.105865s] [吞吐率：9.45req/s] [内存消耗：2,602.18kb] [文件加载：43]
+[ error ] [0]类的属性不存在:app\user\model\Itemclassify->parentId[D:\php-workspace\wms\tp5\thinkphp\library\think\Model.php:626]
+---------------------------------------------------------------
+[ 2020-02-20T00:47:28+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.091303s] [吞吐率：10.95req/s] [内存消耗：2,602.52kb] [文件加载：43]
+[ error ] [0]类的属性不存在:app\user\model\Itemclassify->parentId[D:\php-workspace\wms\tp5\thinkphp\library\think\Model.php:626]
+---------------------------------------------------------------
+[ 2020-02-20T00:49:12+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.106028s] [吞吐率：9.43req/s] [内存消耗：2,618.33kb] [文件加载：45]
+[ error ] [8]Use of undefined constant id - assumed 'id'[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:40]
+---------------------------------------------------------------
+[ 2020-02-20T00:51:24+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.105614s] [吞吐率：9.47req/s] [内存消耗：2,615.34kb] [文件加载：45]
+[ error ] [8]Use of undefined constant tree - assumed 'tree'[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:47]
+---------------------------------------------------------------
+[ 2020-02-20T00:57:33+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.107716s] [吞吐率：9.28req/s] [内存消耗：2,602.29kb] [文件加载：43]
+[ error ] [0]variable type error： array[D:\php-workspace\wms\tp5\thinkphp\library\think\Response.php:316]
+---------------------------------------------------------------
+[ 2020-02-20T01:05:49+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.114726s] [吞吐率：8.72req/s] [内存消耗：2,594.13kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:31]
+---------------------------------------------------------------
+[ 2020-02-20T01:06:06+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.092447s] [吞吐率：10.82req/s] [内存消耗：2,593.00kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:31]
+---------------------------------------------------------------
+[ 2020-02-20T01:06:08+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.095922s] [吞吐率：10.43req/s] [内存消耗：2,593.09kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:31]
+---------------------------------------------------------------
+[ 2020-02-20T01:06:08+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.105316s] [吞吐率：9.50req/s] [内存消耗：2,593.00kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:31]
+---------------------------------------------------------------
+[ 2020-02-20T01:06:09+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.118646s] [吞吐率：8.43req/s] [内存消耗：2,593.00kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:31]
+---------------------------------------------------------------
+[ 2020-02-20T01:06:13+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.091225s] [吞吐率：10.96req/s] [内存消耗：2,591.53kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:31]
+---------------------------------------------------------------
+[ 2020-02-20T01:06:14+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.097838s] [吞吐率：10.22req/s] [内存消耗：2,591.35kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:31]
+---------------------------------------------------------------
+[ 2020-02-20T01:08:02+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.042335s] [吞吐率：23.62req/s] [内存消耗：1,180.09kb] [文件加载：28]
+[ error ] [4]语法错误: unexpected ')'[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:51]
+---------------------------------------------------------------
+[ 2020-02-20T01:08:57+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.092297s] [吞吐率：10.83req/s] [内存消耗：2,599.19kb] [文件加载：45]
+[ error ] [1]Call to a member function column() on a non-object[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:51]
+---------------------------------------------------------------
+[ 2020-02-20T01:10:45+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.100462s] [吞吐率：9.95req/s] [内存消耗：2,599.13kb] [文件加载：46]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nodename' in 'field list'[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2020-02-20T01:11:13+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.099759s] [吞吐率：10.02req/s] [内存消耗：2,599.08kb] [文件加载：46]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '' in 'field list'[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2020-02-20T01:11:57+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.091293s] [吞吐率：10.95req/s] [内存消耗：2,598.64kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:31]
+---------------------------------------------------------------
+[ 2020-02-20T01:12:30+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.101716s] [吞吐率：9.83req/s] [内存消耗：2,598.85kb] [文件加载：45]
+[ error ] [8]未定义变量: item[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:31]
+---------------------------------------------------------------
+[ 2020-02-20T01:12:44+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.095145s] [吞吐率：10.51req/s] [内存消耗：2,598.91kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:33]
+---------------------------------------------------------------
+[ 2020-02-20T01:12:58+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.103156s] [吞吐率：9.69req/s] [内存消耗：2,599.23kb] [文件加载：45]
+[ error ] [8]Use of undefined constant parentNode - assumed 'parentNode'[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:33]
+---------------------------------------------------------------
+[ 2020-02-20T01:13:18+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.090285s] [吞吐率：11.08req/s] [内存消耗：2,598.51kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:36]
+---------------------------------------------------------------
+[ 2020-02-20T01:13:44+08:00 ] 0.0.0.0 GET localhost/sort_management
+[运行时间：0.095068s] [吞吐率：10.52req/s] [内存消耗：2,598.52kb] [文件加载：45]
+[ error ] [2]Attempt to assign property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:38]
+---------------------------------------------------------------
+[ 2020-02-20T01:39:46+08:00 ] 0.0.0.0 POST localhost/add_type
+[运行时间：0.069453s] [吞吐率：14.40req/s] [内存消耗：2,535.25kb] [文件加载：44]
+[ error ] [8]未定义数组索引: parentNode[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:79]

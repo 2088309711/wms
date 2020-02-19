@@ -9,6 +9,7 @@
 namespace app\user\controller;
 
 
+use app\user\model\Itemclassify;
 use app\user\model\Measureunit;
 use app\user\model\Product;
 use think\Controller;
@@ -21,10 +22,65 @@ class Quality extends Filter
         return $this->fetch();
     }
 
+
+    private function translateDataToTree($data, $parentNode = 'root')
+    {
+        $tree = [];
+        $temp = null;
+
+        foreach ($data as $item) {
+            if ($item['parentNode'] == $parentNode) {//找到目标父节点
+                $obj = $item;
+                $temp = $this->translateDataToTree($data, $item['id']);
+                if (count($temp) > 0) {
+                    $obj['children'] = $temp;
+                }
+                $tree[] = $obj;
+            }
+        }
+        return $tree;
+    }
+
+
     public function sortManagement()
     {
-        return $this->fetch();
+        if (request()->isAjax()) {
+
+
+            $itemclassify = Itemclassify::all(['user' => $this->getUserName()]);
+
+
+            $nodeArr = [];
+            foreach ($itemclassify as $item) {
+                $nodeArr[] = [
+                    'title' => $item->name,
+                    'id' => $item->node,
+                    'parentNode' => $item->parentNode,
+                ];
+            }
+
+
+            $tree = $this->translateDataToTree($nodeArr);
+
+            return [['title' => '顶级类别', 'id' => 'root', 'children' => $tree]];
+        } else {
+            return $this->fetch();
+        }
     }
+
+    public function addType()
+    {
+
+        $data = input();
+        $itemclassify = new Itemclassify();
+        $itemclassify->name = $data['name'];
+        $itemclassify->parentNode = $data['parentNode'];
+        $itemclassify->node = $data['node'];
+        $itemclassify->user = $this->getUserName();
+        return $itemclassify->save() ? 'y' : 'n';
+
+    }
+
 
     public function qualityManagement()
     {

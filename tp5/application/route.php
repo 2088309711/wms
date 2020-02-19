@@ -36,6 +36,7 @@ Route::get([
 //    货品
     'Quality' => 'user/Quality/index',
     'sort_management' => 'user/Quality/sortManagement',
+
     'quality_management' => 'user/Quality/qualityManagement',
     'add_quality' => 'user/Quality/addQuality',
     'unit_management' => 'user/Quality/unitManagement',
@@ -109,6 +110,7 @@ Route::post([
 //    货品
     'add_measureunit' => 'user/Quality/addMeasureunit',
     'add_quality' => 'user/Quality/addQuality',
+    'add_type' => 'user/Quality/addType',
 
 ]);
 

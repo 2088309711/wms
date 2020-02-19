@@ -1,10 +1,10 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:72:"D:\php-workspace\wms/tp5/application/user\view\storeroom\in_storage.html";i:1581612671;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581760047;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1581743400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:72:"D:\php-workspace\wms/tp5/application/user\view\storeroom\in_storage.html";i:1581612671;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1581743400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>柠吉CMS</title>
+    <title>柠吉仓库管理系统</title>
     <link rel="stylesheet" href="/statics/layui/css/layui.css">
     <style>
         #nav-switch {
@@ -49,10 +49,8 @@
                 <i class="layui-icon layui-icon-template"></i> 库存</a></li>
             <li class="layui-nav-item"><a href="/basics">
                 <i class="layui-icon layui-icon-user"></i> 基础</a></li>
-            <li class="layui-nav-item"><a href="/plug_in">
-                <i class="layui-icon layui-icon-component"></i> 插件</a></li>
-            <li class="layui-nav-item"><a href="/shopping_mall">
-                <i class="layui-icon layui-icon-cart"></i> 商城</a></li>
+
+
             <li class="layui-nav-item"><a href="/other">
                 <i class="layui-icon layui-icon-util"></i> 其他</a></li>
         </ul>
