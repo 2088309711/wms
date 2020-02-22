@@ -1,0 +1,81 @@
+{extend name="base" /}
+{block name="nav"}{include file="nav_Repertory" /}{/block}
+{block name="content"}
+
+
+<div class="layui-fluid">
+
+    <div class="layui-card" style="margin: 15px 0;">
+        <div class="layui-card-header">库存调拨</div>
+        <div class="layui-card-body">
+
+
+            <div id="test4" class="demo-transfer"></div>
+
+
+            <form class="layui-form" method="post">
+
+                {:token()}
+
+                <input type="hidden" name="code" value="{$code}">
+                <input type="hidden" id="product" name="product" value="">
+
+                <button class="layui-btn" style="margin-top: 10px;" lay-submit lay-filter="formDemo">下一步</button>
+
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+{/block}
+
+{block name="jsScript"}
+<script>
+
+
+    //Demo
+    layui.use(['transfer', 'layer', 'util'], function () {
+        var $ = layui.$
+            , transfer = layui.transfer
+            , layer = layui.layer
+            , form = layui.form
+            , util = layui.util;
+
+
+        //监听提交
+        form.on('submit(formDemo)', function () {
+            $('#product').val(JSON.stringify(transfer.getData('demo1')));
+        });
+
+
+        var data1 = [
+            {"value": "1", "title": "李白"}
+            , {"value": "2", "title": "杜甫"}
+            , {"value": "3", "title": "苏轼"}
+            , {"value": "4", "title": "李清照"}
+            , {"value": "5", "title": "鲁迅"}
+            , {"value": "6", "title": "巴金"}
+            , {"value": "7", "title": "冰心"}
+            , {"value": "8", "title": "矛盾"}
+            , {"value": "9", "title": "贤心"}
+        ]
+
+
+        transfer.render({
+            elem: '#test4'
+            , data: data1
+            , title: ['文本墨客', '获奖文人']
+            , showSearch: true
+            , width: 400 //定义宽度
+            , height: 500 //定义高度
+            , id: 'demo1' //定义索引
+        })
+
+
+    });
+
+</script>
+{/block}

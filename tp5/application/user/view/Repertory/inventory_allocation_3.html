@@ -1,0 +1,76 @@
+{extend name="base" /}
+{block name="nav"}{include file="nav_Repertory" /}{/block}
+{block name="content"}
+
+
+<div class="layui-fluid">
+
+    <div class="layui-card" style="margin: 15px 0;">
+        <div class="layui-card-header">库存调拨 - 数量编辑</div>
+        <div class="layui-card-body">
+
+
+            <table class="layui-table" lay-filter="test"
+                   lay-data="{ toolbar: '#toolbarDemo', url:'#', page: true, limit: 6, limits:[6]}">
+                <thead>
+                <tr>
+                    <th lay-data="{field:'id',align:'center'}">编号</th>
+                    <th lay-data="{field:'product',align:'center'}">货品</th>
+                    <th lay-data="{field:'num',align:'center', edit: 'text'}">调拨数量</th>
+                    <th lay-data="{field:'remark',align:'center', edit: 'text'}">备注</th>
+                    <th lay-data="{fixed: 'right', width: 160, align: 'center', toolbar: '#barDemo'}">操作</th>
+                </tr>
+                </thead>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <a href="/add_staff" class="layui-btn layui-btn-sm">返回上一步</a>
+    </div>
+</script>
+
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">按钮1</a>
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">按钮2</a>
+</script>
+
+
+{/block}
+
+{block name="jsScript"}
+<script>
+
+
+    //Demo
+    layui.use(['form', 'table', 'jquery'], function () {
+        var form = layui.form,
+            table = layui.table,
+            $ = layui.jquery
+
+        table.on('edit(test)', function (obj) { //注：edit是固定事件名，test是table原始容器的属性 lay-filter="对应的值"
+
+            $.get('/inventory_allocation/ajax/' + obj.data.id + '/' + obj.field + '/' + obj.value);
+
+
+            console.log(obj.value); //得到修改后的值
+            console.log(obj.field); //当前编辑的字段名
+            console.log(obj.data.id); //所在行的所有相关数据
+        });
+
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+
+</script>
+{/block}
+

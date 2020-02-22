@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:75:"D:\php-workspace\wms/tp5/application/user\view\quality\sort_management.html";i:1582205041;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:63:"D:\php-workspace\wms\tp5\application\user\view\nav_Quality.html";i:1582205240;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:84:"D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_allocation_2.html";i:1582270649;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_Repertory.html";i:1582257669;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,10 +71,17 @@
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/add_quality">添加货品</a></li>
-<li class="layui-nav-item"><a href="/quality_management">货品管理</a></li>
-<li class="layui-nav-item"><a href="/sort_management">类别管理</a></li>
-<li class="layui-nav-item"><a href="/unit_management">计量单位管理</a></li>
+                <li class="layui-nav-item"><a href="/inventory_allocation/1">库存调拨</a></li>
+<li class="layui-nav-item"><a href="/inventory_verification">库存盘点</a></li>
+<li class="layui-nav-item"><a href="/inventory_allocation_details">库存调拨记录</a></li>
+<li class="layui-nav-item"><a href="/inventory_details">库存盘点记录</a></li>
+<li class="layui-nav-item"><a href="/inventory_query">库存查询</a></li>
+
+
+
+
+
+
 
 
             </ul>
@@ -88,10 +95,24 @@
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
-        <div class="layui-card-header">货品分类管理</div>
+        <div class="layui-card-header">库存调拨</div>
         <div class="layui-card-body">
 
-            <div id="test9" class="demo-tree demo-tree-box"></div>
+
+            <div id="test4" class="demo-transfer"></div>
+
+
+            <form class="layui-form" method="post">
+
+                <?php echo token(); ?>
+
+                <input type="hidden" name="code" value="<?php echo $code; ?>">
+                <input type="hidden" id="product" name="product" value="">
+
+                <button class="layui-btn" style="margin-top: 10px;" lay-submit lay-filter="formDemo">下一步</button>
+
+
+            </form>
 
         </div>
     </div>
@@ -155,94 +176,47 @@
 
 <script>
 
+
     //Demo
-    layui.use(['tree', 'util'], function () {
-        var tree = layui.tree, layer = layui.layer, util = layui.util, $ = layui.jquery,
+    layui.use(['transfer', 'layer', 'util'], function () {
+        var $ = layui.$
+            , transfer = layui.transfer
+            , layer = layui.layer
+            , form = layui.form
+            , util = layui.util;
 
 
-            genId = function () {
-                return Date.now() + Math.random().toString().substr(2, 13)
-            },
+        //监听提交
+        form.on('submit(formDemo)', function () {
+            $('#product').val(JSON.stringify(transfer.getData('demo1')));
+        });
 
 
-            onRender = function () {
+        var data1 = [
+            {"value": "1", "title": "李白"}
+            , {"value": "2", "title": "杜甫"}
+            , {"value": "3", "title": "苏轼"}
+            , {"value": "4", "title": "李清照"}
+            , {"value": "5", "title": "鲁迅"}
+            , {"value": "6", "title": "巴金"}
+            , {"value": "7", "title": "冰心"}
+            , {"value": "8", "title": "矛盾"}
+            , {"value": "9", "title": "贤心"}
+        ]
 
 
-                $.get('', function (data) {
-                    //开启节点操作图标
-                    tree.render({
-                        elem: '#test9'
-                        , data: data
-                        , edit: ['add', 'update', 'del'] //操作节点的图标
-                        , click: function (obj) {
-                            // layer.msg(JSON.stringify(obj.data));
+        transfer.render({
+            elem: '#test4'
+            , data: data1
+            , title: ['文本墨客', '获奖文人']
+            , showSearch: true
+            , width: 400 //定义宽度
+            , height: 500 //定义高度
+            , id: 'demo1' //定义索引
+        })
 
 
-                        }, text: {
-                            defaultNodeName: '请命名新类别' //节点默认名称
-                            , none: '没有任何类别' //数据为空时的提示文本
-                        }
-
-
-                        , operate: function (obj) {
-                            var type = obj.type; //得到操作类型：add、edit、del
-                            var data = obj.data; //得到当前节点的数据
-                            var elem = obj.elem; //得到当前节点元素
-
-
-                            //Ajax 操作
-                            var id = data.id; //得到节点索引
-                            if (type === 'add') { //增加节点
-
-
-                                var newId = genId()
-
-
-                                $.post("/add_type", {
-                                    name: "请命名新类别",
-                                    parentNode: obj.data.id,
-                                    node: newId
-                                }, function (data) {
-                                    if (data.code == 0) {
-                                        layer.msg(data.msg);
-                                        onRender();
-                                    }
-                                })
-
-
-                                //返回 key 值
-                                return newId;
-                            } else if (type === 'update') { //修改节点
-
-                                $.get('/update_type/' + obj.data.id + '/' + elem.find('.layui-tree-txt').html(), function (data) {
-                                    if (data.code == 0) {
-                                        layer.msg(data.msg);
-                                        onRender();
-                                    }
-                                })
-
-
-                            } else if (type === 'del') { //删除节点
-                                $.get('/del_type/' + obj.data.id, function (data) {
-                                    if (data.code == 0) {
-                                        layer.msg(data.msg);
-                                        onRender();
-                                    }
-                                })
-
-                            }
-                        }
-
-                    })
-
-                })
-
-
-            }
-
-
-        onRender()
-    })
+    });
 
 </script>
 

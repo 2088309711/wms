@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:75:"D:\php-workspace\wms/tp5/application/user\view\quality\sort_management.html";i:1582205041;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:63:"D:\php-workspace\wms\tp5\application\user\view\nav_Quality.html";i:1582205240;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:84:"D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_allocation_1.html";i:1582257984;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_Repertory.html";i:1582257669;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,10 +71,17 @@
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/add_quality">添加货品</a></li>
-<li class="layui-nav-item"><a href="/quality_management">货品管理</a></li>
-<li class="layui-nav-item"><a href="/sort_management">类别管理</a></li>
-<li class="layui-nav-item"><a href="/unit_management">计量单位管理</a></li>
+                <li class="layui-nav-item"><a href="/inventory_allocation/1">库存调拨</a></li>
+<li class="layui-nav-item"><a href="/inventory_verification">库存盘点</a></li>
+<li class="layui-nav-item"><a href="/inventory_allocation_details">库存调拨记录</a></li>
+<li class="layui-nav-item"><a href="/inventory_details">库存盘点记录</a></li>
+<li class="layui-nav-item"><a href="/inventory_query">库存查询</a></li>
+
+
+
+
+
+
 
 
             </ul>
@@ -88,10 +95,74 @@
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
-        <div class="layui-card-header">货品分类管理</div>
+        <div class="layui-card-header">库存调拨</div>
         <div class="layui-card-body">
 
-            <div id="test9" class="demo-tree demo-tree-box"></div>
+
+            <form class="layui-form" method="post">
+
+                <?php echo token(); ?>
+                <div class="layui-form-item">
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">单据编号</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="code" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">录单日期</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="date" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">业务员</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="employee" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">出货仓库</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="warehouse_from" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">存货仓库</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="warehouse_to" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">备注</label>
+                    <div class="layui-input-block">
+                        <textarea name="remark" placeholder="请输入内容" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">下一步</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+
+            </form>
 
         </div>
     </div>
@@ -155,94 +226,17 @@
 
 <script>
 
+
     //Demo
-    layui.use(['tree', 'util'], function () {
-        var tree = layui.tree, layer = layui.layer, util = layui.util, $ = layui.jquery,
+    layui.use(['form', 'table'], function () {
+        var form = layui.form, table = layui.table;
 
-
-            genId = function () {
-                return Date.now() + Math.random().toString().substr(2, 13)
-            },
-
-
-            onRender = function () {
-
-
-                $.get('', function (data) {
-                    //开启节点操作图标
-                    tree.render({
-                        elem: '#test9'
-                        , data: data
-                        , edit: ['add', 'update', 'del'] //操作节点的图标
-                        , click: function (obj) {
-                            // layer.msg(JSON.stringify(obj.data));
-
-
-                        }, text: {
-                            defaultNodeName: '请命名新类别' //节点默认名称
-                            , none: '没有任何类别' //数据为空时的提示文本
-                        }
-
-
-                        , operate: function (obj) {
-                            var type = obj.type; //得到操作类型：add、edit、del
-                            var data = obj.data; //得到当前节点的数据
-                            var elem = obj.elem; //得到当前节点元素
-
-
-                            //Ajax 操作
-                            var id = data.id; //得到节点索引
-                            if (type === 'add') { //增加节点
-
-
-                                var newId = genId()
-
-
-                                $.post("/add_type", {
-                                    name: "请命名新类别",
-                                    parentNode: obj.data.id,
-                                    node: newId
-                                }, function (data) {
-                                    if (data.code == 0) {
-                                        layer.msg(data.msg);
-                                        onRender();
-                                    }
-                                })
-
-
-                                //返回 key 值
-                                return newId;
-                            } else if (type === 'update') { //修改节点
-
-                                $.get('/update_type/' + obj.data.id + '/' + elem.find('.layui-tree-txt').html(), function (data) {
-                                    if (data.code == 0) {
-                                        layer.msg(data.msg);
-                                        onRender();
-                                    }
-                                })
-
-
-                            } else if (type === 'del') { //删除节点
-                                $.get('/del_type/' + obj.data.id, function (data) {
-                                    if (data.code == 0) {
-                                        layer.msg(data.msg);
-                                        onRender();
-                                    }
-                                })
-
-                            }
-                        }
-
-                    })
-
-                })
-
-
-            }
-
-
-        onRender()
-    })
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            // layer.msg(JSON.stringify(data.field));
+            // return false;
+        });
+    });
 
 </script>
 

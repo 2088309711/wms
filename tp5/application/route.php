@@ -40,12 +40,15 @@ Route::get([
     'quality_management' => 'user/Quality/qualityManagement',
     'add_quality' => 'user/Quality/addQuality',
     'unit_management' => 'user/Quality/unitManagement',
-
+    '/del_type/:node' => 'user/Quality/delType',
+    '/update_type/:node/:name' => 'user/Quality/updateType',
     'add_measureunit' => 'user/Quality/addMeasureunit',
 
 //    库存
     'repertory' => 'user/Repertory/index',
-    'inventory_allocation' => 'user/Repertory/inventoryAllocation',
+    'inventory_allocation/:step/:id/:field/:value' => 'user/Repertory/inventoryAllocation',
+    'inventory_allocation/:step/:code' => 'user/Repertory/inventoryAllocation',
+    'inventory_allocation/:step' => 'user/Repertory/inventoryAllocation',
     'inventory_allocation_details' => 'user/Repertory/inventoryAllocationDetails',
     'inventory_details' => 'user/Repertory/inventoryDetails',
     'inventory_query' => 'user/Repertory/inventoryQuery',
@@ -111,6 +114,10 @@ Route::post([
     'add_measureunit' => 'user/Quality/addMeasureunit',
     'add_quality' => 'user/Quality/addQuality',
     'add_type' => 'user/Quality/addType',
+
+
+//    库存
+    'inventory_allocation/:step' => 'user/Repertory/inventoryAllocation',
 
 ]);
 

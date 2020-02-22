@@ -29,7 +29,7 @@ class Quality extends Filter
         $temp = null;
 
         foreach ($data as $item) {
-            if ($item['parentNode'] == $parentNode) {//找到目标父节点
+            if ($item['parentNode'] == $parentNode) {
                 $obj = $item;
                 $temp = $this->translateDataToTree($data, $item['id']);
                 if (count($temp) > 0) {
@@ -77,8 +77,50 @@ class Quality extends Filter
         $itemclassify->parentNode = $data['parentNode'];
         $itemclassify->node = $data['node'];
         $itemclassify->user = $this->getUserName();
-        return $itemclassify->save() ? 'y' : 'n';
 
+
+        if ($itemclassify->save()) {
+            $this->success('添加成功');
+        } else {
+            $this->error('添加失败');
+        }
+
+
+    }
+
+    public function updateType()
+    {
+        $data = input();
+
+
+        if ($data['node'] == 'root') {
+            $this->error('顶级类别不可修改');
+        }
+
+        $itemclassify = new Itemclassify();
+
+        if ($itemclassify->save(['name' => $data['name']], ['node' => $data['node']])) {
+            $this->success('修改成功');
+        } else {
+            $this->error('修改失败');
+        }
+    }
+
+    public function delType()
+    {
+        $data = input();
+
+
+        if ($data['node'] == 'root') {
+            $this->error('顶级类别不可删除');
+        }
+
+
+        if (Itemclassify::destroy(['node' => $data['node']])) {
+            $this->success('删除成功');
+        } else {
+            $this->error('删除失败');
+        }
     }
 
 

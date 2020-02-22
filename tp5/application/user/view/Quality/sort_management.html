@@ -21,81 +21,94 @@
 {block name="jsScript"}
 <script>
 
-
-    var data1 = [{
-        title: '顶级类别', id: 'root'
-    }];
-
-
-    function genId() {
-        return Date.now() + Math.random().toString().substr(2, 13);
-    }
-
-
     //Demo
     layui.use(['tree', 'util'], function () {
-        var tree = layui.tree, layer = layui.layer, util = layui.util, $ = layui.jquery
+        var tree = layui.tree, layer = layui.layer, util = layui.util, $ = layui.jquery,
 
 
-        $.get('', function (data) {
-            // console.log(data)
+            genId = function () {
+                return Date.now() + Math.random().toString().substr(2, 13)
+            },
 
 
-            //开启节点操作图标
-            tree.render({
-                elem: '#test9'
-                , data: data
-                , edit: ['add', 'update', 'del'] //操作节点的图标
-                , click: function (obj) {
-                    layer.msg(JSON.stringify(obj.data));
+            onRender = function () {
 
 
-                }, text: {
-                    defaultNodeName: '请命名新类别' //节点默认名称
-                    , none: '没有任何类别' //数据为空时的提示文本
-                }
+                $.get('', function (data) {
+                    //开启节点操作图标
+                    tree.render({
+                        elem: '#test9'
+                        , data: data
+                        , edit: ['add', 'update', 'del'] //操作节点的图标
+                        , click: function (obj) {
+                            // layer.msg(JSON.stringify(obj.data));
 
 
-                , operate: function (obj) {
-                    var type = obj.type; //得到操作类型：add、edit、del
-                    var data = obj.data; //得到当前节点的数据
-                    var elem = obj.elem; //得到当前节点元素
+                        }, text: {
+                            defaultNodeName: '请命名新类别' //节点默认名称
+                            , none: '没有任何类别' //数据为空时的提示文本
+                        }
 
 
-                    //Ajax 操作
-                    var id = data.id; //得到节点索引
-                    if (type === 'add') { //增加节点
+                        , operate: function (obj) {
+                            var type = obj.type; //得到操作类型：add、edit、del
+                            var data = obj.data; //得到当前节点的数据
+                            var elem = obj.elem; //得到当前节点元素
 
 
-                        var newId = genId()
+                            //Ajax 操作
+                            var id = data.id; //得到节点索引
+                            if (type === 'add') { //增加节点
 
 
-                        $.post("/add_type", {
-                            name: "请命名新类别",
-                            parentNode: obj.data.id,
-                            node: newId
-                        }, function (data) {
-                            if (data != 'y') {
-                                layer.msg('添加失败，请检查网络');
+                                var newId = genId()
+
+
+                                $.post("/add_type", {
+                                    name: "请命名新类别",
+                                    parentNode: obj.data.id,
+                                    node: newId
+                                }, function (data) {
+                                    if (data.code == 0) {
+                                        layer.msg(data.msg);
+                                        onRender();
+                                    }
+                                })
+
+
+                                //返回 key 值
+                                return newId;
+                            } else if (type === 'update') { //修改节点
+
+                                $.get('/update_type/' + obj.data.id + '/' + elem.find('.layui-tree-txt').html(), function (data) {
+                                    if (data.code == 0) {
+                                        layer.msg(data.msg);
+                                        onRender();
+                                    }
+                                })
+
+
+                            } else if (type === 'del') { //删除节点
+                                $.get('/del_type/' + obj.data.id, function (data) {
+                                    if (data.code == 0) {
+                                        layer.msg(data.msg);
+                                        onRender();
+                                    }
+                                })
+
                             }
-                        });
+                        }
+
+                    })
+
+                })
 
 
-                        //返回 key 值
-                        return newId;
-                    } else if (type === 'update') { //修改节点
-
-                        console.log(elem.find('.layui-tree-txt').html()); //得到修改后的内容
-                    } else if (type === 'del') { //删除节点
-
-                    }
-                }
+            }
 
 
-            });
-
-        })
-    });
+        onRender()
+    })
 
 </script>
 {/block}

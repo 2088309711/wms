@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:79:"D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_details.html";i:1581682127;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_Repertory.html";i:1581743400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:79:"D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_details.html";i:1582221588;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_Repertory.html";i:1582220019;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,8 +73,8 @@
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
                 <li class="layui-nav-item"><a href="/inventory_allocation">库存调拨</a></li>
 <li class="layui-nav-item"><a href="/inventory_verification">库存盘点</a></li>
-<li class="layui-nav-item"><a href="/inventory_allocation_details">库存调拨明细</a></li>
-<li class="layui-nav-item"><a href="/inventory_details">库存盘点明细</a></li>
+<li class="layui-nav-item"><a href="/inventory_allocation_details">库存调拨记录</a></li>
+<li class="layui-nav-item"><a href="/inventory_details">库存盘点记录</a></li>
 <li class="layui-nav-item"><a href="/inventory_query">库存查询</a></li>
 
 
@@ -95,21 +95,40 @@
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
-        <div class="layui-card-header">货品入库</div>
+        <div class="layui-card-header">库存盘点记录</div>
         <div class="layui-card-body">
-            <fieldset class="layui-elem-field">
-                <legend>单据信息</legend>
-                <div class="layui-field-box">
 
-                    内容
 
-                </div>
-            </fieldset>
+            <table class="layui-table" lay-data="{ toolbar: '#toolbarDemo', url:'#', page: true, limit: 6, limits:[6]}">
+                <thead>
+                <tr>
+                    <th lay-data="{field:'id',align:'center'}">编号</th>
+                    <th lay-data="{field:'warehouse',align:'center'}">盘点仓库</th>
+                    <th lay-data="{field:'employee',align:'center'}">业务员</th>
+                    <th lay-data="{field:'create_time',align:'center'}">盘点时间</th>
 
+                    <th lay-data="{fixed: 'right', width: 160, align: 'center', toolbar: '#barDemo'}">操作</th>
+                </tr>
+                </thead>
+            </table>
 
         </div>
     </div>
 </div>
+
+
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <a href="/add_staff" class="layui-btn layui-btn-sm">库存盘点</a>
+
+    </div>
+</script>
+
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">按钮1</a>
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">按钮2</a>
+</script>
 
 
 
@@ -171,8 +190,8 @@
 
 
     //Demo
-    layui.use('form', function () {
-        var form = layui.form;
+    layui.use(['form', 'table'], function () {
+        var form = layui.form, table = layui.table;
 
         //监听提交
         form.on('submit(formDemo)', function (data) {

@@ -1,0 +1,64 @@
+---------------------------------------------------------------
+[ 2020-02-21T01:19:23+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.075545s] [吞吐率：13.24req/s] [内存消耗：1,471.06kb] [文件加载：36]
+[ error ] [1]Class 'app\admin\model\TestInout' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:50]
+---------------------------------------------------------------
+[ 2020-02-21T01:32:12+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.066153s] [吞吐率：15.12req/s] [内存消耗：1,471.07kb] [文件加载：36]
+[ error ] [1]Class 'app\admin\model\TestInout' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:50]
+---------------------------------------------------------------
+[ 2020-02-21T01:38:17+08:00 ] 0.0.0.0 GET localhost/inventory_allocation_details?page=1&limit=6
+[运行时间：0.075600s] [吞吐率：13.23req/s] [内存消耗：1,464.13kb] [文件加载：36]
+[ error ] [1]Class 'app\user\controller\Employee' not found[D:\php-workspace\wms\tp5\application\user\controller\Repertory.php:31]
+---------------------------------------------------------------
+[ 2020-02-21T01:38:31+08:00 ] 0.0.0.0 GET localhost/inventory_details?page=1&limit=6
+[运行时间：0.068152s] [吞吐率：14.67req/s] [内存消耗：1,465.45kb] [文件加载：36]
+[ error ] [1]Class 'app\user\controller\Employee' not found[D:\php-workspace\wms\tp5\application\user\controller\Repertory.php:55]
+---------------------------------------------------------------
+[ 2020-02-21T01:48:00+08:00 ] 0.0.0.0 GET localhost/inventory_details?page=1&limit=6
+[运行时间：0.051495s] [吞吐率：19.42req/s] [内存消耗：1,465.40kb] [文件加载：36]
+[ error ] [1]Class 'app\user\controller\Employee' not found[D:\php-workspace\wms\tp5\application\user\controller\Repertory.php:56]
+---------------------------------------------------------------
+[ 2020-02-21T01:49:15+08:00 ] 0.0.0.0 GET localhost/inventory_details?page=1&limit=6
+[运行时间：0.052085s] [吞吐率：19.20req/s] [内存消耗：1,465.40kb] [文件加载：36]
+[ error ] [1]Class 'app\user\controller\Employee' not found[D:\php-workspace\wms\tp5\application\user\controller\Repertory.php:56]
+---------------------------------------------------------------
+[ 2020-02-21T12:00:19+08:00 ] 0.0.0.0 GET localhost/inventory_allocation/2
+[运行时间：0.055858s] [吞吐率：17.90req/s] [内存消耗：1,467.98kb] [文件加载：36]
+[ error ] [8]未定义数组索引: step[D:\php-workspace\wms\tp5\application\user\controller\Repertory.php:51]
+---------------------------------------------------------------
+[ 2020-02-21T12:01:55+08:00 ] 0.0.0.0 GET localhost/inventory_allocation/1
+[运行时间：0.046142s] [吞吐率：21.67req/s] [内存消耗：1,461.80kb] [文件加载：35]
+[ error ] [0]模板文件不存在:D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_allocation_1.html[D:\php-workspace\wms\tp5\thinkphp\library\think\view\driver\Think.php:82]
+---------------------------------------------------------------
+[ 2020-02-21T12:04:06+08:00 ] 0.0.0.0 GET localhost/inventory_allocation/2
+[运行时间：0.046294s] [吞吐率：21.60req/s] [内存消耗：1,462.17kb] [文件加载：35]
+[ error ] [0]模板文件不存在:D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_allocation_2.html[D:\php-workspace\wms\tp5\thinkphp\library\think\view\driver\Think.php:82]
+---------------------------------------------------------------
+[ 2020-02-21T12:35:54+08:00 ] 0.0.0.0 POST localhost/inventory_allocation/2
+[运行时间：0.076748s] [吞吐率：13.03req/s] [内存消耗：2,531.15kb] [文件加载：44]
+[ error ] [8]未定义数组索引: date[D:\php-workspace\wms\tp5\application\user\controller\Repertory.php:36]
+---------------------------------------------------------------
+[ 2020-02-21T14:30:00+08:00 ] 0.0.0.0 POST localhost/inventory_allocation/2
+[运行时间：0.048544s] [吞吐率：20.60req/s] [内存消耗：1,472.98kb] [文件加载：36]
+[ error ] [2]json_decode() expects parameter 1 to be string, array given[D:\php-workspace\wms\tp5\application\user\controller\Repertory.php:70]
+---------------------------------------------------------------
+[ 2020-02-21T14:34:29+08:00 ] 0.0.0.0 POST localhost/inventory_allocation/2
+[运行时间：0.049421s] [吞吐率：20.23req/s] [内存消耗：1,478.23kb] [文件加载：36]
+[ error ] [1]Cannot use object of type stdClass as array[D:\php-workspace\wms\tp5\application\user\controller\Repertory.php:91]
+---------------------------------------------------------------
+[ 2020-02-21T15:35:44+08:00 ] 0.0.0.0 GET localhost/inventory_allocation/2/4234
+[运行时间：0.068918s] [吞吐率：14.51req/s] [内存消耗：1,474.08kb] [文件加载：36]
+[ error ] [2]array_merge(): Argument #3 is not an array[D:\php-workspace\wms\tp5\thinkphp\library\think\View.php:151]
+---------------------------------------------------------------
+[ 2020-02-21T15:43:52+08:00 ] 0.0.0.0 GET localhost/inventory_allocation/3
+[运行时间：0.056171s] [吞吐率：17.80req/s] [内存消耗：1,474.45kb] [文件加载：36]
+[ error ] [8]未定义数组索引: code[D:\php-workspace\wms\tp5\application\user\controller\Repertory.php:100]
+---------------------------------------------------------------
+[ 2020-02-21T16:24:51+08:00 ] 0.0.0.0 GET localhost/inventory_allocation/3/4324?page=1&limit=6
+[运行时间：0.114302s] [吞吐率：8.75req/s] [内存消耗：2,604.05kb] [文件加载：45]
+[ error ] [2]stripos() expects parameter 1 to be string, array given[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Query.php:568]
+---------------------------------------------------------------
+[ 2020-02-21T16:25:49+08:00 ] 0.0.0.0 GET localhost/inventory_allocation/3/4324?page=1&limit=6
+[运行时间：0.094579s] [吞吐率：10.57req/s] [内存消耗：2,603.84kb] [文件加载：45]
+[ error ] [2]Missing argument 1 for think\db\Query::where()[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Query.php:1033]

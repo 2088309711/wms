@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:75:"D:\php-workspace\wms/tp5/application/user\view\quality\sort_management.html";i:1582205041;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:63:"D:\php-workspace\wms\tp5\application\user\view\nav_Quality.html";i:1582205240;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:84:"D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_allocation_3.html";i:1582390252;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_Repertory.html";i:1582257669;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,10 +71,17 @@
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/add_quality">添加货品</a></li>
-<li class="layui-nav-item"><a href="/quality_management">货品管理</a></li>
-<li class="layui-nav-item"><a href="/sort_management">类别管理</a></li>
-<li class="layui-nav-item"><a href="/unit_management">计量单位管理</a></li>
+                <li class="layui-nav-item"><a href="/inventory_allocation/1">库存调拨</a></li>
+<li class="layui-nav-item"><a href="/inventory_verification">库存盘点</a></li>
+<li class="layui-nav-item"><a href="/inventory_allocation_details">库存调拨记录</a></li>
+<li class="layui-nav-item"><a href="/inventory_details">库存盘点记录</a></li>
+<li class="layui-nav-item"><a href="/inventory_query">库存查询</a></li>
+
+
+
+
+
+
 
 
             </ul>
@@ -88,14 +95,39 @@
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
-        <div class="layui-card-header">货品分类管理</div>
+        <div class="layui-card-header">库存调拨 - 数量编辑</div>
         <div class="layui-card-body">
 
-            <div id="test9" class="demo-tree demo-tree-box"></div>
+
+            <table class="layui-table" lay-filter="test"
+                   lay-data="{ toolbar: '#toolbarDemo', url:'#', page: true, limit: 6, limits:[6]}">
+                <thead>
+                <tr>
+                    <th lay-data="{field:'id',align:'center'}">编号</th>
+                    <th lay-data="{field:'product',align:'center'}">货品</th>
+                    <th lay-data="{field:'num',align:'center', edit: 'text'}">调拨数量</th>
+                    <th lay-data="{field:'remark',align:'center', edit: 'text'}">备注</th>
+                    <th lay-data="{fixed: 'right', width: 160, align: 'center', toolbar: '#barDemo'}">操作</th>
+                </tr>
+                </thead>
+            </table>
 
         </div>
     </div>
 </div>
+
+
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <a href="/add_staff" class="layui-btn layui-btn-sm">返回上一步</a>
+    </div>
+</script>
+
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">按钮1</a>
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">按钮2</a>
+</script>
 
 
 
@@ -155,94 +187,30 @@
 
 <script>
 
+
     //Demo
-    layui.use(['tree', 'util'], function () {
-        var tree = layui.tree, layer = layui.layer, util = layui.util, $ = layui.jquery,
+    layui.use(['form', 'table', 'jquery'], function () {
+        var form = layui.form,
+            table = layui.table,
+            $ = layui.jquery
+
+        table.on('edit(test)', function (obj) { //注：edit是固定事件名，test是table原始容器的属性 lay-filter="对应的值"
+
+            $.get('/inventory_allocation/ajax/' + obj.data.id + '/' + obj.field + '/' + obj.value);
 
 
-            genId = function () {
-                return Date.now() + Math.random().toString().substr(2, 13)
-            },
+            console.log(obj.value); //得到修改后的值
+            console.log(obj.field); //当前编辑的字段名
+            console.log(obj.data.id); //所在行的所有相关数据
+        });
 
 
-            onRender = function () {
-
-
-                $.get('', function (data) {
-                    //开启节点操作图标
-                    tree.render({
-                        elem: '#test9'
-                        , data: data
-                        , edit: ['add', 'update', 'del'] //操作节点的图标
-                        , click: function (obj) {
-                            // layer.msg(JSON.stringify(obj.data));
-
-
-                        }, text: {
-                            defaultNodeName: '请命名新类别' //节点默认名称
-                            , none: '没有任何类别' //数据为空时的提示文本
-                        }
-
-
-                        , operate: function (obj) {
-                            var type = obj.type; //得到操作类型：add、edit、del
-                            var data = obj.data; //得到当前节点的数据
-                            var elem = obj.elem; //得到当前节点元素
-
-
-                            //Ajax 操作
-                            var id = data.id; //得到节点索引
-                            if (type === 'add') { //增加节点
-
-
-                                var newId = genId()
-
-
-                                $.post("/add_type", {
-                                    name: "请命名新类别",
-                                    parentNode: obj.data.id,
-                                    node: newId
-                                }, function (data) {
-                                    if (data.code == 0) {
-                                        layer.msg(data.msg);
-                                        onRender();
-                                    }
-                                })
-
-
-                                //返回 key 值
-                                return newId;
-                            } else if (type === 'update') { //修改节点
-
-                                $.get('/update_type/' + obj.data.id + '/' + elem.find('.layui-tree-txt').html(), function (data) {
-                                    if (data.code == 0) {
-                                        layer.msg(data.msg);
-                                        onRender();
-                                    }
-                                })
-
-
-                            } else if (type === 'del') { //删除节点
-                                $.get('/del_type/' + obj.data.id, function (data) {
-                                    if (data.code == 0) {
-                                        layer.msg(data.msg);
-                                        onRender();
-                                    }
-                                })
-
-                            }
-                        }
-
-                    })
-
-                })
-
-
-            }
-
-
-        onRender()
-    })
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
 
 </script>
 
