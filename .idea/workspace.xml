@@ -2,32 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f8733d8-b8ca-4a72-9ec7-ac9ec8c5ad7f" name="Default" comment="1">
-      <change afterPath="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tp5/application/route.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/route.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/application/user/controller/Quality.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/controller/Quality.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tp5/application/user/controller/Repertory.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/controller/Repertory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/application/user/model/Itemclassify.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/model/Itemclassify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/Quality/sort_management.html" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/view/Quality/sort_management.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/nav_Quality.html" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/view/nav_Quality.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_verification.html" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_verification_1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tp5/application/user/view/nav_Repertory.html" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/view/nav_Repertory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/代码/套装/数据列表/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/view/代码/套装/数据列表/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/代码/套装/添加数据/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/view/代码/套装/添加数据/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/runtime/log/202002/20.log" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/log/202002/20.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/03f68c3ae6f2c0f1c7dab5b1e5bb94ae.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/03f68c3ae6f2c0f1c7dab5b1e5bb94ae.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/046e915dba0c5c2f4489a8247405bdcc.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/046e915dba0c5c2f4489a8247405bdcc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/3d008e12c8f62b886f26103e56387171.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/3d008e12c8f62b886f26103e56387171.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/3e6ea69766c1a09974dbea862567bf21.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/3e6ea69766c1a09974dbea862567bf21.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/4c3a59cb2b4e90fc2b1b515ca7edf1eb.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/4c3a59cb2b4e90fc2b1b515ca7edf1eb.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/8b674db7cde40ba015526a69fc508b11.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/8b674db7cde40ba015526a69fc508b11.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/9eeb69cdbcbe2284c03b709b59969653.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/9eeb69cdbcbe2284c03b709b59969653.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/a3bb0d3758819e8d27989e7a21243fc7.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/a3bb0d3758819e8d27989e7a21243fc7.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/a69b7031649db726110211ed0723a6e4.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/a69b7031649db726110211ed0723a6e4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/eea079ef5e0e1d8c8cf032ff7730027f.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/eea079ef5e0e1d8c8cf032ff7730027f.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/runtime/log/202002/23.log" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/log/202002/23.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/5ecb710080a0b825db8b4e300261da36.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/5ecb710080a0b825db8b4e300261da36.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/7df0c9e1d5928ebc24c6bc4baa3a9566.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/7df0c9e1d5928ebc24c6bc4baa3a9566.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/ade66f3b41d4b285d0283feec7556a19.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/ade66f3b41d4b285d0283feec7556a19.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/c167eb67b0b1eea36a22444a4cd36e0a.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/c167eb67b0b1eea36a22444a4cd36e0a.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,8 +44,8 @@
       <file leaf-file-name="route.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tp5/application/route.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="48" column="42" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="42" />
+            <state relative-caret-position="364">
+              <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
               <folding>
                 <element signature="e#6#80#0#PHP" expanded="true" />
               </folding>
@@ -67,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Repertory.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Repertory.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tp5/application/user/controller/Repertory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="136" selection-start-line="136" selection-end-line="136" />
+            <state relative-caret-position="448">
+              <caret line="277" selection-start-line="277" selection-end-line="277" />
               <folding>
                 <element signature="e#135#160#0#PHP" expanded="true" />
               </folding>
@@ -79,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inventory_allocation_3.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_3.html">
+      <file leaf-file-name="inventory_verification_2.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_verification_2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="57" column="65" selection-start-line="57" selection-start-column="65" selection-end-line="57" selection-end-column="65" />
+            <state relative-caret-position="476">
+              <caret line="62" column="15" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -148,10 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tp5/application/user/view/基本页面/表单令牌.html" />
-        <option value="$PROJECT_DIR$/tp5/application/user/view/基本页面/验证.php" />
-        <option value="$PROJECT_DIR$/tp5/application/user/controller/Login.php" />
-        <option value="$PROJECT_DIR$/tp5/application/user/controller/Filter.php" />
         <option value="$PROJECT_DIR$/tp5/application/user/model/Employee.php" />
         <option value="$PROJECT_DIR$/tp5/application/user/view/basics/warehouse.html" />
         <option value="$PROJECT_DIR$/tp5/application/user/view/basics/add_staff.html" />
@@ -192,13 +174,17 @@
         <option value="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_details.html" />
         <option value="$PROJECT_DIR$/tp5/application/user/view/代码/套装/添加数据/add.html" />
         <option value="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation.html" />
-        <option value="$PROJECT_DIR$/tp5/application/user/view/nav_Repertory.html" />
         <option value="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_1.html" />
         <option value="$PROJECT_DIR$/tp5/application/user/model/ExchangeData.php" />
         <option value="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_2.html" />
-        <option value="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_3.html" />
+        <option value="$PROJECT_DIR$/tp5/application/user/view/nav_Repertory.html" />
+        <option value="$PROJECT_DIR$/tp5/application/user/model/TakeCheck.php" />
+        <option value="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_verification_1.html" />
+        <option value="$PROJECT_DIR$/tp5/application/user/model/TakeCheckData.php" />
         <option value="$PROJECT_DIR$/tp5/application/route.php" />
         <option value="$PROJECT_DIR$/tp5/application/user/controller/Repertory.php" />
+        <option value="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_3.html" />
+        <option value="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_verification_2.html" />
       </list>
     </option>
   </component>
@@ -256,7 +242,7 @@
               <item name="tp5" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="model" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="wms" type="b2602c69:ProjectViewProjectNode" />
@@ -275,47 +261,6 @@
               <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Repertory" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="wms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wms" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="tp5" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="代码" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wms" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="tp5" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="代码" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="套装" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wms" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="tp5" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="代码" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="套装" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="数据列表" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wms" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="tp5" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="代码" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="套装" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="添加数据" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -331,17 +276,17 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\php-workspace\wms\tp5\application\user\view\代码\套装\添加数据" />
-      <recent name="D:\php-workspace\wms\tp5\application\user\view\代码\套装\基本数据管理" />
-      <recent name="D:\php-workspace\wms\tp5\application\user\view\代码" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\php-workspace\wms\tp5\application\user\view\Repertory" />
       <recent name="D:\php-workspace\wms\statics" />
       <recent name="D:\php-workspace\wms\tp5\application\user\view\Quality" />
       <recent name="D:\php-workspace\wms\tp5\application\user\view\basics" />
       <recent name="D:\php-workspace\wms\tp5\application\user\view\代码\套装\数据列表" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\php-workspace\wms\tp5\application\user\view\代码\套装\添加数据" />
+      <recent name="D:\php-workspace\wms\tp5\application\user\view\代码\套装\基本数据管理" />
+      <recent name="D:\php-workspace\wms\tp5\application\user\view\代码" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -383,7 +328,8 @@
       <workItem from="1581857065438" duration="10409000" />
       <workItem from="1582078318676" duration="20811000" />
       <workItem from="1582201329656" duration="22251000" />
-      <workItem from="1582389538857" duration="1224000" />
+      <workItem from="1582389538857" duration="1316000" />
+      <workItem from="1582469976717" duration="3986000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1581443600778</created>
@@ -396,7 +342,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149062000" />
+    <option name="totallyTimeSpent" value="153140000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -439,35 +385,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/controller/Filter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-142">
-          <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/controller/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="67" column="28" lean-forward="true" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/代码/基本页面/模型.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/代码/套装/数据列表/数据表格.html" />
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/basics/staff_management.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tp5/application/user/view/basics/add_staff.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -707,20 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/nav_Repertory.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="59" selection-start-column="59" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tp5/application/user/model/ExchangeData.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -763,30 +666,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_3.html">
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/nav_Repertory.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="57" column="65" selection-start-line="57" selection-start-column="65" selection-end-line="57" selection-end-column="65" />
+        <state relative-caret-position="28">
+          <caret line="1" column="61" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="18" column="28" selection-end-line="100" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/model/TakeCheck.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_verification_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-504">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/model/TakeCheckData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tp5/application/route.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="48" column="42" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="42" />
+        <state relative-caret-position="364">
+          <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
           <folding>
             <element signature="e#6#80#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/statics/layui/lay/modules/layer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="1" column="1948" selection-start-line="1" selection-start-column="1948" selection-end-line="1" selection-end-column="1948" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="58" column="34" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tp5/application/user/controller/Repertory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="136" selection-start-line="136" selection-end-line="136" />
+        <state relative-caret-position="448">
+          <caret line="277" selection-start-line="277" selection-end-line="277" />
           <folding>
             <element signature="e#135#160#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_verification_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="62" column="15" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
         </state>
       </provider>
     </entry>

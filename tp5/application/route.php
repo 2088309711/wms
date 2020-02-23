@@ -52,7 +52,9 @@ Route::get([
     'inventory_allocation_details' => 'user/Repertory/inventoryAllocationDetails',
     'inventory_details' => 'user/Repertory/inventoryDetails',
     'inventory_query' => 'user/Repertory/inventoryQuery',
-    'inventory_verification' => 'user/Repertory/inventoryVerification',
+    'inventory_verification/:step/:id/:field/:value' => 'user/Repertory/inventoryVerification',
+    'inventory_verification/:step/:code' => 'user/Repertory/inventoryVerification',
+    'inventory_verification/:step' => 'user/Repertory/inventoryVerification',
 
 
 //    基础
@@ -118,7 +120,7 @@ Route::post([
 
 //    库存
     'inventory_allocation/:step' => 'user/Repertory/inventoryAllocation',
-
+    'inventory_verification/:step' => 'user/Repertory/inventoryVerification',
 ]);
 
 

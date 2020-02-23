@@ -12,6 +12,8 @@ namespace app\user\controller;
 use app\user\model\Check;
 use app\user\model\Exchange;
 use app\user\model\ExchangeData;
+use app\user\model\TakeCheck;
+use app\user\model\TakeCheckData;
 use think\Controller;
 
 class Repertory extends Filter
@@ -195,9 +197,89 @@ class Repertory extends Filter
         return $this->fetch();
     }
 
+
+    /**
+     * 库存盘点
+     * @throws \think\Exception
+     * @throws \think\exception\DbException
+     */
     public function inventoryVerification()
     {
-        return $this->fetch();
+
+        $data = input();
+
+        if (request()->isPost()) {
+
+
+            $w = new TakeCheck();
+            $w->date = $data['date'];
+            $w->employee = $data['employee'];
+            $w->warehouse = $data['warehouse'];
+            $w->code = $data['code'];
+            $w->remark = $data['remark'];
+            $w->user = $this->getUserName();
+            if ($w->save()) {
+                $this->redirect('/inventory_verification/2/' . $data['code']);
+            } else {
+                $this->error('操作失败');
+            }
+
+
+        } else {
+
+            switch ($data['step']) {
+                case 1:
+                    return $this->fetch('inventory_verification_1');
+                    break;
+
+
+                case 2:
+
+
+                    if (request()->isAjax()) {
+
+
+                        //  ['code' => $data['code']]
+
+
+                        $employee = TakeCheckData::all();
+
+
+                        $result = [
+                            "code" => 0,
+                            "msg" => "",
+                            "count" => TakeCheckData::count(),
+                            "data" => $employee
+                        ];
+
+                        return $result;
+
+                    } else {
+
+                        return $this->fetch('inventory_verification_2', ['code' => $data['code']]);
+
+                    }
+
+
+                    break;
+
+
+                case 'ajax'://单元行编辑
+
+
+                    $ed = new TakeCheckData;
+
+                    if ($ed->save([$data['field'] => $data['value']], ['id' => $data['id']])) {
+                        $this->success('修改成功');
+                    } else {
+                        $this->error('修改失败');
+                    }
+
+
+            }
+
+
+        }
     }
 
 

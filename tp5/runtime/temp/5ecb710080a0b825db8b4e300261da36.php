@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:84:"D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_verification.html";i:1581682127;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_Repertory.html";i:1581743400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:84:"D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_verification.html";i:1581682127;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_Repertory.html";i:1582257669;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,10 +71,10 @@
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/inventory_allocation">库存调拨</a></li>
+                <li class="layui-nav-item"><a href="/inventory_allocation/1">库存调拨</a></li>
 <li class="layui-nav-item"><a href="/inventory_verification">库存盘点</a></li>
-<li class="layui-nav-item"><a href="/inventory_allocation_details">库存调拨明细</a></li>
-<li class="layui-nav-item"><a href="/inventory_details">库存盘点明细</a></li>
+<li class="layui-nav-item"><a href="/inventory_allocation_details">库存调拨记录</a></li>
+<li class="layui-nav-item"><a href="/inventory_details">库存盘点记录</a></li>
 <li class="layui-nav-item"><a href="/inventory_query">库存查询</a></li>
 
 

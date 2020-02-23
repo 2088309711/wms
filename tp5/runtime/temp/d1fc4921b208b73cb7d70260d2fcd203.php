@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:84:"D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_allocation_3.html";i:1582475038;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_Repertory.html";i:1582470523;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:86:"D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_verification_2.html";i:1582475102;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_Repertory.html";i:1582470523;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,7 +95,7 @@
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
-        <div class="layui-card-header">库存调拨 - 数量编辑</div>
+        <div class="layui-card-header">库存盘点 - 数量编辑</div>
         <div class="layui-card-body">
 
 
@@ -104,9 +104,9 @@
                 <thead>
                 <tr>
                     <th lay-data="{field:'id',align:'center'}">编号</th>
-                    <th lay-data="{field:'product',align:'center'}">货品</th>
-                    <th lay-data="{field:'num',align:'center', edit: 'text'}">调拨数量</th>
-                    <th lay-data="{field:'remark',align:'center', edit: 'text'}">备注</th>
+                    <th lay-data="{field:'product_id',align:'center'}">货品</th>
+                    <th lay-data="{field:'location',align:'center', edit: 'text'}">货架位置</th>
+                    <th lay-data="{field:'num',align:'center', edit: 'text'}">数量</th>
                     <th lay-data="{fixed: 'right', width: 160, align: 'center', toolbar: '#barDemo'}">操作</th>
                 </tr>
                 </thead>
@@ -192,12 +192,13 @@
     layui.use(['form', 'table', 'jquery'], function () {
         var form = layui.form,
             table = layui.table,
-            $ = layui.jquery
+            $ = layui.jquery,
+            layer = layui.layer
 
         table.on('edit(test)', function (obj) { //注：edit是固定事件名，test是table原始容器的属性 lay-filter="对应的值"
 
-            $.get('/inventory_allocation/ajax/' + obj.data.id + '/' + obj.field + '/' + obj.value, function (data) {
-                if (data.code == 1) {
+            $.get('/inventory_verification/ajax/' + obj.data.id + '/' + obj.field + '/' + obj.value, function (data) {
+                if (data.code == 0) {
                     layer.msg(data.msg)
                 }
             });

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:84:"D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_allocation_3.html";i:1582475038;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_Repertory.html";i:1582470523;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:86:"D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_verification_1.html";i:1582471710;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_Repertory.html";i:1582470523;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,39 +95,70 @@
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
-        <div class="layui-card-header">库存调拨 - 数量编辑</div>
+        <div class="layui-card-header">库存盘点</div>
         <div class="layui-card-body">
 
 
-            <table class="layui-table" lay-filter="test"
-                   lay-data="{ toolbar: '#toolbarDemo', url:'#', page: true, limit: 6, limits:[6]}">
-                <thead>
-                <tr>
-                    <th lay-data="{field:'id',align:'center'}">编号</th>
-                    <th lay-data="{field:'product',align:'center'}">货品</th>
-                    <th lay-data="{field:'num',align:'center', edit: 'text'}">调拨数量</th>
-                    <th lay-data="{field:'remark',align:'center', edit: 'text'}">备注</th>
-                    <th lay-data="{fixed: 'right', width: 160, align: 'center', toolbar: '#barDemo'}">操作</th>
-                </tr>
-                </thead>
-            </table>
+            <form class="layui-form" method="post">
+
+                <?php echo token(); ?>
+                <div class="layui-form-item">
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">单据编号</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="code" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">录单日期</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="date" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">业务员</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="employee" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">盘点仓库</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="warehouse" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">备注</label>
+                    <div class="layui-input-block">
+                        <textarea name="remark" placeholder="请输入内容" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">下一步</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+
+            </form>
 
         </div>
     </div>
 </div>
-
-
-<script type="text/html" id="toolbarDemo">
-    <div class="layui-btn-container">
-        <a href="/add_staff" class="layui-btn layui-btn-sm">返回上一步</a>
-    </div>
-</script>
-
-
-<script type="text/html" id="barDemo">
-    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">按钮1</a>
-    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">按钮2</a>
-</script>
 
 
 
@@ -189,30 +220,13 @@
 
 
     //Demo
-    layui.use(['form', 'table', 'jquery'], function () {
-        var form = layui.form,
-            table = layui.table,
-            $ = layui.jquery
-
-        table.on('edit(test)', function (obj) { //注：edit是固定事件名，test是table原始容器的属性 lay-filter="对应的值"
-
-            $.get('/inventory_allocation/ajax/' + obj.data.id + '/' + obj.field + '/' + obj.value, function (data) {
-                if (data.code == 1) {
-                    layer.msg(data.msg)
-                }
-            });
-
-
-            console.log(obj.value); //得到修改后的值
-            console.log(obj.field); //当前编辑的字段名
-            console.log(obj.data.id); //所在行的所有相关数据
-        });
-
+    layui.use(['form', 'table'], function () {
+        var form = layui.form, table = layui.table;
 
         //监听提交
         form.on('submit(formDemo)', function (data) {
-            layer.msg(JSON.stringify(data.field));
-            return false;
+            // layer.msg(JSON.stringify(data.field));
+            // return false;
         });
     });
 
