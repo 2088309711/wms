@@ -4,16 +4,24 @@
     <list default="true" id="9f8733d8-b8ca-4a72-9ec7-ac9ec8c5ad7f" name="Default" comment="1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/uploads/wms.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/uploads/wms.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tp5/application/route.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/route.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/application/user/controller/Repertory.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/controller/Repertory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_verification.html" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_verification_1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/nav_Repertory.html" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/view/nav_Repertory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/runtime/log/202002/23.log" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/log/202002/23.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/5ecb710080a0b825db8b4e300261da36.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/5ecb710080a0b825db8b4e300261da36.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/7df0c9e1d5928ebc24c6bc4baa3a9566.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/7df0c9e1d5928ebc24c6bc4baa3a9566.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/ade66f3b41d4b285d0283feec7556a19.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/ade66f3b41d4b285d0283feec7556a19.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/c167eb67b0b1eea36a22444a4cd36e0a.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/c167eb67b0b1eea36a22444a4cd36e0a.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/application/user/controller/Storeroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/controller/Storeroom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/Storeroom/in_storage.html" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/view/Storeroom/in_storage_1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/Storeroom/out_storage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/Storeroom/storage_query.html" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/view/Storeroom/storage_query.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/Storeroom/storage_record.html" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/view/Storeroom/storage_record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/application/user/view/nav_storeroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/application/user/view/nav_storeroom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/runtime/log/202002/24.log" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/log/202002/24.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/0764077542801543a2c57d63835a9c7f.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/0764077542801543a2c57d63835a9c7f.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/3d008e12c8f62b886f26103e56387171.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/3d008e12c8f62b886f26103e56387171.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/3e6ea69766c1a09974dbea862567bf21.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/3e6ea69766c1a09974dbea862567bf21.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/85f1f1fd182316d4f365f8c8bc851299.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/85f1f1fd182316d4f365f8c8bc851299.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/8b1bc343cd7e56359aff9b3270d8a593.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/8b1bc343cd7e56359aff9b3270d8a593.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/a3bb0d3758819e8d27989e7a21243fc7.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/a3bb0d3758819e8d27989e7a21243fc7.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/a69b7031649db726110211ed0723a6e4.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/a69b7031649db726110211ed0723a6e4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp5/runtime/temp/d73bbba8c379c68325954e9de4caa53f.php" beforeDir="false" afterPath="$PROJECT_DIR$/tp5/runtime/temp/d73bbba8c379c68325954e9de4caa53f.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,8 +52,8 @@
       <file leaf-file-name="route.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tp5/application/route.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
+            <state relative-caret-position="486">
+              <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
               <folding>
                 <element signature="e#6#80#0#PHP" expanded="true" />
               </folding>
@@ -53,23 +61,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Repertory.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tp5/application/user/controller/Repertory.php">
+      <file leaf-file-name="Storeroom.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tp5/application/user/controller/Storeroom.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="277" selection-start-line="277" selection-end-line="277" />
+            <state relative-caret-position="54">
+              <caret line="297" column="23" lean-forward="true" selection-start-line="297" selection-start-column="23" selection-end-line="297" selection-end-column="23" />
               <folding>
-                <element signature="e#135#160#0#PHP" expanded="true" />
+                <element signature="e#134#165#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inventory_verification_2.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_verification_2.html">
+      <file leaf-file-name="storage_query.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Storeroom/storage_query.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="62" column="15" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
+            <state relative-caret-position="166">
+              <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
             </state>
           </provider>
         </entry>
@@ -85,10 +93,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mysql_connect</find>
-      <find>connect</find>
-      <find>$name</find>
-      <find>wms/basic/company/company_show</find>
       <find>ms/basic/warehouse/warehouse_show</find>
       <find>/wms/basic/</find>
       <find>main-content</find>
@@ -115,6 +119,10 @@
       <find>&quot;title&quot;</find>
       <find>inventory_allocation_details</find>
       <find>inventory_allocation</find>
+      <find>admin</find>
+      <find>inventoryAllocation</find>
+      <find>'in_storage/:step' =&gt; 'user/Storeroom/inStorage',</find>
+      <find>in_storage</find>
     </findStrings>
     <replaceStrings>
       <replace>utf-8</replace>
@@ -126,6 +134,7 @@
       <replace>app\user\model;</replace>
       <replace>'user/</replace>
       <replace>title</replace>
+      <replace>user</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -134,18 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tp5/application/user/model/Employee.php" />
-        <option value="$PROJECT_DIR$/tp5/application/user/view/basics/warehouse.html" />
-        <option value="$PROJECT_DIR$/tp5/application/user/view/basics/add_staff.html" />
-        <option value="$PROJECT_DIR$/tp5/application/user/view/代码/套装/添加数据/add.php" />
-        <option value="$PROJECT_DIR$/tp5/application/user/view/代码/套装/数据列表/List_.php" />
-        <option value="$PROJECT_DIR$/tp5/application/user/view/basics/staff_management.html" />
-        <option value="$PROJECT_DIR$/tp5/application/user/model/Company.php" />
-        <option value="$PROJECT_DIR$/tp5/application/user/view/basics/exchange_unit_management.html" />
-        <option value="$PROJECT_DIR$/tp5/application/user/view/basics/add_company.html" />
-        <option value="$PROJECT_DIR$/src/basic/inoutsetting.php" />
-        <option value="$PROJECT_DIR$/tp5/application/user/model/Categories.php" />
-        <option value="$PROJECT_DIR$/tp5/application/user/view/basics/come_enter_lib_set.html" />
         <option value="$PROJECT_DIR$/tp5/application/user/view/basics/add_categories.html" />
         <option value="$PROJECT_DIR$/tp5/application/user/view/nav_basics.html" />
         <option value="$PROJECT_DIR$/tp5/application/user/model/Depart.php" />
@@ -176,15 +173,27 @@
         <option value="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation.html" />
         <option value="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_1.html" />
         <option value="$PROJECT_DIR$/tp5/application/user/model/ExchangeData.php" />
-        <option value="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_2.html" />
         <option value="$PROJECT_DIR$/tp5/application/user/view/nav_Repertory.html" />
         <option value="$PROJECT_DIR$/tp5/application/user/model/TakeCheck.php" />
         <option value="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_verification_1.html" />
         <option value="$PROJECT_DIR$/tp5/application/user/model/TakeCheckData.php" />
-        <option value="$PROJECT_DIR$/tp5/application/route.php" />
         <option value="$PROJECT_DIR$/tp5/application/user/controller/Repertory.php" />
         <option value="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_3.html" />
         <option value="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_verification_2.html" />
+        <option value="$PROJECT_DIR$/tp5/application/user/model/InoutData.php" />
+        <option value="$PROJECT_DIR$/tp5/application/user/model/Inout.php" />
+        <option value="$PROJECT_DIR$/tp5/application/user/view/Storeroom/in_storage_1.html" />
+        <option value="$PROJECT_DIR$/tp5/application/user/view/Storeroom/in_storage_3.html" />
+        <option value="$PROJECT_DIR$/tp5/application/user/view/Storeroom/in_storage_2.html" />
+        <option value="$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_2.html" />
+        <option value="$PROJECT_DIR$/tp5/application/user/view/Storeroom/out_storage_1.html" />
+        <option value="$PROJECT_DIR$/tp5/application/route.php" />
+        <option value="$PROJECT_DIR$/tp5/application/user/view/Storeroom/out_storage_2.html" />
+        <option value="$PROJECT_DIR$/tp5/application/user/view/Storeroom/out_storage_3.html" />
+        <option value="$PROJECT_DIR$/tp5/application/user/view/nav_storeroom.html" />
+        <option value="$PROJECT_DIR$/tp5/application/user/view/Storeroom/storage_record.html" />
+        <option value="$PROJECT_DIR$/tp5/application/user/controller/Storeroom.php" />
+        <option value="$PROJECT_DIR$/tp5/application/user/view/Storeroom/storage_query.html" />
       </list>
     </option>
   </component>
@@ -210,7 +219,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -242,7 +250,7 @@
               <item name="tp5" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="model" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="wms" type="b2602c69:ProjectViewProjectNode" />
@@ -261,10 +269,20 @@
               <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Repertory" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="wms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wms" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="tp5" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Storeroom" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -276,17 +294,17 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\php-workspace\wms\tp5\application\user\view\Repertory" />
-      <recent name="D:\php-workspace\wms\statics" />
-      <recent name="D:\php-workspace\wms\tp5\application\user\view\Quality" />
-      <recent name="D:\php-workspace\wms\tp5\application\user\view\basics" />
-      <recent name="D:\php-workspace\wms\tp5\application\user\view\代码\套装\数据列表" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\php-workspace\wms\tp5\application\user\view\代码\套装\添加数据" />
       <recent name="D:\php-workspace\wms\tp5\application\user\view\代码\套装\基本数据管理" />
       <recent name="D:\php-workspace\wms\tp5\application\user\view\代码" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\php-workspace\wms\tp5\application\user\view\Storeroom" />
+      <recent name="D:\php-workspace\wms\tp5\application\user\view\Repertory" />
+      <recent name="D:\php-workspace\wms\statics" />
+      <recent name="D:\php-workspace\wms\tp5\application\user\view\Quality" />
+      <recent name="D:\php-workspace\wms\tp5\application\user\view\basics" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -329,7 +347,8 @@
       <workItem from="1582078318676" duration="20811000" />
       <workItem from="1582201329656" duration="22251000" />
       <workItem from="1582389538857" duration="1316000" />
-      <workItem from="1582469976717" duration="3986000" />
+      <workItem from="1582469976717" duration="4374000" />
+      <workItem from="1582512294495" duration="7696000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1581443600778</created>
@@ -342,22 +361,23 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153140000" />
+    <option name="totallyTimeSpent" value="161224000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918166" weight="0.24255952" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info id="Database" order="1" sideWeight="0.5008183" side_tool="true" weight="0.25669643" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918166" weight="0.24255952" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info id="Database" order="1" sideWeight="0.5008183" side_tool="true" weight="0.25669643" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -366,7 +386,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,97 +404,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/basics/add_staff.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="94" column="7" lean-forward="true" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/model/Company.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/basics/add_company.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-674">
-          <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/basics/exchange_unit_management.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="36" column="10" lean-forward="true" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/model/Categories.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/basic/inoutsetting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1408">
-          <caret line="131" column="37" lean-forward="true" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/basics/come_enter_lib_set.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="33" column="10" lean-forward="true" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/nav_basics.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/basics/add_categories.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/model/Depart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/basics/sector_management.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="36" column="10" lean-forward="true" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/controller/Basics.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/basics/add_depart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tp5/application/user/view/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -575,13 +503,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/controller/Quality.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tp5/application/user/model/Exchange.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -638,13 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tp5/application/user/view/代码/套装/添加数据/add.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -673,13 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="18" column="28" selection-end-line="100" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tp5/application/user/model/TakeCheck.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -701,16 +608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tp5/application/route.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
-          <folding>
-            <element signature="e#6#80#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/statics/layui/lay/modules/layer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -725,20 +622,152 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/model/InoutData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+          <folding>
+            <element signature="e#6#99#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/model/Inout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/controller/Quality.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="868">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tp5/application/user/controller/Repertory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="277" selection-start-line="277" selection-end-line="277" />
+        <state relative-caret-position="-1906">
+          <caret line="144" column="5" lean-forward="true" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
           <folding>
             <element signature="e#135#160#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="65" column="22" lean-forward="true" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_allocation_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Repertory/inventory_verification_2.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1344">
+          <caret line="60" column="39" lean-forward="true" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Storeroom/in_storage_3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="54" column="28" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Storeroom/in_storage_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="69" column="26" lean-forward="true" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Storeroom/in_storage_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Storeroom/out_storage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6300" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Storeroom/out_storage_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/route.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+          <folding>
+            <element signature="e#6#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Storeroom/out_storage_2.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="62" column="15" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/nav_storeroom.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="3" column="57" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Storeroom/out_storage_3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Storeroom/storage_record.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="103" column="53" lean-forward="true" selection-start-line="103" selection-start-column="53" selection-end-line="103" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/controller/Storeroom.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="297" column="23" lean-forward="true" selection-start-line="297" selection-start-column="23" selection-end-line="297" selection-end-column="23" />
+          <folding>
+            <element signature="e#134#165#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tp5/application/user/view/Storeroom/storage_query.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
         </state>
       </provider>
     </entry>

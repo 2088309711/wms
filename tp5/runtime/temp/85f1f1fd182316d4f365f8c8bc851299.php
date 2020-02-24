@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"D:\php-workspace\wms/tp5/application/user\view\storeroom\storage_record.html";i:1581700795;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1581743400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"D:\php-workspace\wms/tp5/application/user\view\storeroom\storage_record.html";i:1582521181;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1582520788;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,10 +71,10 @@
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/in_storage">入库</a></li>
-<li class="layui-nav-item"><a href="/out_storage">出库</a></li>
-<li class="layui-nav-item"><a href="/storage_record">出入库明细</a></li>
-<li class="layui-nav-item"><a href="/storage_query">出入库查询</a></li>
+                <li class="layui-nav-item"><a href="/in_storage/1">入库</a></li>
+<li class="layui-nav-item"><a href="/out_storage/1">出库</a></li>
+<li class="layui-nav-item"><a href="/storage_record">出入库货品查询</a></li>
+<li class="layui-nav-item"><a href="/storage_query">出入库单据查询</a></li>
             </ul>
         </div>
     </div>
@@ -145,14 +145,14 @@
                     <th lay-data="{align:'center'}" colspan="2">所属单据信息</th>
                 </tr>
                 <tr>
-                    <th lay-data="{field:'item',align:'center'}">货品ID</th>
+                    <th lay-data="{field:'product_id',align:'center'}">货品ID</th>
                     <th lay-data="{field:'name',align:'center'}">名称</th>
                     <th lay-data="{field:'size',align:'center'}">型号</th>
                     <th lay-data="{field:'unit',align:'center'}">单位</th>
                     <th lay-data="{field:'num',align:'center'}">数量</th>
                     <th lay-data="{field:'price',align:'center'}">价格</th>
                     <th lay-data="{field:'type',align:'center'}">类型</th>
-                    <th lay-data="{field:'receipt',align:'center'}">单据ID</th>
+                    <th lay-data="{field:'code',align:'center'}">单据编码</th>
                     <th lay-data="{field:'warehouse',align:'center'}">仓库</th>
                 </tr>
                 </thead>

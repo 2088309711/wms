@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"D:\php-workspace\wms/tp5/application/user\view\storeroom\index.html";i:1581608712;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1582515119;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:75:"D:\php-workspace\wms/tp5/application/user\view\storeroom\out_storage_2.html";i:1582519964;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1582519346;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,7 +72,7 @@
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
                 <li class="layui-nav-item"><a href="/in_storage/1">入库</a></li>
-<li class="layui-nav-item"><a href="/out_storage">出库</a></li>
+<li class="layui-nav-item"><a href="/out_storage/1">出库</a></li>
 <li class="layui-nav-item"><a href="/storage_record">出入库明细</a></li>
 <li class="layui-nav-item"><a href="/storage_query">出入库查询</a></li>
             </ul>
@@ -81,21 +81,35 @@
 
     <div id="main-content" class="layui-body layui-bg-gray">
         
-<div id="main-content" class="layui-body" style="bottom:0;">
 
 
-    <div class="layui-row layui-col-space10" style="padding: 10px;">
+<div class="layui-fluid">
+
+    <div class="layui-card" style="margin: 15px 0;">
+        <div class="layui-card-header">货品出库 - 选择货品</div>
+        <div class="layui-card-body">
 
 
-        <div class="layui-col-md6">
-            <div id="test1" style="border: 1px solid #e6e6e6; padding: 10px 10px 15px; overflow: auto;"></div>
-        </div>
-        <div class="layui-col-md6">
-            <div style="border: 1px solid #e6e6e6; padding: 10px;">请选择栏目节点</div>
+            <div id="test4" class="demo-transfer"></div>
+
+
+            <form class="layui-form" method="post">
+
+                <?php echo token(); ?>
+
+                <input type="hidden" name="code" value="<?php echo $code; ?>">
+                <input type="hidden" id="product" name="product" value="">
+
+                <button class="layui-btn" style="margin-top: 10px;" lay-submit lay-filter="formDemo">下一步</button>
+
+
+            </form>
+
         </div>
     </div>
-
 </div>
+
+
 
     </div>
 
@@ -152,36 +166,50 @@
 </script>
 
 <script>
-    layui.use('tree', function () {
-        var tree = layui.tree, layer = layui.layer;
-        //渲染
-        var inst1 = tree.render({
-            elem: '#test1'  //绑定元素
-            , data: [{
-                title: '江西' //一级菜单
-                , children: [{
-                    title: '南昌' //二级菜单
-                    , children: [{
-                        title: '高新区' //三级菜单
 
-                    }]
-                }]
-            }, {
-                title: '陕西' //一级菜单
-                , children: [{
-                    title: '西安' //二级菜单
-                }]
-            }]
-            , click: function (obj) {
-                layer.msg(JSON.stringify(obj.data)); //得到当前点击的节点数据
-                // layer.msg(JSON.stringify(obj.state)); //得到当前节点的展开状态：open、close、normal
-                // layer.msg(JSON.stringify(obj.elem)); //得到当前节点元素
-                // layer.msg(JSON.stringify(obj.data.children)); //当前节点下是否有子节点
-            }
+
+    //Demo
+    layui.use(['transfer', 'layer', 'util'], function () {
+        var $ = layui.$
+            , transfer = layui.transfer
+            , layer = layui.layer
+            , form = layui.form
+            , util = layui.util;
+
+
+        //监听提交
+        form.on('submit(formDemo)', function () {
+            $('#product').val(JSON.stringify(transfer.getData('demo1')));
         });
-    });
-</script>
 
+
+        var data1 = [
+            {"value": "1", "title": "李白"}
+            , {"value": "2", "title": "杜甫"}
+            , {"value": "3", "title": "苏轼"}
+            , {"value": "4", "title": "李清照"}
+            , {"value": "5", "title": "鲁迅"}
+            , {"value": "6", "title": "巴金"}
+            , {"value": "7", "title": "冰心"}
+            , {"value": "8", "title": "矛盾"}
+            , {"value": "9", "title": "贤心"}
+        ]
+
+
+        transfer.render({
+            elem: '#test4'
+            , data: data1
+            , title: ['该仓库货品', '出库货品']
+            , showSearch: true
+            , width: 400 //定义宽度
+            , height: 500 //定义高度
+            , id: 'demo1' //定义索引
+        })
+
+
+    });
+
+</script>
 
 </body>
 </html>

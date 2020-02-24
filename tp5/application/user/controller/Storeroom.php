@@ -9,14 +9,16 @@
 namespace app\user\controller;
 
 
-use app\admin\model\Enewsclass;
-use app\admin\model\Enewstable;
-use app\admin\model\TableWarehouse;
-use app\admin\model\TbInout;
-use app\admin\model\TbProduct;
-use app\admin\model\TestExchange;
-use app\admin\model\TestInout;
-use app\admin\model\TestReceipt;
+use app\user\model\Enewsclass;
+use app\user\model\Enewstable;
+use app\user\model\Inout;
+use app\user\model\InoutData;
+use app\user\model\TableWarehouse;
+use app\user\model\TbInout;
+use app\user\model\TbProduct;
+use app\user\model\TestExchange;
+use app\user\model\TestInout;
+use app\user\model\TestReceipt;
 use think\Cache;
 use think\Controller;
 use think\Db;
@@ -31,13 +33,228 @@ class Storeroom extends Filter
 
     public function inStorage()
     {
-        return $this->fetch();
+
+        $data = input();
+
+        if (request()->isPost()) {
+
+
+            switch ($data['step']) {
+
+                case 1:
+
+
+                    $data['user'] = $this->getUserName();
+
+
+                    $w = new Inout($data);
+                    if ($w->allowField(true)->save()) {
+                        $this->redirect('/in_storage/2/' . $data['code']);
+                    } else {
+                        $this->error('操作失败');
+                    }
+                    break;
+
+
+                case 2:
+
+
+                    $data['product'] = json_decode($data['product']);
+
+                    $userName = $this->getUserName();
+                    $list = [];
+                    foreach ($data['product'] as $i) {
+                        $list[] = [
+                            'product_id' => $i->value,
+                            'code' => $data['code'],
+                            'user' => $userName,
+                        ];
+                    }
+
+
+                    $w = new InoutData();
+
+                    if ($w->saveAll($list) != null) {
+                        $this->redirect('/in_storage/3/' . $data['code']);
+                    } else {
+                        $this->error('操作失败');
+                    }
+
+
+                    break;
+
+
+            }
+
+
+        } else {
+
+            switch ($data['step']) {
+                case 1:
+                    return $this->fetch('in_storage_1');
+                    break;
+
+                case 2:
+                    return $this->fetch('in_storage_2', ['code' => $data['code']]);
+                    break;
+
+                case 3:
+
+
+                    if (request()->isAjax()) {
+
+
+                        $employee = InoutData::all(['code' => $data['code']]);
+
+
+                        $result = [
+                            "code" => 0,
+                            "msg" => "",
+                            "count" => InoutData::where('code', $data['code'])->count(),
+                            "data" => $employee
+                        ];
+
+                        return $result;
+
+                    } else {
+
+                        return $this->fetch('in_storage_3', ['code' => $data['code']]);
+
+                    }
+
+
+                    break;
+
+
+                case 'ajax'://单元行编辑
+
+
+                    $ed = new InoutData;
+
+                    if ($ed->save([$data['field'] => $data['value']], ['id' => $data['id']])) {
+                        $this->success('修改成功');
+                    } else {
+                        $this->error('修改失败');
+                    }
+
+
+            }
+
+
+        }
     }
 
 
     public function outStorage()
     {
-        return $this->fetch();
+        $data = input();
+
+        if (request()->isPost()) {
+
+
+            switch ($data['step']) {
+
+                case 1:
+
+
+                    $data['user'] = $this->getUserName();
+
+
+                    $w = new Inout($data);
+                    if ($w->allowField(true)->save()) {
+                        $this->redirect('/out_storage/2/' . $data['code']);
+                    } else {
+                        $this->error('操作失败');
+                    }
+                    break;
+
+
+                case 2:
+
+
+                    $data['product'] = json_decode($data['product']);
+
+                    $userName = $this->getUserName();
+                    $list = [];
+                    foreach ($data['product'] as $i) {
+                        $list[] = [
+                            'product_id' => $i->value,
+                            'code' => $data['code'],
+                            'user' => $userName,
+                        ];
+                    }
+
+
+                    $w = new InoutData();
+
+                    if ($w->saveAll($list) != null) {
+                        $this->redirect('/out_storage/3/' . $data['code']);
+                    } else {
+                        $this->error('操作失败');
+                    }
+
+
+                    break;
+
+
+            }
+
+
+        } else {
+
+            switch ($data['step']) {
+                case 1:
+                    return $this->fetch('out_storage_1');
+                    break;
+
+                case 2:
+                    return $this->fetch('out_storage_2', ['code' => $data['code']]);
+                    break;
+
+                case 3:
+
+
+                    if (request()->isAjax()) {
+
+
+                        $employee = InoutData::all(['code' => $data['code']]);
+
+
+                        $result = [
+                            "code" => 0,
+                            "msg" => "",
+                            "count" => InoutData::where('code', $data['code'])->count(),
+                            "data" => $employee
+                        ];
+
+                        return $result;
+
+                    } else {
+
+                        return $this->fetch('out_storage_3', ['code' => $data['code']]);
+
+                    }
+
+
+                    break;
+
+
+                case 'ajax'://单元行编辑
+
+
+                    $ed = new InoutData;
+
+                    if ($ed->save([$data['field'] => $data['value']], ['id' => $data['id']])) {
+                        $this->success('修改成功');
+                    } else {
+                        $this->error('修改失败');
+                    }
+
+
+            }
+
+
+        }
     }
 
     public function storageRecord()
@@ -47,43 +264,13 @@ class Storeroom extends Filter
         if (request()->isAjax()) {
 
 
-            $tt = TestInout::all();
+            $tt = InoutData::all();
 
-
-            foreach ($tt as $item => $value) {
-
-
-                $tp = TbProduct::get(['encode' => $value->item]);
-
-                $tt[$item]->name = $tp->name;
-                $tt[$item]->size = $tp->size;
-                $tt[$item]->unit = $tp->unit;
-
-
-                if ($value->type != 'none') {
-                    $ti = TbInout::get($value->type);
-                    $tt[$item]->type = $ti->name;
-
-
-                    $tr = TestReceipt::get($value->receipt);
-                    $tw = TableWarehouse::get($tr->warehouse);
-
-
-                } else {
-                    $tt[$item]->type = '仓库调拨';
-
-
-                    $te = TestExchange::get($value->receipt);
-                    $tw = TableWarehouse::get($te->warehouse);
-
-                }
-                $tt[$item]->warehouse = $tw->name;
-            }
 
             $result = [
                 "code" => 0,
                 "msg" => "",
-                "count" => TestInout::count(),
+                "count" => InoutData::count(),
                 "data" => $tt
             ];
 
@@ -102,35 +289,29 @@ class Storeroom extends Filter
     {
 
 
-        return $this->fetch();
+        if (request()->isAjax()) {
 
 
-    }
+            $tt = Inout::all();
 
 
-    public function getData()
-    {
+            $result = [
+                "code" => 0,
+                "msg" => "",
+                "count" => Inout::count(),
+                "data" => $tt
+            ];
 
-//        取得数据表
-        $table = Enewstable::all();
+            return $result;
 
-        $info = Db::name('ecms_' . $table[0]['tbname'])->order('id desc')->limit(0, 30)->select();
+        } else {
 
+            return $this->fetch();
 
-        foreach ($info as $key => $item) {
-            $info[$key]['newstime'] = time_to_str($item['newstime']);
         }
 
 
-        $result = [
-            "code" => 0,
-            "msg" => "",
-            "count" => Db::name('ecms_' . $table[0]['tbname'])->count(),
-            "data" => $info
-        ];
-
-        return $result;
-
     }
+
 
 }

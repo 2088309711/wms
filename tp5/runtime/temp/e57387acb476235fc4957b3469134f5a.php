@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"D:\php-workspace\wms/tp5/application/user\view\repertory\index.html";i:1581682127;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_Repertory.html";i:1582470523;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:75:"D:\php-workspace\wms/tp5/application/user\view\storeroom\out_storage_1.html";i:1582519609;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1582519346;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,19 +71,10 @@
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/inventory_allocation/1">库存调拨</a></li>
-<li class="layui-nav-item"><a href="/inventory_verification/1">库存盘点</a></li>
-<li class="layui-nav-item"><a href="/inventory_allocation_details">库存调拨记录</a></li>
-<li class="layui-nav-item"><a href="/inventory_details">库存盘点记录</a></li>
-<li class="layui-nav-item"><a href="/inventory_query">库存查询</a></li>
-
-
-
-
-
-
-
-
+                <li class="layui-nav-item"><a href="/in_storage/1">入库</a></li>
+<li class="layui-nav-item"><a href="/out_storage/1">出库</a></li>
+<li class="layui-nav-item"><a href="/storage_record">出入库明细</a></li>
+<li class="layui-nav-item"><a href="/storage_query">出入库查询</a></li>
             </ul>
         </div>
     </div>
@@ -95,16 +86,114 @@
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
-        <div class="layui-card-header">货品入库</div>
+        <div class="layui-card-header">货品出库 - 单据信息</div>
         <div class="layui-card-body">
-            <fieldset class="layui-elem-field">
-                <legend>单据信息</legend>
-                <div class="layui-field-box">
 
-                    内容
+
+            <form class="layui-form" method="post">
+
+
+                <div class="layui-form-item">
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">单据编号</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="code" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">录单日期</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="date" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">业务员</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="employee" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
 
                 </div>
-            </fieldset>
+
+
+                <div class="layui-form-item">
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">经销商</label>
+                        <div class="layui-input-inline">
+
+
+                            <select name="supplier" lay-verify="required">
+                                <option value=""></option>
+                                <option value="0">北京</option>
+                                <option value="1">上海</option>
+                                <option value="2">广州</option>
+                                <option value="3">深圳</option>
+                                <option value="4">杭州</option>
+                            </select>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">出货仓库</label>
+                        <div class="layui-input-inline">
+                            <select name="warehouse" lay-verify="required">
+                                <option value=""></option>
+                                <option value="0">北京</option>
+                                <option value="1">上海</option>
+                                <option value="2">广州</option>
+                                <option value="3">深圳</option>
+                                <option value="4">杭州</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">出库类型</label>
+                        <div class="layui-input-inline">
+                            <select name="type" lay-verify="required">
+                                <option value=""></option>
+                                <option value="0">北京</option>
+                                <option value="1">上海</option>
+                                <option value="2">广州</option>
+                                <option value="3">深圳</option>
+                                <option value="4">杭州</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">备注</label>
+                    <div class="layui-input-block">
+                        <textarea name="remark" placeholder="请输入内容" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">下一步</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+
+
+            </form>
 
 
         </div>
@@ -176,8 +265,8 @@
 
         //监听提交
         form.on('submit(formDemo)', function (data) {
-            layer.msg(JSON.stringify(data.field));
-            return false;
+            // layer.msg(JSON.stringify(data.field));
+            // return false;
         });
     });
 

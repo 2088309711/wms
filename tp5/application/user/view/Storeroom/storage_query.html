@@ -91,40 +91,20 @@
             </fieldset>
 
 
-            <table class="layui-table">
-                <colgroup>
-                    <col width="150">
-                    <col width="200">
-                    <col>
-                </colgroup>
+            <table class="layui-table" lay-data="{ url:'#', page: true, limit: 6, limits:[6]}">
                 <thead>
+
                 <tr>
-                    <th>单据编号</th>
-                    <th>制单日期</th>
-                    <th>业务员</th>
-                    <th>交易公司</th>
-                    <th>仓库</th>
-                    <th>出入库类型</th>
-                    <th>备注</th>
+                    <th lay-data="{field:'id',align:'center'}">单据编号</th>
+                    <th lay-data="{field:'date',align:'center'}">制单日期</th>
+                    <th lay-data="{field:'employee',align:'center'}">业务员</th>
+                    <th lay-data="{field:'supplier',align:'center'}">交易公司</th>
+                    <th lay-data="{field:'warehouse',align:'center'}">仓库</th>
+                    <th lay-data="{field:'type',align:'center'}">出入库类型</th>
+                    <th lay-data="{field:'remark',align:'center'}">备注</th>
+
                 </tr>
-
-
                 </thead>
-                <tbody>
-                <tr>
-                    <td>贤心</td>
-                    <td>贤心</td>
-                    <td>贤心</td>
-                    <td>贤心</td>
-                    <td>贤心</td>
-                    <td>贤心</td>
-                    <td>贤心</td>
-
-
-
-                </tr>
-
-                </tbody>
             </table>
 
 
@@ -140,7 +120,7 @@
 
 
     //Demo
-    layui.use(['form', 'laydate'], function () {
+    layui.use(['form', 'laydate', 'table'], function () {
         var form = layui.form, laydate = layui.laydate;
 
         //监听提交

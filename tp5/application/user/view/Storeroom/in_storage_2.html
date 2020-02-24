@@ -1,12 +1,12 @@
 {extend name="base" /}
-{block name="nav"}{include file="nav_Repertory" /}{/block}
+{block name="nav"}{include file="nav_Storeroom" /}{/block}
 {block name="content"}
 
 
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
-        <div class="layui-card-header">库存调拨</div>
+        <div class="layui-card-header">货品入库 - 选择货品</div>
         <div class="layui-card-body">
 
 
@@ -67,7 +67,7 @@
         transfer.render({
             elem: '#test4'
             , data: data1
-            , title: ['出货仓库', '入货仓库']
+            , title: ['所有记录的货品', '入库的货品']
             , showSearch: true
             , width: 400 //定义宽度
             , height: 500 //定义高度

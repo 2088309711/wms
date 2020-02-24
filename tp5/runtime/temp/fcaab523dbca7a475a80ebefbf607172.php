@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"D:\php-workspace\wms/tp5/application/user\view\storeroom\index.html";i:1581608712;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1582515119;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:74:"D:\php-workspace\wms/tp5/application/user\view\storeroom\in_storage_3.html";i:1582517884;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1582519346;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,7 +72,7 @@
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
                 <li class="layui-nav-item"><a href="/in_storage/1">入库</a></li>
-<li class="layui-nav-item"><a href="/out_storage">出库</a></li>
+<li class="layui-nav-item"><a href="/out_storage/1">出库</a></li>
 <li class="layui-nav-item"><a href="/storage_record">出入库明细</a></li>
 <li class="layui-nav-item"><a href="/storage_query">出入库查询</a></li>
             </ul>
@@ -81,21 +81,47 @@
 
     <div id="main-content" class="layui-body layui-bg-gray">
         
-<div id="main-content" class="layui-body" style="bottom:0;">
 
 
-    <div class="layui-row layui-col-space10" style="padding: 10px;">
+<div class="layui-fluid">
+
+    <div class="layui-card" style="margin: 15px 0;">
+        <div class="layui-card-header">货品入库 - 数量编辑</div>
+        <div class="layui-card-body">
 
 
-        <div class="layui-col-md6">
-            <div id="test1" style="border: 1px solid #e6e6e6; padding: 10px 10px 15px; overflow: auto;"></div>
-        </div>
-        <div class="layui-col-md6">
-            <div style="border: 1px solid #e6e6e6; padding: 10px;">请选择栏目节点</div>
+            <table class="layui-table" lay-filter="test"
+                   lay-data="{ toolbar: '#toolbarDemo', url:'#', page: true, limit: 6, limits:[6]}">
+                <thead>
+                <tr>
+                    <th lay-data="{field:'id',align:'center'}">编号</th>
+                    <th lay-data="{field:'product_id',align:'center'}">货品</th>
+                    <th lay-data="{field:'num',align:'center', edit: 'text'}">入库数量</th>
+                    <th lay-data="{field:'price',align:'center', edit: 'text'}">入库价格</th>
+                    <th lay-data="{field:'remark',align:'center', edit: 'text'}">备注</th>
+                    <th lay-data="{fixed: 'right', width: 160, align: 'center', toolbar: '#barDemo'}">操作</th>
+                </tr>
+                </thead>
+            </table>
+
         </div>
     </div>
-
 </div>
+
+
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <a href="/add_staff" class="layui-btn layui-btn-sm">返回上一步</a>
+    </div>
+</script>
+
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">按钮1</a>
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">按钮2</a>
+</script>
+
+
 
     </div>
 
@@ -152,36 +178,37 @@
 </script>
 
 <script>
-    layui.use('tree', function () {
-        var tree = layui.tree, layer = layui.layer;
-        //渲染
-        var inst1 = tree.render({
-            elem: '#test1'  //绑定元素
-            , data: [{
-                title: '江西' //一级菜单
-                , children: [{
-                    title: '南昌' //二级菜单
-                    , children: [{
-                        title: '高新区' //三级菜单
 
-                    }]
-                }]
-            }, {
-                title: '陕西' //一级菜单
-                , children: [{
-                    title: '西安' //二级菜单
-                }]
-            }]
-            , click: function (obj) {
-                layer.msg(JSON.stringify(obj.data)); //得到当前点击的节点数据
-                // layer.msg(JSON.stringify(obj.state)); //得到当前节点的展开状态：open、close、normal
-                // layer.msg(JSON.stringify(obj.elem)); //得到当前节点元素
-                // layer.msg(JSON.stringify(obj.data.children)); //当前节点下是否有子节点
-            }
+
+    //Demo
+    layui.use(['form', 'table', 'jquery'], function () {
+        var form = layui.form,
+            table = layui.table,
+            $ = layui.jquery
+
+        table.on('edit(test)', function (obj) { //注：edit是固定事件名，test是table原始容器的属性 lay-filter="对应的值"
+
+            $.get('/in_storage/ajax/' + obj.data.id + '/' + obj.field + '/' + obj.value, function (data) {
+                if (data.code == 0) {
+                    layer.msg(data.msg)
+                }
+            });
+
+
+            console.log(obj.value); //得到修改后的值
+            console.log(obj.field); //当前编辑的字段名
+            console.log(obj.data.id); //所在行的所有相关数据
+        });
+
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            layer.msg(JSON.stringify(data.field));
+            return false;
         });
     });
-</script>
 
+</script>
 
 </body>
 </html>

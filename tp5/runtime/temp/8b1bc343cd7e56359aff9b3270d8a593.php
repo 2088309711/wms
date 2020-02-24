@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:75:"D:\php-workspace\wms/tp5/application/user\view\storeroom\storage_query.html";i:1581652478;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1581743400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:75:"D:\php-workspace\wms/tp5/application/user\view\storeroom\storage_query.html";i:1582521705;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1582520788;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,10 +71,10 @@
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/in_storage">入库</a></li>
-<li class="layui-nav-item"><a href="/out_storage">出库</a></li>
-<li class="layui-nav-item"><a href="/storage_record">出入库明细</a></li>
-<li class="layui-nav-item"><a href="/storage_query">出入库查询</a></li>
+                <li class="layui-nav-item"><a href="/in_storage/1">入库</a></li>
+<li class="layui-nav-item"><a href="/out_storage/1">出库</a></li>
+<li class="layui-nav-item"><a href="/storage_record">出入库货品查询</a></li>
+<li class="layui-nav-item"><a href="/storage_query">出入库单据查询</a></li>
             </ul>
         </div>
     </div>
@@ -171,40 +171,20 @@
             </fieldset>
 
 
-            <table class="layui-table">
-                <colgroup>
-                    <col width="150">
-                    <col width="200">
-                    <col>
-                </colgroup>
+            <table class="layui-table" lay-data="{ url:'#', page: true, limit: 6, limits:[6]}">
                 <thead>
+
                 <tr>
-                    <th>单据编号</th>
-                    <th>制单日期</th>
-                    <th>业务员</th>
-                    <th>交易公司</th>
-                    <th>仓库</th>
-                    <th>出入库类型</th>
-                    <th>备注</th>
+                    <th lay-data="{field:'id',align:'center'}">单据编号</th>
+                    <th lay-data="{field:'date',align:'center'}">制单日期</th>
+                    <th lay-data="{field:'employee',align:'center'}">业务员</th>
+                    <th lay-data="{field:'supplier',align:'center'}">交易公司</th>
+                    <th lay-data="{field:'warehouse',align:'center'}">仓库</th>
+                    <th lay-data="{field:'type',align:'center'}">出入库类型</th>
+                    <th lay-data="{field:'remark',align:'center'}">备注</th>
+
                 </tr>
-
-
                 </thead>
-                <tbody>
-                <tr>
-                    <td>贤心</td>
-                    <td>贤心</td>
-                    <td>贤心</td>
-                    <td>贤心</td>
-                    <td>贤心</td>
-                    <td>贤心</td>
-                    <td>贤心</td>
-
-
-
-                </tr>
-
-                </tbody>
             </table>
 
 
@@ -272,7 +252,7 @@
 
 
     //Demo
-    layui.use(['form', 'laydate'], function () {
+    layui.use(['form', 'laydate', 'table'], function () {
         var form = layui.form, laydate = layui.laydate;
 
         //监听提交

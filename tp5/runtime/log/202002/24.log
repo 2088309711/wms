@@ -2,3 +2,187 @@
 [ 2020-02-24T00:11:08+08:00 ] 0.0.0.0 GET localhost/inventory_verification/2/234234
 [运行时间：0.058008s] [吞吐率：17.24req/s] [内存消耗：1,483.42kb] [文件加载：35]
 [ error ] [0]模板文件不存在:D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_verification_3.html[D:\php-workspace\wms\tp5\thinkphp\library\think\view\driver\Think.php:82]
+---------------------------------------------------------------
+[ 2020-02-24T10:45:43+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.051448s] [吞吐率：19.44req/s] [内存消耗：1,479.20kb] [文件加载：36]
+[ error ] [1]Class 'app\admin\model\TestInout' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:50]
+---------------------------------------------------------------
+[ 2020-02-24T10:45:49+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.049476s] [吞吐率：20.21req/s] [内存消耗：1,479.20kb] [文件加载：36]
+[ error ] [1]Class 'app\admin\model\TestInout' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:50]
+---------------------------------------------------------------
+[ 2020-02-24T10:46:02+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.053080s] [吞吐率：18.84req/s] [内存消耗：1,479.20kb] [文件加载：36]
+[ error ] [1]Class 'app\admin\model\TestInout' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:50]
+---------------------------------------------------------------
+[ 2020-02-24T10:46:06+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.048043s] [吞吐率：20.81req/s] [内存消耗：1,479.20kb] [文件加载：36]
+[ error ] [1]Class 'app\admin\model\TestInout' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:50]
+---------------------------------------------------------------
+[ 2020-02-24T10:47:32+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.048254s] [吞吐率：20.72req/s] [内存消耗：1,479.39kb] [文件加载：36]
+[ error ] [1]Class 'app\admin\model\TestInout' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:50]
+---------------------------------------------------------------
+[ 2020-02-24T10:49:21+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.059979s] [吞吐率：16.67req/s] [内存消耗：1,479.39kb] [文件加载：36]
+[ error ] [1]Class 'app\admin\model\TestInout' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:50]
+---------------------------------------------------------------
+[ 2020-02-24T10:49:31+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.049110s] [吞吐率：20.36req/s] [内存消耗：1,479.39kb] [文件加载：36]
+[ error ] [1]Class 'app\admin\model\TestInout' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:50]
+---------------------------------------------------------------
+[ 2020-02-24T11:01:54+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.050041s] [吞吐率：19.98req/s] [内存消耗：1,479.48kb] [文件加载：36]
+[ error ] [1]Class 'app\admin\model\TestInout' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:50]
+---------------------------------------------------------------
+[ 2020-02-24T11:05:55+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.052085s] [吞吐率：19.20req/s] [内存消耗：1,479.20kb] [文件加载：36]
+[ error ] [1]Class 'app\admin\model\TestInout' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:50]
+---------------------------------------------------------------
+[ 2020-02-24T11:31:40+08:00 ] 0.0.0.0 GET localhost/in_storage
+[运行时间：0.046660s] [吞吐率：21.43req/s] [内存消耗：1,486.93kb] [文件加载：36]
+[ error ] [8]未定义数组索引: step[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:94]
+---------------------------------------------------------------
+[ 2020-02-24T11:32:04+08:00 ] 0.0.0.0 GET localhost/in_storage
+[运行时间：0.051694s] [吞吐率：19.34req/s] [内存消耗：1,487.08kb] [文件加载：36]
+[ error ] [8]未定义数组索引: step[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:94]
+---------------------------------------------------------------
+[ 2020-02-24T11:32:07+08:00 ] 0.0.0.0 GET localhost/in_storage/1
+[运行时间：0.046363s] [吞吐率：21.57req/s] [内存消耗：1,487.78kb] [文件加载：36]
+[ error ] [8]未定义数组索引: step[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:94]
+---------------------------------------------------------------
+[ 2020-02-24T11:32:34+08:00 ] 0.0.0.0 GET localhost/in_storage/1
+[运行时间：0.048299s] [吞吐率：20.70req/s] [内存消耗：1,482.64kb] [文件加载：35]
+[ error ] [0]模板文件不存在:D:\php-workspace\wms/tp5/application/user\view\storeroom\inventory_allocation_1.html[D:\php-workspace\wms\tp5\thinkphp\library\think\view\driver\Think.php:82]
+---------------------------------------------------------------
+[ 2020-02-24T12:07:34+08:00 ] 0.0.0.0 GET localhost/in_storage/2/4234
+[运行时间：0.048739s] [吞吐率：20.52req/s] [内存消耗：1,490.09kb] [文件加载：36]
+[ error ] [8]未定义数组索引: code[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:98]
+---------------------------------------------------------------
+[ 2020-02-24T12:08:59+08:00 ] 0.0.0.0 POST localhost/in_storage/2/4234
+[运行时间：0.053487s] [吞吐率：18.70req/s] [内存消耗：1,501.07kb] [文件加载：36]
+[ error ] [1]Class 'app\user\controller\ExchangeData' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:74]
+---------------------------------------------------------------
+[ 2020-02-24T12:10:54+08:00 ] 0.0.0.0 POST localhost/in_storage/2/4234
+[运行时间：0.093657s] [吞吐率：10.68req/s] [内存消耗：2,605.99kb] [文件加载：44]
+[ error ] [0]数据表字段不存在:[product][D:\php-workspace\wms\tp5\thinkphp\library\think\db\Builder.php:115]
+---------------------------------------------------------------
+[ 2020-02-24T12:13:15+08:00 ] 0.0.0.0 POST localhost/in_storage/2/4234
+[运行时间：0.097332s] [吞吐率：10.27req/s] [内存消耗：2,617.70kb] [文件加载：46]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:453]
+---------------------------------------------------------------
+[ 2020-02-24T12:13:37+08:00 ] 0.0.0.0 GET localhost/in_storage/3/4234?page=1&limit=6
+[运行时间：0.048877s] [吞吐率：20.46req/s] [内存消耗：1,497.68kb] [文件加载：36]
+[ error ] [1]Class 'app\user\controller\ExchangeData' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:117]
+---------------------------------------------------------------
+[ 2020-02-24T12:39:15+08:00 ] 0.0.0.0 GET localhost/out_storage
+[运行时间：0.047569s] [吞吐率：21.02req/s] [内存消耗：1,501.79kb] [文件加载：36]
+[ error ] [8]未定义数组索引: step[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:207]
+---------------------------------------------------------------
+[ 2020-02-24T12:39:21+08:00 ] 0.0.0.0 GET localhost/out_storage
+[运行时间：0.047347s] [吞吐率：21.12req/s] [内存消耗：1,502.16kb] [文件加载：36]
+[ error ] [8]未定义数组索引: step[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:207]
+---------------------------------------------------------------
+[ 2020-02-24T12:39:24+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.178956s] [吞吐率：5.59req/s] [内存消耗：2,855.52kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T12:39:25+08:00 ] 0.0.0.0 GET localhost/out_storage
+[运行时间：0.052448s] [吞吐率：19.07req/s] [内存消耗：1,502.16kb] [文件加载：36]
+[ error ] [8]未定义数组索引: step[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:207]
+---------------------------------------------------------------
+[ 2020-02-24T12:40:16+08:00 ] 0.0.0.0 GET localhost/index.php
+[运行时间：0.052554s] [吞吐率：19.03req/s] [内存消耗：1,473.52kb] [文件加载：36]
+[ error ] [1]Maximum execution time of 60 seconds exceeded[x��T�n�F~�H��h�%i�RW�8ƃ���2?v�=��ԇ�Hb�RߠH�a.g��]�&�N��P|��}r���������ۍ{7���?\'w7��r{7�N_��t:y���~:�����L���7!���b�X�ltV���cS��.�<���ot�l�(iSC�k[2�aJ��YCr��2R�Z��eX�2K=�FK�D^bk4%�[��ǝ� ��kMMC_�o���}�iWG�+]K�%���N��<��ʯV�c�y�-�����u�E��3Cs��x�_�l5�����E9���yѬ�
+Ξ)�y�]�⥐p<C��S�4����KT�[�|�T8gV�R��E�=�����Oa��؛3ˈ��BIi�w_:kװ7�m)��⽷��C��[�H{����G�� �Q�5�؃���)(Z
+c�F�;8�x�2����b�n�Ԉ�k��N�ɡ�`�q�6���Y+�����G�Td��
+�K��x��Y��s���ಳ�G�6�R���}��K��K"����!p�0mA��bܫD����ԗ1��x�̆��C<�~أ�8�1x���.��^x����%�-R�49�#ht�;4��X�Y�1�$�XW�(s��3�/|gX Cn����ֻ��H0�/��ןh�:W��=��w��Yb���8[T�Țݠ吋��e�W�������7�~�*��>5�O��)�T����h��m@/Ј�nk�߫\�N�b�>Y�L����G��s�������+E[����H�F<����ow�7�ݮ4L����<��`�X�������E�~��{��9@���-�x>��j�~/�{�|�
+���8���C��~Í�[1hҬR�ƞؐl�sݡr�����5f8���q/��	�:�J�~n�y��S4�/�{��wҏ:�5/��A��nA?�Z()���ߏl��P��~\�x]�k�Nno���Q�(13) : eval()'d code(1) : eval()'d code:7]
+---------------------------------------------------------------
+[ 2020-02-24T12:41:49+08:00 ] 0.0.0.0 GET localhost/out_storage
+[运行时间：0.049621s] [吞吐率：20.15req/s] [内存消耗：1,505.03kb] [文件加载：36]
+[ error ] [8]未定义数组索引: step[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:207]
+---------------------------------------------------------------
+[ 2020-02-24T12:43:36+08:00 ] 0.0.0.0 GET localhost/out_storage/1
+[运行时间：0.046354s] [吞吐率：21.57req/s] [内存消耗：1,498.97kb] [文件加载：35]
+[ error ] [0]模板文件不存在:D:\php-workspace\wms/tp5/application/user\view\storeroom\out_storage.html[D:\php-workspace\wms\tp5\thinkphp\library\think\view\driver\Think.php:82]
+---------------------------------------------------------------
+[ 2020-02-24T12:57:46+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.171669s] [吞吐率：5.83req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T12:57:56+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.164954s] [吞吐率：6.06req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T13:00:50+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.165658s] [吞吐率：6.04req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T13:04:31+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.166097s] [吞吐率：6.02req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T13:05:04+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.151909s] [吞吐率：6.58req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T13:05:06+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.167139s] [吞吐率：5.98req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T13:05:17+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.163917s] [吞吐率：6.10req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T13:05:25+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.159236s] [吞吐率：6.28req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T13:05:26+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.172755s] [吞吐率：5.79req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T13:05:28+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.167070s] [吞吐率：5.99req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T13:05:28+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.157041s] [吞吐率：6.37req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T13:05:30+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.156505s] [吞吐率：6.39req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T13:05:38+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.178137s] [吞吐率：5.61req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T13:05:42+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.161469s] [吞吐率：6.19req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T13:06:29+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.153368s] [吞吐率：6.52req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T13:06:36+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.173967s] [吞吐率：5.75req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T13:06:42+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.161170s] [吞吐率：6.20req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T13:07:21+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.156236s] [吞吐率：6.40req/s] [内存消耗：2,858.48kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:288]
+---------------------------------------------------------------
+[ 2020-02-24T13:09:07+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.178708s] [吞吐率：5.60req/s] [内存消耗：2,854.95kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:286]
+---------------------------------------------------------------
+[ 2020-02-24T13:09:08+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.167093s] [吞吐率：5.98req/s] [内存消耗：2,854.95kb] [文件加载：48]
+[ error ] [1]Class 'app\user\model\TableWarehouse' not found[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:286]

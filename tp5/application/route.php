@@ -28,8 +28,13 @@ Route::get([
 
 //    仓库
     'storeroom' => 'user/Storeroom/index',
-    'in_storage' => 'user/Storeroom/inStorage',
-    'out_storage' => 'user/Storeroom/outStorage',
+    'in_storage/:step/:id/:field/:value' => 'user/Storeroom/inStorage',
+    'in_storage/:step/:code' => 'user/Storeroom/inStorage',
+    'in_storage/:step' => 'user/Storeroom/inStorage',
+
+    'out_storage/:step/:id/:field/:value' => 'user/Storeroom/outStorage',
+    'out_storage/:step/:code' => 'user/Storeroom/outStorage',
+    'out_storage/:step' => 'user/Storeroom/outStorage',
     'storage_record' => 'user/Storeroom/storageRecord',
     'storage_query' => 'user/Storeroom/storageQuery',
 
@@ -110,7 +115,8 @@ Route::post([
     'add_depart' => 'user/basics/addDepart',
 
 //    仓库
-
+    'in_storage/:step' => 'user/Storeroom/inStorage',
+    'out_storage/:step' => 'user/Storeroom/outStorage',
 
 //    货品
     'add_measureunit' => 'user/Quality/addMeasureunit',

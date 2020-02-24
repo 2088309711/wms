@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:73:"D:\php-workspace\wms/tp5/application/user\view\storeroom\out_storage.html";i:1581614136;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1581743400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:73:"D:\php-workspace\wms/tp5/application/user\view\storeroom\out_storage.html";i:1581614136;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1582519346;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,8 +71,8 @@
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/in_storage">入库</a></li>
-<li class="layui-nav-item"><a href="/out_storage">出库</a></li>
+                <li class="layui-nav-item"><a href="/in_storage/1">入库</a></li>
+<li class="layui-nav-item"><a href="/out_storage/1">出库</a></li>
 <li class="layui-nav-item"><a href="/storage_record">出入库明细</a></li>
 <li class="layui-nav-item"><a href="/storage_query">出入库查询</a></li>
             </ul>
