@@ -13,5 +13,16 @@ use think\Model;
 
 class Product extends Model
 {
+    public function measureunit()
+    {
+        return $this->hasOne('Measureunit', 'id', 'unit')->field('name');
+    }
+
+
+    public function itemclassify()
+    {
+        return $this->hasOne('Itemclassify', 'node', 'type')->field('name');
+    }
+
 
 }

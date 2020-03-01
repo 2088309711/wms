@@ -1,0 +1,212 @@
+---------------------------------------------------------------
+[ 2020-02-25T14:41:15+08:00 ] 0.0.0.0 GET localhost/quality_management
+[运行时间：0.158766s] [吞吐率：6.30req/s] [内存消耗：2,755.34kb] [文件加载：50]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'unit' in 'where clause'[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2020-02-25T14:41:52+08:00 ] 0.0.0.0 GET localhost/quality_management
+[运行时间：0.139825s] [吞吐率：7.15req/s] [内存消耗：2,755.44kb] [文件加载：50]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'unit' in 'where clause'[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2020-02-25T14:41:53+08:00 ] 0.0.0.0 GET localhost/quality_management
+[运行时间：0.130191s] [吞吐率：7.68req/s] [内存消耗：2,755.47kb] [文件加载：50]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'unit' in 'where clause'[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2020-02-25T14:41:56+08:00 ] 0.0.0.0 GET localhost/quality_management
+[运行时间：0.130086s] [吞吐率：7.69req/s] [内存消耗：2,755.44kb] [文件加载：50]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'unit' in 'where clause'[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2020-02-25T14:42:13+08:00 ] 0.0.0.0 GET localhost/quality_management
+[运行时间：0.100040s] [吞吐率：10.00req/s] [内存消耗：2,612.28kb] [文件加载：44]
+[ error ] [0]variable type error： array[D:\php-workspace\wms\tp5\thinkphp\library\think\Response.php:316]
+---------------------------------------------------------------
+[ 2020-02-25T14:42:31+08:00 ] 0.0.0.0 GET localhost/quality_management
+[运行时间：0.095589s] [吞吐率：10.46req/s] [内存消耗：2,611.94kb] [文件加载：44]
+[ error ] [0]variable type error： array[D:\php-workspace\wms\tp5\thinkphp\library\think\Response.php:316]
+---------------------------------------------------------------
+[ 2020-02-25T14:42:33+08:00 ] 0.0.0.0 GET localhost/quality_management
+[运行时间：0.094732s] [吞吐率：10.56req/s] [内存消耗：2,611.87kb] [文件加载：44]
+[ error ] [0]variable type error： array[D:\php-workspace\wms\tp5\thinkphp\library\think\Response.php:316]
+---------------------------------------------------------------
+[ 2020-02-25T14:43:01+08:00 ] 0.0.0.0 GET localhost/quality_management
+[运行时间：0.126157s] [吞吐率：7.93req/s] [内存消耗：2,754.93kb] [文件加载：50]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'unit' in 'where clause'[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2020-02-25T14:48:19+08:00 ] 0.0.0.0 GET localhost/quality_management
+[运行时间：0.134790s] [吞吐率：7.42req/s] [内存消耗：2,754.95kb] [文件加载：50]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'unit' in 'where clause'[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2020-02-25T14:53:51+08:00 ] 0.0.0.0 GET localhost/quality_management
+[运行时间：0.130511s] [吞吐率：7.66req/s] [内存消耗：2,754.98kb] [文件加载：50]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'unit' in 'where clause'[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2020-02-25T14:54:09+08:00 ] 0.0.0.0 GET localhost/quality_management
+[运行时间：0.130325s] [吞吐率：7.67req/s] [内存消耗：2,754.92kb] [文件加载：50]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'unit' in 'where clause'[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2020-02-25T14:54:10+08:00 ] 0.0.0.0 GET localhost/quality_management
+[运行时间：0.131138s] [吞吐率：7.63req/s] [内存消耗：2,754.92kb] [文件加载：50]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'unit' in 'where clause'[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2020-02-25T14:54:29+08:00 ] 0.0.0.0 GET localhost/quality_management
+[运行时间：0.124676s] [吞吐率：8.02req/s] [内存消耗：2,754.95kb] [文件加载：50]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'unit' in 'where clause'[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2020-02-25T14:54:30+08:00 ] 0.0.0.0 GET localhost/quality_management
+[运行时间：0.127427s] [吞吐率：7.85req/s] [内存消耗：2,754.92kb] [文件加载：50]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'unit' in 'where clause'[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2020-02-25T15:00:37+08:00 ] 0.0.0.0 GET localhost/quality_management
+[运行时间：0.132618s] [吞吐率：7.54req/s] [内存消耗：2,754.92kb] [文件加载：50]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'unit' in 'where clause'[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2020-02-25T15:09:25+08:00 ] 0.0.0.0 GET localhost/quality_management?page=1&limit=6
+[运行时间：0.126851s] [吞吐率：7.88req/s] [内存消耗：2,625.22kb] [文件加载：46]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:144]
+---------------------------------------------------------------
+[ 2020-02-25T15:12:03+08:00 ] 0.0.0.0 GET localhost/quality_management?page=1&limit=6
+[运行时间：0.166460s] [吞吐率：6.01req/s] [内存消耗：2,791.84kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:137]
+---------------------------------------------------------------
+[ 2020-02-25T15:14:13+08:00 ] 0.0.0.0 GET localhost/quality_management?page=1&limit=6
+[运行时间：0.141079s] [吞吐率：7.09req/s] [内存消耗：2,801.24kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Quality.php:136]
+---------------------------------------------------------------
+[ 2020-02-25T16:04:17+08:00 ] 0.0.0.0 POST localhost/add_company
+[运行时间：0.080636s] [吞吐率：12.40req/s] [内存消耗：2,566.91kb] [文件加载：44]
+[ error ] [8]未定义数组索引: area[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:70]
+---------------------------------------------------------------
+[ 2020-02-25T16:56:37+08:00 ] 0.0.0.0 GET localhost/staff_management?page=1&limit=6
+[运行时间：0.114413s] [吞吐率：8.74req/s] [内存消耗：2,629.27kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:148]
+---------------------------------------------------------------
+[ 2020-02-25T16:56:51+08:00 ] 0.0.0.0 GET localhost/staff_management?page=1&limit=6
+[运行时间：0.105142s] [吞吐率：9.51req/s] [内存消耗：2,628.95kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:148]
+---------------------------------------------------------------
+[ 2020-02-25T16:57:49+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.095252s] [吞吐率：10.50req/s] [内存消耗：2,629.30kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:148]
+---------------------------------------------------------------
+[ 2020-02-25T16:58:27+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.096070s] [吞吐率：10.41req/s] [内存消耗：2,629.46kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:148]
+---------------------------------------------------------------
+[ 2020-02-25T16:58:28+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.116207s] [吞吐率：8.61req/s] [内存消耗：2,629.30kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:148]
+---------------------------------------------------------------
+[ 2020-02-25T17:01:05+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.112085s] [吞吐率：8.92req/s] [内存消耗：2,629.30kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:148]
+---------------------------------------------------------------
+[ 2020-02-25T17:01:29+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.093211s] [吞吐率：10.73req/s] [内存消耗：2,629.20kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:149]
+---------------------------------------------------------------
+[ 2020-02-25T17:01:31+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.094348s] [吞吐率：10.60req/s] [内存消耗：2,629.02kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:149]
+---------------------------------------------------------------
+[ 2020-02-25T17:01:34+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.093887s] [吞吐率：10.65req/s] [内存消耗：2,628.69kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:149]
+---------------------------------------------------------------
+[ 2020-02-25T17:01:35+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.109125s] [吞吐率：9.16req/s] [内存消耗：2,628.84kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:149]
+---------------------------------------------------------------
+[ 2020-02-25T17:01:35+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.099396s] [吞吐率：10.06req/s] [内存消耗：2,628.69kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:149]
+---------------------------------------------------------------
+[ 2020-02-25T17:01:50+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.095961s] [吞吐率：10.42req/s] [内存消耗：2,628.85kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:144]
+---------------------------------------------------------------
+[ 2020-02-25T17:01:55+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.092174s] [吞吐率：10.85req/s] [内存消耗：2,624.09kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:144]
+---------------------------------------------------------------
+[ 2020-02-25T17:03:31+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.119676s] [吞吐率：8.36req/s] [内存消耗：2,749.86kb] [文件加载：49]
+[ error ] [8]Undefined property: think\model\relation\HasOne::$name[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:144]
+---------------------------------------------------------------
+[ 2020-02-25T17:03:37+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.091016s] [吞吐率：10.99req/s] [内存消耗：2,624.09kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:144]
+---------------------------------------------------------------
+[ 2020-02-25T17:04:30+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.098063s] [吞吐率：10.20req/s] [内存消耗：2,623.97kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:144]
+---------------------------------------------------------------
+[ 2020-02-25T17:07:08+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.108957s] [吞吐率：9.18req/s] [内存消耗：2,624.09kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:144]
+---------------------------------------------------------------
+[ 2020-02-25T17:07:38+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.094627s] [吞吐率：10.57req/s] [内存消耗：2,623.97kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:144]
+---------------------------------------------------------------
+[ 2020-02-25T17:12:41+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.093799s] [吞吐率：10.66req/s] [内存消耗：2,624.09kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:144]
+---------------------------------------------------------------
+[ 2020-02-25T17:13:37+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.092288s] [吞吐率：10.84req/s] [内存消耗：2,610.99kb] [文件加载：43]
+[ error ] [0]类的属性不存在:app\user\model\Employee->_depart[D:\php-workspace\wms\tp5\thinkphp\library\think\Model.php:626]
+---------------------------------------------------------------
+[ 2020-02-25T17:13:47+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.090141s] [吞吐率：11.09req/s] [内存消耗：2,611.09kb] [文件加载：43]
+[ error ] [0]类的属性不存在:app\user\model\Employee->_depart[D:\php-workspace\wms\tp5\thinkphp\library\think\Model.php:626]
+---------------------------------------------------------------
+[ 2020-02-25T17:13:49+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.102891s] [吞吐率：9.72req/s] [内存消耗：2,610.99kb] [文件加载：43]
+[ error ] [0]类的属性不存在:app\user\model\Employee->_depart[D:\php-workspace\wms\tp5\thinkphp\library\think\Model.php:626]
+---------------------------------------------------------------
+[ 2020-02-25T17:13:52+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.093589s] [吞吐率：10.69req/s] [内存消耗：2,610.99kb] [文件加载：43]
+[ error ] [0]类的属性不存在:app\user\model\Employee->_depart[D:\php-workspace\wms\tp5\thinkphp\library\think\Model.php:626]
+---------------------------------------------------------------
+[ 2020-02-25T17:13:57+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.091958s] [吞吐率：10.87req/s] [内存消耗：2,611.09kb] [文件加载：43]
+[ error ] [0]类的属性不存在:app\user\model\Employee->_depart[D:\php-workspace\wms\tp5\thinkphp\library\think\Model.php:626]
+---------------------------------------------------------------
+[ 2020-02-25T17:13:57+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.094330s] [吞吐率：10.60req/s] [内存消耗：2,610.99kb] [文件加载：43]
+[ error ] [0]类的属性不存在:app\user\model\Employee->_depart[D:\php-workspace\wms\tp5\thinkphp\library\think\Model.php:626]
+---------------------------------------------------------------
+[ 2020-02-25T17:13:57+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.095364s] [吞吐率：10.49req/s] [内存消耗：2,610.99kb] [文件加载：43]
+[ error ] [0]类的属性不存在:app\user\model\Employee->_depart[D:\php-workspace\wms\tp5\thinkphp\library\think\Model.php:626]
+---------------------------------------------------------------
+[ 2020-02-25T17:14:02+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.092026s] [吞吐率：10.87req/s] [内存消耗：2,611.09kb] [文件加载：43]
+[ error ] [0]类的属性不存在:app\user\model\Employee->depart_[D:\php-workspace\wms\tp5\thinkphp\library\think\Model.php:626]
+---------------------------------------------------------------
+[ 2020-02-25T17:14:03+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.094490s] [吞吐率：10.58req/s] [内存消耗：2,610.98kb] [文件加载：43]
+[ error ] [0]类的属性不存在:app\user\model\Employee->depart_[D:\php-workspace\wms\tp5\thinkphp\library\think\Model.php:626]
+---------------------------------------------------------------
+[ 2020-02-25T17:14:24+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.147378s] [吞吐率：6.79req/s] [内存消耗：2,758.23kb] [文件加载：50]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'depart' in 'where clause'[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2020-02-25T17:15:22+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.093749s] [吞吐率：10.67req/s] [内存消耗：2,623.88kb] [文件加载：45]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:148]
+---------------------------------------------------------------
+[ 2020-02-25T17:15:25+08:00 ] 0.0.0.0 GET localhost/staff_management
+[运行时间：0.125907s] [吞吐率：7.94req/s] [内存消耗：2,742.46kb] [文件加载：48]
+[ error ] [0]variable type error： array[D:\php-workspace\wms\tp5\thinkphp\library\think\Response.php:316]
+---------------------------------------------------------------
+[ 2020-02-25T17:33:57+08:00 ] 0.0.0.0 GET localhost/come_enter_lib_set?page=1&limit=6
+[运行时间：0.125899s] [吞吐率：7.94req/s] [内存消耗：2,624.84kb] [文件加载：45]
+[ error ] [8]未定义数组下标: 3213[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:274]
+---------------------------------------------------------------
+[ 2020-02-25T17:34:13+08:00 ] 0.0.0.0 GET localhost/come_enter_lib_set?page=1&limit=6
+[运行时间：0.129374s] [吞吐率：7.73req/s] [内存消耗：2,624.81kb] [文件加载：45]
+[ error ] [8]未定义数组索引: [D:\php-workspace\wms\tp5\application\user\controller\Basics.php:274]
+---------------------------------------------------------------
+[ 2020-02-25T17:44:18+08:00 ] 0.0.0.0 GET localhost/exchange_unit_management?page=1&limit=6
+[运行时间：0.102050s] [吞吐率：9.80req/s] [内存消耗：2,641.63kb] [文件加载：45]
+[ error ] [8]未定义数组下标: 2[D:\php-workspace\wms\tp5\application\user\controller\Basics.php:36]

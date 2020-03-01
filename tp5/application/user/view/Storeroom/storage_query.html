@@ -2,7 +2,6 @@
 {block name="nav"}{include file="nav_Storeroom" /}{/block}
 {block name="content"}
 
-
 <div class="layui-fluid">
 
     <div class="layui-card" style="margin: 15px 0;">
@@ -95,12 +94,14 @@
                 <thead>
 
                 <tr>
-                    <th lay-data="{field:'id',align:'center'}">单据编号</th>
+                    <th lay-data="{field:'id',align:'center'}">编号</th>
+                    <th lay-data="{field:'code',align:'center'}">单据编号</th>
                     <th lay-data="{field:'date',align:'center'}">制单日期</th>
                     <th lay-data="{field:'employee',align:'center'}">业务员</th>
                     <th lay-data="{field:'supplier',align:'center'}">交易公司</th>
                     <th lay-data="{field:'warehouse',align:'center'}">仓库</th>
-                    <th lay-data="{field:'type',align:'center'}">出入库类型</th>
+                    <th lay-data="{field:'type_big',align:'center'}">类型</th>
+                    <th lay-data="{field:'type',align:'center'}">出入方式</th>
                     <th lay-data="{field:'remark',align:'center'}">备注</th>
 
                 </tr>
@@ -118,7 +119,7 @@
 {block name="jsScript"}
 <script>
 
-
+    var navTop = 2, navLeft = 4;
     //Demo
     layui.use(['form', 'laydate', 'table'], function () {
         var form = layui.form, laydate = layui.laydate;

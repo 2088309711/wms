@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:77:"D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_query.html";i:1581682127;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_Repertory.html";i:1582470523;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:77:"D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_query.html";i:1582551595;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1582601906;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_Repertory.html";i:1582470523;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,23 +36,27 @@
         </div>
 
 
-        <ul class="layui-nav layui-layout-left" style="left:260px;">
+        <ul id="nav-top" class="layui-nav layui-layout-left" style="left:260px;">
             <li class="layui-nav-item"><a href="/menu">
                 <i class="layui-icon layui-icon-app"></i> 功能</a></li>
-            <li class="layui-nav-item"><a href="/system">
-                <i class="layui-icon layui-icon-console"></i> 系统</a></li>
+
             <li class="layui-nav-item"><a href="/Storeroom">
                 <i class="layui-icon layui-icon-form"></i> 仓库</a></li>
-            <li class="layui-nav-item"><a href="/quality">
-                <i class="layui-icon layui-icon-tabs"></i> 货品</a></li>
+
             <li class="layui-nav-item"><a href="/repertory">
                 <i class="layui-icon layui-icon-template"></i> 库存</a></li>
+
+            <li class="layui-nav-item"><a href="/quality">
+                <i class="layui-icon layui-icon-tabs"></i> 货品</a></li>
+
             <li class="layui-nav-item"><a href="/basics">
                 <i class="layui-icon layui-icon-user"></i> 基础</a></li>
 
 
-            <li class="layui-nav-item"><a href="/other">
-                <i class="layui-icon layui-icon-util"></i> 其他</a></li>
+            <li class="layui-nav-item"><a href="/system">
+                <i class="layui-icon layui-icon-console"></i> 系统</a></li>
+
+
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
@@ -70,7 +74,7 @@
 
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
-            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+            <ul id="nav-left" class="layui-nav layui-nav-tree" lay-filter="test">
                 <li class="layui-nav-item"><a href="/inventory_allocation/1">库存调拨</a></li>
 <li class="layui-nav-item"><a href="/inventory_verification/1">库存盘点</a></li>
 <li class="layui-nav-item"><a href="/inventory_allocation_details">库存调拨记录</a></li>
@@ -129,6 +133,23 @@
 </div>
 
 <script src="/statics/layui/layui.js"></script>
+
+<script>
+    var navTop = 3, navLeft = 5;
+
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+
+</script>
+
 <script>
     $ = null;
 
@@ -159,29 +180,38 @@
         var element = layui.element;
         $ = layui.jquery;
         $(function () {
+
+
+            // 选中菜单
+            try {
+                $("#nav-top").children("li.layui-nav-item").eq(navTop - 1).addClass('layui-this');
+            } catch (e) {
+            }
+
+            try {
+                $("#nav-left").children("li.layui-nav-item").eq(navLeft - 1).addClass('layui-this');
+            } catch (e) {
+            }
+
+
+            // 收缩/展开菜单
             $('#nav-switch').click(function () {
                 $('#main-nav').data('switch') == 1 ? fold_nav('close') : fold_nav('open');
             });
-            execute_event();
+
+
+            try {
+                execute_event();
+            } catch (e) {
+            }
+
+
         })
     });
 </script>
 
-<script>
 
 
-    //Demo
-    layui.use('form', function () {
-        var form = layui.form;
-
-        //监听提交
-        form.on('submit(formDemo)', function (data) {
-            layer.msg(JSON.stringify(data.field));
-            return false;
-        });
-    });
-
-</script>
 
 </body>
 </html>

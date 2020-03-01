@@ -9,19 +9,14 @@
 namespace app\user\controller;
 
 
-use app\user\model\Enewsclass;
-use app\user\model\Enewstable;
+use app\user\model\Categories;
+use app\user\model\Company;
 use app\user\model\Inout;
 use app\user\model\InoutData;
-use app\user\model\TableWarehouse;
-use app\user\model\TbInout;
-use app\user\model\TbProduct;
-use app\user\model\TestExchange;
-use app\user\model\TestInout;
-use app\user\model\TestReceipt;
-use think\Cache;
-use think\Controller;
-use think\Db;
+use app\user\model\Product;
+use app\user\model\Warehouse;
+use app\user\model\WarehouseData;
+
 
 class Storeroom extends Filter
 {
@@ -31,10 +26,23 @@ class Storeroom extends Filter
         return $this->fetch();
     }
 
-    public function inStorage()
-    {
 
+    /**
+     * 出入库合并
+     */
+    public function inOutStorage()
+    {
         $data = input();
+        $type_big = $data['func'];
+        $userName = $this->getUserName();
+        $inHtml = 'in_storage_';
+        $outHtml = 'out_storage_';
+
+        $autoHtml = $type_big == 1 ? $inHtml : $outHtml;
+        $autoHtmlStep = ($type_big == 1 ? $inHtml : $outHtml) . $data['step'];
+
+
+        $inOutStorageUrl = '/in_out_storage/' . $type_big . '/';
 
         if (request()->isPost()) {
 
@@ -43,16 +51,21 @@ class Storeroom extends Filter
 
                 case 1:
 
+                    //查询单号是否存在
+                    if (Inout::get(['code' => $data['code'], 'user' => $userName, 'type_big' => $type_big]) != null) {
+                        $this->error('单号已经存在');
+                    }
 
-                    $data['user'] = $this->getUserName();
-
-
+                    $data['type_big'] = $type_big;
+                    $data['user'] = $userName;
                     $w = new Inout($data);
                     if ($w->allowField(true)->save()) {
-                        $this->redirect('/in_storage/2/' . $data['code']);
+                        $this->redirect($inOutStorageUrl . '2/' . $data['code']);
                     } else {
                         $this->error('操作失败');
                     }
+
+
                     break;
 
 
@@ -61,50 +74,104 @@ class Storeroom extends Filter
 
                     $data['product'] = json_decode($data['product']);
 
-                    $userName = $this->getUserName();
+
+                    $inout = Inout::get(['user' => $userName, 'code' => $data['code'], 'type_big' => $type_big]);
+
+
                     $list = [];
                     foreach ($data['product'] as $i) {
-                        $list[] = [
+                        //过滤已存在的数据
+
+                        $temp = [
                             'product_id' => $i->value,
                             'code' => $data['code'],
+                            'type_big' => $type_big,
                             'user' => $userName,
                         ];
+
+                        if (InoutData::get($temp) == null) {
+                            $temp['warehouse'] = $inout->warehouse;
+                            $list[] = $temp;
+                        }
+
                     }
 
+                    if (count($list) == 0) {
+                        $this->redirect($inOutStorageUrl . '3/' . $data['code']);
+                    }
 
                     $w = new InoutData();
 
                     if ($w->saveAll($list) != null) {
-                        $this->redirect('/in_storage/3/' . $data['code']);
+                        $this->redirect($inOutStorageUrl . '3/' . $data['code']);
                     } else {
                         $this->error('操作失败');
                     }
-
-
                     break;
-
-
             }
-
-
         } else {
 
             switch ($data['step']) {
                 case 1:
-                    return $this->fetch('in_storage_1');
+
+                    $this->assign('company', Company::all(['user' => $userName, 'type' => ($type_big == 1 ? 1 : 0)]));
+                    $this->assign('warehouse', Warehouse::all(['user' => $userName]));
+                    $this->assign('categories', Categories::all(['user' => $userName, 'type' => ($type_big == 1 ? 0 : 1)]));
+
+                    return $this->fetch($autoHtmlStep);
+
                     break;
 
                 case 2:
-                    return $this->fetch('in_storage_2', ['code' => $data['code']]);
+
+
+                    $where = ['user' => $userName];
+                    if ($type_big == 2) {
+                        //获取仓库
+                        $i = Inout::get(['user' => $userName, 'type_big' => $type_big, 'code' => $data['code']]);
+                        //获取该仓库存放的货品
+                        $wd = WarehouseData::all(['warehouse' => $i->warehouse, 'user' => $userName]);
+
+                        //获取仓库资料
+                        $war = Warehouse::get(['id' => $i->warehouse, 'user' => $userName]);
+
+                        $this->assign('warname', $war->name);
+                        //取出多个货品的ID
+
+                        $pids = [];
+                        foreach ($wd as $i) {
+                            $pids[] = $i->product_id;
+                        }
+
+                        $where = $pids;
+
+                    }
+
+                    $p = Product::all($where);
+
+                    $str = '[';
+                    foreach ($p as $i) {
+                        $str .= '{"value": "' . $i->id . '", "title": "' . $i->name . '"},';
+                    }
+                    $str .= ']';
+
+                    $this->assign('product', $str);
+
+                    return $this->fetch($autoHtmlStep, ['code' => $data['code']]);
+
                     break;
 
                 case 3:
 
-
                     if (request()->isAjax()) {
 
+                        $employee = InoutData::all(['code' => $data['code'], 'type_big' => $type_big, 'user' => $userName]);
 
-                        $employee = InoutData::all(['code' => $data['code']]);
+
+                        foreach ($employee as $i) {
+                            $i->product_name = $i->product->name;
+                            $i->inprice = $i->product->inprice;
+                        }
 
 
                         $result = [
@@ -114,12 +181,11 @@ class Storeroom extends Filter
                             "data" => $employee
                         ];
 
+
                         return $result;
 
                     } else {
-
-                        return $this->fetch('in_storage_3', ['code' => $data['code']]);
-
+                        return $this->fetch($autoHtmlStep);
                     }
 
 
@@ -129,133 +195,68 @@ class Storeroom extends Filter
                 case 'ajax'://单元行编辑
 
 
-                    $ed = new InoutData;
+                    //如果是更新数量，取得上次的数量
+                    $num = 0;
+                    $diff = 0;
+                    if ($data['field'] == 'num') {
+                        $id = InoutData::get($data['id']);
+                        if ($id->num != null) {
+                            $num = $id->num;
+                        }
 
-                    if ($ed->save([$data['field'] => $data['value']], ['id' => $data['id']])) {
+                        //计算数量差值
+                        $diff = $data['value'] - $num;
+                    }
+
+
+                    //修改入库明细
+                    $ed = new InoutData;
+                    $r1 = $ed->save([$data['field'] => $data['value']], ['id' => $data['id']]);
+
+
+                    //如果是入库数量，同步到仓库存储
+                    if ($data['field'] == 'num') {
+                        $id = InoutData::get($data['id']);
+                        $inout = Inout::get(['code' => $id->code, 'type_big' => $type_big, 'user' => $userName]);
+                        $wd = WarehouseData::get(['product_id' => $id->product_id, 'warehouse' => $inout->warehouse, 'user' => $userName]);
+
+                        if ($wd == null && $type_big == 1) {//该仓库没有该货品记录
+                            //新增
+                            $wd = new WarehouseData([
+                                'product_id' => $id->product_id,
+                                'num' => $data['value'],
+                                'warehouse' => $inout->warehouse,
+                                'user' => $userName,
+                            ]);
+                            if (!$wd->save()) {//新增失败，回滚任务
+                                $this->error('操作失败');
+                            }
+                        } else {
+                            //更新
+
+                            if ($type_big == 1) {
+                                $wd->num += $diff;
+                            } else {
+                                $wd->num -= $diff;
+                            }
+                            if (!$wd->save()) {//更新失败，回滚任务
+                                $this->error('操作失败');
+                            }
+
+
+                        }
+                    }
+
+                    if ($r1) {
                         $this->success('修改成功');
                     } else {
                         $this->error('修改失败');
                     }
 
-
             }
-
-
         }
     }
 
-
-    public function outStorage()
-    {
-        $data = input();
-
-        if (request()->isPost()) {
-
-
-            switch ($data['step']) {
-
-                case 1:
-
-
-                    $data['user'] = $this->getUserName();
-
-
-                    $w = new Inout($data);
-                    if ($w->allowField(true)->save()) {
-                        $this->redirect('/out_storage/2/' . $data['code']);
-                    } else {
-                        $this->error('操作失败');
-                    }
-                    break;
-
-
-                case 2:
-
-
-                    $data['product'] = json_decode($data['product']);
-
-                    $userName = $this->getUserName();
-                    $list = [];
-                    foreach ($data['product'] as $i) {
-                        $list[] = [
-                            'product_id' => $i->value,
-                            'code' => $data['code'],
-                            'user' => $userName,
-                        ];
-                    }
-
-
-                    $w = new InoutData();
-
-                    if ($w->saveAll($list) != null) {
-                        $this->redirect('/out_storage/3/' . $data['code']);
-                    } else {
-                        $this->error('操作失败');
-                    }
-
-
-                    break;
-
-
-            }
-
-
-        } else {
-
-            switch ($data['step']) {
-                case 1:
-                    return $this->fetch('out_storage_1');
-                    break;
-
-                case 2:
-                    return $this->fetch('out_storage_2', ['code' => $data['code']]);
-                    break;
-
-                case 3:
-
-
-                    if (request()->isAjax()) {
-
-
-                        $employee = InoutData::all(['code' => $data['code']]);
-
-
-                        $result = [
-                            "code" => 0,
-                            "msg" => "",
-                            "count" => InoutData::where('code', $data['code'])->count(),
-                            "data" => $employee
-                        ];
-
-                        return $result;
-
-                    } else {
-
-                        return $this->fetch('out_storage_3', ['code' => $data['code']]);
-
-                    }
-
-
-                    break;
-
-
-                case 'ajax'://单元行编辑
-
-
-                    $ed = new InoutData;
-
-                    if ($ed->save([$data['field'] => $data['value']], ['id' => $data['id']])) {
-                        $this->success('修改成功');
-                    } else {
-                        $this->error('修改失败');
-                    }
-
-
-            }
-
-
-        }
-    }
 
     public function storageRecord()
     {
@@ -264,13 +265,23 @@ class Storeroom extends Filter
         if (request()->isAjax()) {
 
 
-            $tt = InoutData::all();
+            $tt = InoutData::all(['user' => $this->getUserName()]);
+
+
+            foreach ($tt as $i) {
+                $i->name = $i->product->name;
+                $i->model2 = $i->product->model2;
+                $i->size = $i->product->size;
+                $i->warehouse = $i->warehouse2->name;
+                $i->unit = $i->product->measureunit->name;
+                $i->type_big = $i->type_big == 1 ? '入库' : '出库';
+            }
 
 
             $result = [
                 "code" => 0,
                 "msg" => "",
-                "count" => InoutData::count(),
+                "count" => InoutData::where('user', $this->getUserName())->count(),
                 "data" => $tt
             ];
 
@@ -291,14 +302,20 @@ class Storeroom extends Filter
 
         if (request()->isAjax()) {
 
+            $tt = Inout::all(['user' => $this->getUserName()]);
 
-            $tt = Inout::all();
 
+            foreach ($tt as $i) {
+                $i->supplier = $i->company->name;
+                $i->warehouse = $i->warehouse2->name;
+                $i->type = $i->categories->name;
+                $i->type_big = $i->type_big == 1 ? '入库' : '出库';
+            }
 
             $result = [
                 "code" => 0,
                 "msg" => "",
-                "count" => Inout::count(),
+                "count" => Inout::where('user', $this->getUserName())->count(),
                 "data" => $tt
             ];
 

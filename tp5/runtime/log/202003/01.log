@@ -1,0 +1,280 @@
+---------------------------------------------------------------
+[ 2020-03-01T15:43:14+08:00 ] 0.0.0.0 GET localhost/in_storage/ajax/47/num/
+[运行时间：0.050329s] [吞吐率：19.87req/s] [内存消耗：1,518.94kb] [文件加载：36]
+[ error ] [8]未定义数组索引: field[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:159]
+---------------------------------------------------------------
+[ 2020-03-01T16:22:59+08:00 ] 0.0.0.0 GET localhost/out_storage/ajax/90/num/10
+[运行时间：0.173182s] [吞吐率：5.77req/s] [内存消耗：2,826.29kb] [文件加载：50]
+[ error ] [2]Creating default object from empty value[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:405]
+---------------------------------------------------------------
+[ 2020-03-01T16:23:45+08:00 ] 0.0.0.0 GET localhost/out_storage/ajax/90/num/11
+[运行时间：0.163805s] [吞吐率：6.10req/s] [内存消耗：2,826.29kb] [文件加载：50]
+[ error ] [2]Creating default object from empty value[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:405]
+---------------------------------------------------------------
+[ 2020-03-01T16:39:28+08:00 ] 0.0.0.0 GET localhost/out_storage/2/235345
+[运行时间：0.116186s] [吞吐率：8.61req/s] [内存消耗：2,691.05kb] [文件加载：46]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:315]
+---------------------------------------------------------------
+[ 2020-03-01T17:11:08+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.148369s] [吞吐率：6.74req/s] [内存消耗：2,806.59kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:457]
+---------------------------------------------------------------
+[ 2020-03-01T17:11:21+08:00 ] 0.0.0.0 GET localhost/storage_record
+[运行时间：0.137692s] [吞吐率：7.26req/s] [内存消耗：2,806.59kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:457]
+---------------------------------------------------------------
+[ 2020-03-01T17:12:05+08:00 ] 0.0.0.0 GET localhost/storage_record
+[运行时间：0.094115s] [吞吐率：10.63req/s] [内存消耗：2,684.03kb] [文件加载：43]
+[ error ] [0]类的属性不存在:app\user\model\InoutData->name[D:\php-workspace\wms\tp5\thinkphp\library\think\Model.php:626]
+---------------------------------------------------------------
+[ 2020-03-01T17:12:35+08:00 ] 0.0.0.0 GET localhost/storage_record
+[运行时间：0.142552s] [吞吐率：7.01req/s] [内存消耗：2,806.90kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:457]
+---------------------------------------------------------------
+[ 2020-03-01T17:12:46+08:00 ] 0.0.0.0 GET localhost/storage_record
+[运行时间：0.127678s] [吞吐率：7.83req/s] [内存消耗：2,806.90kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:457]
+---------------------------------------------------------------
+[ 2020-03-01T17:13:47+08:00 ] 0.0.0.0 GET localhost/storage_record
+[运行时间：0.136777s] [吞吐率：7.31req/s] [内存消耗：2,816.77kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:457]
+---------------------------------------------------------------
+[ 2020-03-01T17:14:47+08:00 ] 0.0.0.0 GET localhost/storage_record
+[运行时间：0.254297s] [吞吐率：3.93req/s] [内存消耗：3,341.98kb] [文件加载：48]
+[ error ] [0]variable type error： array[D:\php-workspace\wms\tp5\thinkphp\library\think\Response.php:316]
+---------------------------------------------------------------
+[ 2020-03-01T17:20:19+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.130978s] [吞吐率：7.63req/s] [内存消耗：2,775.93kb] [文件加载：47]
+[ error ] [0]类的属性不存在:app\user\model\Product->model2[D:\php-workspace\wms\tp5\thinkphp\library\think\Model.php:626]
+---------------------------------------------------------------
+[ 2020-03-01T17:35:26+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.136534s] [吞吐率：7.32req/s] [内存消耗：2,791.06kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:460]
+---------------------------------------------------------------
+[ 2020-03-01T17:35:35+08:00 ] 0.0.0.0 GET localhost/storage_record
+[运行时间：0.136412s] [吞吐率：7.33req/s] [内存消耗：2,791.09kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:460]
+---------------------------------------------------------------
+[ 2020-03-01T17:36:27+08:00 ] 0.0.0.0 GET localhost/storage_record
+[运行时间：0.126435s] [吞吐率：7.91req/s] [内存消耗：2,791.23kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:460]
+---------------------------------------------------------------
+[ 2020-03-01T17:37:29+08:00 ] 0.0.0.0 GET localhost/storage_record
+[运行时间：0.133677s] [吞吐率：7.48req/s] [内存消耗：2,791.09kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:460]
+---------------------------------------------------------------
+[ 2020-03-01T17:37:39+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.135426s] [吞吐率：7.38req/s] [内存消耗：2,791.06kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:460]
+---------------------------------------------------------------
+[ 2020-03-01T17:38:42+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.133169s] [吞吐率：7.51req/s] [内存消耗：2,791.06kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:460]
+---------------------------------------------------------------
+[ 2020-03-01T17:38:51+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.202238s] [吞吐率：4.94req/s] [内存消耗：2,791.06kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:460]
+---------------------------------------------------------------
+[ 2020-03-01T17:38:51+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.164295s] [吞吐率：6.09req/s] [内存消耗：2,791.06kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:460]
+---------------------------------------------------------------
+[ 2020-03-01T17:39:48+08:00 ] 0.0.0.0 GET localhost/storage_record
+[运行时间：0.153202s] [吞吐率：6.53req/s] [内存消耗：2,791.46kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:460]
+---------------------------------------------------------------
+[ 2020-03-01T17:39:55+08:00 ] 0.0.0.0 GET localhost/storage_record
+[运行时间：0.166401s] [吞吐率：6.01req/s] [内存消耗：2,822.52kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:464]
+---------------------------------------------------------------
+[ 2020-03-01T17:40:05+08:00 ] 0.0.0.0 GET localhost/storage_record
+[运行时间：0.172490s] [吞吐率：5.80req/s] [内存消耗：2,822.44kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:464]
+---------------------------------------------------------------
+[ 2020-03-01T17:40:06+08:00 ] 0.0.0.0 GET localhost/storage_record
+[运行时间：0.169703s] [吞吐率：5.89req/s] [内存消耗：2,822.44kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:464]
+---------------------------------------------------------------
+[ 2020-03-01T17:40:07+08:00 ] 0.0.0.0 GET localhost/storage_record
+[运行时间：0.154330s] [吞吐率：6.48req/s] [内存消耗：2,822.52kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:464]
+---------------------------------------------------------------
+[ 2020-03-01T17:40:50+08:00 ] 0.0.0.0 GET localhost/storage_record
+[运行时间：0.527531s] [吞吐率：1.90req/s] [内存消耗：4,593.41kb] [文件加载：50]
+[ error ] [0]variable type error： array[D:\php-workspace\wms\tp5\thinkphp\library\think\Response.php:316]
+---------------------------------------------------------------
+[ 2020-03-01T17:41:13+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.294635s] [吞吐率：3.39req/s] [内存消耗：3,123.96kb] [文件加载：51]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:460]
+---------------------------------------------------------------
+[ 2020-03-01T17:48:28+08:00 ] 0.0.0.0 GET localhost/storage_query?page=1&limit=6
+[运行时间：0.103320s] [吞吐率：9.68req/s] [内存消耗：2,668.75kb] [文件加载：45]
+[ error ] [2]stripos() expects parameter 1 to be string, array given[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Query.php:568]
+---------------------------------------------------------------
+[ 2020-03-01T17:48:49+08:00 ] 0.0.0.0 GET localhost/storage_query?page=1&limit=6
+[运行时间：0.099469s] [吞吐率：10.05req/s] [内存消耗：2,668.75kb] [文件加载：45]
+[ error ] [2]stripos() expects parameter 1 to be string, array given[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Query.php:568]
+---------------------------------------------------------------
+[ 2020-03-01T17:51:09+08:00 ] 0.0.0.0 GET localhost/storage_query?page=1&limit=6
+[运行时间：0.110863s] [吞吐率：9.02req/s] [内存消耗：2,668.75kb] [文件加载：45]
+[ error ] [2]stripos() expects parameter 1 to be string, array given[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Query.php:568]
+---------------------------------------------------------------
+[ 2020-03-01T17:51:27+08:00 ] 0.0.0.0 GET localhost/storage_query
+[运行时间：0.095574s] [吞吐率：10.46req/s] [内存消耗：2,668.83kb] [文件加载：45]
+[ error ] [2]stripos() expects parameter 1 to be string, array given[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Query.php:568]
+---------------------------------------------------------------
+[ 2020-03-01T17:51:39+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.595676s] [吞吐率：1.68req/s] [内存消耗：4,605.92kb] [文件加载：51]
+[ error ] [2]stripos() expects parameter 1 to be string, array given[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Query.php:568]
+---------------------------------------------------------------
+[ 2020-03-01T17:51:41+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.561455s] [吞吐率：1.78req/s] [内存消耗：4,605.92kb] [文件加载：51]
+[ error ] [2]stripos() expects parameter 1 to be string, array given[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Query.php:568]
+---------------------------------------------------------------
+[ 2020-03-01T17:51:44+08:00 ] 0.0.0.0 GET localhost/storage_query
+[运行时间：0.112503s] [吞吐率：8.89req/s] [内存消耗：2,668.48kb] [文件加载：45]
+[ error ] [2]stripos() expects parameter 1 to be string, array given[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Query.php:568]
+---------------------------------------------------------------
+[ 2020-03-01T17:51:46+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.574037s] [吞吐率：1.74req/s] [内存消耗：4,605.92kb] [文件加载：51]
+[ error ] [2]stripos() expects parameter 1 to be string, array given[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Query.php:568]
+---------------------------------------------------------------
+[ 2020-03-01T17:51:47+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.558966s] [吞吐率：1.79req/s] [内存消耗：4,605.92kb] [文件加载：51]
+[ error ] [2]stripos() expects parameter 1 to be string, array given[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Query.php:568]
+---------------------------------------------------------------
+[ 2020-03-01T17:51:48+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.538446s] [吞吐率：1.86req/s] [内存消耗：4,605.92kb] [文件加载：51]
+[ error ] [2]stripos() expects parameter 1 to be string, array given[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Query.php:568]
+---------------------------------------------------------------
+[ 2020-03-01T17:51:54+08:00 ] 0.0.0.0 GET localhost/storage_query
+[运行时间：0.099203s] [吞吐率：10.08req/s] [内存消耗：2,668.48kb] [文件加载：45]
+[ error ] [2]stripos() expects parameter 1 to be string, array given[D:\php-workspace\wms\tp5\thinkphp\library\think\db\Query.php:568]
+---------------------------------------------------------------
+[ 2020-03-01T17:52:04+08:00 ] 0.0.0.0 GET localhost/storage_query
+[运行时间：0.096652s] [吞吐率：10.35req/s] [内存消耗：2,642.20kb] [文件加载：44]
+[ error ] [0]variable type error： array[D:\php-workspace\wms\tp5\thinkphp\library\think\Response.php:316]
+---------------------------------------------------------------
+[ 2020-03-01T17:56:45+08:00 ] 0.0.0.0 GET localhost/storage_query?page=1&limit=6
+[运行时间：0.164104s] [吞吐率：6.09req/s] [内存消耗：2,788.59kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:496]
+---------------------------------------------------------------
+[ 2020-03-01T17:56:55+08:00 ] 0.0.0.0 GET localhost/storage_query
+[运行时间：0.129343s] [吞吐率：7.73req/s] [内存消耗：2,788.47kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:496]
+---------------------------------------------------------------
+[ 2020-03-01T17:58:01+08:00 ] 0.0.0.0 GET localhost/storage_query
+[运行时间：0.151332s] [吞吐率：6.61req/s] [内存消耗：2,870.48kb] [文件加载：48]
+[ error ] [0]variable type error： array[D:\php-workspace\wms\tp5\thinkphp\library\think\Response.php:316]
+---------------------------------------------------------------
+[ 2020-03-01T18:02:37+08:00 ] 0.0.0.0 GET localhost/storage_query?page=1&limit=6
+[运行时间：0.198045s] [吞吐率：5.05req/s] [内存消耗：2,908.83kb] [文件加载：51]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:498]
+---------------------------------------------------------------
+[ 2020-03-01T19:26:16+08:00 ] 0.0.0.0 POST localhost/in_out_storage/1/1
+[运行时间：0.060130s] [吞吐率：16.63req/s] [内存消耗：1,878.80kb] [文件加载：38]
+[ error ] [8]未定义数组索引: user[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:55]
+---------------------------------------------------------------
+[ 2020-03-01T19:30:49+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/142/num/100
+[运行时间：0.133110s] [吞吐率：7.51req/s] [内存消耗：2,848.09kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:30:53+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/143/num/100
+[运行时间：0.143582s] [吞吐率：6.96req/s] [内存消耗：2,848.09kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:30:56+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/144/num/100
+[运行时间：0.134352s] [吞吐率：7.44req/s] [内存消耗：2,848.09kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:31:03+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/145/num/100
+[运行时间：0.133629s] [吞吐率：7.48req/s] [内存消耗：2,848.09kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:31:35+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/146/num/100
+[运行时间：0.166926s] [吞吐率：5.99req/s] [内存消耗：2,848.09kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:31:41+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/146/num/100
+[运行时间：0.155568s] [吞吐率：6.43req/s] [内存消耗：2,848.01kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:35:41+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/146/num/100
+[运行时间：0.143600s] [吞吐率：6.96req/s] [内存消耗：2,848.23kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:35:44+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/146/num/100
+[运行时间：0.130037s] [吞吐率：7.69req/s] [内存消耗：2,848.23kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:35:45+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/146/num/100
+[运行时间：0.138540s] [吞吐率：7.22req/s] [内存消耗：2,848.55kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:35:46+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/146/num/100
+[运行时间：0.130660s] [吞吐率：7.65req/s] [内存消耗：2,848.23kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:35:47+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/146/num/100
+[运行时间：0.130887s] [吞吐率：7.64req/s] [内存消耗：2,848.23kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:35:49+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/146/num/100
+[运行时间：0.135417s] [吞吐率：7.38req/s] [内存消耗：2,848.55kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:35:49+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/146/num/100
+[运行时间：0.132279s] [吞吐率：7.56req/s] [内存消耗：2,848.23kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:35:50+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/146/num/100
+[运行时间：0.129041s] [吞吐率：7.75req/s] [内存消耗：2,848.23kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:35:50+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/146/num/100
+[运行时间：0.131492s] [吞吐率：7.61req/s] [内存消耗：2,848.49kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:35:50+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/146/num/100
+[运行时间：0.134141s] [吞吐率：7.45req/s] [内存消耗：2,848.20kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:35:51+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/146/num/100
+[运行时间：0.123174s] [吞吐率：8.12req/s] [内存消耗：2,848.23kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:35:54+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/146/num/100
+[运行时间：0.127863s] [吞吐率：7.82req/s] [内存消耗：2,848.55kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:35:54+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/146/num/100
+[运行时间：0.125166s] [吞吐率：7.99req/s] [内存消耗：2,848.23kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T19:36:17+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/146/num/100
+[运行时间：0.121982s] [吞吐率：8.20req/s] [内存消耗：2,821.48kb] [文件加载：49]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:223]
+---------------------------------------------------------------
+[ 2020-03-01T20:38:34+08:00 ] 0.0.0.0 GET localhost/in_out_storage/1/ajax/146/num/100
+[运行时间：0.149831s] [吞吐率：6.67req/s] [内存消耗：2,848.07kb] [文件加载：50]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:224]
+---------------------------------------------------------------
+[ 2020-03-01T20:51:15+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.557931s] [吞吐率：1.79req/s] [内存消耗：4,638.13kb] [文件加载：51]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:680]
+---------------------------------------------------------------
+[ 2020-03-01T20:52:27+08:00 ] 0.0.0.0 GET localhost/storage_record
+[运行时间：0.518026s] [吞吐率：1.93req/s] [内存消耗：4,638.06kb] [文件加载：51]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:680]
+---------------------------------------------------------------
+[ 2020-03-01T20:53:18+08:00 ] 0.0.0.0 GET localhost/storage_record
+[运行时间：0.465629s] [吞吐率：2.15req/s] [内存消耗：4,304.85kb] [文件加载：49]
+[ error ] [0]variable type error： array[D:\php-workspace\wms\tp5\thinkphp\library\think\Response.php:316]
+---------------------------------------------------------------
+[ 2020-03-01T20:53:49+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.531537s] [吞吐率：1.88req/s] [内存消耗：4,638.13kb] [文件加载：51]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:680]
+---------------------------------------------------------------
+[ 2020-03-01T20:54:53+08:00 ] 0.0.0.0 GET localhost/storage_record?page=1&limit=6
+[运行时间：0.567106s] [吞吐率：1.76req/s] [内存消耗：4,638.13kb] [文件加载：51]
+[ error ] [8]Trying to get property of non-object[D:\php-workspace\wms\tp5\application\user\controller\Storeroom.php:680]

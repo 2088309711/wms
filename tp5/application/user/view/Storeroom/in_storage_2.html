@@ -35,7 +35,7 @@
 {block name="jsScript"}
 <script>
 
-
+    var navTop = 2, navLeft = 1;
     //Demo
     layui.use(['transfer', 'layer', 'util'], function () {
         var $ = layui.$
@@ -51,23 +51,10 @@
         });
 
 
-        var data1 = [
-            {"value": "1", "title": "李白"}
-            , {"value": "2", "title": "杜甫"}
-            , {"value": "3", "title": "苏轼"}
-            , {"value": "4", "title": "李清照"}
-            , {"value": "5", "title": "鲁迅"}
-            , {"value": "6", "title": "巴金"}
-            , {"value": "7", "title": "冰心"}
-            , {"value": "8", "title": "矛盾"}
-            , {"value": "9", "title": "贤心"}
-        ]
-
-
         transfer.render({
             elem: '#test4'
-            , data: data1
-            , title: ['所有记录的货品', '入库的货品']
+            , data: {$product}
+            , title: ['所有货品', '入库货品']
             , showSearch: true
             , width: 400 //定义宽度
             , height: 500 //定义高度

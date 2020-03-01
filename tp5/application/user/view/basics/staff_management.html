@@ -49,7 +49,7 @@
 {block name="jsScript"}
 <script>
 
-
+    var navTop = 5, navLeft = 3;
     //Demo
     layui.use(['form', 'table'], function () {
         var form = layui.form, table = layui.table;
@@ -63,60 +63,3 @@
 
 </script>
 {/block}
-
-
-*******************
-
-
-if (request()->isAjax()) {
-
-
-$tt = TestInout::all();
-
-
-foreach ($tt as $item => $value) {
-
-
-$tp = TbProduct::get(['encode' => $value->item]);
-
-$tt[$item]->name = $tp->name;
-$tt[$item]->size = $tp->size;
-$tt[$item]->unit = $tp->unit;
-
-
-if ($value->type != 'none') {
-$ti = TbInout::get($value->type);
-$tt[$item]->type = $ti->name;
-
-
-$tr = TestReceipt::get($value->receipt);
-$tw = TableWarehouse::get($tr->warehouse);
-
-
-} else {
-$tt[$item]->type = '仓库调拨';
-
-
-$te = TestExchange::get($value->receipt);
-$tw = TableWarehouse::get($te->warehouse);
-
-}
-$tt[$item]->warehouse = $tw->name;
-}
-
-$result = [
-"code" => 0,
-"msg" => "",
-"count" => TestInout::count(),
-"data" => $tt
-];
-
-return $result;
-
-} else {
-
-return $this->fetch();
-
-}
-
-

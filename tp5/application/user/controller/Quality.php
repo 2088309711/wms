@@ -128,9 +128,12 @@ class Quality extends Filter
     {
         if (request()->isAjax()) {
 
-
             $employee = Product::all();
 
+            foreach ($employee as $i) {
+                $i['unit'] = $i->measureunit->name;
+                $i['type'] = $i->itemclassify->name;
+            }
 
             $result = [
                 "code" => 0,
@@ -182,6 +185,16 @@ class Quality extends Filter
             }
 
         } else {
+
+
+            //measureunit
+
+
+            $m = Measureunit::all(['user' => $this->getUserName()]);
+
+
+            $this->assign('measureunit', $m);
+
 
             return $this->fetch();
         }

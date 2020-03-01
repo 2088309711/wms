@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"D:\php-workspace\wms/tp5/application/user\view\index\index.html";i:1581872757;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1581743400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"D:\php-workspace\wms/tp5/application/user\view\index\index.html";i:1581872757;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1582601906;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1583058228;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,23 +36,27 @@
         </div>
 
 
-        <ul class="layui-nav layui-layout-left" style="left:260px;">
+        <ul id="nav-top" class="layui-nav layui-layout-left" style="left:260px;">
             <li class="layui-nav-item"><a href="/menu">
                 <i class="layui-icon layui-icon-app"></i> 功能</a></li>
-            <li class="layui-nav-item"><a href="/system">
-                <i class="layui-icon layui-icon-console"></i> 系统</a></li>
+
             <li class="layui-nav-item"><a href="/Storeroom">
                 <i class="layui-icon layui-icon-form"></i> 仓库</a></li>
-            <li class="layui-nav-item"><a href="/quality">
-                <i class="layui-icon layui-icon-tabs"></i> 货品</a></li>
+
             <li class="layui-nav-item"><a href="/repertory">
                 <i class="layui-icon layui-icon-template"></i> 库存</a></li>
+
+            <li class="layui-nav-item"><a href="/quality">
+                <i class="layui-icon layui-icon-tabs"></i> 货品</a></li>
+
             <li class="layui-nav-item"><a href="/basics">
                 <i class="layui-icon layui-icon-user"></i> 基础</a></li>
 
 
-            <li class="layui-nav-item"><a href="/other">
-                <i class="layui-icon layui-icon-util"></i> 其他</a></li>
+            <li class="layui-nav-item"><a href="/system">
+                <i class="layui-icon layui-icon-console"></i> 系统</a></li>
+
+
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
@@ -70,11 +74,11 @@
 
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
-            <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/in_storage">入库</a></li>
-<li class="layui-nav-item"><a href="/out_storage">出库</a></li>
-<li class="layui-nav-item"><a href="/storage_record">出入库明细</a></li>
-<li class="layui-nav-item"><a href="/storage_query">出入库查询</a></li>
+            <ul id="nav-left" class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item"><a href="/in_out_storage/1/1">入库</a></li>
+<li class="layui-nav-item"><a href="/in_out_storage/2/1">出库</a></li>
+<li class="layui-nav-item"><a href="/storage_record">出入库货品查询</a></li>
+<li class="layui-nav-item"><a href="/storage_query">出入库单据查询</a></li>
             </ul>
         </div>
     </div>
@@ -279,6 +283,7 @@
 </div>
 
 <script src="/statics/layui/layui.js"></script>
+
 <script>
     $ = null;
 
@@ -309,13 +314,38 @@
         var element = layui.element;
         $ = layui.jquery;
         $(function () {
+
+
+            // 选中菜单
+            try {
+                $("#nav-top").children("li.layui-nav-item").eq(navTop - 1).addClass('layui-this');
+            } catch (e) {
+            }
+
+            try {
+                $("#nav-left").children("li.layui-nav-item").eq(navLeft - 1).addClass('layui-this');
+            } catch (e) {
+            }
+
+
+            // 收缩/展开菜单
             $('#nav-switch').click(function () {
                 $('#main-nav').data('switch') == 1 ? fold_nav('close') : fold_nav('open');
             });
-            execute_event();
+
+
+            try {
+                execute_event();
+            } catch (e) {
+            }
+
+
         })
     });
 </script>
+
+
+
 
 </body>
 </html>

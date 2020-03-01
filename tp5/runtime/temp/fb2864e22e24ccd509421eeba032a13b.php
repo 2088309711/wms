@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"D:\php-workspace\wms/tp5/application/user\view\system\reduction_of_data.html";i:1581685685;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:62:"D:\php-workspace\wms\tp5\application\user\view\nav_system.html";i:1581743400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"D:\php-workspace\wms/tp5/application/user\view\system\reduction_of_data.html";i:1581685685;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1582547218;s:62:"D:\php-workspace\wms\tp5\application\user\view\nav_system.html";i:1581743400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,8 +51,7 @@
                 <i class="layui-icon layui-icon-user"></i> 基础</a></li>
 
 
-            <li class="layui-nav-item"><a href="/other">
-                <i class="layui-icon layui-icon-util"></i> 其他</a></li>
+           
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">

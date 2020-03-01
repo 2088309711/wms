@@ -12,6 +12,11 @@
 // 应用公共文件
 
 
+function halt_clean($var)
+{
+    halt(json_decode(json_encode($var)));
+}
+
 /**
  * 时间戳转日期 Y-m-d
  * @param $time

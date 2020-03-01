@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"D:\php-workspace\wms/tp5/application/user\view\storeroom\storage_record.html";i:1582521181;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1582520788;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"D:\php-workspace\wms/tp5/application/user\view\storeroom\storage_record.html";i:1583055663;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1582601906;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1583058228;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,23 +36,27 @@
         </div>
 
 
-        <ul class="layui-nav layui-layout-left" style="left:260px;">
+        <ul id="nav-top" class="layui-nav layui-layout-left" style="left:260px;">
             <li class="layui-nav-item"><a href="/menu">
                 <i class="layui-icon layui-icon-app"></i> 功能</a></li>
-            <li class="layui-nav-item"><a href="/system">
-                <i class="layui-icon layui-icon-console"></i> 系统</a></li>
+
             <li class="layui-nav-item"><a href="/Storeroom">
                 <i class="layui-icon layui-icon-form"></i> 仓库</a></li>
-            <li class="layui-nav-item"><a href="/quality">
-                <i class="layui-icon layui-icon-tabs"></i> 货品</a></li>
+
             <li class="layui-nav-item"><a href="/repertory">
                 <i class="layui-icon layui-icon-template"></i> 库存</a></li>
+
+            <li class="layui-nav-item"><a href="/quality">
+                <i class="layui-icon layui-icon-tabs"></i> 货品</a></li>
+
             <li class="layui-nav-item"><a href="/basics">
                 <i class="layui-icon layui-icon-user"></i> 基础</a></li>
 
 
-            <li class="layui-nav-item"><a href="/other">
-                <i class="layui-icon layui-icon-util"></i> 其他</a></li>
+            <li class="layui-nav-item"><a href="/system">
+                <i class="layui-icon layui-icon-console"></i> 系统</a></li>
+
+
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
@@ -70,9 +74,9 @@
 
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
-            <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/in_storage/1">入库</a></li>
-<li class="layui-nav-item"><a href="/out_storage/1">出库</a></li>
+            <ul id="nav-left" class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item"><a href="/in_out_storage/1/1">入库</a></li>
+<li class="layui-nav-item"><a href="/in_out_storage/2/1">出库</a></li>
 <li class="layui-nav-item"><a href="/storage_record">出入库货品查询</a></li>
 <li class="layui-nav-item"><a href="/storage_query">出入库单据查询</a></li>
             </ul>
@@ -140,18 +144,19 @@
                 <thead>
                 <tr>
                     <th lay-data="{field:'id',align:'center'}" rowspan="2">记录编号</th>
-                    <th lay-data="{align:'center'}" colspan="4">货品信息</th>
+                    <th lay-data="{align:'center'}" colspan="5">货品信息</th>
                     <th lay-data="{align:'center'}" colspan="3">出入库信息</th>
                     <th lay-data="{align:'center'}" colspan="2">所属单据信息</th>
                 </tr>
                 <tr>
                     <th lay-data="{field:'product_id',align:'center'}">货品ID</th>
                     <th lay-data="{field:'name',align:'center'}">名称</th>
-                    <th lay-data="{field:'size',align:'center'}">型号</th>
+                    <th lay-data="{field:'model2',align:'center'}">型号</th>
+                    <th lay-data="{field:'size',align:'center'}">规格</th>
                     <th lay-data="{field:'unit',align:'center'}">单位</th>
                     <th lay-data="{field:'num',align:'center'}">数量</th>
                     <th lay-data="{field:'price',align:'center'}">价格</th>
-                    <th lay-data="{field:'type',align:'center'}">类型</th>
+                    <th lay-data="{field:'type_big',align:'center'}">类型</th>
                     <th lay-data="{field:'code',align:'center'}">单据编码</th>
                     <th lay-data="{field:'warehouse',align:'center'}">仓库</th>
                 </tr>
@@ -187,6 +192,23 @@
 </div>
 
 <script src="/statics/layui/layui.js"></script>
+
+<script>
+
+    var navTop = 2, navLeft = 3;
+    //Demo
+    layui.use(['form', 'table'], function () {
+        var form = layui.form, table = layui.table;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+
+</script>
+
 <script>
     $ = null;
 
@@ -217,29 +239,38 @@
         var element = layui.element;
         $ = layui.jquery;
         $(function () {
+
+
+            // 选中菜单
+            try {
+                $("#nav-top").children("li.layui-nav-item").eq(navTop - 1).addClass('layui-this');
+            } catch (e) {
+            }
+
+            try {
+                $("#nav-left").children("li.layui-nav-item").eq(navLeft - 1).addClass('layui-this');
+            } catch (e) {
+            }
+
+
+            // 收缩/展开菜单
             $('#nav-switch').click(function () {
                 $('#main-nav').data('switch') == 1 ? fold_nav('close') : fold_nav('open');
             });
-            execute_event();
+
+
+            try {
+                execute_event();
+            } catch (e) {
+            }
+
+
         })
     });
 </script>
 
-<script>
 
 
-    //Demo
-    layui.use(['form', 'table'], function () {
-        var form = layui.form, table = layui.table;
-
-        //监听提交
-        form.on('submit(formDemo)', function (data) {
-            layer.msg(JSON.stringify(data.field));
-            return false;
-        });
-    });
-
-</script>
 
 </body>
 </html>

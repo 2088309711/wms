@@ -15,6 +15,7 @@
                 <tr>
                     <th lay-data="{field:'id',align:'center'}">编号</th>
                     <th lay-data="{field:'name',align:'center'}">货品名称</th>
+                    <th lay-data="{field:'type',align:'center'}">类别</th>
                     <th lay-data="{field:'size',align:'center'}">规格</th>
                     <th lay-data="{field:'unit',align:'center'}">计量单位</th>
                     <th lay-data="{field:'upperlimit',align:'center'}">库存上限</th>
@@ -47,7 +48,7 @@
 
 {block name="jsScript"}
 <script>
-
+    var navTop = 4, navLeft = 2;
 
     //Demo
     layui.use(['form', 'table'], function () {

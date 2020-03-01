@@ -13,5 +13,8 @@ use think\Model;
 
 class Employee extends Model
 {
-
+    public function depart_()
+    {
+        return $this->hasOne('Depart', 'id', 'depart')->field('name');
+    }
 }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"D:\php-workspace\wms/tp5/application/user\view\basics\add_staff.html";i:1581782954;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:62:"D:\php-workspace\wms\tp5\application\user\view\nav_basics.html";i:1581870660;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"D:\php-workspace\wms/tp5/application/user\view\basics\add_staff.html";i:1582620313;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1582601906;s:62:"D:\php-workspace\wms\tp5\application\user\view\nav_basics.html";i:1581870660;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,23 +36,27 @@
         </div>
 
 
-        <ul class="layui-nav layui-layout-left" style="left:260px;">
+        <ul id="nav-top" class="layui-nav layui-layout-left" style="left:260px;">
             <li class="layui-nav-item"><a href="/menu">
                 <i class="layui-icon layui-icon-app"></i> 功能</a></li>
-            <li class="layui-nav-item"><a href="/system">
-                <i class="layui-icon layui-icon-console"></i> 系统</a></li>
+
             <li class="layui-nav-item"><a href="/Storeroom">
                 <i class="layui-icon layui-icon-form"></i> 仓库</a></li>
-            <li class="layui-nav-item"><a href="/quality">
-                <i class="layui-icon layui-icon-tabs"></i> 货品</a></li>
+
             <li class="layui-nav-item"><a href="/repertory">
                 <i class="layui-icon layui-icon-template"></i> 库存</a></li>
+
+            <li class="layui-nav-item"><a href="/quality">
+                <i class="layui-icon layui-icon-tabs"></i> 货品</a></li>
+
             <li class="layui-nav-item"><a href="/basics">
                 <i class="layui-icon layui-icon-user"></i> 基础</a></li>
 
 
-            <li class="layui-nav-item"><a href="/other">
-                <i class="layui-icon layui-icon-util"></i> 其他</a></li>
+            <li class="layui-nav-item"><a href="/system">
+                <i class="layui-icon layui-icon-console"></i> 系统</a></li>
+
+
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
@@ -70,7 +74,7 @@
 
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
-            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+            <ul id="nav-left" class="layui-nav layui-nav-tree" lay-filter="test">
                 <li class="layui-nav-item"><a href="/exchange_unit_management">往来单位管理</a></li>
 <li class="layui-nav-item"><a href="/sector_management">部门管理</a></li>
 <li class="layui-nav-item"><a href="/staff_management">员工管理</a></li>
@@ -111,21 +115,6 @@
 
 
                     <div class="layui-inline">
-                        <label class="layui-form-label">性别</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="sex" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">职位</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="post" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-
-                    <div class="layui-inline">
                         <label class="layui-form-label">电话</label>
                         <div class="layui-input-inline">
                             <input type="text" name="phone" autocomplete="off" class="layui-input">
@@ -140,12 +129,45 @@
                         </div>
                     </div>
 
+                </div>
+
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">性别</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="sex" value="0" title="男" checked>
+                        <input type="radio" name="sex" value="1" title="女">
+                    </div>
+                </div>
+
+
+                <div class="layui-form-item">
+
+
                     <div class="layui-inline">
                         <label class="layui-form-label">部门</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="depart" autocomplete="off" class="layui-input">
+
+
+                            <select name="depart" lay-verify="required">
+                                <option value=""></option>
+                                <?php if(is_array($depart) || $depart instanceof \think\Collection || $depart instanceof \think\Paginator): $i = 0; $__LIST__ = $depart;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                <option value="<?php echo $vo['id']; ?>"><?php echo $vo['name']; ?></option>
+                                <?php endforeach; endif; else: echo "" ;endif; ?>
+                            </select>
+
                         </div>
                     </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">职位</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="post" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
                 </div>
 
 
@@ -180,6 +202,23 @@
 </div>
 
 <script src="/statics/layui/layui.js"></script>
+
+<script>
+
+    var navTop = 5, navLeft = 3;
+    //Demo
+    layui.use(['form', 'table'], function () {
+        var form = layui.form, table = layui.table;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            // layer.msg(JSON.stringify(data.field));
+            // return false;
+        });
+    });
+
+</script>
+
 <script>
     $ = null;
 
@@ -210,29 +249,38 @@
         var element = layui.element;
         $ = layui.jquery;
         $(function () {
+
+
+            // 选中菜单
+            try {
+                $("#nav-top").children("li.layui-nav-item").eq(navTop - 1).addClass('layui-this');
+            } catch (e) {
+            }
+
+            try {
+                $("#nav-left").children("li.layui-nav-item").eq(navLeft - 1).addClass('layui-this');
+            } catch (e) {
+            }
+
+
+            // 收缩/展开菜单
             $('#nav-switch').click(function () {
                 $('#main-nav').data('switch') == 1 ? fold_nav('close') : fold_nav('open');
             });
-            execute_event();
+
+
+            try {
+                execute_event();
+            } catch (e) {
+            }
+
+
         })
     });
 </script>
 
-<script>
 
 
-    //Demo
-    layui.use(['form', 'table'], function () {
-        var form = layui.form, table = layui.table;
-
-        //监听提交
-        form.on('submit(formDemo)', function (data) {
-            // layer.msg(JSON.stringify(data.field));
-            // return false;
-        });
-    });
-
-</script>
 
 </body>
 </html>

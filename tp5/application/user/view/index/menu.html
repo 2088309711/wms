@@ -1,5 +1,5 @@
 {extend name="base" /}
-
+{block name="nav"}{include file="nav_menu" /}{/block}
 {block name="content"}
 
 
@@ -793,7 +793,7 @@
 {block name="jsScript"}
 <script>
     function execute_event() {
-        fold_nav('close');
+        // fold_nav('close');
     }
 </script>
 

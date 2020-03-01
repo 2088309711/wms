@@ -47,7 +47,7 @@
 {block name="jsScript"}
 <script>
 
-
+    var navTop = 2, navLeft = 2;
     //Demo
     layui.use(['form', 'table', 'jquery'], function () {
         var form = layui.form,
@@ -56,7 +56,7 @@
 
         table.on('edit(test)', function (obj) { //注：edit是固定事件名，test是table原始容器的属性 lay-filter="对应的值"
 
-            $.get('/out_storage/ajax/' + obj.data.id + '/' + obj.field + '/' + obj.value, function (data) {
+            $.get('/in_out_storage/2/ajax/' + obj.data.id + '/' + obj.field + '/' + obj.value, function (data) {
                 if (data.code == 0) {
                     layer.msg(data.msg)
                 }

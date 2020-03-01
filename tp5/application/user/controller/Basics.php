@@ -31,6 +31,12 @@ class Basics extends Filter
             $employee = Company::all();
 
 
+            $type = ['经销商', '供应商'];
+            foreach ($employee as $i) {
+                $i['type'] = $type[$i['type']];
+            }
+
+
             $result = [
                 "code" => 0,
                 "msg" => "",
@@ -54,29 +60,10 @@ class Basics extends Filter
 
             $data = input();
 
+            $data['user'] = $this->getUserName();
 
-            $w = new Company;
-            $w->name = $data['name'];
-            $w->type = $data['type'];
-            $w->contacts = $data['contacts'];
-            $w->phone = $data['phone'];
-            $w->fax = $data['fax'];
-            $w->email = $data['email'];
-
-
-            $w->bank = $data['bank'];
-            $w->bankaccount = $data['bankaccount'];
-            $w->tariff = $data['tariff'];
-            $w->area = $data['area'];
-            $w->province = $data['province'];
-            $w->city = $data['city'];
-            $w->address = $data['address'];
-            $w->zipcode = $data['zipcode'];
-            $w->remark = $data['remark'];
-
-
-            $w->user = $this->getUserName();
-            if ($w->save()) {
+            $w = new Company($data);
+            if ($w->allowField(true)->save()) {
                 $this->redirect('/exchange_unit_management');
             } else {
                 $this->error('添加失败');
@@ -155,6 +142,11 @@ class Basics extends Filter
 
             $employee = Employee::all();
 
+            $sex = ['男', '女'];
+            foreach ($employee as $i) {
+                $i['sex'] = $sex[$i['sex']];
+                $i['depart'] = $i->depart_->name;
+            }
 
             $result = [
                 "code" => 0,
@@ -181,21 +173,20 @@ class Basics extends Filter
             $data = input();
 
 
-            $w = new Employee;
-            $w->name = $data['name'];
-            $w->sex = $data['sex'];
-            $w->phone = $data['phone'];
-            $w->address = $data['address'];
-            $w->post = $data['post'];
-            $w->depart = $data['depart'];
-            $w->user = $this->getUserName();
-            if ($w->save()) {
+            $data['user'] = $this->getUserName();
+            $w = new Employee($data);
+            if ($w->allowField(true)->save()) {
                 $this->redirect('/staff_management');
             } else {
                 $this->error('添加失败');
             }
 
         } else {
+
+
+            $d = Depart::all(['user' => $this->getUserName()]);
+
+            $this->assign('depart', $d);
 
             return $this->fetch();
         }
@@ -278,6 +269,14 @@ class Basics extends Filter
             $employee = Categories::all();
 
 
+            $cost = ['不参与', '参与'];
+            $type = ['出库', '入库'];
+            foreach ($employee as $i) {
+                $i['cost'] = $cost[$i['cost']];
+                $i['type'] = $type[$i['type']];
+            }
+
+
             $result = [
                 "code" => 0,
                 "msg" => "",
@@ -302,14 +301,11 @@ class Basics extends Filter
 
             $data = input();
 
+            $data['cost'] = input('?cost') ? 1 : 0;
 
-            $w = new Categories;
-            $w->name = $data['name'];
-            $w->type = $data['type'];
-            $w->cost = $data['cost'];
-
-            $w->user = $this->getUserName();
-            if ($w->save()) {
+            $data['user'] = $this->getUserName();
+            $w = new Categories($data);
+            if ($w->allowField(true)->save()) {
                 $this->redirect('/come_enter_lib_set');
             } else {
                 $this->error('添加失败');

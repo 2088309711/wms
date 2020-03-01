@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:75:"D:\php-workspace\wms/tp5/application/user\view\storeroom\out_storage_1.html";i:1582519609;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1582519346;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:75:"D:\php-workspace\wms/tp5/application/user\view\storeroom\out_storage_1.html";i:1582717078;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1582601906;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1583058228;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,23 +36,27 @@
         </div>
 
 
-        <ul class="layui-nav layui-layout-left" style="left:260px;">
+        <ul id="nav-top" class="layui-nav layui-layout-left" style="left:260px;">
             <li class="layui-nav-item"><a href="/menu">
                 <i class="layui-icon layui-icon-app"></i> 功能</a></li>
-            <li class="layui-nav-item"><a href="/system">
-                <i class="layui-icon layui-icon-console"></i> 系统</a></li>
+
             <li class="layui-nav-item"><a href="/Storeroom">
                 <i class="layui-icon layui-icon-form"></i> 仓库</a></li>
-            <li class="layui-nav-item"><a href="/quality">
-                <i class="layui-icon layui-icon-tabs"></i> 货品</a></li>
+
             <li class="layui-nav-item"><a href="/repertory">
                 <i class="layui-icon layui-icon-template"></i> 库存</a></li>
+
+            <li class="layui-nav-item"><a href="/quality">
+                <i class="layui-icon layui-icon-tabs"></i> 货品</a></li>
+
             <li class="layui-nav-item"><a href="/basics">
                 <i class="layui-icon layui-icon-user"></i> 基础</a></li>
 
 
-            <li class="layui-nav-item"><a href="/other">
-                <i class="layui-icon layui-icon-util"></i> 其他</a></li>
+            <li class="layui-nav-item"><a href="/system">
+                <i class="layui-icon layui-icon-console"></i> 系统</a></li>
+
+
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
@@ -70,11 +74,11 @@
 
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
-            <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/in_storage/1">入库</a></li>
-<li class="layui-nav-item"><a href="/out_storage/1">出库</a></li>
-<li class="layui-nav-item"><a href="/storage_record">出入库明细</a></li>
-<li class="layui-nav-item"><a href="/storage_query">出入库查询</a></li>
+            <ul id="nav-left" class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item"><a href="/in_out_storage/1/1">入库</a></li>
+<li class="layui-nav-item"><a href="/in_out_storage/2/1">出库</a></li>
+<li class="layui-nav-item"><a href="/storage_record">出入库货品查询</a></li>
+<li class="layui-nav-item"><a href="/storage_query">出入库单据查询</a></li>
             </ul>
         </div>
     </div>
@@ -107,7 +111,7 @@
                     <div class="layui-inline">
                         <label class="layui-form-label">录单日期</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="date" autocomplete="off" class="layui-input">
+                            <input type="text" name="date" class="layui-input" autocomplete="off" id="test1">
                         </div>
                     </div>
 
@@ -133,11 +137,9 @@
 
                             <select name="supplier" lay-verify="required">
                                 <option value=""></option>
-                                <option value="0">北京</option>
-                                <option value="1">上海</option>
-                                <option value="2">广州</option>
-                                <option value="3">深圳</option>
-                                <option value="4">杭州</option>
+                                <?php if(is_array($company) || $company instanceof \think\Collection || $company instanceof \think\Paginator): $i = 0; $__LIST__ = $company;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                <option value="<?php echo $vo['id']; ?>"><?php echo $vo['name']; ?></option>
+                                <?php endforeach; endif; else: echo "" ;endif; ?>
                             </select>
 
 
@@ -150,11 +152,9 @@
                         <div class="layui-input-inline">
                             <select name="warehouse" lay-verify="required">
                                 <option value=""></option>
-                                <option value="0">北京</option>
-                                <option value="1">上海</option>
-                                <option value="2">广州</option>
-                                <option value="3">深圳</option>
-                                <option value="4">杭州</option>
+                                <?php if(is_array($warehouse) || $warehouse instanceof \think\Collection || $warehouse instanceof \think\Paginator): $i = 0; $__LIST__ = $warehouse;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                <option value="<?php echo $vo['id']; ?>"><?php echo $vo['name']; ?></option>
+                                <?php endforeach; endif; else: echo "" ;endif; ?>
                             </select>
                         </div>
                     </div>
@@ -165,11 +165,9 @@
                         <div class="layui-input-inline">
                             <select name="type" lay-verify="required">
                                 <option value=""></option>
-                                <option value="0">北京</option>
-                                <option value="1">上海</option>
-                                <option value="2">广州</option>
-                                <option value="3">深圳</option>
-                                <option value="4">杭州</option>
+                                <?php if(is_array($categories) || $categories instanceof \think\Collection || $categories instanceof \think\Paginator): $i = 0; $__LIST__ = $categories;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                <option value="<?php echo $vo['id']; ?>"><?php echo $vo['name']; ?></option>
+                                <?php endforeach; endif; else: echo "" ;endif; ?>
                             </select>
                         </div>
                     </div>
@@ -218,6 +216,30 @@
 </div>
 
 <script src="/statics/layui/layui.js"></script>
+
+<script>
+
+    var navTop = 2, navLeft = 2;
+    //Demo
+    layui.use(['laydate', 'form'], function () {
+        var form = layui.form, laydate = layui.laydate;
+
+
+
+        laydate.render({
+            elem: '#test1'
+        });
+
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            // layer.msg(JSON.stringify(data.field));
+            // return false;
+        });
+    });
+
+</script>
+
 <script>
     $ = null;
 
@@ -248,29 +270,38 @@
         var element = layui.element;
         $ = layui.jquery;
         $(function () {
+
+
+            // 选中菜单
+            try {
+                $("#nav-top").children("li.layui-nav-item").eq(navTop - 1).addClass('layui-this');
+            } catch (e) {
+            }
+
+            try {
+                $("#nav-left").children("li.layui-nav-item").eq(navLeft - 1).addClass('layui-this');
+            } catch (e) {
+            }
+
+
+            // 收缩/展开菜单
             $('#nav-switch').click(function () {
                 $('#main-nav').data('switch') == 1 ? fold_nav('close') : fold_nav('open');
             });
-            execute_event();
+
+
+            try {
+                execute_event();
+            } catch (e) {
+            }
+
+
         })
     });
 </script>
 
-<script>
 
 
-    //Demo
-    layui.use('form', function () {
-        var form = layui.form;
-
-        //监听提交
-        form.on('submit(formDemo)', function (data) {
-            // layer.msg(JSON.stringify(data.field));
-            // return false;
-        });
-    });
-
-</script>
 
 </body>
 </html>

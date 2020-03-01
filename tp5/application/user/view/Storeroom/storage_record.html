@@ -60,18 +60,19 @@
                 <thead>
                 <tr>
                     <th lay-data="{field:'id',align:'center'}" rowspan="2">记录编号</th>
-                    <th lay-data="{align:'center'}" colspan="4">货品信息</th>
+                    <th lay-data="{align:'center'}" colspan="5">货品信息</th>
                     <th lay-data="{align:'center'}" colspan="3">出入库信息</th>
                     <th lay-data="{align:'center'}" colspan="2">所属单据信息</th>
                 </tr>
                 <tr>
                     <th lay-data="{field:'product_id',align:'center'}">货品ID</th>
                     <th lay-data="{field:'name',align:'center'}">名称</th>
-                    <th lay-data="{field:'size',align:'center'}">型号</th>
+                    <th lay-data="{field:'model2',align:'center'}">型号</th>
+                    <th lay-data="{field:'size',align:'center'}">规格</th>
                     <th lay-data="{field:'unit',align:'center'}">单位</th>
                     <th lay-data="{field:'num',align:'center'}">数量</th>
                     <th lay-data="{field:'price',align:'center'}">价格</th>
-                    <th lay-data="{field:'type',align:'center'}">类型</th>
+                    <th lay-data="{field:'type_big',align:'center'}">类型</th>
                     <th lay-data="{field:'code',align:'center'}">单据编码</th>
                     <th lay-data="{field:'warehouse',align:'center'}">仓库</th>
                 </tr>
@@ -95,7 +96,7 @@
 {block name="jsScript"}
 <script>
 
-
+    var navTop = 2, navLeft = 3;
     //Demo
     layui.use(['form', 'table'], function () {
         var form = layui.form, table = layui.table;

@@ -25,21 +25,6 @@
 
 
                     <div class="layui-inline">
-                        <label class="layui-form-label">性别</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="sex" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-                    <div class="layui-inline">
-                        <label class="layui-form-label">职位</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="post" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-
-
-                    <div class="layui-inline">
                         <label class="layui-form-label">电话</label>
                         <div class="layui-input-inline">
                             <input type="text" name="phone" autocomplete="off" class="layui-input">
@@ -54,12 +39,45 @@
                         </div>
                     </div>
 
+                </div>
+
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">性别</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="sex" value="0" title="男" checked>
+                        <input type="radio" name="sex" value="1" title="女">
+                    </div>
+                </div>
+
+
+                <div class="layui-form-item">
+
+
                     <div class="layui-inline">
                         <label class="layui-form-label">部门</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="depart" autocomplete="off" class="layui-input">
+
+
+                            <select name="depart" lay-verify="required">
+                                <option value=""></option>
+                                {volist name="depart" id="vo"}
+                                <option value="{$vo.id}">{$vo.name}</option>
+                                {/volist}
+                            </select>
+
                         </div>
                     </div>
+
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">职位</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="post" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
                 </div>
 
 
@@ -82,7 +100,7 @@
 {block name="jsScript"}
 <script>
 
-
+    var navTop = 5, navLeft = 3;
     //Demo
     layui.use(['form', 'table'], function () {
         var form = layui.form, table = layui.table;

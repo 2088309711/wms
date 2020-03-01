@@ -13,5 +13,19 @@ use think\Model;
 
 class Inout extends Model
 {
+    public function warehouse2()
+    {
+        return $this->hasOne('Warehouse', 'id', 'warehouse');
+    }
+
+    public function categories()
+    {
+        return $this->hasOne('Categories', 'id', 'type');
+    }
+
+    public function company()
+    {
+        return $this->hasOne('Company', 'id', 'supplier');
+    }
 
 }

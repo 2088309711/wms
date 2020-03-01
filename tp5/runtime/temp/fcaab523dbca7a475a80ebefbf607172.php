@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:74:"D:\php-workspace\wms/tp5/application/user\view\storeroom\in_storage_3.html";i:1582517884;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1581872702;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1582519346;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:74:"D:\php-workspace\wms/tp5/application/user\view\storeroom\in_storage_3.html";i:1583062187;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1582601906;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1583058228;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,23 +36,27 @@
         </div>
 
 
-        <ul class="layui-nav layui-layout-left" style="left:260px;">
+        <ul id="nav-top" class="layui-nav layui-layout-left" style="left:260px;">
             <li class="layui-nav-item"><a href="/menu">
                 <i class="layui-icon layui-icon-app"></i> 功能</a></li>
-            <li class="layui-nav-item"><a href="/system">
-                <i class="layui-icon layui-icon-console"></i> 系统</a></li>
+
             <li class="layui-nav-item"><a href="/Storeroom">
                 <i class="layui-icon layui-icon-form"></i> 仓库</a></li>
-            <li class="layui-nav-item"><a href="/quality">
-                <i class="layui-icon layui-icon-tabs"></i> 货品</a></li>
+
             <li class="layui-nav-item"><a href="/repertory">
                 <i class="layui-icon layui-icon-template"></i> 库存</a></li>
+
+            <li class="layui-nav-item"><a href="/quality">
+                <i class="layui-icon layui-icon-tabs"></i> 货品</a></li>
+
             <li class="layui-nav-item"><a href="/basics">
                 <i class="layui-icon layui-icon-user"></i> 基础</a></li>
 
 
-            <li class="layui-nav-item"><a href="/other">
-                <i class="layui-icon layui-icon-util"></i> 其他</a></li>
+            <li class="layui-nav-item"><a href="/system">
+                <i class="layui-icon layui-icon-console"></i> 系统</a></li>
+
+
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
@@ -70,11 +74,11 @@
 
     <div id="main-nav" data-switch="1" class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
-            <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="/in_storage/1">入库</a></li>
-<li class="layui-nav-item"><a href="/out_storage/1">出库</a></li>
-<li class="layui-nav-item"><a href="/storage_record">出入库明细</a></li>
-<li class="layui-nav-item"><a href="/storage_query">出入库查询</a></li>
+            <ul id="nav-left" class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item"><a href="/in_out_storage/1/1">入库</a></li>
+<li class="layui-nav-item"><a href="/in_out_storage/2/1">出库</a></li>
+<li class="layui-nav-item"><a href="/storage_record">出入库货品查询</a></li>
+<li class="layui-nav-item"><a href="/storage_query">出入库单据查询</a></li>
             </ul>
         </div>
     </div>
@@ -95,8 +99,9 @@
                 <thead>
                 <tr>
                     <th lay-data="{field:'id',align:'center'}">编号</th>
-                    <th lay-data="{field:'product_id',align:'center'}">货品</th>
+                    <th lay-data="{field:'product_name',align:'center'}">货品</th>
                     <th lay-data="{field:'num',align:'center', edit: 'text'}">入库数量</th>
+                    <th lay-data="{field:'inprice',align:'center'}">参考价格</th>
                     <th lay-data="{field:'price',align:'center', edit: 'text'}">入库价格</th>
                     <th lay-data="{field:'remark',align:'center', edit: 'text'}">备注</th>
                     <th lay-data="{fixed: 'right', width: 160, align: 'center', toolbar: '#barDemo'}">操作</th>
@@ -139,6 +144,40 @@
 </div>
 
 <script src="/statics/layui/layui.js"></script>
+
+<script>
+
+    var navTop = 2, navLeft = 1;
+    //Demo
+    layui.use(['form', 'table', 'jquery'], function () {
+        var form = layui.form,
+            table = layui.table,
+            $ = layui.jquery
+
+        table.on('edit(test)', function (obj) { //注：edit是固定事件名，test是table原始容器的属性 lay-filter="对应的值"
+
+            $.get('/in_out_storage/1/ajax/' + obj.data.id + '/' + obj.field + '/' + obj.value, function (data) {
+                if (data.code == 0) {
+                    layer.msg(data.msg)
+                }
+            });
+
+
+            console.log(obj.value); //得到修改后的值
+            console.log(obj.field); //当前编辑的字段名
+            console.log(obj.data.id); //所在行的所有相关数据
+        });
+
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+
+</script>
+
 <script>
     $ = null;
 
@@ -169,46 +208,38 @@
         var element = layui.element;
         $ = layui.jquery;
         $(function () {
+
+
+            // 选中菜单
+            try {
+                $("#nav-top").children("li.layui-nav-item").eq(navTop - 1).addClass('layui-this');
+            } catch (e) {
+            }
+
+            try {
+                $("#nav-left").children("li.layui-nav-item").eq(navLeft - 1).addClass('layui-this');
+            } catch (e) {
+            }
+
+
+            // 收缩/展开菜单
             $('#nav-switch').click(function () {
                 $('#main-nav').data('switch') == 1 ? fold_nav('close') : fold_nav('open');
             });
-            execute_event();
+
+
+            try {
+                execute_event();
+            } catch (e) {
+            }
+
+
         })
     });
 </script>
 
-<script>
 
 
-    //Demo
-    layui.use(['form', 'table', 'jquery'], function () {
-        var form = layui.form,
-            table = layui.table,
-            $ = layui.jquery
-
-        table.on('edit(test)', function (obj) { //注：edit是固定事件名，test是table原始容器的属性 lay-filter="对应的值"
-
-            $.get('/in_storage/ajax/' + obj.data.id + '/' + obj.field + '/' + obj.value, function (data) {
-                if (data.code == 0) {
-                    layer.msg(data.msg)
-                }
-            });
-
-
-            console.log(obj.value); //得到修改后的值
-            console.log(obj.field); //当前编辑的字段名
-            console.log(obj.data.id); //所在行的所有相关数据
-        });
-
-
-        //监听提交
-        form.on('submit(formDemo)', function (data) {
-            layer.msg(JSON.stringify(data.field));
-            return false;
-        });
-    });
-
-</script>
 
 </body>
 </html>

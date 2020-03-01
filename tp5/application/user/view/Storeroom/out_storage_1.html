@@ -27,7 +27,7 @@
                     <div class="layui-inline">
                         <label class="layui-form-label">录单日期</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="date" autocomplete="off" class="layui-input">
+                            <input type="text" name="date" class="layui-input" autocomplete="off" id="test1">
                         </div>
                     </div>
 
@@ -53,11 +53,9 @@
 
                             <select name="supplier" lay-verify="required">
                                 <option value=""></option>
-                                <option value="0">北京</option>
-                                <option value="1">上海</option>
-                                <option value="2">广州</option>
-                                <option value="3">深圳</option>
-                                <option value="4">杭州</option>
+                                {volist name="company" id="vo"}
+                                <option value="{$vo.id}">{$vo.name}</option>
+                                {/volist}
                             </select>
 
 
@@ -70,11 +68,9 @@
                         <div class="layui-input-inline">
                             <select name="warehouse" lay-verify="required">
                                 <option value=""></option>
-                                <option value="0">北京</option>
-                                <option value="1">上海</option>
-                                <option value="2">广州</option>
-                                <option value="3">深圳</option>
-                                <option value="4">杭州</option>
+                                {volist name="warehouse" id="vo"}
+                                <option value="{$vo.id}">{$vo.name}</option>
+                                {/volist}
                             </select>
                         </div>
                     </div>
@@ -85,11 +81,9 @@
                         <div class="layui-input-inline">
                             <select name="type" lay-verify="required">
                                 <option value=""></option>
-                                <option value="0">北京</option>
-                                <option value="1">上海</option>
-                                <option value="2">广州</option>
-                                <option value="3">深圳</option>
-                                <option value="4">杭州</option>
+                                {volist name="categories" id="vo"}
+                                <option value="{$vo.id}">{$vo.name}</option>
+                                {/volist}
                             </select>
                         </div>
                     </div>
@@ -126,10 +120,17 @@
 {block name="jsScript"}
 <script>
 
-
+    var navTop = 2, navLeft = 2;
     //Demo
-    layui.use('form', function () {
-        var form = layui.form;
+    layui.use(['laydate', 'form'], function () {
+        var form = layui.form, laydate = layui.laydate;
+
+
+
+        laydate.render({
+            elem: '#test1'
+        });
+
 
         //监听提交
         form.on('submit(formDemo)', function (data) {
