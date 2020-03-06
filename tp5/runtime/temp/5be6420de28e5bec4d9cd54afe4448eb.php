@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:74:"D:\php-workspace\wms/tp5/application/user\view\storeroom\in_storage_1.html";i:1582715797;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1582601906;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1583058228;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:74:"D:\php-workspace\wms/tp5/application/user\view\storeroom\in_storage_1.html";i:1583120822;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1582601906;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_storeroom.html";i:1583058228;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -226,6 +226,7 @@
     layui.use(['laydate', 'form'], function () {
         var form = layui.form, laydate = layui.laydate;
 
+        // laydate = layui.laydate;
         laydate.render({
             elem: '#test1'
         });

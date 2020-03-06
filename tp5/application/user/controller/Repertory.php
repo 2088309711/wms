@@ -12,8 +12,11 @@ namespace app\user\controller;
 use app\user\model\Check;
 use app\user\model\Exchange;
 use app\user\model\ExchangeData;
+use app\user\model\Product;
 use app\user\model\TakeCheck;
 use app\user\model\TakeCheckData;
+use app\user\model\Warehouse;
+use app\user\model\WarehouseData;
 use think\Controller;
 
 class Repertory extends Filter
@@ -38,41 +41,42 @@ class Repertory extends Filter
             switch ($data['step']) {
 
                 case 1:
-
-                    $w = new Exchange();
-                    $w->date = $data['date'];
-                    $w->employee = $data['employee'];
-                    $w->warehouse_from = $data['warehouse_from'];
-                    $w->warehouse_to = $data['warehouse_to'];
-                    $w->code = $data['code'];
-                    $w->remark = $data['remark'];
-                    $w->user = $this->getUserName();
-                    if ($w->save()) {
+                    $data['user'] = $this->getUserName();
+                    $w = new Exchange($data);
+                    if ($w->allowField(true)->save()) {
                         $this->redirect('/inventory_allocation/2/' . $data['code']);
                     } else {
                         $this->error('操作失败');
                     }
                     break;
 
-
                 case 2:
 
+                    $userName = $this->getUserName();
+                    $exchange = Exchange::get(['user' => $userName, 'code' => $data['code']]);
 
                     $data['product'] = json_decode($data['product']);
 
-                    $userName = $this->getUserName();
                     $list = [];
                     foreach ($data['product'] as $i) {
-                        $list[] = [
+
+                        $temp = [
                             'product' => $i->value,
                             'code' => $data['code'],
                             'user' => $userName,
                         ];
+
+                        if (ExchangeData::get($temp) == null) {
+                            $temp['warehouse'] = $exchange->warehouse_from;
+                            $list[] = $temp;
+                        }
                     }
 
+                    if (count($list) == 0) {
+                        $this->redirect('/inventory_allocation/3/' . $data['code']);
+                    }
 
                     $w = new ExchangeData();
-
 
                     if ($w->saveAll($list) != null) {
                         $this->redirect('/inventory_allocation/3/' . $data['code']);
@@ -80,21 +84,47 @@ class Repertory extends Filter
                         $this->error('操作失败');
                     }
 
-
                     break;
 
-
             }
-
 
         } else {
 
             switch ($data['step']) {
                 case 1:
-                    return $this->fetch('inventory_allocation_1');
+
+                    $warehouse = Warehouse::all(['user' => $this->getUserName()]);
+
+                    return $this->fetch('inventory_allocation_1', ['warehouse' => $warehouse]);
                     break;
 
                 case 2:
+
+
+                    $exchange = Exchange::get(['code' => $data['code'], 'user' => $this->getUserName()]);
+
+
+                    $wd = WarehouseData::all(['warehouse' => $exchange->warehouse_from, 'user' => $this->getUserName()]);
+
+
+                    $pids = [];
+                    foreach ($wd as $i) {
+                        $pids[] = $i->product_id;
+                    }
+
+
+                    $str = '[';
+                    if (count($pids) > 0) {
+                        $p = Product::all($pids);
+                        foreach ($p as $i) {
+                            $str .= '{"value": "' . $i->id . '", "title": "' . $i->name . '"},';
+                        }
+                    }
+                    $str .= ']';
+
+
+                    $this->assign('product', $str);
+
                     return $this->fetch('inventory_allocation_2', ['code' => $data['code']]);
                     break;
 
@@ -106,6 +136,11 @@ class Repertory extends Filter
 
                         $employee = ExchangeData::all(['code' => $data['code']]);
 
+
+                        foreach ($employee as $i) {
+                            $i->product = $i->product2->name;
+//                            $i->inprice = $i->product2->inprice;
+                        }
 
                         $result = [
                             "code" => 0,

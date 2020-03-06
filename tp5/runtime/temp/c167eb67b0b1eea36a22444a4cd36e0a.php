@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:84:"D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_allocation_1.html";i:1582551498;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1582601906;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_Repertory.html";i:1582470523;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:84:"D:\php-workspace\wms/tp5/application/user\view\repertory\inventory_allocation_1.html";i:1583139306;s:56:"D:\php-workspace\wms\tp5\application\user\view\base.html";i:1582601906;s:65:"D:\php-workspace\wms\tp5\application\user\view\nav_Repertory.html";i:1582470523;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -102,12 +102,10 @@
         <div class="layui-card-header">库存调拨</div>
         <div class="layui-card-body">
 
-
             <form class="layui-form" method="post">
 
                 <?php echo token(); ?>
                 <div class="layui-form-item">
-
 
                     <div class="layui-inline">
                         <label class="layui-form-label">单据编号</label>
@@ -116,11 +114,10 @@
                         </div>
                     </div>
 
-
                     <div class="layui-inline">
                         <label class="layui-form-label">录单日期</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="date" autocomplete="off" class="layui-input">
+                            <input type="text" name="date" class="layui-input" autocomplete="off" id="test1">
                         </div>
                     </div>
 
@@ -135,7 +132,17 @@
                     <div class="layui-inline">
                         <label class="layui-form-label">出货仓库</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="warehouse_from" autocomplete="off" class="layui-input">
+
+
+                            <select id="warehouse_from" name="warehouse_from" lay-filter="warehouse_from"
+                                    lay-verify="required">
+                                <option value=""></option>
+                                <?php if(is_array($warehouse) || $warehouse instanceof \think\Collection || $warehouse instanceof \think\Paginator): $i = 0; $__LIST__ = $warehouse;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                <option value="<?php echo $vo['id']; ?>"><?php echo $vo['name']; ?></option>
+                                <?php endforeach; endif; else: echo "" ;endif; ?>
+                            </select>
+
+
                         </div>
                     </div>
 
@@ -143,7 +150,17 @@
                     <div class="layui-inline">
                         <label class="layui-form-label">存货仓库</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="warehouse_to" autocomplete="off" class="layui-input">
+
+
+                            <select id="warehouse_to" name="warehouse_to" lay-filter="warehouse_to"
+                                    lay-verify="required">
+                                <option value=""></option>
+                                <?php if(is_array($warehouse) || $warehouse instanceof \think\Collection || $warehouse instanceof \think\Paginator): $i = 0; $__LIST__ = $warehouse;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                <option value="<?php echo $vo['id']; ?>"><?php echo $vo['name']; ?></option>
+                                <?php endforeach; endif; else: echo "" ;endif; ?>
+                            </select>
+
+
                         </div>
                     </div>
 
@@ -195,8 +212,39 @@
 
     var navTop = 3, navLeft = 1;
     //Demo
-    layui.use(['form', 'table'], function () {
-        var form = layui.form, table = layui.table;
+    layui.use(['laydate', 'jquery', 'form', 'table'], function () {
+        var form = layui.form,
+            table = layui.table,
+            laydate = layui.laydate,
+            $ = layui.jquery;
+
+
+        //laydate = layui.laydate
+        laydate.render({
+            elem: '#test1'
+        });
+
+
+        form.on('select(warehouse_from)', function (data) {
+            onRender('warehouse_to', data.value);
+        });
+
+        form.on('select(warehouse_to)', function (data) {
+            onRender('warehouse_from', data.value);
+        });
+
+
+        function onRender(id, value) {
+            $('#' + id).children().each(function () {
+                if ($(this).val() == value) {
+                    $(this).prop("disabled", true).prop("selected", false)
+                } else {
+                    $(this).prop("disabled", false)
+                }
+            });
+            form.render('select');
+        }
+
 
         //监听提交
         form.on('submit(formDemo)', function (data) {

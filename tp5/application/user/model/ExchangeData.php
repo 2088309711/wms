@@ -13,5 +13,8 @@ use think\Model;
 
 class ExchangeData extends Model
 {
-
+    public function product2()
+    {
+        return $this->hasOne('Product', 'id', 'product')->field('name');
+    }
 }

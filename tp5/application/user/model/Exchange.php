@@ -13,5 +13,9 @@ use think\Model;
 
 class Exchange extends Model
 {
+//    public function product()
+//    {
+//        return $this->hasOne('Product', 'id', 'warehouse_from')->field('name');
+//    }
 
 }

@@ -12,6 +12,9 @@
 // 应用公共文件
 
 
+
+
+
 function halt_clean($var)
 {
     halt(json_decode(json_encode($var)));

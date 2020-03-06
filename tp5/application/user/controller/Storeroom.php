@@ -28,6 +28,44 @@ class Storeroom extends Filter
 
 
     /**
+     * 仓库货品变更
+     * @param $warehouseId 仓库ID
+     * @param $productId 货品ID
+     * @param $addNum 数量（仅新增）
+     * @param $diff 差值（更新）
+     * @param bool $add 变更模式，默认添加，false = 减少
+     * @throws \think\exception\DbException
+     */
+    public function warehousing($warehouseId, $productId, $addNum, $diff, $add = true)
+    {
+        $userName = $this->getUserName();
+        //查询货品是否已经登记
+        $wd = WarehouseData::get(['product_id' => $productId, 'warehouse' => $warehouseId, 'user' => $userName]);
+        if ($wd == null) {
+            //新增
+            $wd = new WarehouseData([
+                'product_id' => $productId,
+                'num' => $addNum,
+                'warehouse' => $warehouseId,
+                'user' => $userName,
+            ]);
+            if (!$wd->save()) {//新增失败，回滚任务
+                $this->error('操作失败');
+            }
+        } else {
+            //更新
+            if ($add) {
+                $wd->num += $diff;
+            } else {
+                $wd->num -= $diff;
+            }
+            if (!$wd->save()) {//更新失败，回滚任务
+                $this->error('操作失败');
+            }
+        }
+    }
+
+    /**
      * 出入库合并
      */
     public function inOutStorage()
@@ -218,33 +256,41 @@ class Storeroom extends Filter
                     if ($data['field'] == 'num') {
                         $id = InoutData::get($data['id']);
                         $inout = Inout::get(['code' => $id->code, 'type_big' => $type_big, 'user' => $userName]);
-                        $wd = WarehouseData::get(['product_id' => $id->product_id, 'warehouse' => $inout->warehouse, 'user' => $userName]);
+//                        $wd = WarehouseData::get(['product_id' => $id->product_id, 'warehouse' => $inout->warehouse, 'user' => $userName]);
 
-                        if ($wd == null && $type_big == 1) {//该仓库没有该货品记录
-                            //新增
-                            $wd = new WarehouseData([
-                                'product_id' => $id->product_id,
-                                'num' => $data['value'],
-                                'warehouse' => $inout->warehouse,
-                                'user' => $userName,
-                            ]);
-                            if (!$wd->save()) {//新增失败，回滚任务
-                                $this->error('操作失败');
-                            }
+
+                        if ($type_big == 1) {
+                            $this->warehousing($inout->warehouse, $id->product_id, $data['value'], $diff);
                         } else {
-                            //更新
-
-                            if ($type_big == 1) {
-                                $wd->num += $diff;
-                            } else {
-                                $wd->num -= $diff;
-                            }
-                            if (!$wd->save()) {//更新失败，回滚任务
-                                $this->error('操作失败');
-                            }
-
-
+                            $this->warehousing($inout->warehouse, $id->product_id, $data['value'], $diff, false);
                         }
+
+
+//                        if ($wd == null && $type_big == 1) {//该仓库没有该货品记录
+//                            //新增
+//                            $wd = new WarehouseData([
+//                                'product_id' => $id->product_id,
+//                                'num' => $data['value'],
+//                                'warehouse' => $inout->warehouse,
+//                                'user' => $userName,
+//                            ]);
+//                            if (!$wd->save()) {//新增失败，回滚任务
+//                                $this->error('操作失败');
+//                            }
+//                        } else {
+//                            //更新
+//
+//                            if ($type_big == 1) {
+//                                $wd->num += $diff;
+//                            } else {
+//                                $wd->num -= $diff;
+//                            }
+//                            if (!$wd->save()) {//更新失败，回滚任务
+//                                $this->error('操作失败');
+//                            }
+//
+//
+//                        }
                     }
 
                     if ($r1) {
